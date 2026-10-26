@@ -1,7 +1,7 @@
 {
   "record_type": "report_derived_index",
   "evidence_level": "Parsed from user-submitted EXP-0014; binary not independently accessed",
-  "source_sha256": "8d67720e721c2f69d81777c7a982b217633f76eeee0f74a00d2def02438e71d2",
+  "source_sha256": "2b7c5c2ff6647d1e3d5c2c659b60fc072bc0466ba1775bda6563ca32dec99dd8",
   "reported_binary_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
   "image_base": "0x00400000",
   "registry": [
@@ -301,5 +301,7 @@
       "target_rva": "0x00552620",
       "function": "FUN_00952620"
     }
-  ]
+  ],
+  "original_uploaded_sha256": "8d67720e721c2f69d81777c7a982b217633f76eeee0f74a00d2def02438e71d2",
+  "normalization_note": "Files ingestion removed one terminal LF from the uploaded EXP-0014 Markdown; source_sha256 is the committed GitHub snapshot, original_uploaded_sha256 retains attachment byte identity."
 }
