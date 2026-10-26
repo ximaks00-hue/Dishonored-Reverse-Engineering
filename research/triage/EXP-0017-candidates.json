@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "evidence_level": "user_summary_only_not_independently_disassembled",
+  "reported_exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "image_base": "0x00400000",
+  "scan_summary": {
+    "index_functions": 72437,
+    "previous_ghidra_functions": 72925,
+    "vptr_store_instructions": 10002,
+    "unique_candidate_addresses": 4267,
+    "structurally_passing": 1176,
+    "tested_slot_count": 11,
+    "raw_scan_available": false
+  },
+  "roles": {
+    "powerwheel": {
+      "class": "DisGFxMoviePlayerPowerWheel",
+      "slot_offset": "0x1F0",
+      "wrapper_va": "0x009F8290"
+    },
+    "controller": {
+      "class": "DishonoredPlayerController",
+      "slot_offset": "0x560",
+      "wrapper_va": "0x009EE630"
+    }
+  },
+  "candidates": [
+    {
+      "table_va": "0x010B4C48",
+      "reported_owner": null,
+      "evaluations": {
+        "powerwheel": {
+          "status": "needs_review",
+          "observation": "+1F0 accesses fields and helper; no proven conflict"
+        },
+        "controller": {
+          "status": "deprioritized",
+          "observation": "+560 appears to perform cleanup"
+        }
+      }
+    },
+    {
+      "table_va": "0x011CADD0",
+      "reported_owner": null,
+      "evaluations": {
+        "powerwheel": {
+          "status": "deprioritized",
+          "observation": "+1F0 lacks visible scalar arg; verify actual x86 call"
+        },
+        "controller": {
+          "status": "deprioritized",
+          "observation": "+560 appears to receive multiple args; inspect thunks"
+        }
+      }
+    },
+    {
+      "table_va": "0x01121478",
+      "reported_owner": null,
+      "evaluations": {
+        "powerwheel": {
+          "status": "needs_review",
+          "observation": "+1F0 tests and helper calls; possibly relevant"
+        },
+        "controller": {
+          "status": "deprioritized",
+          "observation": "+560 copies globals into object fields"
+        }
+      }
+    },
+    {
+      "table_va": "0x01127D08",
+      "reported_owner": null,
+      "evaluations": {
+        "powerwheel": {
+          "status": "deprioritized",
+          "observation": "+1F0 populates output fields"
+        },
+        "controller": {
+          "status": "deprioritized",
+          "observation": "+560 appears to return static data pointer"
+        }
+      }
+    },
+    {
+      "table_va": "0x0120750C",
+      "reported_owner": "NxScene",
+      "evaluations": {
+        "powerwheel": {
+          "status": "reported_excluded",
+          "observation": "NxScene::vftable; +1F0 purecall in report"
+        },
+        "controller": {
+          "status": "reported_excluded",
+          "observation": "NxScene not PlayerController in report"
+        }
+      }
+    }
+  ]
+}
