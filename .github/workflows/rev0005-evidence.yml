@@ -1,0 +1,19 @@
+name: REV-0005 evidence integrity
+on:
+  pull_request:
+  push:
+    branches: ["research/**"]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate source-bounded index
+        run: python tools/validate_selection_report.py research/triage/EXP-0021-0022-report-index.json
+      - name: Run REV-0005 tests
+        run: python -m unittest discover -s tests -p 'test_rev0005.py' -v
