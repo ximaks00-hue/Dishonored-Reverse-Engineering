@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/dishonored-re/research-record.schema.json",
+  "title": "Dishonored RE research record",
+  "description": "Minimal provenance-bearing record for a finding, observation, or hypothesis.",
+  "type": "object",
+  "required": ["id", "kind", "status", "claim", "scope", "sources"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^(FIND|OBS|HYP|EXP)-[A-Z0-9-]+$" },
+    "kind": { "enum": ["finding", "observation", "hypothesis", "experiment"] },
+    "status": { "enum": ["confirmed", "observed", "inferred", "unknown", "superseded", "planned"] },
+    "claim": { "type": "string", "minLength": 1 },
+    "scope": {
+      "type": "object",
+      "required": ["build"],
+      "properties": {
+        "build": { "type": ["string", "null"] },
+        "files": { "type": "array", "items": { "type": "string" } },
+        "module_rva": { "type": ["string", "null"] },
+        "conditions": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type", "reference"],
+        "properties": {
+          "type": { "enum": ["file", "experiment", "tool_output", "external", "capture", "analyst_note"] },
+          "reference": { "type": "string", "minLength": 1 },
+          "tool_version": { "type": ["string", "null"] },
+          "sha256": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "alternatives": { "type": "array", "items": { "type": "string" } },
+    "falsification_test": { "type": "string" },
+    "supersedes": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
