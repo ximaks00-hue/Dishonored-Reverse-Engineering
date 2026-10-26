@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "source_type": "user_report_summary",
+  "independently_reproduced": false,
+  "reported_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "image_base": "0x00400000",
+  "classes": [
+    {
+      "name": "DisGFxMoviePlayerPowerWheel",
+      "descriptor_va": "0x01354070",
+      "constructor_va": "0x00BD1080",
+      "vtable_va": "0x01161C08",
+      "slot_offset": "0x1F0",
+      "slot_va": "0x01161DF8",
+      "target_va": "0x00BCD800",
+      "path_classification": "UI_UPDATE",
+      "finding": "wheel 24 => branch 2 => Blink class and active list => UpdateItemInfos",
+      "evidence_level": "reported_static"
+    },
+    {
+      "name": "DishonoredPlayerController",
+      "descriptor_va": "0x01316938",
+      "constructor_va": "0x00ABD1F0",
+      "vtable_va": "0x01118738",
+      "slot_offset": "0x560",
+      "slot_va": "0x01118C98",
+      "target_va": "0x00AB4680",
+      "path_classification": "POWER_SELECTION",
+      "finding": "_iPower bounds checked vs pawn+0xA44 then indexed storage at +0xA40, passed to pawn virtual slots +0x6E8/+0x6E4",
+      "evidence_level": "reported_static"
+    },
+    {
+      "name": "DisGFxMoviePlayerStore",
+      "descriptor_va": "0x013543E0",
+      "constructor_va": "0x00BD7910",
+      "vtable_va": "0x01163388",
+      "slot_offset": null,
+      "slot_va": null,
+      "target_va": null,
+      "path_classification": "CORRECTION",
+      "finding": "corrects previous incorrect attribution of FUN_00BBD3A0 to PowerWheel",
+      "evidence_level": "reported_static"
+    }
+  ],
+  "blink_family": [
+    {
+      "function_va": "0x00BFC5D0",
+      "classification": "candidate_blink_vtable_method"
+    },
+    {
+      "function_va": "0x00BFC160",
+      "classification": "candidate_blink_vtable_method"
+    },
+    {
+      "function_va": "0x00BFBC90",
+      "classification": "candidate_blink_vtable_method"
+    },
+    {
+      "function_va": "0x00BF9AB0",
+      "classification": "candidate_blink_vtable_method"
+    }
+  ],
+  "family_observations": [
+    "coordinates/points",
+    "distances",
+    "timers",
+    "0x38 record stride",
+    "no direct pawn-position store observed in examined bodies"
+  ],
+  "generic_callees": [
+    {
+      "function_va": "0x00C7E200",
+      "reported_data_refs": 301
+    },
+    {
+      "function_va": "0x00C82AA0",
+      "reported_data_refs": 301
+    }
+  ],
+  "object_flag": {
+    "function_va": "0x00414DC0",
+    "mask": "0x80000",
+    "meaning": "unknown"
+  },
+  "field_hypotheses": [
+    {
+      "owner": "DishonoredPlayerPawn",
+      "offsets": [
+        "0xA40",
+        "0xA44"
+      ],
+      "candidate_name": "m_UsableActivePowerIndices",
+      "status": "inferred_unverified_native_offset"
+    },
+    {
+      "owner": "DishonoredPlayerPawn",
+      "offsets": [
+        "0x788",
+        "0x78C"
+      ],
+      "candidate_name": "m_ActivePowers",
+      "status": "inferred_unverified_native_offset"
+    },
+    {
+      "owner": "controller_or_UI_state_unresolved",
+      "offsets": [
+        "0x228"
+      ],
+      "candidate_name": "shortcut-derived byte",
+      "status": "reported_storage_semantics_unknown"
+    }
+  ],
+  "known_mappings": [
+    {
+      "from": "DPWI_Blink",
+      "value": 24,
+      "to": "PowerWheel handler branch",
+      "result": 2,
+      "scope": "PowerWheel OnSelectionChanged only"
+    }
+  ],
+  "unresolved_mappings": [
+    "PowerWheel branch code 2 to controller _iPower",
+    "_iPower to Blink active-array index 0",
+    "shortcut stored byte +0x228 to wheel item or enum",
+    "Blink attributes to native field offsets",
+    "Blink target candidate to confirmed pawn-position update"
+  ],
+  "function_counts": {
+    "total": 72925,
+    "non_external": 72437,
+    "external_number_measured": false
+  },
+  "gameplay_position_update_confirmed": false
+}
