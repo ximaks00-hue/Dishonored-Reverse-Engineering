@@ -38,3 +38,8 @@
 **EXP-0018:** сначала доказать native-класс через constructor vptr store + независимый source identity/registration; затем разрешить точные target `+0x560` и `+0x1F0` и проследить входные параметры. Не смешивать UI enum `2`, wheel `24`, active array `0`, shortcut positions `1/5` без реального dataflow.
 
 Официальная документация: [Ghidra Memory API](https://ghidra.re/ghidra_docs/api/ghidra/program/model/mem/Memory.html), [FunctionManager](https://ghidra.re/ghidra_docs/api/ghidra/program/model/listing/FunctionManager.html), [headless readOnly и блокировки](https://github.com/NationalSecurityAgency/ghidra/blob/master/Ghidra/RuntimeScripts/support/analyzeHeadlessREADME.md).
+
+
+## Проверяемая причина разницы 488 функций
+
+По официальной документации Ghidra API `FunctionManager.getFunctionCount()` включает **external** функции, а `getFunctions(true)` перечисляет только **non-external** функции; `getExternalFunctions()` позволяет посчитать разницу отдельно. Поэтому отчётные 72 925 против 72 437 могут различаться ровно на 488 external entries — **если** старый счётчик и новый сканер использовали именно эти методы в одной базе. Это гипотеза, не доказанный факт. Скрипт `tools/Exp0018FunctionCountAudit.java` экспортирует все три показателя и сравнит количество внешних функций с 488. [API Ghidra](https://ghidra.re/ghidra_docs/api/ghidra/program/model/listing/FunctionManager.html).
