@@ -23,4 +23,4 @@ Choose one event-to-media path and seek independent structural evidence plus a c
 
 ## Sources
 
-[Coverage snapshot](../coverage.md) · [EXP-0118](../../experiments/EXP-0118-bink-full-stream-decode-census.md) · [EXP-0119](../../experiments/EXP-0119-wwise-wem-full-decode-census.md) · [EXP-0120](../../experiments/EXP-0120-wwise-pck-python-table-crosscheck.md) · [EXP-0134](../../experiments/EXP-0134-localized-akpk-quickbms-crosscheck.md)
+[Coverage snapshot](../coverage.md) · [EXP-0118](../../experiments/EXP-0118-bink-full-stream-decode-census.md) · [EXP-0119](../../experiments/EXP-0119-wwise-wem-full-decode-census.md) · [EXP-0120](../../experiments/EXP-0120-wwise-pck-python-table-crosscheck.md) · [EXP-0134](../../experiments/EXP-0134-quickbms-localized-akpk-crosscheck.md)

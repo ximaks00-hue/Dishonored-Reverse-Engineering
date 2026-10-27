@@ -22,4 +22,4 @@ No general claim is made that all files were freshly rehashed in the same experi
 
 ## Sources
 
-[Build record](../../research/builds/BUILD-STEAM-10256413/build.md) · [EXP-0001](../../experiments/EXP-0001-build-inventory.md) · [EXP-0003](../../experiments/EXP-0003-start-menu-mod-status.md) · [EXP-0011](../../experiments/EXP-0011-cookedpcconsole-inventory.md) · [EXP-0052](../../experiments/EXP-0052-installed-dlc-package-inventory.md) · [EXP-0121](../../experiments/EXP-0121-full-install-inventory-refresh.md)
+[Build record](../../research/builds/BUILD-STEAM-10256413/build.md) · [EXP-0001](../../experiments/EXP-0001-build-inventory.md) · [EXP-0003](../../experiments/EXP-0003-start-menu-mod-status.md) · [EXP-0011](../../experiments/EXP-0011-cookedpcconsole-inventory.md) · [EXP-0052](../../experiments/EXP-0052-installed-dlc-package-inventory.md) · [EXP-0121](../../experiments/EXP-0121-current-install-inventory-refresh.md)

@@ -29,4 +29,4 @@ Prioritize unresolved layouts or references that connect multiple known artifact
 
 ## Sources
 
-[Coverage snapshot](../coverage.md) · [Build and installation](build-and-installation.md) · [EXP-0052](../../experiments/EXP-0052-installed-dlc-package-inventory.md) · [EXP-0053](../../experiments/EXP-0053-all-install-upk-object-catalog.md) · [EXP-0114](../../experiments/EXP-0114-config-path-candidate-audit.md) · [EXP-0134](../../experiments/EXP-0134-localized-akpk-quickbms-crosscheck.md)
+[Coverage snapshot](../coverage.md) · [Build and installation](build-and-installation.md) · [EXP-0052](../../experiments/EXP-0052-installed-dlc-package-inventory.md) · [EXP-0053](../../experiments/EXP-0053-all-install-upk-object-catalog.md) · [EXP-0114](../../experiments/EXP-0114-config-path-candidate-audit.md) · [EXP-0134](../../experiments/EXP-0134-quickbms-localized-akpk-crosscheck.md)

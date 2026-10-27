@@ -21,4 +21,4 @@ Work these as separate joins: trace input-to-caller, establish scheduler receive
 
 ## Sources
 
-[Activation graph](../gameplay/blink/activation-graph.md) · [EXP-0028](../../experiments/EXP-0028-usepower-blink-activation-target.md) · [EXP-0048](../../experiments/EXP-0048-usepower-secondary-component-path.md) · [Research backlog](../backlog.md)
+[Activation graph](../gameplay/blink/activation-graph.md) · [EXP-0028](../../experiments/EXP-0028-item-context-inheritance.md) · [EXP-0048](../../experiments/EXP-0048-usepower-component-slot168.md) · [Research backlog](../backlog.md)
