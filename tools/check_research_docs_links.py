@@ -34,7 +34,21 @@ def check_links(root: Path) -> list[str]:
     failures: list[str] = []
     for path in documentation_files(root):
         content = path.read_text(encoding="utf-8")
-        for match in LINK_RE.finditer(content):
+        # Fenced Markdown code is illustrative text, not live links.
+        visible_lines: list[str] = []
+        fence: str | None = None
+        for line in content.splitlines():
+            stripped = line.lstrip()
+            token = stripped[:3]
+            if token in ("\`\`\`", "~~~"):
+                if fence is None:
+                    fence = token
+                elif fence == token:
+                    fence = None
+                continue
+            if fence is None:
+                visible_lines.append(line)
+        for match in LINK_RE.finditer("\\n".join(visible_lines)):
             raw = target_from_markdown(match.group(1))
             if not raw or raw.startswith("#"):
                 continue
