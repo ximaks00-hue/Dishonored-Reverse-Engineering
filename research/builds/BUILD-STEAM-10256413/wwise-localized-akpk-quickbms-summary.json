@@ -1,0 +1,36 @@
+{
+  "cache_version": 1,
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "quickbms_sha256": "FF812D38E22AEA0CC2CDC13C5C91CA34FAE4443AB12987002105BE6BAB3F4948",
+  "quickbms_version": "ckbms -l -f \"{}.txt;{}.dds\" zip.bms myfile.zip\n  quickbms -F \"{}.bff\" c:\\nfsshift.bms c:\\Shift\\Pakfiles c:\\output\n\nCheck quickbms.txt for the full manual and the list of additional credits.\n\n\n\nQuickBMS generic files extractor and reimporter 0.12.0\nby Luigi Auriemma\ne-mail: me@aluigi.org\nweb:    aluigi.org\n        (Aug 24 2022 - 10:55:28)\n\n                          quickbms.com  Homepage\n                            zenhax.com  ZenHAX Forum\n                     @zenhax @quickbms  Twitter & Scripts",
+  "bms_sha256": "4459C0A4C354A92DCAD335599C389E8296908BD8B38FB128BD4C505AEAEE6B5D",
+  "quickbms_options": [
+    "-0",
+    "-L"
+  ],
+  "packages_table_sha256": "61156B22B9E112D5F09DDDA148A84303B5C43BF7B2A7CDCA2857EF212F34884F",
+  "entries_table_sha256": "4FD1765639F13C09022F6563DD0C2D25E2E6FF09F52E025717A56B7810FBF38F",
+  "source_package_rows": 4059,
+  "nonempty_source_paths_checked": 4056,
+  "empty_source_paths": 3,
+  "unique_nonempty_source_payloads": 2570,
+  "unique_quickbms_invocations_this_run": 0,
+  "unique_cache_hits": 2570,
+  "python_entry_rows": 16168,
+  "quickbms_unique_payload_entry_rows": 10002,
+  "python_unique_content_entry_rows": 10002,
+  "unique_payloads_with_successful_cached_listings": 2570,
+  "unique_payloads_exact_match": 2570,
+  "unique_payloads_mismatch_or_failed": 0,
+  "source_paths_exact_match": 4056,
+  "source_paths_empty": 3,
+  "source_paths_mismatch_or_failed": 0,
+  "elapsed_verification_seconds": 3.338,
+  "cache_path": "E:\\Dishonored Reverse Engineering\\.tmp\\wwise-localized-akpk-quickbms-cache.jsonl",
+  "limitations": [
+    "QuickBMS list-only output is a second implementation using the pinned community Wwise extractor script, not an independent vendor specification.",
+    "Both implementations are applied to the same exact AKPK source bytes; payload semantics and runtime package/locale selection are not tested.",
+    "Exact agreement covers catalogued entry path, offset, and size; it does not establish HIRC reference meaning or playback."
+  ]
+}
