@@ -20,7 +20,8 @@
     "Twenty-seven manually reviewed functions remain subsystem-unassigned, including twenty inferred native-exec role candidates and the seven earlier non-candidate reviews.",
     "The 439 baseline symbol-name candidates remain unchanged and were not re-reviewed by the manual overlays.",
     "EXP-0159 establishes one observed static registry lookup/name-to-pointer traversal; its caller and target invocation remain unknown.",
-    "No review in this overlay establishes runtime reachability."
+    "No review in this overlay establishes runtime reachability.",
+    "FUN_0046E5C0 also has a nonzero-selector path through virtual .data at 0x014068F0; its runtime values and identity with UELib NativeToken remain unverified."
   ],
   "overlay_unknown_note": "The 71,974 unresolved unknown-subsystem rows include seven earlier manually reviewed functions without subsystem assignments and the twenty EXP-0140/0142 through EXP-0156 inferred role candidates without confirmed subsystem assignments."
 }
