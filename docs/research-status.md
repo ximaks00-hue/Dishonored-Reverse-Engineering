@@ -2,6 +2,8 @@
 
 Updated: 2026-10-27. Scope: Steam x86 build `10256413`; see the [build record](../research/builds/BUILD-STEAM-10256413/build.md). The primary source is each EXP body; this page summarizes current coverage.
 
+For a cross-direction overview, see the [visual progress dashboard](progress-dashboard.md). Detailed status pages summarize [build/install](progress/build-and-installation.md), [packages/config](progress/packages-and-formats.md), [Blink/gameplay](progress/gameplay-and-blink.md), [native code](progress/native-code.md), [audio/media](progress/audio-and-media.md), [tooling](progress/tooling-and-automation.md), and [collaboration](progress/collaboration-and-review.md).
+
 ## Available evidence
 
 - The corpus contains 155 EXP records, EXP-0001–0155. See the [published evidence index](published-evidence.md) and [coverage snapshot](coverage.md).

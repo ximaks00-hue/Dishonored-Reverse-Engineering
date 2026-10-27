@@ -95,3 +95,9 @@ EXP-0106–0108 record eight selected `AK::SoundEngine` wrapper families, the sh
 
 - Added a committed curated claim registry and deterministic per-function coverage CSV with a JSON provenance manifest. The export validates source/build identity, hashes, row counts, schemas, and exact address-set reconciliation without reading local SQLite, the game executable, or Ghidra.
 - Updated coverage and contributor documentation to distinguish repository-reproducible L0–L2 evidence from unpublished L3/L4 axes; CI now checks export reproducibility.
+
+# 2026-10-27 — Research progress dashboard
+
+- Added a multi-direction progress dashboard and focused status pages for build/install, packages and formats, Blink/gameplay, native code, audio/media, tooling, and collaboration.
+- Linked the dashboard from the README, handbook, research status, and roadmap. Published counts retain their denominators and source links; unsupported single-number completion percentages were replaced with qualitative maturity labels.
+- Corrected the evidence ladder description: L3 is connected dataflow and L4 is runtime verification; independent review remains a separate process.
