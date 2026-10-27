@@ -15,7 +15,7 @@ question: "What body-level evidence is available for the 11 unreviewed EXP-0139 
 - Exclusions: no class ownership, method identity, native dispatch, semantic role, subsystem, dataflow, or runtime claim is confirmed by this review. EXP-0139 name/export joins remain candidates. Vtable byte displacements are recorded as call-site observations only.
 - Inputs: exact-build executable, `research/executable/functions.csv`, EXP-0139 candidate catalog, prior 49-row cumulative manual review overlay.
 - Tools: Python 3.12, pefile 2024.8.26, Capstone 5.0.7. Raw code hashes are primary body identifiers.
-- Durable outputs: [11-row body review](../research/executable/evidence/function-triage/manual-review-overlay-EXP-0190.csv), [60-row cumulative overlay](../research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0190.csv), and [summary](../research/executable/evidence/function-triage/manual-review-overlay-summary-EXP-0190.json).
+- Durable outputs: [11-row body review](../research/executable/evidence/function-triage/manual-review-overlay-EXP-0190.csv), [60-row cumulative overlay](../research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0190.csv), and [summary](../research/executable/evidence/function-triage/manual-review-overlay-summary-EXP-0190.json). The summary records SHA-256 hashes for the prior cumulative overlay and both outputs.
 
 ## Procedure
 
@@ -31,6 +31,7 @@ question: "What body-level evidence is available for the 11 unreviewed EXP-0139 
 - Raw x86 shows VM-frame cursor use at `[frame+0x18]` in all 11 bodies. All 11 conditionally consume byte `0x41` and call the helper pointer at `0x014069F4`; four additionally read a byte-indexed helper from the table based at `0x014068F0` to decode a local dword. Ten finish with a receiver virtual call, while `0x005D9980` makes a direct call to `FUN_00781340`; `0x00434270` also calls `FUN_00430BF0` for cleanup. These are local instruction facts, not proof of a particular UnrealScript dispatch path.
 - The class/method names joined in EXP-0139 remain unresolved candidate labels. In particular, `0x00434270` has a substantially different body from the small wrappers, and `0x009E5240` joins the unrelated-looking labels `DisDLC06Gadget_ArcMinePlaced.BaseChange` and `GameCrowdDestinationQueuePoint.ActuallyAdvance`; neither association is resolved here.
 - The 11 raw indexed-body SHA-256 values, PE offsets, linked candidate paths, and observed call shapes are recorded row by row in the body-review CSV. The current EXP-0139 candidate set contains 254 unique indexed targets. Its body-reviewed count rises from 20 to 31; 223 remain without body review in that candidate set.
+- The inherited EXP-0159 cumulative CSV contains one row (`0046E5C0`) with unquoted commas that shift fields for a standard CSV reader. The EXP-0190 cumulative derivative repairs that row's `static_role_candidate` and `relevant_callsites` field boundaries from the serialized content; it preserves the address, size, review status, and claim status. EXP-0159's source file is unchanged. The prior file hash is recorded in the EXP-0190 summary.
 - The cumulative manual body-review overlay rises from 49 to 60 unique internal function addresses, or 0.082831% of the 72,437-function index. This is a body-analysis count, not a count of functions semantically understood. This experiment adds zero confirmed semantic claims and zero runtime-verified functions; the reviewed targets remain subsystem-unknown.
 
 ## Interpretation and claim limits
@@ -48,7 +49,7 @@ From the repository root, with Python, pefile, and Capstone installed:
 2. For each evidence row, resolve `address` and `size_bytes` in `research/executable/functions.csv`; with PE image base `0x00400000`, map `RVA = VA - ImageBase` through the PE section table and read exactly `size_bytes` from `file_offset`.
 3. Verify each raw range SHA-256 and disassemble the full range with Capstone `CS_ARCH_X86` / `CS_MODE_32`; compare the direct and indirect call shapes with `observed_raw_shape`.
 4. Filter `native-class-table-handler-candidates-EXP-0139.csv` by address to recover the original candidate class/method joins. Do not treat those joins as confirmed ownership.
-5. Verify the cumulative output contains 60 unique addresses and that the 11 addresses in this experiment were absent from the EXP-0159 cumulative input.
+5. Verify the cumulative output contains 60 unique addresses and that the 11 addresses in this experiment were absent from the EXP-0159 cumulative input. Check the input hash in the EXP-0190 summary. The inherited `0046E5C0` row is normalized in the new derivative as described above; the original is retained unchanged.
 
 The Ghidra project was locked by an active process during this pass, so no Headless decompilation was attempted. Raw bytes were read from the exact registered executable; no project, lock, or game state was changed. The local SQLite callgraph mirror was not used as a durable input to this experiment. No runtime experiment was performed. The EXP-0139 census and UELib export joins remain candidate evidence as described in that experiment.
 
