@@ -1,0 +1,89 @@
+{
+  "record": "EXP-0183 exact-build Boyle UpdateTaskTarget export census",
+  "target_build": {
+    "steam_app_id": "217980",
+    "build_id": "10256413",
+    "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E"
+  },
+  "query": {
+    "tool": "mcp__ue_explorer__search_objects",
+    "query": "UpdateTaskTarget",
+    "scope": "each exact package path listed below",
+    "result_definition": "export-name/class search result; no property values, script links, or graph edges inspected"
+  },
+  "packages": [
+    {
+      "path": "DishonoredGame/CookedPCConsole/L_BoyleStreet_Ext_Script.upk",
+      "sha256": "09BD6F570A9B12F4577C7B7E329C97ED2F7FE968CB7A0F70A3C16A5D3074EE24",
+      "size_bytes": 18191826,
+      "package_version": "801/30",
+      "engine_version": 9098,
+      "name_count": 9046,
+      "export_count": 15103,
+      "import_count": 1316,
+      "matching_action_exports": 7,
+      "outer_path_counts": {"Main_Sequence": 7}
+    },
+    {
+      "path": "DishonoredGame/CookedPCConsole/L_Boyle_Ext_Script.upk",
+      "sha256": "C7F03C95142F29B8015995579EA39B27B8999A7B24414C2B51B6FF5A2C0CC134",
+      "size_bytes": 7939297,
+      "package_version": "801/30",
+      "engine_version": 9098,
+      "name_count": 6430,
+      "export_count": 7751,
+      "import_count": 1000,
+      "matching_action_exports": 8,
+      "outer_path_counts": {"Main_Sequence": 5, "Pistols_in_the_Yard": 3}
+    },
+    {
+      "path": "DishonoredGame/CookedPCConsole/L_Boyle_Int_Script.upk",
+      "sha256": "17BE4C7BD18F4E400DC053E0FCF61590240B38B0C3666F2F224676FFDFACCB86",
+      "size_bytes": 20215321,
+      "package_version": "801/30",
+      "engine_version": 9098,
+      "name_count": 9679,
+      "export_count": 20275,
+      "import_count": 1301,
+      "matching_action_exports": 25,
+      "outer_path": "TheWorld.PersistentLevel.Main_Sequence.Boyle_Objectives",
+      "uelib_outer_table_index": 16751,
+      "ue_explorer_outer_export_index": 16750,
+      "outer_chain": [
+        {"uelib_table_index": 16751, "ue_explorer_export_index": 16750, "name": "Boyle_Objectives"},
+        {"uelib_table_index": 16750, "ue_explorer_export_index": 16749, "name": "Main_Sequence"},
+        {"uelib_table_index": 11615, "ue_explorer_export_index": 11614, "name": "PersistentLevel"},
+        {"uelib_table_index": 20274, "ue_explorer_export_index": 20273, "name": "TheWorld"}
+      ],
+      "export_subset_csv": "boyle-int-update-task-target-exports.csv",
+      "subset_row_count": 25,
+      "relation_provenance": "UELib package import/export table indices; no object initialization required",
+      "relation_source_hash_check": "all 25 rows' sourceSha256 values equal the actual package SHA-256",
+      "index_convention": "UELib tableIndex is one greater than UE Explorer export_index for these records; the CSV records both source values"
+    },
+    {
+      "path": "DishonoredGame/CookedPCConsole/L_Pub_FromBoyle_Script.upk",
+      "sha256": "64D647BF1C35B82F2045B233B712427208B51C3DEC62113F54A98E47FC6207EF",
+      "size_bytes": 15835983,
+      "package_version": "801/30",
+      "engine_version": 9098,
+      "name_count": 6985,
+      "export_count": 10707,
+      "import_count": 1080,
+      "matching_action_exports": 6,
+      "outer_path_counts": {"Main_Sequence": 6}
+    }
+  ],
+  "aggregate": {
+    "package_count": 4,
+    "matching_action_export_count": 46,
+    "boyle_interior_outer_path_count": 25,
+    "claim": "static package inventory identifies 25 UpdateTaskTarget exports under Boyle_Objectives in Boyle Interior and 21 more across three adjacent Boyle script packages"
+  },
+  "limitations": [
+    "Package metadata for the four mission UPKs reports EngineVersion 9098; the base DishonoredGame.upk is a separate package reported as EngineVersion 9411. Do not conflate these package values.",
+    "Export names, classes, outer paths, serial offsets, and serial sizes do not reveal action property values or Kismet connections.",
+    "The exact-build native handler association remains a cross-source candidate; EXP-0179 reports a weak order-based donor match (0.609).",
+    "No property decompilation, graph reconstruction, runtime execution, or user-visible marker observation was performed."
+  ]
+}

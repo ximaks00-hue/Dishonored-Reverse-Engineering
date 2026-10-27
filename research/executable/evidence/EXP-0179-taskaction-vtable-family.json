@@ -1,0 +1,95 @@
+{
+  "record": "EXP-0179 task-action family vtable slots",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "exe_relative_path": "Binaries/Win32/Dishonored.exe",
+  "image_base": "0x00400000",
+  "slot_offset": "0x190",
+  "slot_index": 100,
+  "shared_neighbor_slots": {
+    "starting_slot_index": 93,
+    "starting_byte_offset": "0x174",
+    "values": [
+      "0x00BA8300",
+      "0x006D9680",
+      "0x00459D10",
+      "0x006CF2C0",
+      "0x006FEF20",
+      "0x00459D10",
+      "0x005CB0C0"
+    ]
+  },
+  "exact_build_tables": [
+    {
+      "candidate_class": "UDisSeqAct_SetTaskHidden",
+      "identity_basis": "external global-table match 1.000 plus shared slot fingerprint",
+      "rva": "0x00D58780",
+      "va": "0x01158780",
+      "raw_table_offset": "0x00D57180",
+      "raw_slot_offset": "0x00D57310",
+      "slot_bytes": "20 68 B8 00",
+      "slot_target": "0x00B86820",
+      "handler_name_candidate": "UDisSeqAct_SetTaskHidden::HandleTaskInstance",
+      "handler_donor_match": "bytes 1.000, sizes 25/25"
+    },
+    {
+      "candidate_class": "UDisSeqAct_SetTaskState",
+      "identity_basis": "external global-table match 1.000 plus shared slot fingerprint",
+      "rva": "0x00D58918",
+      "va": "0x01158918",
+      "raw_table_offset": "0x00D57318",
+      "raw_slot_offset": "0x00D574A8",
+      "slot_bytes": "40 68 B8 00",
+      "slot_target": "0x00B86840",
+      "handler_name_candidate": "UDisSeqAct_SetTaskState::HandleTaskInstance",
+      "handler_donor_match": "bytes 1.000, sizes 23/23"
+    },
+    {
+      "candidate_class": "UDisSeqAct_UpdateCustomTask",
+      "identity_basis": "unique exact-build .rdata pointer to handler candidate plus matching slots 93-99; class identity is inferred",
+      "rva": "0x00D55430",
+      "va": "0x01155430",
+      "raw_table_offset": "0x00D53E30",
+      "raw_slot_offset": "0x00D53FC0",
+      "slot_bytes": "80 68 B8 00",
+      "slot_target": "0x00B86880",
+      "handler_name_candidate": "UDisSeqAct_UpdateCustomTask::HandleTaskInstance",
+      "handler_donor_match": "neighbours 1.000, sizes 16/16"
+    },
+    {
+      "candidate_class": "UDisSeqAct_UpdateTaskTarget",
+      "identity_basis": "external global-table match 1.000 plus shared slot fingerprint",
+      "rva": "0x00D58DE0",
+      "va": "0x01158DE0",
+      "raw_table_offset": "0x00D577E0",
+      "raw_slot_offset": "0x00D57970",
+      "slot_bytes": "D0 84 BA 00",
+      "slot_target": "0x00BA84D0",
+      "handler_name_candidate": "UDisSeqAct_UpdateTaskTarget::HandleTaskInstance",
+      "handler_donor_match": "order 0.609, donor size 882 vs exact index size 1052"
+    }
+  ],
+  "rejected_donor_table_candidate": {
+    "candidate_class": "UDisSeqAct_UpdateCustomTask",
+    "rva": "0x00D59C60",
+    "va": "0x01159C60",
+    "matcher": "global-votes 0.800",
+    "raw_table_offset": "0x00D58660",
+    "slot_0x174_target": "0x00B8E090",
+    "slot_0x190_target": "0x00BA1670",
+    "target_donor_candidate": "UDisSeqAct_GameOver scalar deleting destructor",
+    "target_donor_match": "vtable 1.000, sizes 38/38",
+    "reason": "Does not share the exact-build neighbor-slot fingerprint and points to a destructor candidate rather than the UpdateCustomTask handler candidate."
+  },
+  "external_source_hashes": {
+    "functions_2013.csv": "C3B6821A018D30E2A317D95396B6584EB0C378BA5C0BD0075EC1E8C6C240CE88",
+    "match_2012_2013.csv": "06164572249FD3E2477F1C404B2AF6A27CACF83ACECB8C82DB08FCEDE037B330"
+  },
+  "method": "Translate donor table RVAs through the target PE section map, read little-endian DWORDs from the registered exact-build executable, and scan aligned .rdata DWORDs for the unique 0x00B86880 pointer. No game process was launched.",
+  "claim_limits": [
+    "Slot contents and pointer addresses are exact-build static byte observations.",
+    "Class names are external symbol candidates; the UpdateCustomTask table identity is inferred from its unique handler pointer and shared neighboring slots.",
+    "The UpdateTaskTarget handler label is low confidence because its donor function match is order-based with a substantial size difference.",
+    "No action instance, Kismet package link, or runtime dispatch was observed."
+  ]
+}

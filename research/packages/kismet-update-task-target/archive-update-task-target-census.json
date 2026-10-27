@@ -1,0 +1,318 @@
+{
+  "scope": "browser/editor CSV exports only; no UPK parsing or retail projection",
+  "task_reference_limit": "VariableLinks export linked variable leaf names but not their object paths/indices; task-definition joins by exact package and sequence_path are scoped candidates, not serialized pointer identity.",
+  "action_class": "DisSeqAct_UpdateTaskTarget",
+  "unique_actions": 384,
+  "property_rows": {
+    "m_TargetIndex": 39,
+    "m_TargetName": 384,
+    "m_pTargetActor": 7
+  },
+  "property_presence_sets": {
+    "m_TargetName": 338,
+    "m_TargetName+m_TargetIndex": 39,
+    "m_TargetName+m_pTargetActor": 7
+  },
+  "target_index_values": {
+    "1": 20,
+    "2": 15,
+    "3": 4
+  },
+  "indexed_task_variable_link_occurrences": 54,
+  "indexed_unique_task_variable_instances": 49,
+  "indexed_task_links_with_same_sequence_definition_candidate": 54,
+  "indexed_task_links_without_same_sequence_definition_candidate": 0,
+  "inventory_sources": [
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Boyle_Ext_Script.csv",
+      "sha256": "2ba880e970baf4000047226f395cf09026eacf8ad0b0fa37b37b80c1b2e47ff1"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Boyle_Int_Script.csv",
+      "sha256": "6917fb27ce61a6be108650d465d472114e7d6318f31a5508947b2ddca75f205d"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_BoyleStreet_Ext_Script.csv",
+      "sha256": "87735a04dd6d6ec6de9759df17992c049cd6baf7d763f1053e6dcb4c1328eabd"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Bridge_Part1a_Script.csv",
+      "sha256": "9707f766b95260b2a22d92137cf48acbb550fd2797306f8cbfdba9dd70be5c27"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Bridge_Part1b_Script.csv",
+      "sha256": "7a1bfab5ebc740f60987e388c97df6d7b732fc9b3e49838ecb6b6fef3b65111e"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Bridge_Part1c_Script.csv",
+      "sha256": "7ebc346524dda7b657af12df404bac83bef70566d54a84dc516b21fcecd09c04"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Bridge_Part2_Script.csv",
+      "sha256": "35685d22208dcbb9f4b868b40b6051d5e85d419ceff8a26f58e844a001602098"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Brothel_Script.csv",
+      "sha256": "3c90988be63ea8c65ba41b9d80d9e505bd26b17a2458eeb018490f4b39232c45"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Distillery2_Script.csv",
+      "sha256": "2b6a1b6f0815c37dbb21c60e64da51e7de4a848d11d1a3b819580e225b48ea5f"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Flooded_FAssassins_Script.csv",
+      "sha256": "c4685ea8fbe788f4fd540910471f97e08ee4cf43af830da47687d65e82b28758"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Flooded_FGate_Script.csv",
+      "sha256": "b620c413510c114e170024c2b944f4589996a2d9c3cf05f805c4ba8d33015128"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Flooded_FRefinery_Script.csv",
+      "sha256": "bee28814b8dbb7f9a4b885106d66214320766258109bc936e69c130105c2437c"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Flooded_FStreets_Script.csv",
+      "sha256": "444252d71a9f75b7942cc6581011599d7aee4d1fea4b3f6aa29cb87f516da168"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Isl_HighChaos_Script.csv",
+      "sha256": "a734f2bfef7102f310ee50b6b73a98d50615029bfc165994c62b9f32c033cf08"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_LightH_HighChaos_Script.csv",
+      "sha256": "bdf69dd9f22b645d42e7e702cd28049df2572b9ee13ed61a1bc878ef2cec83e3"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_LightH_LowChaos_Script.csv",
+      "sha256": "e74860f32621b768b34edcf6b06bfdf06d008c684c44c32afb969fe68a7d69e6"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_OutsiderDream_Script.csv",
+      "sha256": "f00bc39114384d42ca3b50f49a3315dd71808b0e4b656bedbf5c37b1d485d6f6"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Ovrsr_Back_Script.csv",
+      "sha256": "219e6f21db1fed11963348ceea27ce298177673d423cbea87bdd4623d50ba027"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Ovrsr_Kennel_Script.csv",
+      "sha256": "7c16dbd3a66ae43bc402adc43256d9c8018fbf9e171e226085dd727acdbaa7d2"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Ovrsr_Script.csv",
+      "sha256": "555435b77d9c823f585e8289063a4d02087e4fa81100f151bb62a071491cceee"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Prison_Script.csv",
+      "sha256": "2d96effe6100f09411c3c64ba4795dfbdae4c6ac469c1f6478b082ca1f89dd34"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_PrsnSewer_Script.csv",
+      "sha256": "a8e70c5c06a54d201660c005056e6063219d2cba54b10d1fb5490926e3d00ce7"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Pub_FromBoyle_Script.csv",
+      "sha256": "eee3107f66a08d6c4924237c17d0120d0fb0bd9c75e30a404b413a67a6fc0619"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Pub_FromBridge_Script.csv",
+      "sha256": "b7391aea90651d2a3f7adfc1165d1e8baca813356f96010c6a56dfeed01eb42a"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Pub_FromBrothel_Script.csv",
+      "sha256": "c637f97bdaa0cdc174b1173b4bd252da642b07c03c46b49483b50e91c9ce224f"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Pub_FromFlooded_Script.csv",
+      "sha256": "6a076321261d14ad1dc87ab72aff5bccdcf4911e1841eba32b01b5fa058b2a4b"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Pub_FromOvrsr_Script.csv",
+      "sha256": "4c612ead79e3642ff72fdda8f42c386b3e0ae88c6395e020f18d3ac37ffde8e8"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Pub_FromPrison_Script.csv",
+      "sha256": "ae07c75c79004d96976c3f4ec4a9de50a2dfaf5fc1b2c0f858049a858fb633aa"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Pub_FromTwrReturn_Script.csv",
+      "sha256": "5be303c372c6b983014acbbd7ad7645c16ea1367d888c2283f4fd8ef82e99a42"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Streets1_Script.csv",
+      "sha256": "ff1bb42f2dc8cb82ed07247157289cfe0697c16f234f2038d3b1bbabf34293ff"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Streets2_Script.csv",
+      "sha256": "b2c6aa48e678b4c2fae5b5b773715229a4348598e345246c5210f245ff7c823d"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Streetsewer_Script.csv",
+      "sha256": "c9fbd2c505417f813a9e2def229ae3504d4f2dbfbed146afaab3e2332a4bc7b2"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_Tower_Script.csv",
+      "sha256": "4f6a3c74d43280c8b65b71ccf1b6d8e89cc3d3fc78f7c5532b96d359b7432cca"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_TowerRtrn_Int_Script.csv",
+      "sha256": "7f2a80f80cc31f78c9137e044946babcad83145636932c4d0c227bfb705cef3d"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_TowerRtrn_Yard_Roof_Script.csv",
+      "sha256": "eaf6d602233069facd8d5bbf6b14e187e124e45fb7b93375b2688e0f95e9fd46"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\task_story_node_inventory\\L_TowerRtrn_Yard_Script.csv",
+      "sha256": "568f763997d54e532dc7d71990054ac310ebaf5d9610f96022acbc940558735a"
+    }
+  ],
+  "link_sources": [
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_BoyleStreet_Ext_Script_links.csv",
+      "sha256": "7659fac025744026c6f18a15e7843c3e3cc3377f8e6b97063a120f455f91c929"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Boyle_Ext_Script_links.csv",
+      "sha256": "0dde851cd891be37565b4fc68838e2888bed6f529300cfed9a6766c9f302ead0"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Boyle_Int_Script_links.csv",
+      "sha256": "14f5b16fa8808071544b2e13d0e5b9e952f8d16ae061d8e9bb7cafddf6b155c0"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Bridge_Part1a_Script_links.csv",
+      "sha256": "6114f230fbf1be2b434489d8d5f0f0ccdf4bc11ac5aa1f1852198ef184e09540"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Bridge_Part1b_Script_links.csv",
+      "sha256": "4d17de5ac05573101ebd05a7adeff9fa35107af3eec2bd081fa1c020d49189d5"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Bridge_Part1c_Script_links.csv",
+      "sha256": "3473a71dd744f650056addf27a85c431b4b1107af87ddeef7af731f5eb58058d"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Bridge_Part2_Script_links.csv",
+      "sha256": "0f3f7932e547a372f5c3f681105081a2d4504cc6d71076b3097daef6bd69ac17"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Brothel_Script_links.csv",
+      "sha256": "d860561dc056cf0b6d5ecd5168eac4ab4d2f240ebc4321488316acc75463416e"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Distillery2_Script_links.csv",
+      "sha256": "d2b59a529034c2c7aebbe04a050bb8a2720579c9f3985a6d7a8fc19cbf0b66c1"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Flooded_FAssassins_Script_links.csv",
+      "sha256": "a75471200d8680d1040f1a5c1abce81b03b2696695fe7e3d9fc1696d45c81271"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Flooded_FGate_Script_links.csv",
+      "sha256": "d59e6e53449d68f2ffabcff14df6229d007182ccb469e2260668907527ef7758"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Flooded_FRefinery_Script_links.csv",
+      "sha256": "dad4ddb98fda5e0b395e762f4fc9797093748d08c5b52ec7c43bdb2e3ab18240"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Flooded_FStreets_Script_links.csv",
+      "sha256": "8bd6e321ff73405281662d024d630300a5db74c549ab35b593ea6c7dafe28daa"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Isl_HighChaos_Script_links.csv",
+      "sha256": "eb765780b9cefd0b108770952c5b88e6f34be319625923affed219b7e1cad9d4"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_LightH_HighChaos_Script_links.csv",
+      "sha256": "da37f0f49773a08a862601749f98b51e251faee6d66168e48742dd58f7237096"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_LightH_LowChaos_Script_links.csv",
+      "sha256": "7d53efedeeb840447ad93f16a1e702212ca49e43e75f1fd803ff90a5d23eb236"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_OutsiderDream_Script_links.csv",
+      "sha256": "08a1f88ca41f83bde153fc53acfd6763d8abb65a5ef598d6ba3ac0b0776239b1"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Ovrsr_Back_Script_links.csv",
+      "sha256": "a4fb77b8aa708f0c0ee36da7707fdcb8c8bc515cdce640787760540785923908"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Ovrsr_Kennel_Script_links.csv",
+      "sha256": "a2531010e32883c1bc576cc22259f103d8159952f33b9936f1122ef1ab57f645"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Ovrsr_Script_links.csv",
+      "sha256": "9efc925a2e0ecd340eabc37c6e94aeda8a4796880860c23d3d9ce2c495a6dcb3"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Prison_Script_links.csv",
+      "sha256": "9fbb57cb004a14a250474440b588ec779bb3ac3e2f1b6b1a9d6f80a83d60775f"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_PrsnSewer_Script_links.csv",
+      "sha256": "e70a95569c8022f318c57fdbedb83eacdd283a8d8b7d93fdaef7d9bf51e1bd13"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Pub_FromBoyle_Script_links.csv",
+      "sha256": "fc6e80685b59883a539cfff7974335c658e02c038b4fae6c35288930e0cce63c"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Pub_FromBridge_Script_links.csv",
+      "sha256": "a620c92aebf297ae207c17b09fa585924be55c0dd04562f5f02a0a7b59ee5769"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Pub_FromBrothel_Script_links.csv",
+      "sha256": "9db8ad4918e8a35da776ed0f426fdf96c3516c4b6521169075141aa07625a81d"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Pub_FromFlooded_Script_links.csv",
+      "sha256": "6831b75715ac48c09131474c5b9d9ec3976bb9d03c454189f27265612ad1fb20"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Pub_FromOvrsr_Script_links.csv",
+      "sha256": "3fc892269897e3e35541269b4efb8418d8aa6df92ee0fd93e100dced2f3da471"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Pub_FromPrison_Script_links.csv",
+      "sha256": "bb8450c51712d47e24ab4867841f42991ac5a07245e96738f16c5de98299ec32"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Pub_FromTwrReturn_Script_links.csv",
+      "sha256": "faf8453452c23a02d2617427d2bea7bcedc9ca77305cbd8e2f7ae8b9513889ec"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Streets1_Script_links.csv",
+      "sha256": "954ca999bd9db5084cf237943a3c76f56e1750cf0bdbe7c12a04d75b9c6c3cc2"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Streets2_Script_links.csv",
+      "sha256": "ec9af30197f26b351c19df6b7b80d1d8db03ceca950959409a86a1ecb621af9c"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Streetsewer_Script_links.csv",
+      "sha256": "300908c3c916c826c73bb5370dbaf217a7b276c0878c59ddce8594f19917f91b"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_TowerRtrn_Int_Script_links.csv",
+      "sha256": "3cc341bfe14ef02b97d8833fda679bc8e8e3da1a080876a9b3bb84cf23b63025"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_TowerRtrn_Yard_Roof_Script_links.csv",
+      "sha256": "0c046d694c8b6c0c3368cb633b5dc897be5c2619f5d1640856b8a785cd57f402"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_TowerRtrn_Yard_Script_links.csv",
+      "sha256": "8d796bf7b2cf4bec17c004990fd2d835a70fdaf766605bb0104fd8a98448f932"
+    },
+    {
+      "path": "D:\\Dishonored\\40_BROWSER_PORT\\repo\\experiments\\campaign_typed_links\\link_details\\L_Tower_Script_links.csv",
+      "sha256": "5ed003a06046bd84b2c75f065b6ce6573b32cbcf981775127c97f6f33d516f3e"
+    }
+  ],
+  "generated_csv_sha256": "a21d4a88570e5d8b8bb17d8d6c669bffb4c24c2f54dffa75a99df2d651b8e945"
+}

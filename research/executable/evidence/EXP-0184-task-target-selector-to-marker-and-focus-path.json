@@ -1,0 +1,332 @@
+{
+  "record": "EXP-0184 task-target selector consumers and marker-object construction",
+  "target": {
+    "steam_app_id": "217980",
+    "build_id": "10256413",
+    "exe_relative_path": "Binaries/Win32/Dishonored.exe",
+    "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E"
+  },
+  "cache_inputs": [
+    {
+      "address": "0x00AD9910",
+      "file": "knowledge/cache/decompiles/00AD9910.json",
+      "sha256": "0C0F336FF85757BD46112A64CF1331C32890CF7DA914DF771CE7E17D0C87E5FB"
+    },
+    {
+      "address": "0x00BAD550",
+      "file": "knowledge/cache/decompiles/00BAD550.json",
+      "sha256": "10B43CA8F9E9265B73F465DF6CC185411489574D5C988BA809667E6EB001C2FB"
+    },
+    {
+      "address": "0x00C36920",
+      "file": "knowledge/cache/decompiles/00C36920.json",
+      "sha256": "46F456B744FF637C66A80F19B277466BAE616C4D5179934838F9490FF1AF468B"
+    },
+    {
+      "address": "0x00BCE750",
+      "file": "knowledge/cache/decompiles/00BCE750.json",
+      "sha256": "5E7F646C2C03AFD77A5C981EF723674ACF508B6B7E806A1F8F0BEDCE0B0C62AB"
+    },
+    {
+      "address": "0x00BCE380",
+      "file": "knowledge/cache/decompiles/00BCE380.json",
+      "sha256": "FDB7129249504C936D3CF47FB4FED212E736FD33BBF5FB7D82B3698B7186E324"
+    },
+    {
+      "address": "0x00BB9FA0",
+      "file": "knowledge/cache/decompiles/00BB9FA0.json",
+      "sha256": "69AB54FC72EA18FEB9C45A90949E6ED9A1654420D5B63CD6A19C00AF5FC2F7B5"
+    },
+    {
+      "address": "0x00BB00C0",
+      "file": "knowledge/cache/decompiles/00BB00C0.json",
+      "sha256": "A2FED82F1D52390E551D29073E6821477030C3D08B88D28161F969026E080FA1"
+    },
+    {
+      "address": "0x00BB2280",
+      "file": "knowledge/cache/decompiles/00BB2280.json",
+      "sha256": "4C627A1F1B3F3ED30439AC2B3C6ADFA184C9A6D7F62E1A06989254FBEE49D2A3"
+    }
+  ],
+  "exact_build_observations": {
+    "selector": {
+      "va": "0x00AD9910",
+      "row_stride": "0x24",
+      "output": "array of pointers to accepted target rows",
+      "predicate_offsets_and_masks": [
+        "objective +0x45 == 0",
+        "objective +0x48 bits 0x10/0x20",
+        "task +0x5D < 2",
+        "task +0x60 bits 0x08/0x10",
+        "target actor non-null",
+        "actor +0x120 bit 0x08 clear",
+        "actor +0x0C mask 0x20000000 clear"
+      ],
+      "semantic_labels": "unknown; numeric tests only",
+      "indexed_direct_callers": [
+        {
+          "caller": "0x00BAD550",
+          "callsite": "0x00BAD5E7",
+          "param_3": 1
+        },
+        {
+          "caller": "0x00C36920",
+          "callsite": "0x00C36BC7",
+          "param_3": 0
+        }
+      ],
+      "raw_text_direct_call_scan": "exactly two E8 rel32 references to target; no absolute VA pointer reference found",
+      "indirect_call_limit": "dynamic/computed indirect calls are not excluded"
+    },
+    "marker_consumer": {
+      "caller_va": "0x00BAD550",
+      "selector_callsite": "0x00BAD5E7",
+      "constructor_va": "0x00BCE750",
+      "constructor_callsite": "0x00BAD6C1",
+      "row_dedup_key": "row first DWORD compared with existing marker object +0x08",
+      "row_bit_route": "row DWORD +0x20 bit 0 selects one of two settings pointers",
+      "settings_pointer_if_bit_clear": "owner +0x1B0 +0x6FC",
+      "settings_pointer_if_bit_set": "owner +0x1B0 +0x744",
+      "marker_array_offsets": [
+        "owner +0x524",
+        "owner +0x554"
+      ]
+    },
+    "marker_like_object_lifecycle": {
+      "owner_update_like_va": "0x00BB2280",
+      "wrapper_callsite": "0x00BB23C4",
+      "wrapper_va": "0x00BB00C0",
+      "reconcile_callsite": "0x00BB00C7",
+      "secondary_array_offsets": [
+        "owner +0x554",
+        "owner +0x558"
+      ],
+      "per_object_virtual_call": {
+        "slot": "+0x0C",
+        "target_va": "0x005CB0C0",
+        "target_bytes": "C2 04 00",
+        "target_behavior": "ret 4 stub; no-op"
+      },
+      "update_candidate": {
+        "slot": "+0x14",
+        "target_va": "0x00BC57F0",
+        "direct_text_call_references": 0,
+        "absolute_pointer_occurrences": [
+          "vtable at file offset 0x00D61FBC"
+        ]
+      },
+      "stale_entry_path": [
+        "FUN_00B36C00",
+        "slot +0 virtual callback with argument 1",
+        "FUN_00A4DDD0 removes secondary-array entry"
+      ],
+      "destructor_semantics": "unknown",
+      "separate_companion_call": "FUN_00BAD960; not merged into target-row lifecycle"
+    },
+    "constructor": {
+      "va": "0x00BCE750",
+      "size": 578,
+      "row_fields_read": [
+        "+0x00",
+        "+0x04",
+        "+0x08",
+        "+0x10",
+        "+0x14",
+        "+0x1C"
+      ],
+      "name_literal": "m_TargetName",
+      "row_plus_1c_values": [
+        0,
+        1,
+        2
+      ],
+      "vtable_va": "0x011635A8"
+    },
+    "base_initializer": {
+      "va": "0x00BCE380",
+      "row_first_pointer_passed_to_initializer": true,
+      "stores_second_argument_at_object_offset": "+0x08",
+      "stores_third_argument_settings_pointer_at_object_offset": "+0x0C",
+      "stores_fourth_argument_owner_context_at_object_offset": "+0x10",
+      "initial_vtable_va": "0x01163590",
+      "derived_constructor_overwrites_vtable": "0x011635A8"
+    },
+    "vtable": {
+      "va": "0x011635A8",
+      "rva": "0x00D635A8",
+      "file_offset": "0x00D61FA8",
+      "raw_first_eight_pointers": [
+        "0x00BD6610",
+        "0x00BC54F0",
+        "0x00BC5730",
+        "0x005CB0C0",
+        "0x00BB9FA0",
+        "0x00BC57F0",
+        "0x00BD6640",
+        "0x00BC5B40"
+      ],
+      "slot_4": "0x00BB9FA0",
+      "slot_5": "0x00BC57F0"
+    },
+    "indexed_location_method": {
+      "va": "0x00BB9FA0",
+      "size": 75,
+      "reads_object_offset": "+0x08",
+      "actor_coordinate_offsets": [
+        "+0xC4",
+        "+0xC8",
+        "+0xCC"
+      ]
+    },
+    "unindexed_update_candidate": {
+      "va": "0x00BC57F0",
+      "rva": "0x007C57F0",
+      "file_offset": "0x007C4BF0",
+      "decoded_size": 837,
+      "instruction_count": 227,
+      "return_va": "0x00BC5B32",
+      "return": "ret 0x18",
+      "next_indexed_start": "0x00BC5B40",
+      "direct_call": "FUN_00BBD430 at 0x00BC5865",
+      "direct_preset_0_1_2_branch": "not found in reviewed disassembly"
+    },
+    "second_consumer": {
+      "va": "0x00C36920",
+      "selector_callsite": "0x00C36BC7",
+      "hit_actor_offset": "this +0x12C",
+      "membership_test": "returned target row first DWORD equals hit actor pointer",
+      "match_branch_mode": "0x78",
+      "alternate_branch_mode": "0x79"
+    }
+  },
+  "external_crosswalk_candidates": [
+    {
+      "source": "DishonoredGameUIClasses.h",
+      "sha256": "E7018174981593A15B3BAAC10E54E4C68923A94F83A0E668BA84BFA3EACBEAE6",
+      "layout_assertions_file": "DishonoredGameLayouts.h",
+      "layout_assertions_sha256": "F52C10720197B894203BC953DE4BE931634340CA2DFB4AF70D8B82473333F4D0",
+      "settings_fields": [
+        {
+          "base_offset": "+0x6FC",
+          "candidate": "m_TaskMarkerSettings"
+        },
+        {
+          "base_offset": "+0x744",
+          "candidate": "m_OptionalTaskMarkerSettings"
+        }
+      ],
+      "row_flag_candidate": {
+        "offset": "+0x20 bit 0",
+        "candidate": "m_bOptional",
+        "limit": "field order only; no individual target-bound bit assertion"
+      }
+    },
+    {
+      "target_va": "0x00BB9FA0",
+      "candidate": "FDisTaskMarker::GetLocation",
+      "match": "byte exact, 75/75"
+    },
+    {
+      "target_va": "0x00BC57F0",
+      "candidate": "FDisTaskMarker::Update",
+      "match": "neighbor-based score 0.929; 825 donor bytes vs 837 target bytes"
+    },
+    {
+      "target_va": "0x00BC57F0",
+      "candidate_stack_argument": "flags",
+      "basis": "external candidate signature; raw target uses several masks on final stack argument"
+    },
+    {
+      "row_offset": "+0x1C",
+      "candidate": "m_VanishPreset",
+      "basis": "pinned 2013 layout crosswalk; target constructor proves a three-way numeric branch, not the field name or visible effect"
+    }
+  ],
+  "claim_status": {
+    "selector_row_flow": "observed",
+    "marker_constructor_and_vtable_membership": "observed",
+    "second_hit_actor_membership_consumer": "observed",
+    "external_method_and_field_names": "inferred",
+    "runtime_execution_and_visible_marker_behavior": "unknown",
+    "retail_boyle_kismet_node_to_native_row_link": "unknown"
+  },
+  "limitations": [
+    "Decompiled pseudocode is a rendering of target instructions, not original source.",
+    "The function at 0x00BC57F0 is not an indexed function; its boundary is based on raw x86 decoding and a ret instruction before the next indexed start.",
+    "No direct row+0x1C preset comparison was found in the reviewed update body; helper or indirect use is not excluded.",
+    "No Boyle retail Kismet property values or edges were read.",
+    "No game process/runtime behavior or visible HUD result was observed."
+  ],
+  "preset_crosswalk": {
+    "exact_build": {
+      "build_id": "10256413",
+      "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+      "handler_candidate": "0x00BA84D0",
+      "handler_cache_sha256": "91738D7C17EA472804B1CA58A0F9BD90A00949FC72D6BE2F6E2C74714CF50BA6",
+      "action_byte_offset": "0x110",
+      "target_row_byte_offset": "0x1C",
+      "constructor": "0x00BCE750",
+      "constructor_cache_sha256": "5E7F646C2C03AFD77A5C981EF723674ACF508B6B7E806A1F8F0BEDCE0B0C62AB",
+      "branch_load_va": "0x00BCE890",
+      "observed_pointer_choices": [
+        {
+          "byte_value": 0,
+          "selected_pointer": "settings+0x38"
+        },
+        {
+          "byte_value": 1,
+          "selected_pointer": "owner-root+0x790"
+        },
+        {
+          "byte_value": 2,
+          "selected_pointer": "owner-root+0x7A0"
+        },
+        {
+          "other_values": "selected marker field remains unset"
+        }
+      ],
+      "limit": "Pointer selection is observed; visible vanish behavior is not established."
+    },
+    "external_2013_crosswalk": {
+      "repository": "dishonoredrecompiled",
+      "commit": "e7829390fa1c2fc7c200357e9de695ad4c613527",
+      "scope": "retail 2013 / engine 9411",
+      "enum": "EDisTaskMarkerVanishPreset",
+      "values": {
+        "DTTVP_Default": 0,
+        "DTTVP_VeryClose": 1,
+        "DTTVP_Never": 2,
+        "DTTVP_MAX": 3
+      },
+      "source_files": {
+        "source/Development/Src/DishonoredGame/Inc/DishonoredGameEngineShims.h": "28C42700560E38AFDBB8ECD46D11065E9CD4BC89F8DFD8DFDC045A0216D7D2CA",
+        "source/Development/Src/DishonoredGame/Inc/DishonoredGameObjectivesClasses.h": "F5153AB3CF81341C94ADF6DE6B773721DED71E73CA22D45CAF586461EEC7979E",
+        "source/Development/Src/DishonoredGame/Inc/DishonoredGameLayouts.h": "F52C10720197B894203BC953DE4BE931634340CA2DFB4AF70D8B82473333F4D0",
+        "source/Development/Src/DishonoredGame/Inc/DishonoredGameUIClasses.h": "E7018174981593A15B3BAAC10E54E4C68923A94F83A0E668BA84BFA3EACBEAE6"
+      },
+      "fields_declared_as": "BYTE",
+      "layout_offsets": {
+        "UDisSeqAct_UpdateTaskTarget.m_MarkerVanishPreset": "0x110",
+        "FDisTaskTarget.m_VanishPreset": "0x1C"
+      },
+      "source_handler_implementation": "stub; no enum use found in handler body"
+    },
+    "archive_export_census": {
+      "scope": "filtered browser/editor CSV slices only; no UPK payload parsing",
+      "task_story_node_inventory_files": 36,
+      "update_task_target_unique_actions": 384,
+      "update_task_target_property_rows": 430,
+      "link_details_files": 37,
+      "link_details_action_property_rows": 1166,
+      "preset_property_or_value_hits": 0,
+      "properties_checked": [
+        "m_MarkerVanishPreset",
+        "m_VanishPreset",
+        "property names containing vanish or preset"
+      ],
+      "inventory_manifest_sha256": "221AAB7F5707D3C0887381FC7FAE961AFC4F1D78350D1652AF01350F80FC8A37",
+      "links_manifest_sha256": "7E4460E51CFD8C62BC64892192BF4A8C5E0850F1BF9E225B34D1D8A89A6EA76A",
+      "limit": "Absence from these filtered exports is not proof that source packages lack the property or value."
+    }
+  }
+}
