@@ -3,6 +3,7 @@
 This is the project entry point, not evidence that every candidate subsystem has been investigated.
 
 ## Orientation
+- [Visual research progress dashboard](progress-dashboard.md)
 - [Current verified status](research-status.md)
 - [Published experiments, build record and function evidence](published-evidence.md)
 - [New contributor onboarding](onboarding.md)

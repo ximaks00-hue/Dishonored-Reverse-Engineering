@@ -4,6 +4,23 @@ Community-oriented, evidence-led research into **Dishonored (Windows)**, coverin
 
 > **Project status:** the research corpus includes 155 build-scoped experiments, a recorded Steam build and file manifest, reproducible analysis tools, and static native-function review catalogs. These records preserve their evidence level and limitations; they do not claim runtime verification of all findings. See [research status](docs/research-status.md) and the [published evidence index](docs/published-evidence.md).
 
+## Research progress dashboard
+
+Progress is tracked by research direction, with explicit denominators and evidence limits. There is no single project-wide completion percentage. See the [visual progress dashboard](docs/progress-dashboard.md) for measured coverage, open questions, and next milestones.
+
+| Direction | Status | Snapshot |
+| --- | --- | --- |
+| Build and installation | Established | Steam x86 build `10256413`; 13,623-path install snapshot; 904/904 UPKs reconciled |
+| Packages and formats | Strong | 904 UPKs cataloged; 4,056/4,056 non-empty localized AKPK containers parsed |
+| Config and paths | Active | EXP-0114 reports 63 syntactic candidates from 76 directives; runtime resolution remains open |
+| Blink and gameplay | Active | Conditional static edges documented; dynamic caller and runtime bridge remain open |
+| Native code | Early-to-mid | 72,437 functions indexed; 47 manual body reviews through EXP-0155; runtime-verified functions: 0 |
+| Audio and media | Strong | 503 PCKs cataloged; 1,908 WEM and 76 Bink files decoded with scoped limits |
+| Tooling and automation | Strong | Validators, schemas, CI, and repository research tools are in place |
+| Collaboration and review | Active | Contributor guidance and review process exist; independent reproduction is still scaling |
+
+Inventory and parser coverage do not imply semantic understanding. Static analysis, independent review, and runtime confirmation are separate evidence outcomes.
+
 ## Why this project exists
 Build a searchable, reproducible account of how selected game systems work, with documented uncertainty and independent behavioral models. **This is not a claim of recreating the complete game.** The project does not distribute game data and is not affiliated with the rights holders.
 
