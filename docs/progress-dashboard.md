@@ -12,7 +12,7 @@ This is a reverse-engineering research corpus, not a feature roadmap for a conve
 | Packages and formats | **Strong** | UPK object catalogs and scoped UELib/format studies; 4,056 non-empty AKPK files parsed | Payload meaning, unknown objects, and runtime selection | [Coverage](coverage.md), [baseline findings](findings/baseline.md) |
 | Config and paths | **Active** | EXP-0114 records filesystem candidates under tested roots | Which root/load order the game actually uses | [EXP-0114](../experiments/EXP-0114-config-path-candidate-audit.md), [EXP-0136](../experiments/EXP-0136-configured-map-and-package-name-joins.md) |
 | Blink and gameplay | **Active** | Conditional static activation edges are documented; alternatives remain separate | Dynamic caller/scheduler bridge and runtime behavior | [Activation graph](gameplay/blink/activation-graph.md), [Blink findings](findings/blink-native.md) |
-| Native code | **Early-to-mid** | 72,437 indexed functions; 48 cumulative manual body reviews | Ownership/dataflow gaps and selective semantic review | [Function evidence model](methodology/function-evidence-model.md), [triage catalog](../research/executable/evidence/function-triage/README.md) |
+| Native code | **Early-to-mid** | 72,437 indexed functions; 49 cumulative manual body reviews | Ownership/dataflow gaps and selective semantic review | [Function evidence model](methodology/function-evidence-model.md), [triage catalog](../research/executable/evidence/function-triage/README.md) |
 | Audio and media | **Strong** | PCK/AKPK, HIRC, WEM, and Bink parser/decode cohorts | Event meaning, playback selection, and runtime semantics | [Coverage](coverage.md) |
 | Tooling and automation | **Strong** | Validators, experiment schemas, CI, and local research tooling | Cache identity and portable provenance across more outputs | [Tooling overview](tooling/mcp.md), [audit](reviews/AUDIT-2026-10-27-documentation-and-onboarding.md) |
 | Collaboration and review | **Active** | Contributor guide and review workflow | Independent reproductions and broader participation | [Contributing](../CONTRIBUTING.md), [review workflow](methodology/workflow.md) |
@@ -36,12 +36,12 @@ This is a conceptual research workflow, not a claim that every result has passed
 
 | Measure | Value | Scope |
 | --- | ---: | --- |
-| Published experiments | 155 | EXP-0001–0155; corpus size does not measure completeness |
+| Published experiments | 159 | EXP-0001–0159; corpus size does not measure completeness |
 | Registered executable | Steam x86 build `10256413` | SHA-256 `66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E` |
 | Install manifest | 13,623 paths | Recorded local snapshot; not every path was rehashed in the same experiment |
 | Installed UPKs | 904 / 904 | Path/size/hash matched to package manifest |
 | Internal functions indexed | 72,437 / 72,437 | Indexing is L0, not semantic review |
-| Manual function body reviews | 48 / 72,437 | Static body review through EXP-0156 |
+| Manual function body reviews | 49 / 72,437 | Static body review through EXP-0159 |
 | Derived ledger snapshot | L0=72,382; L1=51; L2=4; L3=0; L4=0 | EXP-0156 sync snapshot; generated local DB view, not an independently portable export |
 | Non-empty localized AKPK | 4,056 / 4,056 | Three of 4,059 inventoried files were empty placeholders |
 | PCK WEM decode | 1,908 / 1,908 | Decoder acceptance; perceptual correctness and in-game selection remain open |
