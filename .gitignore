@@ -1,22 +1,43 @@
-# Game files and extracted assets are not research notes and must not be committed.
+# Game content and locally extracted material
 assets/extracted/
 game-install/
+Dishonored RHCP/
 *.upk
 *.u
 *.umap
 *.sav
+*.exe
+*.dll
+*.pak
+*.bik
+*.bnk
 
-# Local analysis databases and generated outputs
+# Analysis databases, local manifests and private artifacts
 *.ghidra
 *.gpr
 *.rep/
+*.idb
+*.i64
+*.dmp
+local/
+private/
+.env
+.env.*
+!.env.example
+
+# Python / build outputs
 __pycache__/
+*.py[cod]
 .pytest_cache/
 .venv/
 venv/
 site/
 dist/
 build/
+.coverage
 
-# Local game installation copied into this workspace
-Dishonored RHCP/
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
