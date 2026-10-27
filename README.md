@@ -12,7 +12,7 @@ Progress is tracked by research direction, not by one project-wide completion pe
 | Packages and formats | Strong | 904 UPKs cataloged; 4,056/4,056 non-empty localized AKPK containers parsed |
 | Config and paths | Active | 63 path-shaped candidates from 76 directives; runtime resolution remains open |
 | Blink and gameplay | Active | Several conditional static edges confirmed; dynamic caller and runtime bridge remain open |
-| Native code | Early-to-mid | 72,437 functions indexed; 49 manual body reviews; L0–L4 counts remain separate |
+| Native code | Early-to-mid | 72,437 functions indexed; 49 manual body reviews; 17 Core static boundary candidates recovered; L0–L4 counts remain separate |
 | Audio and media | Strong | 503 PCKs cataloged; 1,908 WEM and 76 Bink files decoded with scoped limits |
 | Tooling and automation | Strong | Validators, schemas, CI, and repository research tools are in place |
 | Collaboration and review | Active | Contributor guidance and review process exist; independent reproduction is still scaling |

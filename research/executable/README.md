@@ -11,6 +11,7 @@ Canonical read-only static MCP server: [`mcp_servers/static/server.py`](../../mc
 - `scripts/` — headless helper scripts (`DecompileFunction.java`, export triage)
 - `evidence/native-token-dispatch-catalog.csv` — partial UELib NativeToken → exact-build `.data` name-pointer / adjacent `.text` address join (EXP-0066)
 - `evidence/native-selector-table-registration-census.csv` and its JSON provenance manifest — exact-build census of table `0x014068F0` initialization consumers and 33 static Engine token/target registration pairs (EXP-0160)
+- `evidence/EXP-0162-core-native-unindexed-target-*` — static boundary candidates and decoded instructions for 17 Core token targets still absent from the 72,437-row function index; see the EXP for evidence limits
 - `evidence/function-triage/` — one row per exact-build internal function with conservative name-label bucket, direct-call role, incoming data-xref context, and explicit unknown/unreviewed status (EXP-0072)
 - `evidence/EXP-0073-wwise-function-probes.csv` — selected exact-address decompiler observations for four `AK::SoundEngine` functions (EXP-0073)
 

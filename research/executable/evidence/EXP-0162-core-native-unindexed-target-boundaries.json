@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-10-27T11:58:34.613036+00:00",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "inputs": {
+    "function_index_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+    "native_token_catalog_sha256": "FB0B9E82567CE2C38F4C26F330FA55962F6B19333853EB32E851FC0978D86175",
+    "build_file_manifest_sha256": "65286FAA9E04422D2A4C7E2C1D0CEAB80B02564B8C98ABA619967DD4FA09D5EB",
+    "build_record_sha256": "83BAC00A21EC5FEB8A17AA9AD34580BA61683F31F54EF4E49725842F6E46F036",
+    "executable_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E"
+  },
+  "tool": {
+    "path": "tools/recover_core_native_token_unindexed_targets.py",
+    "sha256": "3C3EB069F423B9ECBAEF2020476A5F3B71F081EA10A20C2CAD81464A651DFB16",
+    "python": "3.12.10",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7",
+    "command": "python tools/recover_core_native_token_unindexed_targets.py"
+  },
+  "counts": {
+    "core_catalog_rows": 166,
+    "core_unindexed_target_addresses": 17,
+    "distinct_unindexed_target_tokens": 17,
+    "recovered_boundary_candidates": 17,
+    "all_have_ret8_and_local_control_flow": 17,
+    "all_have_int3_only_padding": 17,
+    "decoded_instruction_rows": 1579
+  },
+  "outputs": {
+    "boundaries_csv": {
+      "path": "EXP-0162-core-native-unindexed-target-boundaries.csv",
+      "sha256": "9451F88F03DC221F83807F91242D0AFB8E7EDB8D2F32BA1B9844B411BF88D9CB",
+      "rows": 17
+    },
+    "disassembly_csv": {
+      "path": "EXP-0162-core-native-unindexed-target-disassembly.csv",
+      "sha256": "513AAA18181DD67C157BEF3B034BAAFBC11817B8DFF41E37039D776B407B7C39",
+      "rows": 1579
+    }
+  },
+  "limitations": [
+    "Recovered entries remain outside the checked-in 72,437-row function index and are not Ghidra function definitions.",
+    "Boundary recovery is static and does not establish runtime dispatch, concrete owner classes, or complete operator semantics.",
+    "The compiler prologue is used only as a candidate boundary together with return, padding, and control-flow evidence."
+  ]
+}
