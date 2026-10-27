@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-10-27T12:34:48+00:00",
+  "build_id": "10256413",
+  "executable_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "inputs": {
+    "executable": {
+      "path": "Dishonored RHCP/Binaries/Win32/Dishonored.exe",
+      "sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+      "size": 18041856
+    },
+    "install_manifest": {
+      "path": "research/builds/BUILD-STEAM-10256413/files.csv",
+      "sha256": "65286FAA9E04422D2A4C7E2C1D0CEAB80B02564B8C98ABA619967DD4FA09D5EB",
+      "exe_row_size": 18041856,
+      "exe_row_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E"
+    },
+    "function_index": {
+      "path": "research/executable/functions.csv",
+      "sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+      "rows": 72437
+    },
+    "native_token_catalog": {
+      "path": "research/executable/evidence/native-token-dispatch-catalog.csv",
+      "sha256": "FB0B9E82567CE2C38F4C26F330FA55962F6B19333853EB32E851FC0978D86175",
+      "rows": 207
+    },
+    "build_record": {
+      "path": "research/builds/BUILD-STEAM-10256413/build.md",
+      "sha256": "83BAC00A21EC5FEB8A17AA9AD34580BA61683F31F54EF4E49725842F6E46F036"
+    }
+  },
+  "tool": {
+    "path": "tools/audit_unindexed_selector_initializer_calls.py",
+    "sha256": "F2A2E4C88930CCFBE42834A2057BAB62E36CEBD57628A45385F1345BBC740FF6",
+    "python": "3.12.10",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7"
+  },
+  "analysis": {
+    "initializer_va": "0x00426C60",
+    "function_index_body_interval_count": 72437,
+    "raw_text_rel32_call_candidates": 2267,
+    "calls_in_indexed_bodies_instruction_decoded": 1082,
+    "calls_outside_indexed_bodies": 1185,
+    "outside_calls_matching_push_call_cleanup_result_byte_store_ret": 1185,
+    "outside_wrapper_entry_candidates_aligned_16": 1185,
+    "outside_tokens": {
+      "0x00000180": 1,
+      "0x00000181": 1,
+      "0xFFFFFFFF": 1183
+    },
+    "non_sentinel_rows": [
+      {
+        "call_site_va": "0x00F720BA",
+        "wrapper_entry_candidate_va": "0x00F720B0",
+        "return_instruction_va": "0x00F720C7",
+        "token": "0x00000181",
+        "token_is_sentinel": "false",
+        "token_push_encoding": "imm32",
+        "pointer_cell_va": "0x01286C78",
+        "pointer_cell_section": ".data",
+        "target_va": "0x0058C820",
+        "target_section": ".text",
+        "target_is_indexed_entry": "false",
+        "result_byte_va": "0x0144613C",
+        "claim_status": "observed_static_call_pattern"
+      },
+      {
+        "call_site_va": "0x00F7D6BA",
+        "wrapper_entry_candidate_va": "0x00F7D6B0",
+        "return_instruction_va": "0x00F7D6C7",
+        "token": "0x00000180",
+        "token_is_sentinel": "false",
+        "token_push_encoding": "imm32",
+        "pointer_cell_va": "0x012A0268",
+        "pointer_cell_section": ".data",
+        "target_va": "0x006CC1D0",
+        "target_section": ".text",
+        "target_is_indexed_entry": "true",
+        "result_byte_va": "0x01449470",
+        "claim_status": "observed_static_call_pattern"
+      }
+    ],
+    "non_sentinel_tokens_present_in_exp0066_catalog": {
+      "0x00000181": false,
+      "0x00000180": false
+    },
+    "unindexed_non_sentinel_target_probes": [
+      {
+        "target_va": "0x0058C820",
+        "instructions_through_return": [
+          {
+            "address": "0x0058C820",
+            "bytes": "8B 81 AC 01 00 00",
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [ecx + 0x1ac]"
+          },
+          {
+            "address": "0x0058C826",
+            "bytes": "85 C0",
+            "mnemonic": "test",
+            "operands": "eax, eax"
+          },
+          {
+            "address": "0x0058C828",
+            "bytes": "74 0F",
+            "mnemonic": "je",
+            "operands": "0x58c839"
+          },
+          {
+            "address": "0x0058C82A",
+            "bytes": "B2 01",
+            "mnemonic": "mov",
+            "operands": "dl, 1"
+          },
+          {
+            "address": "0x0058C82C",
+            "bytes": "84 90 D8 00 00 00",
+            "mnemonic": "test",
+            "operands": "byte ptr [eax + 0xd8], dl"
+          },
+          {
+            "address": "0x0058C832",
+            "bytes": "74 05",
+            "mnemonic": "je",
+            "operands": "0x58c839"
+          },
+          {
+            "address": "0x0058C834",
+            "bytes": "84 50 5C",
+            "mnemonic": "test",
+            "operands": "byte ptr [eax + 0x5c], dl"
+          },
+          {
+            "address": "0x0058C837",
+            "bytes": "75 0F",
+            "mnemonic": "jne",
+            "operands": "0x58c848"
+          },
+          {
+            "address": "0x0058C839",
+            "bytes": "8B 41 18",
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [ecx + 0x18]"
+          },
+          {
+            "address": "0x0058C83C",
+            "bytes": "33 D2",
+            "mnemonic": "xor",
+            "operands": "edx, edx"
+          },
+          {
+            "address": "0x0058C83E",
+            "bytes": "66 89 50 30",
+            "mnemonic": "mov",
+            "operands": "word ptr [eax + 0x30], dx"
+          },
+          {
+            "address": "0x0058C842",
+            "bytes": "89 91 AC 01 00 00",
+            "mnemonic": "mov",
+            "operands": "dword ptr [ecx + 0x1ac], edx"
+          },
+          {
+            "address": "0x0058C848",
+            "bytes": "C2 08 00",
+            "mnemonic": "ret",
+            "operands": "8"
+          }
+        ]
+      }
+    ],
+    "target_sections": {
+      ".text": 1185
+    },
+    "distinct_target_addresses": 872
+  },
+  "outputs": {
+    "calls_csv": {
+      "path": "research/executable/evidence/EXP-0163-unindexed-selector-initializer-calls.csv",
+      "sha256": "4AE3B17BA0216856265920A03EF74811D27261E5FD2E8F3F7899E5F062A659E5",
+      "rows": 1185
+    }
+  },
+  "limits": [
+    "The 1,185 rows are raw-code static wrapper candidates outside indexed function body intervals; the checked-in Ghidra function index is unchanged.",
+    "The 1,183 sentinel calls pass 0xFFFFFFFF and do not establish token-specific selector-table writes.",
+    "Tokens 0x180 and 0x181 are observed arguments to the initializer; neither is identified as a UELib NativeToken or assigned a semantic meaning here.",
+    "The UELib absence check is limited to the checked-in 207-row EXP-0066 derived catalog and does not prove absence from every package or runtime registry.",
+    "The pointer-cell DWORD and target section/index membership are static PE relations; no caller execution, class ownership, dispatch, or runtime behavior is established.",
+    "The scan is exact-build .text only and does not prove complete coverage of indirect calls or non-.text code."
+  ]
+}

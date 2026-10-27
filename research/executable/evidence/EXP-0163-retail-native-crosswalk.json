@@ -1,0 +1,29 @@
+{
+  "experiment": "EXP-0163",
+  "purpose": "Compact crosswalk of the two non-sentinel selector initializer arguments to a local Dishonored Recompiled 2013 retail symbol/native export snapshot.",
+  "external_snapshot": {
+    "local_path": "D:/Dishonored/01_REFERENCE/community/dishonoredrecompiled-main",
+    "repository_commit": null,
+    "commit_note": "The available directory is a source snapshot without a .git directory or recorded commit identifier.",
+    "files": {
+      "resources/docs/symbols/natives_2013.csv": "2156C0F179E53F4F1D0508E80CA52248CCD6BDA0AE2A23A335F8835A17F669C6",
+      "resources/docs/symbols/functions_2013.csv": "C3B6821A018D30E2A317D95396B6584EB0C378BA5C0BD0075EC1E8C6C240CE88",
+      "resources/docs/symbols/match_2012_2013.csv": "06164572249FD3E2477F1C404B2AF6A27CACF83ACECB8C82DB08FCEDE037B330",
+      "resources/tools/ida/export_natives.py": "135177E905CF1EFD1F91E25135ABD5A18B15DCC40D147C46FC97FFE29B81B7EA"
+    }
+  },
+  "joins": [
+    "Selector initializer target VA is joined exactly to natives_2013.csv va and functions_2013.csv va.",
+    "Token is compared as an integer to natives_2013.csv native_index.",
+    "functions_2013.csv mangled name is joined to match_2012_2013.csv name, and RVA to rva_2013.",
+    "The retail build identity is independently checked against the registered build record and local install manifest by the EXP-0163 audit."
+  ],
+  "export_method_review": "The inspected export_natives.py documents numbered registration as push <iNative>, push <function-pointer-variable>, call GRegisterNative; it recovers the function pointer and signed index from the call site, and also scans GNatives plus inlined Core stores. The selected 0x180/0x181 values are positive numbered indices.",
+  "limitations": [
+    "These are compacted rows from a local third-party snapshot; repository commit identity is unavailable.",
+    "The exports do not themselves embed the retail executable SHA-256; exact-build applicability is supported by the snapshot documentation and matching project build registry, not by an embedded per-row hash.",
+    "functions_2013.csv names are propagated from a 2012 PDB. Both selected rows have byte-match ratio 1.000 and equal 2012/2013 function sizes in match_2012_2013.csv, which supports identity correspondence but does not make the 2012 PDB an authority for retail layouts.",
+    "The GNatives index/native registration row identifies a registered exec binding, but does not establish runtime execution, gameplay reachability, or behavioral semantics.",
+    "Absence from the project EXP-0066-derived 207-row NativeToken catalog is scoped to that catalog only."
+  ]
+}
