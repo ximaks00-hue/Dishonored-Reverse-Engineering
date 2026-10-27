@@ -35,13 +35,13 @@ These checks validate links and record structure. They do not certify research c
 4. `tools/validate_experiments.py` uses a small line-oriented frontmatter parser and path-link regex rather than a complete YAML/Markdown parser. It is adequate for current records but does not validate full YAML syntax or all link forms.
 5. Runtime evidence remains zero; 47 of 72,437 indexed bodies have manual body reviews, and the exact-build function unknown bucket remains large. See [coverage](../coverage.md) and [roadmap](../roadmap.md).
 6. The GitHub research corpus is carried on a long stacked draft-PR history. Branch integration still needs a reviewed rebase/merge plan; this review does not merge or retarget PRs.
-7. The first hosted Actions run failed because the EXP validator treated four intentionally local-only paths (ignored extracted outputs and the local decompressor) as broken links. The validator now exempts only those path families; a successful hosted run is still required.
+7. Initial hosted Actions runs exposed four intentionally local-only targets and a stale EXP-0014 source digest. The validators now recognize the documented local-only paths, and the index digest was refreshed from the current EXP source. All three hosted workflows passed on commit `6c6d055` (Research evidence checks run 87; REV-0004 run 77; REV-0005 run 62).
 8. GitHub's API reports that branch protection is unavailable for this private repository on its current plan (HTTP 403: upgrade to Pro or make the repository public). The collaborator list currently contains only the owner. No protection was configured and no contributor access was granted.
 
 ## Follow-up order
 
 1. Research branch `codex/research-corpus-sync` contains EXP-0001–0155, including EXP-0114. The current `main` branch has no experiment directory because the corpus is still in stacked draft PRs. Integrate that reviewed PR stack before saying the experiment corpus is available from the default branch; do not reconstruct any other historical sources that are not present.
-2. Verify a successful GitHub Actions run for the corrected CI on the final commit; local validation alone is not CI evidence.
+2. **Done for this audit commit:** hosted Research evidence checks, REV-0004, and REV-0005 all passed on `6c6d055`. Keep required-check names verified against these runs when branch protection becomes available.
 3. Upgrade the private repository plan or make the repository public before enabling and verifying `main` protection and required checks. Add collaborators only by explicit GitHub username and agreed permission.
 4. Add an evidence-manifest format for generated catalogs (EXP/source hashes, build, tool/options, row count, and reproduction command) and adopt it for new outputs before migrating old artifacts.
 5. Correct decompile-cache invalidation and L4 build matching with negative cross-build cases; do not relabel existing evidence automatically.

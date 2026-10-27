@@ -58,7 +58,7 @@ Use denominators such as files inventoried / manifest files, packages parsed / p
 These project-delivery tasks remain open alongside reverse engineering:
 
 - Recover the original local sources for EXP-0114 and other earlier records absent from the available GitHub corpus. Do not recreate experiment bodies from summaries.
-- Confirm successful GitHub Actions runs for repository evidence checks after the CI changes; a local pass does not close this gate.
+- **Done on `6c6d055`:** repository evidence checks, REV-0004, and REV-0005 all passed on GitHub Actions. Enforcing them as required checks remains open until branch protection is available.
 - Configure and verify `main` branch protection, required checks, a usable issue-label set, and collaborator access appropriate to the project's contributors.
 
 ## Experiment range
