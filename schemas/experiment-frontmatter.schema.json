@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/blob/main/schemas/experiment-frontmatter.schema.json",
+  "title": "Dishonored RE experiment frontmatter",
+  "description": "Machine-validated metadata for source-of-truth EXP Markdown records.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "experiment_status",
+    "claim_status",
+    "build",
+    "question"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^EXP-[0-9]{4}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "experiment_status": { "enum": ["planned", "in_progress", "done", "superseded"] },
+    "claim_status": {
+      "enum": ["confirmed", "observed", "inferred", "unknown", "superseded", "mixed", "rejected"]
+    },
+    "build": { "type": "string", "minLength": 1 },
+    "question": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

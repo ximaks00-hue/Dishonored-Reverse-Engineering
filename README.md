@@ -30,7 +30,7 @@ Build a searchable, reproducible account of how selected game systems work, with
 5. Link stable EXP/OBS/HYP/FIND records and update the appropriate subsystem.
 6. Have another contributor reproduce or review the claim.
 
-Use `python tools/validate_repo.py` and `python -m unittest discover -s tests -v` (Python 3.11+) before proposing changes. GitHub Actions runs the same checks on pull requests.
+Install validator dependencies with `python -m pip install -r requirements-dev.txt`, then run `python tools/validate_repo.py` and `python -m unittest discover -s tests -v` (Python 3.11+) before proposing changes. GitHub Actions runs the same checks on pull requests.
 
 ## Research principles
 - The build, environment, file hash and method constrain every claim.
