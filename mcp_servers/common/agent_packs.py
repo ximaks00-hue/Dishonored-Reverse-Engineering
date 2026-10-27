@@ -199,16 +199,73 @@ def function_dossier(address: str) -> dict[str, Any]:
                 (f"%{key[-6:]}%",),
             ).fetchall()
         )
+        progress: dict[str, Any] | None = None
+        analysis_evidence: list[dict[str, Any]] = []
+        semantic_claims: list[dict[str, Any]] = []
+        function_edges: list[dict[str, Any]] = []
+        runtime_evidence: list[dict[str, Any]] = []
+        has_progress_view = db.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='view' AND name='function_research_progress'"
+        ).fetchone()
+        if has_progress_view:
+            settings = get_settings()
+            va_int = int(function["address"], 16)
+            progress_row = db.execute(
+                "SELECT module, va, rva, name, size_bytes, analysis_axis, semantic_axis, "
+                "connectivity_axis, runtime_axis, gated_level FROM function_research_progress "
+                "WHERE build_id=? AND executable_sha256=? AND module=? AND va=? LIMIT 1",
+                (settings.build_id, settings.executable_sha256, "Dishonored.exe", va_int),
+            ).fetchone()
+            if progress_row is not None:
+                progress = dict(progress_row)
+                function_id = int(db.execute(
+                    "SELECT id FROM function_inventory WHERE build_id=(SELECT id FROM game_build "
+                    "WHERE build_id=? AND executable_sha256=?) AND module=? AND va=? LIMIT 1",
+                    (settings.build_id, settings.executable_sha256, "Dishonored.exe", va_int),
+                ).fetchone()[0])
+                analysis_evidence = row_dicts(db.execute(
+                    "SELECT analysis_kind, tool_name, tool_version, status, input_sha256, options_sha256, "
+                    "source_ref, source_sha256, summary, is_current FROM function_analysis_runs "
+                    "WHERE function_id=? ORDER BY is_current DESC, recorded_at DESC, id DESC",
+                    (function_id,),
+                ).fetchall())
+                semantic_claims = row_dicts(db.execute(
+                    "SELECT claim_kind, claim_status, statement, confidence, evidence_va, evidence_rva, "
+                    "evidence_ref, evidence_sha256, experiment_key, pointer_provenance, is_current "
+                    "FROM function_claims WHERE function_id=? ORDER BY is_current DESC, id DESC",
+                    (function_id,),
+                ).fetchall())
+                function_edges = row_dicts(db.execute(
+                    "SELECT e.relation_kind, e.claim_status, e.source_va, e.source_rva, "
+                    "e.pointer_provenance, e.evidence_ref, e.evidence_sha256, e.experiment_key, "
+                    "source.va AS source_function_va, source.name AS source_function_name, "
+                    "target.va AS target_function_va, target.name AS target_function_name "
+                    "FROM function_edges e JOIN function_inventory source ON source.id=e.source_function_id "
+                    "JOIN function_inventory target ON target.id=e.target_function_id "
+                    "WHERE e.source_function_id=? OR e.target_function_id=? ORDER BY e.id DESC LIMIT 100",
+                    (function_id, function_id),
+                ).fetchall())
+                runtime_evidence = row_dicts(db.execute(
+                    "SELECT status, claim_status, baseline_id, capture_ref, capture_sha256, build_sha256, "
+                    "inputs_json, outputs_json, experiment_key FROM function_runtime_evidence "
+                    "WHERE function_id=? ORDER BY recorded_at DESC, id DESC LIMIT 50",
+                    (function_id,),
+                ).fetchall())
 
     return {
         "function": function,
         "research_function_rows": db_fn,
+        "function_progress": progress,
+        "function_analysis_evidence": analysis_evidence,
+        "function_semantic_claims": semantic_claims,
+        "function_edges": function_edges,
+        "function_runtime_evidence": runtime_evidence,
         "callers": callers_payload,
         "callees": callees_payload,
         "decompile": cached,
         "experiments": mentions[:20],
         "missing": missing,
-        "note": "Does not elevate claim status; EXP markdown is authoritative.",
+        "note": "Index/decompile coverage is distinct from semantic, dataflow, and runtime evidence; EXP markdown is authoritative.",
     }
 
 

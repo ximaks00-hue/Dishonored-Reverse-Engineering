@@ -6,6 +6,7 @@
 2. Skim [research status](../research-status.md) next actions and [activation graph](../gameplay/blink/activation-graph.md).
 3. Note which MCP servers are live; workspace paths per [mcp.md](mcp.md).
 4. Open a new `EXP-NNNN` from [templates/experiment.md](../../templates/experiment.md) with YAML frontmatter before changing notes mid-flight.
+5. For native-function work, use the [function evidence model](../methodology/function-evidence-model.md): index/decompile coverage is separate from confirmed role, dataflow, and runtime claims.
 
 ## During
 

@@ -18,6 +18,7 @@ The layers can overlap, but conclusions at one layer must not be presented as pr
 - [System architecture map](architecture/overview.md)
 - [Evidence and provenance policy](methodology/evidence.md)
 - [Research workflow](methodology/workflow.md)
+- [Function evidence model and L0–L4 gates](methodology/function-evidence-model.md)
 - [Long-term roadmap](roadmap.md)
 - [MCP matrix / paths](tooling/mcp.md)
 - [Session checklist](tooling/session-checklist.md)

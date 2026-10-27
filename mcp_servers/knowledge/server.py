@@ -40,7 +40,7 @@ def _require_confidence(confidence: float) -> float:
 def _health_payload() -> dict[str, Any]:
     report = _settings.path_report()
     report["server"] = "dishonored-research"
-    report["version"] = "2.1.0"
+    report["version"] = "2.2.0"
     with connect(write=False) as db:
         report["counts"] = {
             "experiments": db.execute("SELECT COUNT(*) FROM experiments").fetchone()[0],
@@ -53,6 +53,32 @@ def _health_payload() -> dict[str, Any]:
             "game_build": db.execute("SELECT COUNT(*) FROM game_build").fetchone()[0],
             "research_fts": db.execute("SELECT COUNT(*) FROM research_fts").fetchone()[0],
         }
+        has_progress_view = db.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='view' AND name='function_research_progress'"
+        ).fetchone()
+        if has_progress_view:
+            report["counts"]["function_inventory"] = db.execute(
+                "SELECT COUNT(*) FROM function_inventory f JOIN game_build b ON b.id=f.build_id "
+                "WHERE b.build_id=? AND b.executable_sha256=?",
+                (_settings.build_id, _settings.executable_sha256),
+            ).fetchone()[0]
+            report["counts"]["function_analysis_runs"] = db.execute(
+                "SELECT COUNT(*) FROM function_analysis_runs a JOIN function_inventory f ON f.id=a.function_id "
+                "JOIN game_build b ON b.id=f.build_id WHERE b.build_id=? AND b.executable_sha256=? AND a.is_current=1",
+                (_settings.build_id, _settings.executable_sha256),
+            ).fetchone()[0]
+            report["counts"]["function_claims"] = db.execute(
+                "SELECT COUNT(*) FROM function_claims c JOIN function_inventory f ON f.id=c.function_id "
+                "JOIN game_build b ON b.id=f.build_id WHERE b.build_id=? AND b.executable_sha256=? AND c.is_current=1",
+                (_settings.build_id, _settings.executable_sha256),
+            ).fetchone()[0]
+            report["counts"]["function_progress_levels"] = {
+                row[0]: row[1] for row in db.execute(
+                    "SELECT gated_level,COUNT(*) FROM function_research_progress "
+                    "WHERE build_id=? AND executable_sha256=? GROUP BY gated_level ORDER BY gated_level",
+                    (_settings.build_id, _settings.executable_sha256),
+                ).fetchall()
+            }
     report["ready"] = _settings.schema_sql.is_file()
     return report
 
@@ -87,6 +113,33 @@ def brief(topic: str) -> dict[str, Any]:
 @mcp_tool(_log)
 def function_dossier(address: str) -> dict[str, Any]:
     return agent_packs.function_dossier(address)
+
+
+@mcp_tool(_log)
+def list_function_progress(level: str = "", query: str = "", limit: int = 50) -> list[dict]:
+    """List exact-build function coverage by derived L0-L4 gate and evidence axes."""
+    level = (level or "").upper().strip()
+    if level and level not in {"L0", "L1", "L2", "L3", "L4"}:
+        raise ToolError("invalid_level", "level must be empty or one of L0, L1, L2, L3, L4")
+    limit = clamp_limit(limit, maximum=200)
+    pattern = f"%{(query or '').strip()}%"
+    with connect(write=False) as db:
+        available = db.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='view' AND name='function_research_progress'"
+        ).fetchone()
+        if not available:
+            raise ToolError("function_evidence_unavailable", "Run the experiment sync to create the function evidence ledger")
+        sql = (
+            "SELECT printf('0x%08X',va) AS va, printf('0x%08X',rva) AS rva, module,name,size_bytes, "
+            "analysis_axis,semantic_axis,connectivity_axis,runtime_axis,gated_level "
+            "FROM function_research_progress WHERE build_id=? AND executable_sha256=? "
+            "AND (?='' OR gated_level=?) AND (?='%%' OR name LIKE ? OR printf('0x%08X',va) LIKE ?) "
+            "ORDER BY gated_level DESC,va LIMIT ?"
+        )
+        return row_dicts(db.execute(
+            sql,
+            (_settings.build_id, _settings.executable_sha256, level, level, pattern, pattern, pattern, limit),
+        ).fetchall())
 
 
 @mcp_tool(_log)
@@ -283,7 +336,11 @@ def register(server: MCPServer, *, include_health: bool = True) -> None:
     )
     server.add_tool(
         function_dossier,
-        description="Agent pack: function index + callers/callees + cached decompile + EXP mentions.",
+        description="Agent pack: function index, L0-L4 evidence axes, claims, edges, runtime records, callers/callees, and EXP mentions.",
+    )
+    server.add_tool(
+        list_function_progress,
+        description="List exact-build function coverage by L0-L4 gate and separate evidence axes.",
     )
     server.add_tool(
         experiment,
@@ -316,7 +373,7 @@ def register(server: MCPServer, *, include_health: bool = True) -> None:
 def create_server() -> MCPServer:
     mcp = MCPServer(
         name="dishonored-research",
-        version="2.1.0",
+        version="2.2.0",
         instructions=(
             "Search and update the SQLite research mirror for Dishonored RE. "
             "Prefer brief / function_dossier / experiment for agent context. "

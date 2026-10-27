@@ -20,6 +20,7 @@ UMODEL_EXE = _settings.umodel_exe
 GHIDRA_HEADLESS = _settings.ghidra_headless
 BUILD_ID = _settings.build_id
 EXECUTABLE_SHA256 = _settings.executable_sha256
+IMAGE_BASE = _settings.image_base
 
 
 def path_health():

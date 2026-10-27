@@ -3,15 +3,26 @@
 
 from __future__ import annotations
 
+import csv
+import hashlib
+import json
 import re
 import sqlite3
+import struct
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
-from mcp_servers._paths import BUILD_ID, EXECUTABLE_SHA256, RESEARCH_DB  # noqa: E402
+from mcp_servers._paths import (  # noqa: E402
+    BUILD_ID,
+    EXECUTABLE_SHA256,
+    FUNCTIONS_CSV,
+    GAME_EXE,
+    IMAGE_BASE,
+    RESEARCH_DB,
+)
 
 EXPERIMENTS = ROOT / "experiments"
 SCHEMA = ROOT / "knowledge" / "database" / "schema.sql"
@@ -68,6 +79,11 @@ HYPOTHESES = [
     ),
 ]
 
+FUNCTION_REVIEW_OVERLAY = (
+    ROOT
+    / "research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0128.csv"
+)
+
 
 def parse_frontmatter(text: str) -> dict[str, str]:
     match = FRONTMATTER_RE.match(text)
@@ -86,6 +102,21 @@ def connect() -> sqlite3.Connection:
     RESEARCH_DB.parent.mkdir(parents=True, exist_ok=True)
     connection = sqlite3.connect(RESEARCH_DB)
     connection.execute("PRAGMA foreign_keys = ON")
+    # Add columns used by the regenerated progress view before executing schema.sql.
+    # SQLite has no ALTER VIEW; the schema drops and rebuilds the derived view.
+    for table, name, declaration in (
+        ("function_analysis_runs", "is_current", "INTEGER NOT NULL DEFAULT 1 CHECK (is_current IN (0, 1))"),
+        ("function_claims", "is_current", "INTEGER NOT NULL DEFAULT 1 CHECK (is_current IN (0, 1))"),
+        ("function_claims", "evidence_va", "INTEGER CHECK (evidence_va IS NULL OR evidence_va >= 0)"),
+        ("function_claims", "evidence_rva", "INTEGER CHECK (evidence_rva IS NULL OR evidence_rva >= 0)"),
+    ):
+        exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)
+        ).fetchone()
+        if exists:
+            existing = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
+            if name not in existing:
+                connection.execute(f"ALTER TABLE {table} ADD COLUMN {name} {declaration}")
     connection.executescript(SCHEMA.read_text(encoding="utf-8"))
     # Migrate older DBs that predate new columns.
     columns = {
@@ -120,20 +151,284 @@ def connect() -> sqlite3.Connection:
     return connection
 
 
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest().upper()
+
+
+def pe32_image_range(path: Path) -> tuple[int, int]:
+    """Return PE32 ImageBase and SizeOfImage without third-party modules."""
+    with path.open("rb") as stream:
+        if stream.read(2) != b"MZ":
+            raise ValueError(f"not a PE executable: {path}")
+        stream.seek(0x3C)
+        pe_offset = struct.unpack("<I", stream.read(4))[0]
+        stream.seek(pe_offset)
+        if stream.read(4) != b"PE\0\0":
+            raise ValueError(f"missing PE signature: {path}")
+        coff = stream.read(20)
+        machine, _, _, _, _, optional_size, _ = struct.unpack("<HHIIIHH", coff)
+        optional = stream.read(optional_size)
+        if machine != 0x14C or struct.unpack_from("<H", optional, 0)[0] != 0x10B:
+            raise ValueError("expected x86 PE32 executable")
+        image_base = struct.unpack_from("<I", optional, 28)[0]
+        size_of_image = struct.unpack_from("<I", optional, 56)[0]
+        return image_base, size_of_image
+
+
+def stable_key(*parts: object) -> str:
+    payload = json.dumps(parts, ensure_ascii=False, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest().upper()
+
+
+def sync_function_evidence(db: sqlite3.Connection, build_row_id: int) -> dict[str, int]:
+    """Import the exact-build index as L0 and only explicitly reviewed evidence above it."""
+    exe_path = GAME_EXE.resolve(strict=True)
+    actual_exe_sha = sha256_file(exe_path)
+    if actual_exe_sha.upper() != EXECUTABLE_SHA256.upper():
+        raise ValueError("current executable hash differs from configured exact-build identity")
+    image_base, size_of_image = pe32_image_range(exe_path)
+    if image_base != IMAGE_BASE:
+        raise ValueError(
+            f"PE ImageBase 0x{image_base:08X} differs from configured 0x{IMAGE_BASE:08X}"
+        )
+
+    index_path = FUNCTIONS_CSV.resolve(strict=True)
+    index_sha = sha256_file(index_path)
+    index_ref = str(index_path.relative_to(ROOT)).replace("\\", "/")
+    rows: list[tuple] = []
+    address_to_id: dict[int, int] = {}
+    with index_path.open("r", encoding="utf-8-sig", newline="") as stream:
+        for row in csv.DictReader(stream):
+            va = int(row["address"], 16)
+            size = int(row["size"])
+            rva = va - image_base
+            if rva < 0 or size <= 0 or rva + size > size_of_image:
+                raise ValueError(
+                    f"function VA/RVA range is outside the verified PE image: {row['address']}"
+                )
+            rows.append((
+                build_row_id,
+                "Dishonored.exe",
+                va,
+                rva,
+                image_base,
+                row["name"],
+                row["signature"],
+                size,
+                index_ref,
+                index_sha,
+            ))
+    if len(rows) != 72437:
+        raise ValueError(f"expected the EXP-0041 internal-function denominator 72,437; found {len(rows)}")
+
+    db.executemany(
+        "INSERT INTO function_inventory(build_id,module,va,rva,image_base,name,signature,size_bytes,index_source,index_sha256) "
+        "VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(build_id,module,va) DO UPDATE SET "
+        "rva=excluded.rva,image_base=excluded.image_base,name=excluded.name,signature=excluded.signature,"
+        "size_bytes=excluded.size_bytes,index_source=excluded.index_source,index_sha256=excluded.index_sha256",
+        rows,
+    )
+    for function_id, va in db.execute(
+        "SELECT id,va FROM function_inventory WHERE build_id=? AND module=?", (build_row_id, "Dishonored.exe")
+    ):
+        address_to_id[int(va)] = int(function_id)
+
+    exp_rows = {
+        row[0]: (row[1], row[2])
+        for row in db.execute("SELECT experiment_key,path,claim_status FROM experiments WHERE experiment_key IS NOT NULL")
+    }
+    active_analysis_keys: set[str] = set()
+    active_claim_keys: set[str] = set()
+    managed_function_ids: set[int] = set()
+    curated_experiment_keys: set[str] = set()
+
+    def experiment_source(experiment_key: str) -> tuple[str, str]:
+        found = exp_rows.get(experiment_key)
+        if not found or not found[0]:
+            raise ValueError(f"function evidence references missing experiment {experiment_key}")
+        rel_path = found[0]
+        digest = sha256_file(ROOT / Path(rel_path))
+        return rel_path, digest
+
+    def insert_analysis(
+        function_id: int,
+        va: int,
+        kind: str,
+        tool: str,
+        tool_version: str | None,
+        source_ref: str,
+        source_sha: str,
+        summary: str,
+    ) -> None:
+        cache_key = stable_key(
+            actual_exe_sha.upper(), "Dishonored.exe", f"0x{va:08X}", kind, tool,
+            tool_version or "", "",
+        )
+        active_analysis_keys.add(cache_key)
+        db.execute(
+            "INSERT INTO function_analysis_runs(function_id,analysis_kind,tool_name,tool_version,status,input_sha256,"
+            "options_sha256,cache_key,source_ref,source_sha256,summary) VALUES(?,?,?,?,?,?,?,?,?,?,?) "
+            "ON CONFLICT(cache_key) DO UPDATE SET status=excluded.status,is_current=1,source_ref=excluded.source_ref,"
+            "source_sha256=excluded.source_sha256,summary=excluded.summary",
+            (function_id, kind, tool, tool_version, "complete", actual_exe_sha.upper(), None,
+             cache_key, source_ref, source_sha, summary),
+        )
+
+    # Existing curated static roles are explicit evidence-backed claim records.
+    curated = db.execute(
+        "SELECT module,address,summary,source,confidence,status FROM functions WHERE module='Dishonored.exe'"
+    ).fetchall()
+    for module, address, statement, experiment_key, confidence, status in curated:
+        va = int(address, 0)
+        function_id = address_to_id.get(va)
+        if function_id is None:
+            raise ValueError(f"curated function address is missing from the exact-build index: {address}")
+        source_ref, source_sha = experiment_source(experiment_key)
+        managed_function_ids.add(function_id)
+        curated_experiment_keys.add(experiment_key)
+        insert_analysis(function_id, va, "manual_body_review", "Ghidra", None, source_ref, source_sha,
+                        f"Existing curated static function record; claim status={status}.")
+        if status not in {"confirmed", "observed", "inferred", "unknown", "superseded", "rejected"}:
+            raise ValueError(f"unsupported function claim status: {status}")
+        claim_key = stable_key(actual_exe_sha.upper(), module, f"0x{va:08X}", "role", experiment_key, statement)
+        active_claim_keys.add(claim_key)
+        db.execute(
+            "INSERT INTO function_claims(function_id,claim_kind,claim_status,statement,confidence,evidence_va,evidence_rva,"
+            "evidence_ref,evidence_sha256,experiment_key,pointer_provenance,claim_key) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) "
+            "ON CONFLICT(claim_key) DO UPDATE SET claim_status=excluded.claim_status,is_current=1,"
+            "statement=excluded.statement,confidence=excluded.confidence,evidence_va=excluded.evidence_va,"
+            "evidence_rva=excluded.evidence_rva,"
+            "evidence_ref=excluded.evidence_ref,evidence_sha256=excluded.evidence_sha256",
+            (function_id, "role", status, statement, confidence, va, va - image_base, source_ref, source_sha,
+             experiment_key, "", claim_key),
+        )
+
+    # The 28 reviewed bodies are analysis coverage only. Their subsystem labels
+    # remain candidates/unassigned in the source overlay, so they are not
+    # imported as confirmed semantic claims.
+    overlay_path = FUNCTION_REVIEW_OVERLAY.resolve(strict=True)
+    overlay_ref = str(overlay_path.relative_to(ROOT)).replace("\\", "/")
+    overlay_sha = sha256_file(overlay_path)
+    overlay_rows = list(csv.DictReader(overlay_path.open("r", encoding="utf-8-sig", newline="")))
+    for row in overlay_rows:
+        va = int(row["address"], 16)
+        function_id = address_to_id.get(va)
+        if function_id is None:
+            raise ValueError(f"reviewed function address is missing from the exact-build index: {row['address']}")
+        managed_function_ids.add(function_id)
+        summary = (
+            f"{row['review_status']}; static_role_candidate={row['static_role_candidate']}; "
+            f"source_claim_status={row['claim_status']}"
+        )
+        insert_analysis(function_id, va, "manual_body_review", "Ghidra (manual review)", "not-recorded",
+                        overlay_ref, overlay_sha, summary)
+
+    current_experiment_paths = {
+        str(path.relative_to(ROOT)).replace("\\", "/") for path in EXPERIMENTS.glob("EXP-*.md")
+    }
+    current_source_paths = current_experiment_paths | {overlay_ref}
+    for (run_id, source_ref) in db.execute(
+        "SELECT id,source_ref FROM function_analysis_runs WHERE source_ref LIKE 'experiments/%' OR source_ref=?",
+        (overlay_ref,),
+    ).fetchall():
+        if source_ref not in current_source_paths:
+            db.execute("UPDATE function_analysis_runs SET is_current=0 WHERE id=?", (run_id,))
+    if managed_function_ids:
+        placeholders = ",".join("?" for _ in managed_function_ids)
+        for (run_id, cache_key) in db.execute(
+            f"SELECT id,cache_key FROM function_analysis_runs WHERE function_id IN ({placeholders}) "
+            "AND analysis_kind='manual_body_review' AND tool_name IN ('Ghidra','Ghidra (manual review)')",
+            tuple(sorted(managed_function_ids)),
+        ).fetchall():
+            if cache_key not in active_analysis_keys:
+                db.execute("UPDATE function_analysis_runs SET is_current=0 WHERE id=?", (run_id,))
+    for (claim_id, evidence_ref) in db.execute(
+        "SELECT id,evidence_ref FROM function_claims WHERE evidence_ref LIKE 'experiments/%'"
+    ).fetchall():
+        if evidence_ref not in current_experiment_paths:
+            db.execute(
+                "UPDATE function_claims SET is_current=0,claim_status='superseded' WHERE id=?",
+                (claim_id,),
+            )
+    if managed_function_ids and curated_experiment_keys:
+        f_placeholders = ",".join("?" for _ in managed_function_ids)
+        e_placeholders = ",".join("?" for _ in curated_experiment_keys)
+        query = (
+            f"SELECT id,claim_key FROM function_claims WHERE function_id IN ({f_placeholders}) "
+            f"AND claim_kind='role' AND experiment_key IN ({e_placeholders})"
+        )
+        params = tuple(sorted(managed_function_ids)) + tuple(sorted(curated_experiment_keys))
+        for claim_id, claim_key in db.execute(query, params).fetchall():
+            if claim_key not in active_claim_keys:
+                db.execute(
+                    "UPDATE function_claims SET is_current=0,claim_status='superseded' WHERE id=?",
+                    (claim_id,),
+                )
+
+    level_counts = {
+        row[0]: int(row[1])
+        for row in db.execute(
+            "SELECT gated_level,COUNT(*) FROM function_research_progress "
+            "WHERE build_id=? GROUP BY gated_level", (BUILD_ID,)
+        )
+    }
+    return {
+        "function_indexed": len(rows),
+        "function_analysis_records": int(db.execute(
+            "SELECT COUNT(*) FROM function_analysis_runs a JOIN function_inventory f ON f.id=a.function_id "
+            "WHERE f.build_id=? AND a.is_current=1",
+            (build_row_id,),
+        ).fetchone()[0]),
+        "function_claims": int(db.execute(
+            "SELECT COUNT(*) FROM function_claims c JOIN function_inventory f ON f.id=c.function_id "
+            "WHERE f.build_id=? AND c.is_current=1",
+            (build_row_id,),
+        ).fetchone()[0]),
+        "function_superseded_analysis_records": int(db.execute(
+            "SELECT COUNT(*) FROM function_analysis_runs a JOIN function_inventory f ON f.id=a.function_id "
+            "WHERE f.build_id=? AND a.is_current=0",
+            (build_row_id,),
+        ).fetchone()[0]),
+        "function_superseded_claims": int(db.execute(
+            "SELECT COUNT(*) FROM function_claims c JOIN function_inventory f ON f.id=c.function_id "
+            "WHERE f.build_id=? AND c.is_current=0",
+            (build_row_id,),
+        ).fetchone()[0]),
+        "function_edges": int(db.execute(
+            "SELECT COUNT(*) FROM function_edges e JOIN function_inventory f ON f.id=e.source_function_id WHERE f.build_id=?",
+            (build_row_id,),
+        ).fetchone()[0]),
+        "function_runtime_records": int(db.execute(
+            "SELECT COUNT(*) FROM function_runtime_evidence r JOIN function_inventory f ON f.id=r.function_id WHERE f.build_id=?",
+            (build_row_id,),
+        ).fetchone()[0]),
+        **{f"functions_{level}": level_counts.get(level, 0) for level in ("L0", "L1", "L2", "L3", "L4")},
+    }
+
+
 def sync() -> dict[str, int]:
-    counts = {"experiments": 0, "functions": 0, "edges": 0, "hypotheses": 0}
+    counts = {"experiments": 0, "curated_functions": 0, "edges": 0, "hypotheses": 0}
     with connect() as db:
         db.execute(
             "INSERT INTO game_build(app_id, build_id, executable_sha256, architecture) "
             "VALUES(?,?,?,?) ON CONFLICT(app_id, build_id, executable_sha256) DO NOTHING",
             ("217980", BUILD_ID, EXECUTABLE_SHA256, "x86"),
         )
+        build_row_id = int(db.execute(
+            "SELECT id FROM game_build WHERE app_id=? AND build_id=? AND executable_sha256=?",
+            ("217980", BUILD_ID, EXECUTABLE_SHA256),
+        ).fetchone()[0])
 
         for path in sorted(EXPERIMENTS.glob("EXP-*.md")):
             text = path.read_text(encoding="utf-8")
             meta = parse_frontmatter(text)
-            parts = path.stem.split("-")
-            key = meta.get("id") or (f"{parts[0]}-{parts[1]}" if len(parts) >= 2 else path.stem)
+            if not meta.get("id"):
+                raise ValueError(f"experiment lacks required YAML frontmatter id: {path}")
+            key = meta["id"]
             title = meta.get("title") or path.stem
             experiment_status = meta.get("experiment_status") or meta.get("status") or "done"
             claim_status = meta.get("claim_status") or "observed"
@@ -178,6 +473,19 @@ def sync() -> dict[str, int]:
                 )
             counts["experiments"] += 1
 
+        active_paths = {
+            str(path.relative_to(ROOT)).replace("\\", "/") for path in EXPERIMENTS.glob("EXP-*.md")
+        }
+        for (experiment_id, path) in db.execute(
+            "SELECT id,path FROM experiments WHERE path LIKE 'experiments/%'"
+        ).fetchall():
+            if path not in active_paths:
+                db.execute(
+                    "UPDATE experiments SET status='superseded',experiment_status='superseded',"
+                    "claim_status='superseded' WHERE id=?",
+                    (experiment_id,),
+                )
+
         for module, address, name, summary, exp, confidence, status in FUNCTIONS:
             db.execute(
                 "INSERT INTO functions(module, name, address, summary, source, confidence, status, experiment_key) "
@@ -187,7 +495,7 @@ def sync() -> dict[str, int]:
                 "confidence=excluded.confidence, status=excluded.status, experiment_key=excluded.experiment_key",
                 (module, name, address, summary, exp, confidence, status, exp),
             )
-            counts["functions"] += 1
+            counts["curated_functions"] += 1
 
         for edge_key, source, target, status, summary, exp in EDGES:
             existing = db.execute(
@@ -223,6 +531,8 @@ def sync() -> dict[str, int]:
                     (title, claim, scope, confidence, status, exp),
                 )
             counts["hypotheses"] += 1
+
+        counts.update(sync_function_evidence(db, build_row_id))
 
         db.commit()
     return counts
