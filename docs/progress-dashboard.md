@@ -41,8 +41,8 @@ This is a conceptual research workflow, not a claim that every result has passed
 | Install manifest | 13,623 paths | Recorded local snapshot; not every path was rehashed in the same experiment |
 | Installed UPKs | 904 / 904 | Path/size/hash matched to package manifest |
 | Internal functions indexed | 72,437 / 72,437 | Indexing is L0, not semantic review |
-| Manual function body reviews | 247 / 72,437 | 247 unique addresses in the cumulative overlay through EXP-0205, including eight historical reviews reconciled from EXP-0158; this measures body review, not semantic recovery |
-| Derived ledger snapshot | L0=72,183; L1=250; L2=4; L3=0; L4=0 | EXP-0205 sync snapshot; generated local DB view, not an independently portable export |
+| Manual function body reviews | 248 / 72,437 | 248 unique addresses in the cumulative overlay through EXP-0206, including eight historical reviews reconciled from EXP-0158; this measures body review, not semantic recovery |
+| Derived ledger snapshot | L0=72,182; L1=251; L2=4; L3=0; L4=0 | EXP-0206 sync snapshot; generated local DB view, not an independently portable export |
 | Non-empty localized AKPK | 4,056 / 4,056 | Three of 4,059 inventoried files were empty placeholders |
 | PCK WEM decode | 1,908 / 1,908 | Decoder acceptance; perceptual correctness and in-game selection remain open |
 | Bink full-stream decode | 76 / 76 | Decoded to null sink; quality and runtime selection remain open |
