@@ -2,12 +2,25 @@
 
 This is the project entry point, not evidence that every candidate subsystem has been investigated.
 
+## Visual navigation
+
+- [Visual progress dashboard](progress-dashboard.md)
+- [Build and installation baseline](progress/build-and-installation.md)
+- [Packages and formats](progress/packages-and-formats.md)
+- [Blink / gameplay reverse engineering](progress/gameplay-and-blink.md)
+- [Native code analysis](progress/native-code.md)
+- [Audio and media](progress/audio-and-media.md)
+- [Tooling and automation](progress/tooling-and-automation.md)
+- [Collaboration and review](progress/collaboration-and-review.md)
+
 ## Orientation
+- [Visual progress dashboard](progress-dashboard.md) — current state by research direction, with denominators and open questions
 - [Current verified status](research-status.md)
 - [Published experiments, build record and function evidence](published-evidence.md)
 - [New contributor onboarding](onboarding.md)
 - [Research backlog](backlog.md)
 - [Roadmap and evidence gates](roadmap.md)
+- Workstream details: [build and installation](progress/build-and-installation.md), [packages and formats](progress/packages-and-formats.md), [gameplay and Blink](progress/gameplay-and-blink.md), [native code](progress/native-code.md), [audio and media](progress/audio-and-media.md), [tooling and automation](progress/tooling-and-automation.md), [collaboration and review](progress/collaboration-and-review.md)
 - [Architecture map](architecture/overview.md)
 - [Glossary](glossary.md)
 

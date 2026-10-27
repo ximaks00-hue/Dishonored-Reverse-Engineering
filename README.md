@@ -7,12 +7,32 @@ Community-oriented, evidence-led research into **Dishonored (Windows)**, coverin
 ## Why this project exists
 Build a searchable, reproducible account of how selected game systems work, with documented uncertainty and independent behavioral models. **This is not a claim of recreating the complete game.** The project does not distribute game data and is not affiliated with the rights holders.
 
+## Research progress dashboard
+
+Progress is tracked by research direction, not by one project-wide completion percentage. Each direction has its own denominator, evidence model, and open questions.
+
+> See the [visual progress dashboard](docs/progress-dashboard.md) for the current snapshot and detailed workstream pages.
+
+| Direction | Status | Current evidence |
+| --- | --- | --- |
+| Build and installation baseline | Established | Steam x86 build identified; 904/904 UPKs reconciled |
+| Packages and file formats | Strong | Package catalogs and selected format parsers cover large cohorts |
+| Config and path analysis | Active | Filesystem candidates recorded; runtime resolution remains open |
+| Blink and gameplay | Active | Conditional static paths documented; runtime bridge remains open |
+| Native code | Early-to-mid | 72,437 indexed; 47 manual body reviews; portable export has 54 analysis records |
+| Audio and media | Strong | PCK/WEM, AKPK, HIRC, and Bink cohorts have scoped coverage |
+| Tooling and automation | Strong | Validators, CI, schemas, tests, and portable coverage export |
+| Collaboration and review | Active | Tasks, onboarding, templates, and independent-review process |
+
+Inventory or parser coverage does not imply semantic understanding. See the dashboard for denominators, evidence boundaries, and linked source records.
+
 ## Participate
 **New contributor?** Pick a [small task](docs/contributor-tasks.md), then read [onboarding](docs/onboarding.md) and [CONTRIBUTING](CONTRIBUTING.md). The [contributor playbook](docs/contributor-playbook.md) includes worked examples and the independent review process. You can help with documentation, verification, synthetic test cases and code without owning the game. Propose a [research question](https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/issues/new/choose) or improve an existing issue.
 
 ## Navigation
 | Goal | Document |
 | --- | --- |
+| View research progress by direction | [Progress dashboard](docs/progress-dashboard.md) |
 | Learn what has actually been verified | [Research status](docs/research-status.md) |
 | Browse published experiments, build identity and native-function records | [Published evidence index](docs/published-evidence.md) |
 | Understand project organization | [Handbook](docs/index.md) and [architecture](docs/architecture/overview.md) |

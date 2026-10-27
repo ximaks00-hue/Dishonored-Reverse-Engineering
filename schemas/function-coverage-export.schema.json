@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/blob/main/schemas/function-coverage-export.schema.json",
+  "title": "Portable function coverage export",
+  "description": "Provenance manifest and metrics derived from Git-tracked function index and evidence artifacts.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "metric_scope",
+    "build",
+    "generated_by",
+    "source_records",
+    "inputs",
+    "measurements",
+    "per_function_export",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "metric_scope": { "type": "string", "minLength": 1 },
+    "build": {
+      "type": "object",
+      "required": ["app_id", "build_id", "architecture", "module", "image_base", "executable_sha256"],
+      "properties": {
+        "app_id": { "type": "string" },
+        "build_id": { "type": "string" },
+        "architecture": { "type": "string" },
+        "module": { "type": "string" },
+        "image_base": { "type": "string" },
+        "executable_sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "generated_by": {
+      "type": "object",
+      "required": ["tool", "version", "sha256"],
+      "properties": {
+        "tool": { "type": "string" },
+        "version": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "source_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "sha256", "claim_status"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^EXP-[0-9]{4}$" },
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+          "claim_status": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+          "rows": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "measurements": {
+      "type": "object",
+      "required": ["denominator", "analysis", "semantic_claims", "portable_highest_known_level", "unpublished_levels", "triage_baseline"],
+      "properties": {
+        "denominator": { "type": "integer", "minimum": 1 },
+        "analysis": {
+          "type": "object",
+          "required": ["indexed_only", "analyzed", "manual_review_overlay", "curated_records"],
+          "properties": {
+            "indexed_only": { "type": "integer", "minimum": 0 },
+            "analyzed": { "type": "integer", "minimum": 0 },
+            "manual_review_overlay": { "type": "integer", "minimum": 0 },
+            "curated_records": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "semantic_claims": {
+          "type": "object",
+          "required": ["confirmed", "other_claims", "no_portable_claim"],
+          "properties": {
+            "confirmed": { "type": "integer", "minimum": 0 },
+            "other_claims": { "type": "integer", "minimum": 0 },
+            "no_portable_claim": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "portable_highest_known_level": {
+          "type": "object",
+          "required": ["L0", "L1", "L2"],
+          "properties": {
+            "L0": { "type": "integer", "minimum": 0 },
+            "L1": { "type": "integer", "minimum": 0 },
+            "L2": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "unpublished_levels": {
+          "type": "array",
+          "items": { "enum": ["L3", "L4"] }
+        },
+        "triage_baseline": {
+          "type": "object",
+          "required": ["unknown_subsystem", "symbol_name_candidates"],
+          "properties": {
+            "unknown_subsystem": { "type": "integer", "minimum": 0 },
+            "symbol_name_candidates": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "per_function_export": {
+      "type": "object",
+      "required": ["path", "sha256", "rows", "columns"],
+      "properties": {
+        "path": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+        "rows": { "type": "integer", "minimum": 1 },
+        "columns": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

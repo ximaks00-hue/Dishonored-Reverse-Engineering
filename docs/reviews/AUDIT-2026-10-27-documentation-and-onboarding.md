@@ -31,7 +31,7 @@ These checks validate links and record structure. They do not certify research c
 
 1. The headless decompilation cache is keyed by normalized function address and checks build ID / executable SHA, but it does not invalidate on Ghidra version, analysis options, or project-analysis revision. See `mcp_servers/common/decompile_cache.py` and [the function evidence model](../methodology/function-evidence-model.md).
 2. The L4 progress view recognizes a replicated, confirmed runtime record but does not compare that record's `build_sha256` with the executable SHA joined to the indexed function. A future runtime importer should enforce identity before the view can count L4.
-3. The knowledge sync needs the exact local executable and function index to rebuild function coverage. The derived SQLite mirror is ignored by Git; repository-only CI cannot independently reproduce L0–L4 counts.
+3. **Resolved for portable coverage, with a defined boundary:** a committed per-function CSV and provenance manifest are reproducible from repository inputs and do not depend on the derived SQLite mirror. They expose repository-published L0–L2 evidence; L3/L4 remain unpublished. Exact re-indexing still requires the local executable and analysis data.
 4. `tools/validate_experiments.py` uses a small line-oriented frontmatter parser and path-link regex rather than a complete YAML/Markdown parser. It is adequate for current records but does not validate full YAML syntax or all link forms.
 5. Runtime evidence remains zero; 47 of 72,437 indexed bodies have manual body reviews, and the exact-build function unknown bucket remains large. See [coverage](../coverage.md) and [roadmap](../roadmap.md).
 6. The GitHub research corpus is carried on a long stacked draft-PR history. Branch integration still needs a reviewed rebase/merge plan; this review does not merge or retarget PRs.
@@ -45,5 +45,5 @@ These checks validate links and record structure. They do not certify research c
 3. **Done:** repository visibility is public and the `main` protection rules above are active. Invite collaborators only by explicit GitHub username and agreed permission.
 4. Add an evidence-manifest format for generated catalogs (EXP/source hashes, build, tool/options, row count, and reproduction command) and adopt it for new outputs before migrating old artifacts.
 5. Correct decompile-cache invalidation and L4 build matching with negative cross-build cases; do not relabel existing evidence automatically.
-6. Publish a compact coverage export that can be regenerated from validated metadata without requiring game binaries; keep exact-build re-indexing as a separate local operation.
+6. **Done:** [portable function coverage export](../../research/executable/evidence/function-triage/function-coverage-EXP-0155.json) is regenerated from validated repository metadata and checked in CI. It explicitly leaves L3/L4 unpublished.
 7. Continue priority-driven reverse engineering from the [roadmap](../roadmap.md). Preserve runtime and semantic gaps in the status instead of implying completion from inventory counts.

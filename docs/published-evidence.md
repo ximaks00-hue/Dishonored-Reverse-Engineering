@@ -18,6 +18,8 @@ This index points to source records and machine-readable outputs committed with 
 ## Native functions
 
 - [EXP-0072](../experiments/EXP-0072-exact-build-internal-function-subsystem-triage.md) defines the 72,437-function exact-build index and conservative triage limits; [the catalog](../research/executable/evidence/function-triage/internal-function-triage.csv) keeps unknowns explicit.
+- The portable [per-function coverage CSV](../research/executable/evidence/function-triage/function-coverage-EXP-0155.csv) and [provenance manifest](../research/executable/evidence/function-triage/function-coverage-EXP-0155.json) can be regenerated from committed inputs with `python tools/export_function_coverage.py`; CI checks them with `--check`. They do not require the game executable, Ghidra, or SQLite. L3/L4 are explicitly unpublished in this export.
+- The seven source-backed semantic records are in the [curated claims registry](../research/executable/evidence/function-triage/curated-function-claims-EXP-0155.json), rather than embedded in importer code.
 - [Cumulative manual review overlay through EXP-0155](../research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0155.csv) contains 47 build-scoped body-review records. Review means static body analysis, not runtime verification or automatic semantic recovery.
 - [EXP-0139](../experiments/EXP-0139-native-class-table-zero-token-handler-join.md) documents a 254-address candidate catalog created from class-table pointer edges and exact UELib export joins. Those joins alone are not proof of native ownership or dispatch.
 - [EXP-0140–0155](../experiments/) record selected native body reviews, owners/slots still unresolved, and inference limits.

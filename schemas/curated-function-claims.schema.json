@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/blob/main/schemas/curated-function-claims.schema.json",
+  "title": "Curated exact-build function claims",
+  "description": "Portable source rows consumed by the derived research database and coverage export.",
+  "type": "object",
+  "required": ["schema_version", "app_id", "build_id", "executable_sha256", "module", "records"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "app_id": { "const": "217980" },
+    "build_id": { "type": "string", "minLength": 1 },
+    "executable_sha256": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "module": { "type": "string", "minLength": 1 },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["address", "name", "summary", "experiment", "confidence", "claim_status"],
+        "properties": {
+          "address": { "type": "string", "pattern": "^0x[0-9A-Fa-f]{8}$" },
+          "name": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "experiment": { "type": "string", "pattern": "^EXP-[0-9]{4}$" },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "claim_status": { "enum": ["confirmed", "observed", "inferred", "unknown", "superseded", "rejected"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
