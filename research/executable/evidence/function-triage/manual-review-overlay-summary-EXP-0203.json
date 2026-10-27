@@ -1,0 +1,49 @@
+{
+  "experiment": "EXP-0203",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "functions_indexed": 72437,
+  "prior_cumulative_reviewed": 228,
+  "new_body_reviews": 6,
+  "cumulative_reviewed": 234,
+  "whole_index_reviewed_percent": 0.323039,
+  "exp0139_candidate_target_set": 254,
+  "exp0139_reviewed": 148,
+  "exp0139_remaining": 106,
+  "fully_decoded_bodies": 6,
+  "normalized_groups": {
+    "106_byte_pair_1": [
+      "0059BA90",
+      "0059BC50"
+    ],
+    "105_byte_single": [
+      "0059BBE0"
+    ],
+    "106_byte_pair_2": [
+      "0059BB00",
+      "0059BB70"
+    ]
+  },
+  "direct_call_edges": {
+    "selected_functions_to_00428B50": 6,
+    "callers_to_00594DE0": 5
+  },
+  "callgraph_returned_incoming_rows": {
+    "00594DE0": 14,
+    "00428B50": 50
+  },
+  "callgraph_cap_rows": {
+    "00428B50": 50
+  },
+  "semantic_claims_added": 0,
+  "runtime_verified_added": 0,
+  "functions_csv_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "previous_cumulative_csv_sha256": "63D4D17A9C3A8B8595395CC6E657E8D3E83852F1EBE4AE1AEB42D06F3F3E724E",
+  "evidence_csv_sha256": "32224DCBC3BC8B78B42D6E79F6928851BFEEA8ECE44C096E8F598A0773B50764",
+  "cumulative_csv_sha256": "6240A29DC41982EB37C8D22BF2ED09A6DF7A3B6671D3B74343854294CE5628DA",
+  "tooling": {
+    "capstone": "5.0.7",
+    "pefile": "2024.8.26",
+    "python": "3.12"
+  }
+}
