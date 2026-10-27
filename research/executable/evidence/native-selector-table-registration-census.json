@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-10-27T11:30:57.732894+00:00",
+  "build_id": "10256413",
+  "executable_sha256": "66443f3d68a6c658b0ed943260c3eb2f4cc9e3400d5809a94d6ec41eb725e17e",
+  "inputs": {
+    "executable": {
+      "path": "Dishonored RHCP/Binaries/Win32/Dishonored.exe",
+      "sha256": "66443f3d68a6c658b0ed943260c3eb2f4cc9e3400d5809a94d6ec41eb725e17e"
+    },
+    "function_index": {
+      "path": "research/executable/functions.csv",
+      "sha256": "d260b168f863e6b4b592a8f57c959d204052fc67e6151c1c42ffecddf124eef9",
+      "rows": 72437
+    },
+    "native_token_catalog": {
+      "path": "research/executable/evidence/native-token-dispatch-catalog.csv",
+      "sha256": "fb0b9e82567ce2c38f4c26f330fa55962f6b19333853eb32e851fc0978d86175",
+      "rows": 207
+    },
+    "build_record": {
+      "path": "research/builds/BUILD-STEAM-10256413/build.md",
+      "sha256": "83bac00a21ec5feb8a17aa9ad34580ba61683f31f54ef4e49725842f6e46f036"
+    }
+  },
+  "tool": {
+    "path": "tools/scan_native_selector_table.py",
+    "sha256": "a6ba311e4c2f096f70861c0459fc223219ba938954663a7bc2a632592ff445ae",
+    "python": "3.12.10",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7",
+    "command": "python tools/scan_native_selector_table.py"
+  },
+  "analysis": {
+    "table_va": "0x014068F0",
+    "initializer_va": "0x00426C60",
+    "indexed_function_count": 72437,
+    "table_operand_reference_count": 3276,
+    "table_referencing_function_count": 1595,
+    "table_operand_access_counts": {
+      "cmp:read": 1,
+      "mov:read": 3274,
+      "mov:write": 1
+    },
+    "direct_initializer_call_count": 1082,
+    "sentinel_initializer_call_count": 1049,
+    "non_sentinel_registration_call_count": 33,
+    "distinct_non_sentinel_token_count": 33,
+    "uelib_engine_distinct_nonzero_native_token_count": 33,
+    "registration_tokens_equal_uelib_engine_tokens": true,
+    "distinct_second_argument_pointer_cell_count": 1082,
+    "second_argument_cells_contiguous_by_4_bytes": true,
+    "registration_row_count": 33,
+    "exact_uelib_token_target_match_row_count": 33
+  },
+  "outputs": {
+    "registration_census": {
+      "path": "research/executable/evidence/native-selector-table-registration-census.csv",
+      "sha256": "0cbd0dad32d16a46e88b00f80a9b8d664add3c8c537279ed13107cf49ef64ab7",
+      "rows": 33
+    }
+  },
+  "limits": [
+    "The call-site census includes direct calls found while disassembling indexed function bodies.",
+    "Static call sites and pointer writes do not prove runtime execution of the registration wrappers.",
+    "Exact token/target joins to EXP-0066 establish static address correspondence, not runtime dispatch or gameplay reachability."
+  ]
+}

@@ -42,7 +42,7 @@ Completion gates:
 
 | Priority | Work package | Starting evidence | Next useful result |
 | --- | --- | --- | --- |
-| 1 | Recover owners and dataflow around shared native registration and dispatch | EXP-0066/0067/0075/0076, EXP-0137–0159 | Trace the owner/use of `FUN_0046E5C0` output `[EBX+0x9C]` and establish whether `[EBX+0x84]` is the UELib `NativeToken`; keep that cross-layer join inferred until the field/table mapping is proven; separate `NativeToken` declarations from `NativeFlag=true, NativeToken=0` class-table joins |
+| 1 | Recover owners and dataflow around shared native registration and dispatch | EXP-0066/0067/0075/0076, EXP-0137–0160 | Trace the owner/use of `FUN_0046E5C0` output `[EBX+0x9C]`; identify whether `[EBX+0x84]` maps to the selector table; trace startup reachability for the 33 statically matched Engine token registrations and extend the same audit to Core tokens; keep runtime claims separate; distinguish `NativeToken` declarations from `NativeFlag=true, NativeToken=0` class-table joins |
 | 2 | Close high-value Blink activation gaps | [Activation graph](gameplay/blink/activation-graph.md), EXP-0027–0037, EXP-0043–0051 | Identify a discriminating caller/receiver or scheduler edge for E7; preserve E8 as open/weakened and E9 as rejected-as-UsePower |
 | 3 | Expand native function understanding by connected clusters | [Coverage snapshot](coverage.md), EXP-0072 and current manual overlay | Rank candidates by missing relationships, repeated class edges, and falsifiable hypotheses; do not scan by address order |
 | 4 | Continue package, resource, and configuration closure | EXP-0063–0105, EXP-0112–0136 | Resolve high-impact parser gaps and cross-layer candidates with independent checks and explicit parser limits |
@@ -63,4 +63,4 @@ These project-delivery tasks remain open alongside reverse engineering:
 
 ## Experiment range
 
-The current source corpus contains [EXP-0001 through EXP-0159](../experiments/). New experiments use the [template](../templates/experiment.md), and the repository validator checks IDs, statuses, and local references.
+The current source corpus contains [EXP-0001 through EXP-0160](../experiments/). New experiments use the [template](../templates/experiment.md), and the repository validator checks IDs, statuses, and local references.
