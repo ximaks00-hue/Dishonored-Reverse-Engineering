@@ -56,6 +56,17 @@ class ResearchDocsLinksTests(unittest.TestCase):
             self.assertEqual(len(failures), 1)
             self.assertIn("link escapes repository", failures[0])
 
+    def test_allows_missing_documented_local_only_artifacts(self) -> None:
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "experiments").mkdir()
+            (root / "experiments" / "EXP-0001.md").write_text(
+                "[binary](../tools/ue-package-decompressor/decompress.exe) "
+                "[output](../assets/extracted/result/data.json)\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(check_links(root), [])
+
 
 if __name__ == "__main__":
     unittest.main()

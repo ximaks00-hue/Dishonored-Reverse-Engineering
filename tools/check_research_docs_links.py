@@ -95,13 +95,17 @@ def local_link_failures(root: Path, path: Path) -> list[str]:
             continue
         resolved = (path.parent / relative_path).resolve()
         try:
-            resolved.relative_to(root)
+            repository_relative = resolved.relative_to(root).as_posix()
         except ValueError:
             failures.append(
                 f"{path.relative_to(root)}:{line_number}: link escapes repository: {destination}"
             )
             continue
         if not resolved.exists():
+            # These are documented local inputs/generated outputs excluded by
+            # .gitignore. Their absence from a clean GitHub checkout is expected.
+            if repository_relative.startswith("assets/extracted/") or repository_relative == "tools/ue-package-decompressor/decompress.exe":
+                continue
             failures.append(
                 f"{path.relative_to(root)}:{line_number}: missing local target: {destination}"
             )

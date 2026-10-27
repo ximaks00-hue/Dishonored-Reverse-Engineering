@@ -40,7 +40,7 @@ These checks validate links and record structure. They do not certify research c
 
 ## Follow-up order
 
-1. Recover missing earlier local experiment sources before claiming they are represented on GitHub. EXP-0114 and other historically referenced records were absent from the available checkout during the audit; no contents were reconstructed from summaries. Track them as source-recovery work until the original files are recovered.
+1. Research branch `codex/research-corpus-sync` contains EXP-0001–0155, including EXP-0114. The current `main` branch has no experiment directory because the corpus is still in stacked draft PRs. Integrate that reviewed PR stack before saying the experiment corpus is available from the default branch; do not reconstruct any other historical sources that are not present.
 2. Verify a successful GitHub Actions run for the corrected CI on the final commit; local validation alone is not CI evidence.
 3. Upgrade the private repository plan or make the repository public before enabling and verifying `main` protection and required checks. Add collaborators only by explicit GitHub username and agreed permission.
 4. Add an evidence-manifest format for generated catalogs (EXP/source hashes, build, tool/options, row count, and reproduction command) and adopt it for new outputs before migrating old artifacts.
