@@ -2,6 +2,22 @@
 
 **Status: broad static coverage with format-specific limits.** Counts here describe inventories, parser passes, or selected validations; none is a universal measure of semantic understanding.
 
+## Visual map
+
+```mermaid
+flowchart LR
+  BUILD["Build and file manifest"] --> UPK["904 UPKs<br/>UModel / UELib catalogs"]
+  BUILD --> CONFIG["Config declarations<br/>filesystem candidates"]
+  BUILD --> AKPK["4,056 non-empty AKPK<br/>table parsing + scoped cross-check"]
+  BUILD --> MEDIA["PCK / WEM / Bink<br/>corpus parsing and decode"]
+  UPK --> OPEN["Open: payload semantics<br/>and game-side use"]
+  CONFIG --> OPEN
+  AKPK --> OPEN
+  MEDIA --> OPEN
+```
+
+The common build node indicates scope and provenance. The paths do not imply that these formats share runtime dependencies.
+
 ## Unreal packages
 
 - 904/904 installed UPKs have package metadata and export catalogs; the census reports 2,885,414 exports. Seventeen packages contain name-fixing warnings; no package-open errors were reported (EXP-0052/0053).

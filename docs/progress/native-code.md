@@ -2,6 +2,18 @@
 
 **Status: early semantic coverage over a complete published index.** Indexing all functions provides a denominator; it does not mean all functions have been analyzed or understood.
 
+## Visual coverage
+
+```mermaid
+flowchart LR
+  INDEX["Indexed L0<br/>72,437"] --> REVIEW["Portable analysis records<br/>54 total"]
+  REVIEW --> L1["L1 only<br/>50"]
+  REVIEW --> L2["L2 confirmed claims<br/>4"]
+  LIMIT["L3 connected / L4 runtime"] -. "not exported; not asserted zero in local SQLite" .-> REVIEW
+```
+
+The counts show the highest level recoverable from published inputs, not the state of every ignored local database.
+
 ## Current counts
 
 - 72,437 exact-build internal functions in the published index (EXP-0041/0072).

@@ -4,6 +4,24 @@
 
 ## Current model
 
+### Visual map
+
+```mermaid
+flowchart LR
+  INPUT["Player input / event"] -. "caller not identified" .-> C134["UsePower +0x134"]
+  C134 -->|"confirmed static for documented receiver"| B174["Blink +0x174"]
+  B174 -->|"confirmed static"| B1AC["Blink +0x1AC"]
+  C184["UsePower +0x184"] -->|"conditional"| COMP["Context component +0x168"]
+  COMP -->|"class / guards required"| B168["Blink +0x168 path"]
+  B168 -->|"conditional"| B1AC
+  TICK["Blink +0x13C"] -. "engine scheduler caller unknown" .-> VCALL["virtual +0x1B0"]
+  VCALL -->|"same-receiver fields confirmed"| B1AC
+  B1AC -->|"gated mode transition"| POS["Pawn position writes"]
+  UI["PowerWheel / UI selection"] -. "no proven activation edge" .-> INPUT
+```
+
+Solid arrows represent the cited static relationships; dashed arrows mark unresolved bridges. The graph is intentionally narrower than a complete gameplay execution trace. See the [full activation graph](../gameplay/blink/activation-graph.md) for statuses, conditions, and rejected paths.
+
 The [Blink activation graph](../gameplay/blink/activation-graph.md) keeps UI selection, `UsePower`, Blink movement, the Transversal subclass, open callers, and rejected alternatives in separate evidence groups. For example, `UsePower +0x134` to Blink `+0x1AC` is statically confirmed for the documented receiver conditions (EXP-0028); some `+0x184` component paths are conditional (EXP-0048). The graph does not collapse PowerWheel item `24`, UI enum `2`, active-array index `0`, or `_iPower` into one identifier.
 
 The graph currently labels E1–E3, E5–E6 and E5a–E5b as confirmed or conditionally confirmed; E4/E7/E8/E10 remain open, and E9 is rejected as the UsePower activation route. See the graph's edge table for exact claim wording and cited EXPs.

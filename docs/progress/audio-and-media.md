@@ -2,6 +2,23 @@
 
 **Status: strong corpus parsing and selected decode coverage; runtime meaning remains open.** Successful parsing or decoder acceptance is not the same as correct playback or a proven game-side dependency.
 
+## Visual coverage map
+
+```mermaid
+flowchart TB
+  PCK["503 PCK files"] --> TABLE["2,411 bank / sound entries<br/>independent table cross-check"]
+  TABLE --> WEM["1,908 WEM entries decoded<br/>vgmstream r2023"]
+  PCK --> HIRC["wwiser HIRC catalogs<br/>objects and static relations"]
+  AKPK["4,056 non-empty localized AKPK"] --> BANKS["2,570 unique banks<br/>12,112 sound occurrences"]
+  BANKS --> HIRC
+  BINK["76 Bink files"] --> DECODE["76 / 76 decoded to null sink<br/>FFmpeg 9.0.1"]
+  WEM -. "perceptual correctness / game selection open" .-> RUNTIME["Runtime playback semantics"]
+  HIRC -. "event resolution / invocation open" .-> RUNTIME
+  DECODE -. "quality / track selection open" .-> RUNTIME
+```
+
+The diagram separates container/table parsing, payload decoding, HIRC relations, and runtime behavior. It does not claim the three asset groups converge on the same playback path.
+
 ## Measured coverage
 
 - 503 PCK files and 2,411 embedded bank/sound rows were cataloged; a separate Python parser matched the QuickBMS catalog's paths, offsets, and sizes (EXP-0119/0120).

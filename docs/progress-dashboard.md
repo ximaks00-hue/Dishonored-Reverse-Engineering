@@ -19,6 +19,23 @@ This dashboard summarizes research by direction. It does not combine unlike work
 | Tooling and automation | Reproducibility improving | Repository validators, schemas, CI, and a portable function coverage export | Extend provenance and checks to more generated catalogs and analysis versions | [Tooling and automation](progress/tooling-and-automation.md) |
 | Collaboration and review | Ready for scoped contributions | Onboarding, small tasks, templates, evidence policy, and independent-review workflow | More independent reproductions and contributor participation | [Collaboration and review](progress/collaboration-and-review.md) |
 
+## Visual overview
+
+The diagram shows the project's evidence workflow, not a completion funnel. Each stream has its own denominator and may stop at a different evidence layer.
+
+```mermaid
+flowchart LR
+  BUILD["Build identity<br/>Steam x86 10256413"] --> SOURCES["Versioned source artifacts<br/>manifest · packages · executable"]
+  SOURCES --> EXP["Experiments<br/>method · observations · limits"]
+  EXP --> STATIC["Static evidence<br/>catalogs · parsers · function review"]
+  STATIC --> MODELS["Subsystem models<br/>Blink · audio · package relations"]
+  MODELS -. "requires separate baseline and observation" .-> RUNTIME["Runtime evidence<br/>currently no published L4 function records"]
+  EXP --> PROVENANCE["Reproducibility<br/>hashes · tools · schemas · CI"]
+  PROVENANCE -. "independent work by another researcher" .-> REVIEW["Independent review"]
+```
+
+The arrows summarize the research workflow. They do not claim that every source has been independently reproduced or that every subsystem model has runtime support.
+
 ## Measured corpus snapshot
 
 | Measure | Current value | What the number means |
