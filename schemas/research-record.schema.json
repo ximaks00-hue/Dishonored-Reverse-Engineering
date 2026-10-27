@@ -15,7 +15,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^(FIND|OBS|HYP|EXP)-[A-Z0-9-]+$"
+      "pattern": "^(FIND|OBS|HYP|EXP)-[0-9]{4}$"
     },
     "kind": {
       "enum": [
@@ -139,6 +139,26 @@
   },
   "additionalProperties": false,
   "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "finding" } }, "required": ["kind"] },
+      "then": { "properties": { "id": { "pattern": "^FIND-" } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "observation" } }, "required": ["kind"] },
+      "then": { "properties": { "id": { "pattern": "^OBS-" } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "hypothesis" } }, "required": ["kind"] },
+      "then": { "properties": { "id": { "pattern": "^HYP-" } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "experiment" } }, "required": ["kind"] },
+      "then": { "properties": { "id": { "pattern": "^EXP-" } } }
+    },
+    {
+      "if": { "required": ["confidence"] },
+      "then": { "required": ["calibration_reference"] }
+    },
     {
       "if": {
         "properties": {
