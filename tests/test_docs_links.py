@@ -38,7 +38,7 @@ class ResearchDocsLinksTests(unittest.TestCase):
             (root / "docs").mkdir()
             fence = chr(96) * 3
             (root / "docs" / "example.md").write_text(
-                fence + "md\\n[example](../../outside.txt)\\n" + fence + "\\n"
+                chr(10).join([fence + "md", "[example](../../outside.txt)", fence])
             )
             self.assertEqual(check_links(root), [])
 
