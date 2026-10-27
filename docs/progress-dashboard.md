@@ -12,7 +12,7 @@ This is a reverse-engineering research corpus, not a feature roadmap for a conve
 | Packages and formats | **Strong** | UPK object catalogs and scoped UELib/format studies; 4,056 non-empty AKPK files parsed | Payload meaning, unknown objects, and runtime selection | [Coverage](coverage.md), [baseline findings](findings/baseline.md) |
 | Config and paths | **Active** | EXP-0114 records filesystem candidates under tested roots | Which root/load order the game actually uses | [EXP-0114](../experiments/EXP-0114-config-path-candidate-audit.md), [EXP-0136](../experiments/EXP-0136-configured-map-and-package-name-joins.md) |
 | Blink and gameplay | **Active** | Conditional static activation edges are documented; alternatives remain separate | Dynamic caller/scheduler bridge and runtime behavior | [Activation graph](gameplay/blink/activation-graph.md), [Blink findings](findings/blink-native.md) |
-| Native code | **Early-to-mid** | 72,437 indexed functions; 234 manual body reviews; 4 L2 claims; 0 L3/L4; 17 Core target boundary candidates recovered statically | Ownership, operator semantics, and runtime dataflow remain open | [Function evidence model](methodology/function-evidence-model.md), [triage catalog](../research/executable/evidence/function-triage/README.md) |
+| Native code | **Early-to-mid** | 72,437 indexed functions; 239 manual body reviews; 4 L2 claims; 0 L3/L4; 17 Core target boundary candidates recovered statically | Ownership, operator semantics, and runtime dataflow remain open | [Function evidence model](methodology/function-evidence-model.md), [triage catalog](../research/executable/evidence/function-triage/README.md) |
 | Audio and media | **Strong** | PCK/AKPK, HIRC, WEM, and Bink parser/decode cohorts | Event meaning, playback selection, and runtime semantics | [Coverage](coverage.md) |
 | Tooling and automation | **Strong** | Validators, experiment schemas, CI, and local research tooling | Cache identity and portable provenance across more outputs | [Tooling overview](tooling/mcp.md), [audit](reviews/AUDIT-2026-10-27-documentation-and-onboarding.md) |
 | Collaboration and review | **Active** | Contributor guide and review workflow | Independent reproductions and broader participation | [Contributing](../CONTRIBUTING.md), [review workflow](methodology/workflow.md) |
@@ -36,13 +36,13 @@ This is a conceptual research workflow, not a claim that every result has passed
 
 | Measure | Value | Scope |
 | --- | ---: | --- |
-| Published experiments | 203 | EXP-0001–0203; corpus size does not measure completeness |
+| Published experiments | 204 | EXP-0001–0204; corpus size does not measure completeness |
 | Registered executable | Steam x86 build `10256413` | SHA-256 `66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E` |
 | Install manifest | 13,623 paths | Recorded local snapshot; not every path was rehashed in the same experiment |
 | Installed UPKs | 904 / 904 | Path/size/hash matched to package manifest |
 | Internal functions indexed | 72,437 / 72,437 | Indexing is L0, not semantic review |
-| Manual function body reviews | 234 / 72,437 | 234 unique addresses in the cumulative overlay through EXP-0203; this measures body review, not semantic recovery |
-| Derived ledger snapshot | L0=72,196; L1=237; L2=4; L3=0; L4=0 | EXP-0203 sync snapshot; generated local DB view, not an independently portable export |
+| Manual function body reviews | 239 / 72,437 | 239 unique addresses in the cumulative overlay through EXP-0204; this measures body review, not semantic recovery |
+| Derived ledger snapshot | L0=72,191; L1=242; L2=4; L3=0; L4=0 | EXP-0204 sync snapshot; generated local DB view, not an independently portable export |
 | Non-empty localized AKPK | 4,056 / 4,056 | Three of 4,059 inventoried files were empty placeholders |
 | PCK WEM decode | 1,908 / 1,908 | Decoder acceptance; perceptual correctness and in-game selection remain open |
 | Bink full-stream decode | 76 / 76 | Decoded to null sink; quality and runtime selection remain open |
