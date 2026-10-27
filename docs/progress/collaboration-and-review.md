@@ -1,6 +1,17 @@
 # Collaboration and review
 
-**Status: contributor path is documented; independent reproduction is still scaling.** Public documentation lowers the entry barrier but does not substitute for a second person reproducing a result.
+**Status: Active.** The contributor path is documented; independent reproduction is still scaling. Public documentation lowers the entry barrier but does not substitute for a second person reproducing a result.
+
+## Contributor path
+
+```mermaid
+flowchart LR
+  NEW["New contributor"] --> ORIENT["Read onboarding"] --> TASK["Choose a bounded task"]
+  TASK --> WORK["Record method and evidence"] --> PR["Submit pull request"]
+  PR --> REVIEW["Independent review"] --> OUTCOME["Merge, revise, or document limitation"]
+```
+
+The diagram describes the documented workflow; it does not imply that every result has already received an independent reproduction.
 
 ## Available to contributors
 

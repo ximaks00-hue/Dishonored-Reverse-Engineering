@@ -103,3 +103,4 @@ EXP-0106–0108 record eight selected `AK::SoundEngine` wrapper families, the sh
 - Corrected the evidence ladder description: L3 is connected dataflow and L4 is runtime verification; independent review remains a separate process.
 - Added an ordered next-milestone list covering cache/build identity, one bounded runtime result, high-value native clusters, portable catalog provenance, and independent review.
 - Added source-scoped Mermaid overviews for the evidence workflow, package formats, Blink path boundaries, native coverage, and audio/media cohorts.
+- Standardized qualitative maturity labels and added a contributor workflow map, tooling track, and denominator-based package/audio breakdowns instead of unsupported percentage shares.

@@ -15,14 +15,14 @@ Progress is tracked by research direction, not by one project-wide completion pe
 
 | Direction | Status | Current evidence |
 | --- | --- | --- |
-| Build and installation baseline | Established for recorded snapshot | Steam x86 build identified; 904/904 UPKs reconciled |
-| Packages and file formats | Broad static coverage | Package catalogs and selected format parsers cover large cohorts |
-| Config and path analysis | Candidate evidence established | Filesystem candidates recorded; runtime resolution remains open |
+| Build and installation baseline | Established | Steam x86 build identified; 904/904 UPKs reconciled |
+| Packages and file formats | Strong | Package catalogs and selected format parsers cover large cohorts |
+| Config and path analysis | Active | Filesystem candidates recorded; runtime resolution remains open |
 | Blink and gameplay | Active | Conditional static paths documented; runtime bridge remains open |
-| Native code | Selective semantic review | 72,437 indexed; 47 manual body reviews; portable export has 54 analysis records |
-| Audio and media | Broad corpus parsing | PCK/WEM, AKPK, HIRC, and Bink cohorts have scoped coverage |
-| Tooling and automation | Reproducibility improving | Validators, CI, schemas, tests, and portable coverage export |
-| Collaboration and review | Contributor path documented | Tasks, onboarding, templates, and independent-review process |
+| Native code | Early-to-mid | 72,437 indexed; 47 manual body reviews; portable export has 54 analysis records |
+| Audio and media | Strong | PCK/WEM, AKPK, HIRC, and Bink cohorts have scoped coverage |
+| Tooling and automation | Strong | Validators, CI, schemas, tests, and portable coverage export |
+| Collaboration and review | Active | Tasks, onboarding, templates, and independent-review process |
 
 Inventory or parser coverage does not imply semantic understanding. See the dashboard for denominators, evidence boundaries, and linked source records.
 

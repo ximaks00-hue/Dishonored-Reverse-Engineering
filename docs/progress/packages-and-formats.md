@@ -1,6 +1,6 @@
 # Packages and file formats
 
-**Status: broad static coverage with format-specific limits.** Counts here describe inventories, parser passes, or selected validations; none is a universal measure of semantic understanding.
+**Status: Strong.** Coverage is broad but static and format-specific. Counts describe inventories, parser passes, or selected validations; none is a universal measure of semantic understanding.
 
 ## Visual map
 
@@ -17,6 +17,18 @@ flowchart LR
 ```
 
 The common build node indicates scope and provenance. The paths do not imply that these formats share runtime dependencies.
+
+### Evidence breakdown
+
+| Workstream | Measured evidence | Remaining limit |
+| --- | --- | --- |
+| File and package inventory | 904/904 UPKs matched by path, size, and SHA-256 | The local install contains a documented mod; matching this manifest does not prove all files are stock |
+| Object/export relations | 2,885,414 UPK export rows; UELib catalogs package-local relations | Cataloged indices and parsed properties do not establish full object or bytecode semantics |
+| Config/path candidates | 63 path-shaped declarations from 76 config directives; candidate matches recorded | Runtime config resolution and effective load order remain unknown |
+| Container and media formats | 4,056/4,056 non-empty localized AKPK containers parsed; PCK and Bink work is separately scoped | Successful parsing/decoding does not prove game-side load or use |
+| Selected texture/cache formats | Exact output comparisons exist for selected object/cache cohorts | Samples do not establish complete class or format coverage |
+
+The rows use different populations and overlap in places, so they are not shares of a common total and should not be represented as a pie chart.
 
 ## Unreal packages
 

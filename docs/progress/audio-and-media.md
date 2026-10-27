@@ -1,6 +1,6 @@
 # Audio and media
 
-**Status: strong corpus parsing and selected decode coverage; runtime meaning remains open.** Successful parsing or decoder acceptance is not the same as correct playback or a proven game-side dependency.
+**Status: Strong.** Corpus parsing and selected decode coverage are extensive; runtime meaning remains open. Successful parsing or decoder acceptance is not the same as correct playback or a proven game-side dependency.
 
 ## Visual coverage map
 
@@ -18,6 +18,18 @@ flowchart TB
 ```
 
 The diagram separates container/table parsing, payload decoding, HIRC relations, and runtime behavior. It does not claim the three asset groups converge on the same playback path.
+
+### Evidence breakdown
+
+| Workstream | Measured evidence | Interpretation boundary |
+| --- | --- | --- |
+| PCK tables | 503/503 PCK files; 2,411 bank/sound rows matched by an independent table parser | Parser interpretation is informed by the pinned QuickBMS layout; no vendor specification |
+| PCK WEM decode | 1,908/1,908 WEM entries decoded | Decoder acceptance does not establish perceptual correctness or in-game selection |
+| PCK HIRC | 503 PCK banks plus `Init.bnk` parsed; static HIRC relation and target-ID audits recorded | ID matches remain candidates unless semantics or runtime use are independently supported |
+| Localized AKPK | 4,056 non-empty containers parsed; 2,570 unique bank payloads and 12,112 sound-entry occurrences | Static container/HIRC/media joins do not establish playback |
+| Bink | 76/76 files decoded to a null sink | No audiovisual quality or game track-selection claim |
+
+These measures overlap and have different denominators; they describe the research mix rather than a percentage allocation.
 
 ## Measured coverage
 

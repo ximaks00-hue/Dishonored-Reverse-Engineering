@@ -10,14 +10,14 @@ This dashboard summarizes research by direction. It does not combine unlike work
 
 | Research direction | Current status | Established evidence | Main open question | Details |
 | --- | --- | --- | --- | --- |
-| Build and installation baseline | Established for the recorded snapshot | Steam build identity recorded; 13,623 manifest paths; all 904 installed UPKs reconciled | The install contains a modded start-menu package; prior manifest path-level delta is unavailable | [Build and installation](progress/build-and-installation.md) |
-| Packages and file formats | Broad static coverage | 904 UPKs cataloged; 4,056 non-empty localized AKPK files parsed; selected object and format studies | Semantic payload coverage, unsupported/unknown objects, and runtime resource selection | [Packages and formats](progress/packages-and-formats.md) |
-| Config and path analysis | Candidate evidence established | EXP-0114 records path-shaped declarations and filesystem candidates | Which roots and declarations the game actually resolves at runtime | [Config and path analysis](progress/packages-and-formats.md#config-and-path-analysis) |
-| Blink and gameplay | Active static reconstruction | Several conditional static activation edges are confirmed; competing/rejected paths are kept separate | Dynamic caller/scheduler bridge and runtime behavior | [Gameplay and Blink](progress/gameplay-and-blink.md) |
-| Native code | Large index; selective review | 72,437 indexed functions; 47 manual body reviews; 54 functions with portable analysis records | High-value ownership/dataflow links and scalable semantic review | [Native code](progress/native-code.md) |
-| Audio and media | Broad corpus parsing | PCK/AKPK, HIRC, WEM, and Bink cohorts have substantial parser/decode coverage | Event meaning, perceptual correctness, playback selection, and runtime behavior | [Audio and media](progress/audio-and-media.md) |
-| Tooling and automation | Reproducibility improving | Repository validators, schemas, CI, and a portable function coverage export | Extend provenance and checks to more generated catalogs and analysis versions | [Tooling and automation](progress/tooling-and-automation.md) |
-| Collaboration and review | Ready for scoped contributions | Onboarding, small tasks, templates, evidence policy, and independent-review workflow | More independent reproductions and contributor participation | [Collaboration and review](progress/collaboration-and-review.md) |
+| Build and installation baseline | **Established** | Steam build identity recorded; 13,623 manifest paths; all 904 installed UPKs reconciled | The install contains a modded start-menu package; prior manifest path-level delta is unavailable | [Build and installation](progress/build-and-installation.md) |
+| Packages and file formats | **Strong** | 904 UPKs cataloged; 4,056 non-empty localized AKPK files parsed; selected object and format studies | Semantic payload coverage, unsupported/unknown objects, and runtime resource selection | [Packages and formats](progress/packages-and-formats.md) |
+| Config and path analysis | **Active** | EXP-0114 records path-shaped declarations and filesystem candidates | Which roots and declarations the game actually resolves at runtime | [Config and path analysis](progress/packages-and-formats.md#config-and-path-analysis) |
+| Blink and gameplay | **Active** | Several conditional static activation edges are confirmed; competing/rejected paths are kept separate | Dynamic caller/scheduler bridge and runtime behavior | [Gameplay and Blink](progress/gameplay-and-blink.md) |
+| Native code | **Early-to-mid** | 72,437 indexed functions; 47 manual body reviews; 54 functions with portable analysis records | High-value ownership/dataflow links and scalable semantic review | [Native code](progress/native-code.md) |
+| Audio and media | **Strong** | PCK/AKPK, HIRC, WEM, and Bink cohorts have substantial parser/decode coverage | Event meaning, perceptual correctness, playback selection, and runtime behavior | [Audio and media](progress/audio-and-media.md) |
+| Tooling and automation | **Strong** | Repository validators, schemas, CI, and a portable function coverage export | Extend provenance and checks to more generated catalogs and analysis versions | [Tooling and automation](progress/tooling-and-automation.md) |
+| Collaboration and review | **Active** | Onboarding, small tasks, templates, evidence policy, and independent-review workflow | More independent reproductions and contributor participation | [Collaboration and review](progress/collaboration-and-review.md) |
 
 ## Visual overview
 
@@ -35,6 +35,10 @@ flowchart LR
 ```
 
 The arrows summarize the research workflow. They do not claim that every source has been independently reproduced or that every subsystem model has runtime support.
+
+## Status vocabulary
+
+Workstream pages use the same qualitative labels: **Established** for a bounded baseline; **Strong** for broad, well-scoped artifacts; **Active** where major questions remain under investigation; **Early-to-mid** where the index is large but semantic review is selective; **Exploratory** where evidence is preliminary; and **Blocked** where a named dependency prevents progress. These labels are summaries, not percentages.
 
 ## Measured corpus snapshot
 
@@ -89,6 +93,7 @@ Current portable function coverage is [exported per function](../research/execut
 
 ## How to read status
 
+- This is a reverse-engineering research corpus, not a feature roadmap for a conventional software product. The goal is to increase reproducible, build-bound, evidence-backed answers.
 - “Established” describes a bounded artifact or inventory result, not full system understanding.
 - Status labels are qualitative judgments grounded in the linked EXPs; percentages are omitted where there is no defensible denominator or completion criterion.
 - Static candidates, confirmed semantic claims, independent reviews, and runtime observations must retain their distinct claim labels.

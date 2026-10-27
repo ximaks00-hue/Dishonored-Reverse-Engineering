@@ -1,6 +1,18 @@
 # Tooling and automation
 
-**Status: useful repository validation and growing provenance support.** Tool presence is not evidence that every output is correct; generated artifacts need source, version, options, and scope.
+**Status: Strong.** Repository validation is established and provenance support is growing. Tool presence is not evidence that every output is correct; generated artifacts need source, version, options, and scope.
+
+## Visual track
+
+```mermaid
+flowchart LR
+  SOURCES["Research sources"] --> VALIDATE["Validators and schemas"] --> CI["Pull-request CI"]
+  OUTPUTS["Generated catalogs"] --> MANIFEST["Portable provenance export"] --> CI
+  CACHE["Decompiler cache"] -. "missing Ghidra version / options / project revision" .-> HARDEN["Cache identity hardening"]
+  RUNTIME["Runtime evidence import"] -. "enforce executable SHA match" .-> IDENTITY["Build identity gate"]
+```
+
+The top row is in use; the two dashed rows are planned improvements, not completed safeguards.
 
 ## Available
 

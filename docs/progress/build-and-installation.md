@@ -1,6 +1,6 @@
 # Build and installation baseline
 
-**Status: established for one recorded local snapshot.** The evidence identifies a specific executable and inventories the corresponding local installation. It does not certify every installed file as an untouched Steam depot file.
+**Status: Established.** This covers one recorded local snapshot. The evidence identifies a specific executable and inventories the corresponding installation; it does not certify every installed file as an untouched Steam depot file.
 
 ## What is recorded
 
