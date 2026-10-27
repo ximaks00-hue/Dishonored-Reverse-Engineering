@@ -54,7 +54,7 @@ question: What direct-call structure is present in `007C3BC0` and four compact i
 ## Interpretation and claim limits
 
 - **Observed:** four selected compact callers each contain a direct call to `007C3BC0` and a separate direct call to the previously reviewed `00428B50`.
-- **Observed:** `007C3BC0` contains a direct call to `00938290`; its role remains unknown. Cached decompiler output for that callee suggests a chained hash lookup, but this experiment did not inspect its raw body and does not promote that suggestion.
+- **Observed:** `007C3BC0` contains a direct call to `00938290`. EXP-0158 had already established the callee's raw static two-key bucket-chain lookup operations; this call edge alone does not identify the caller's arguments or runtime use.
 - **Inferred, limited:** this is a useful bounded call neighborhood and a repeatable triage unit. The relation graph can help select further callers or the callee for review.
 - **Unknown:** meanings of the five functions and their arguments, ownership, dataflow, runtime reachability, and complete fan-in to `00428B50`.
 - **Not established:** callgraph connectivity proves shared behavior, subsystem ownership, or execution during gameplay.
