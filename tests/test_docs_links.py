@@ -32,6 +32,16 @@ class ResearchDocsLinksTests(unittest.TestCase):
             self.assertEqual(len(failures), 1)
             self.assertIn("missing local target", failures[0])
 
+    def test_fenced_examples_are_not_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "docs").mkdir()
+            fence = chr(96) * 3
+            (root / "docs" / "example.md").write_text(
+                fence + "md\\n[example](../../outside.txt)\\n" + fence + "\\n"
+            )
+            self.assertEqual(check_links(root), [])
+
     def test_repo_escape(self) -> None:
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
