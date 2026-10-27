@@ -1,0 +1,2 @@
+address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,relevant_callsites,claim_status
+005DC290,FUN_005dc290,138,unknown,body_reviewed_static_role_candidate,"three exact NativeFlag=true / NativeToken=0 exports with two parameters from two class branches share this target; body decodes two values and passes them to receiver slot +0x1DC; slot owner and cross-export semantics unresolved",,,3 EXP-0139 raw target edges via 00A0DBF0,inferred
