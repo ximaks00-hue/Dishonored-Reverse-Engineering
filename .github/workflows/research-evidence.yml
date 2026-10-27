@@ -15,5 +15,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate all experiment IDs, statuses and local links
+        run: python tools/validate_experiments.py
+      - name: Check research documentation links
+        run: python tools/check_research_docs_links.py
       - name: Verify EXP-0014 report-derived index
         run: python tools/check_exp0014_index.py
