@@ -11,6 +11,11 @@
     "image_base": "0x00400000",
     "pawn_vtable": {"va": "0x0111A3B0", "file_offset": "0x00D18DB0", "identity_source": "EXP-0021/0035 exact-build vtable-path identification"},
     "slot_700": {"va": "0x0111AAB0", "file_offset": "0x00D194B0", "raw_dword": "0x00AB6960", "target": "FUN_00AB6960", "target_indexed_size": 138},
+    "shared_vtable_slots": [
+      {"vtable_va": "0x0111A3B0", "slot_700": "0x00AB6960", "slot_704": "0x00AB9EA0", "slot_708": "0x00AA4EA0"},
+      {"vtable_va": "0x011B0B50", "slot_700": "0x00AB6960", "slot_704": "0x00AB9EA0", "slot_708": "0x00AA4EA0"},
+      {"vtable_va": "0x011CDBA8", "slot_700": "0x00AB6960", "slot_704": "0x00AB9EA0", "slot_708": "0x00AA4EA0"}
+    ],
     "function_ranges": [
       {"address": "0x00ABF830", "file_offset": "0x006BEC30", "size": 365, "body_sha256": "BC76D03A133332DCAA757DCA93193F39C3A7AB816C22950762BDD2C29695903C"},
       {"address": "0x00AB5320", "file_offset": "0x006B4720", "size": 124, "body_sha256": "04CF9DB5F68CE1E7402F6D5D57D1FFA3DD5555A09540828B0F396ECC7C9E10DA"},
@@ -46,7 +51,11 @@
     {"address": "0x00C62F20", "file": "knowledge/cache/decompiles/00C62F20.json", "sha256": "52B495F487BE784EF4D9BD6ECA7B23CB9D7A2545E78CE7C52B0CCC98D1585B89"},
     {"address": "0x00AA4EA0", "file": "knowledge/cache/decompiles/00AA4EA0.json", "sha256": "65246925F3EE5692FC46D358F0EE00830250DDFEADDAC7DA559B4033A60A5894"},
     {"address": "0x00AB9EA0", "file": "knowledge/cache/decompiles/00AB9EA0.json", "sha256": "BE50A3728F9593E1F25C759D78B745866A7CD8A6C09B2BD969CC6C06C6E6D2D5"},
-    {"address": "0x00AA1EB0", "file": "knowledge/cache/decompiles/00AA1EB0.json", "sha256": "544AB7556CF134F674B7BDFEAF4CE81E429B8042BDCE1CF231762923C15A360B"}
+    {"address": "0x00AA1EB0", "file": "knowledge/cache/decompiles/00AA1EB0.json", "sha256": "544AB7556CF134F674B7BDFEAF4CE81E429B8042BDCE1CF231762923C15A360B"},
+    {"address": "0x00ABED50", "file": "knowledge/cache/decompiles/00ABED50.json", "sha256": "B869A68B8B17FE2F071B8E898F58C0886566291195E651B6CAD9232F47279E4B"},
+    {"address": "0x00CBF0A0", "file": "knowledge/cache/decompiles/00CBF0A0.json", "sha256": "1F0DB3C7C67CC24C3E0F389B40FEB970E28B76A8E2DB7D2F8EA886B4E3CFD862"},
+    {"address": "0x00CFC230", "file": "knowledge/cache/decompiles/00CFC230.json", "sha256": "3EFE7931924A7CD3026E653E852A79E05E04A8C0A07717CF471BB5D8EF4B821C"},
+    {"address": "0x00AA4E20", "file": "knowledge/cache/decompiles/00AA4E20.json", "sha256": "9ED5C196B0E29C5BC66AF76F722989DB4EDF9D099BADAC281726253B969DC45B"}
   ],
   "collection_path": {
     "pawn_global": "DAT_0145F628; assigned after FUN_00ABF830 installs vtable 0x0111A3B0, cleared by FUN_00AB5320",
@@ -60,10 +69,23 @@
     "secondary_mapping_predicate": "entry +0x508 bit 0x400 clear; resolve entry +0x26C through FUN_00A660F0; require resolved +0x380 nonzero and FUN_00B00D20 called with ECX=resolved +0x380 to return nonzero; FUN_00B00D20 returns bit 6 of its argument +0x3C",
     "reconciliation_gate": "FUN_00BA6E50; requires FUN_00BA0DE0(candidate,mode) and numeric squared-distance tests against owner settings +0x7FC/+0x800/+0x804; candidate pointer at +0x15C later participates in existing-object matching",
     "semantic_names": "unknown",
+    "shared_slot_reuse": {
+      "vtable_va": ["0x0111A3B0", "0x011B0B50", "0x011CDBA8"],
+      "slots": {
+        "+0x700": "FUN_00AB6960",
+        "+0x704": "FUN_00AB9EA0",
+        "+0x708": "FUN_00AA4EA0"
+      },
+      "constructor_paths": [
+        {"function": "FUN_00CBF0A0", "calls": "FUN_00ABF830", "installs_vtable": "0x011B0B50", "descriptor_class_name": "DisDLC06PlayerPawn (cross-source candidate)"},
+        {"function": "FUN_00CFC230", "calls": "FUN_00CBF0A0", "installs_vtable": "0x011CDBA8", "descriptor_class_name": "DisDLC07PlayerPawn (cross-source candidate)"}
+      ],
+      "claim_limit": "Pointer reuse across these vtable slots and constructor paths is observed; C++ inheritance and linked-node semantics are not established."
+    },
     "raw_offset_census_0x9d4": {
-      "method": "Search exact-build PE for little-endian 0x9D4, decode/mapping hits to indexed function bodies; classify effective memory operands rather than raw byte-pattern hits.",
+      "method": "Review indexed function-map displacement hits and selected exact-build caches/constructors; raw byte-pattern overlaps are not treated as object-field references. Not every matching PE byte sequence was fully decoded in this follow-up.",
       "indexed_function_denominator": 72437,
-      "effective_operand_hits": [
+      "reviewed_context_hits": [
         {"function": "FUN_00AA4EA0", "context": "Pawn linked-list head read"},
         {"function": "FUN_00AB6960", "context": "Pawn linked-list head read"},
         {"function": "FUN_00AB9EA0", "context": "Pawn linked-list head address/read"},
@@ -71,12 +93,12 @@
         {"function": "FUN_00DB9E40", "context": "_Font_Cache float field read"},
         {"function": "FUN_009B8760", "context": "separate pointer-array indexing"}
       ],
-      "raw_pattern_false_positives": [
+      "additional_unresolved_or_non_field_matches": [
         {"function": "FUN_007C4B20", "context": "conditional branch relative displacement, not memory operand"},
         {"function": "FUN_0099F490", "context": "overlap between disp8 and immediate bytes, not a 0x9D4 memory operand"}
       ],
-      "pawn_specific_explicit_writer_found": false,
-      "limits": ["indexed direct-displacement census does not exclude unindexed code, computed/aliased writes, or allocator zero initialization"]
+      "pawn_specific_explicit_writer_found_in_reviewed_indexed_bodies_and_constructors": false,
+      "limits": ["This is not a fully decoded proof of all raw PE byte-pattern matches.", "Review does not exclude unindexed code, computed/aliased writes, or allocator zero initialization."]
     }
   },
   "claim_limits": [
@@ -94,6 +116,8 @@
     "predicate_raw_call_setup_corrects_cached_pseudocode": "observed",
     "secondary_array_mapping_and_distance_conditions": "observed",
     "semantic_collection_and_gameplay_identity": "unknown",
+    "related_vtable_slot_reuse_across_constructor_paths": "observed",
+    "pawn_9d4_list_writer": "unknown",
     "runtime_and_kismet_linkage": "unknown"
   }
 }
