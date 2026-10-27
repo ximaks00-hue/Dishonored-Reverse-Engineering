@@ -1,0 +1,25 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "baseline_source": "EXP-0072 exact-build internal function triage",
+  "indexed_internal_functions": 72437,
+  "baseline_unknown_subsystem": 71998,
+  "baseline_symbol_name_candidates": 439,
+  "cumulative_manual_body_reviewed_functions": 33,
+  "cumulative_input_related_static_role_candidates": 16,
+  "cumulative_audio_related_static_role_candidates": 6,
+  "cumulative_native_exec_role_candidates": 5,
+  "cumulative_reviewed_but_subsystem_unassigned_functions": 11,
+  "overlay_unresolved_unknown_subsystem": 71976,
+  "overlay_candidate_rows": 466,
+  "runtime_verified_functions": 0,
+  "cumulative_rows_csv": "manual-review-overlay-cumulative-EXP-0143.csv",
+  "limits": [
+    "The automated EXP-0072 triage artifacts remain unchanged; manual reviews are additive overlays.",
+    "EXP-0140, EXP-0142, and EXP-0143 native-exec roles are inferred from exact class-table name/export joins and decompiler/raw code shape; concrete owners, slot identity, and runtime dispatch remain unknown.",
+    "Eleven manually reviewed functions remain subsystem-unassigned, including five inferred native-exec role candidates.",
+    "The 439 baseline symbol-name candidates remain unchanged and were not re-reviewed by the manual overlays.",
+    "No review in this overlay establishes runtime reachability."
+  ],
+  "overlay_unknown_note": "The 71,976 unresolved unknown-subsystem rows include six earlier manually reviewed functions without subsystem assignments and the five EXP-0140/0142/0143 inferred role candidates without confirmed subsystem assignments."
+}
