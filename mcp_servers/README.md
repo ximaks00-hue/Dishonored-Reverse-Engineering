@@ -26,7 +26,7 @@ Design rules:
 - **Path traversal guards** on export directories (`ensure_under`).
 - **CSV indexes** are mtime-cached. Function lookup is O(1) by entry and O(log n) by body range (~72k functions).
 - **Call graph** is offline SQLite (`callers` / `callees` / `xrefs_to` / `path`); missing → `index_missing`.
-- **Decompile cache** under `knowledge/cache/decompiles/`; the current headless cache validates build ID and EXE SHA-256, but not Ghidra version/options/project revision. See [the cache limitation](../docs/methodology/function-evidence-model.md).
+- **Decompile cache** under `knowledge/cache/decompiles/`; cache keys include build and EXE identity, Ghidra release/revision and installed Java/native decompiler hashes, headless flags, decompiler script hash, project-file revision fingerprint, and the function-index SHA-256. Old address-only entries miss and are replaced. Large project databases use file metadata to avoid rehashing hundreds of megabytes per request; if their contents change while preserving size and timestamps, update `DISHONORED_GHIDRA_PROJECT_REVISION`. See [cache provenance and limits](../docs/methodology/function-evidence-model.md).
 - **Package object cache** in `package-cache.sqlite`; `search_objects` is index-only after warm-up.
 - **Agent packs** — call `brief` / `function_dossier` / `experiment` first; EXP markdown remains authoritative.
 - **Read-only runtime/Frida** — no write/patch/suspend/terminate APIs.

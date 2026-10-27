@@ -29,7 +29,7 @@ These checks validate links and record structure. They do not certify research c
 
 ## Open project risks
 
-1. The headless decompilation cache is keyed by normalized function address and checks build ID / executable SHA, but it does not invalidate on Ghidra version, analysis options, or project-analysis revision. See `mcp_servers/common/decompile_cache.py` and [the function evidence model](../methodology/function-evidence-model.md).
+1. **Resolved in PR #24:** the headless decompilation cache now keys by normalized function address and a provenance digest covering build/EXE identity, Ghidra release/revision and Java/native decompiler hashes, headless flags, decompiler-script hash, project-file revision fingerprint, and function-index SHA. Large project database contents are tracked by file metadata rather than full per-request hashes; explicitly update `DISHONORED_GHIDRA_PROJECT_REVISION` after any metadata-preserving rewrite. See `mcp_servers/common/decompile_cache.py` and [the function evidence model](../methodology/function-evidence-model.md).
 2. The L4 progress view recognizes a replicated, confirmed runtime record but does not compare that record's `build_sha256` with the executable SHA joined to the indexed function. A future runtime importer should enforce identity before the view can count L4.
 3. The knowledge sync needs the exact local executable and function index to rebuild function coverage. The derived SQLite mirror is ignored by Git; repository-only CI cannot independently reproduce L0–L4 counts.
 4. `tools/validate_experiments.py` uses a small line-oriented frontmatter parser and path-link regex rather than a complete YAML/Markdown parser. It is adequate for current records but does not validate full YAML syntax or all link forms.
@@ -44,6 +44,6 @@ These checks validate links and record structure. They do not certify research c
 2. **Done for this audit commit:** hosted Research evidence checks, REV-0004, and REV-0005 all passed on `6c6d055`. Keep required-check names verified against these runs when branch protection becomes available.
 3. **Done:** repository visibility is public and the `main` protection rules above are active. Invite collaborators only by explicit GitHub username and agreed permission.
 4. Add an evidence-manifest format for generated catalogs (EXP/source hashes, build, tool/options, row count, and reproduction command) and adopt it for new outputs before migrating old artifacts.
-5. Correct decompile-cache invalidation and L4 build matching with negative cross-build cases; do not relabel existing evidence automatically.
+5. **Cache invalidation implemented in PR #24.** Independently test L4 build matching with negative cross-build cases; do not relabel existing evidence automatically.
 6. Publish a compact coverage export that can be regenerated from validated metadata without requiring game binaries; keep exact-build re-indexing as a separate local operation.
 7. Continue priority-driven reverse engineering from the [roadmap](../roadmap.md). Preserve runtime and semantic gaps in the status instead of implying completion from inventory counts.
