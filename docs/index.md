@@ -4,6 +4,8 @@ This handbook explains the evidence process and points to the current primary re
 
 ## Start with your task
 
+For a visual overview of current research directions and next priorities, see the [progress dashboard](progress-dashboard.md).
+
 | If you want to… | Start here |
 | --- | --- |
 | Join or review a contribution | [Contributing guide](../CONTRIBUTING.md) |
