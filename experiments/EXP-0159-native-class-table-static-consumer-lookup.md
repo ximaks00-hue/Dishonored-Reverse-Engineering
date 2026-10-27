@@ -26,7 +26,8 @@ question: "What handler-selection paths and output writes can be established in 
 ## Observations
 
 - The exact-build index records `FUN_0046E5C0` at `0x0046E5C0–0x0046E83D`, size 638 bytes. SHA-256 of that exact function range is `3188F8F58F2E19A5E47C5FD35E2D9698386EDFF3E21227DF9A3C24DDD5550BE0`.
-- At entry, `FUN_00425D90` supplies a pointer in `ESI`. The function checks bit `0x400` at `[EBX+0x80]` and bit `0x4000` at `[ESI+0xC8]`. If the first bit is clear or the second is set, it writes pointer `0x0045FF10` to `[EBX+0x9C]` and returns.
+- The function passes its incoming `this` (`EBX`) to `FUN_00425D90` and saves the return in `ESI`. Raw x86 for that helper walks from the supplied object through pointer `[node+0x24]` until `[node+0x30]` equals global `0x0141B314`, then returns that node. The named indexed function `GetStackOwnerClass` at `0x00926480` loads `[arg+0x10]`, passes it to the same helper, and returns the result. This is a static symbol/usage association; it suggests a stack-owner-class lookup but does not by itself establish the node's type or the global sentinel's meaning.
+- Using the returned `ESI`, `FUN_0046E5C0` checks bit `0x400` at `[EBX+0x80]` and bit `0x4000` at `[ESI+0xC8]`. If the first bit is clear or the second is set, it writes pointer `0x0045FF10` to `[EBX+0x9C]` and returns.
 - Otherwise it reads a 16-bit value from `[EBX+0x84]`. If nonzero, the raw instruction at `0x0046E626` loads the DWORD at `0x014068F0 + selector*4` and stores that value at `[EBX+0x9C]`; this function contains no explicit bounds check on the selector. It does not call the loaded pointer in this path.
 - PE section metadata places `0x014068F0` inside the virtual `.data` section but beyond its file-backed `SizeOfRawData` (section-relative offset `0x19D8F0`; raw size `0x14D000`; virtual size `0x21B3BC`). The table entries therefore have no corresponding bytes in this executable file. This static examination cannot establish their runtime values or how they are populated. The same global is referenced by other static decoder paths (for example, `FUN_004052F0` in EXP-0046 and reviewed native-exec adapters); shared address use does not establish that all sites use the entries with the same meaning.
 - At `0x0046E783–0x0046E796`, the function passes a pointer to a two-dword local key and an output-index pointer to `FUN_00938290`, with `ECX = 0x01435408`. At `0x0046E7A8`, it reads the record-array base from `[0x01435408]`. These are the two code references to the registry address found by `tools/scan_pointer_refs.py --va 0x01435408 --code-only` within this function.
@@ -40,10 +41,11 @@ question: "What handler-selection paths and output writes can be established in 
 ## Interpretation and claim limits
 
 - **Confirmed static control flow:** after the two flag guards, a nonzero 16-bit selector loads one DWORD from `0x014068F0 + selector*4` into `[EBX+0x9C]`; a zero selector enters the name-based registry fallback. Guard failure writes the fixed pointer `0x0045FF10`.
+- **Observed symbol association:** the context node returned by `FUN_00425D90` is read by `FUN_0046E5C0` and by the indexed function named `GetStackOwnerClass`. The helper's exact pointer walk is confirmed statically; interpreting the returned node as a stack owner class follows the symbol name and remains unverified against class metadata or runtime state.
 - **Confirmed static dataflow:** `FUN_0046E5C0` queries the registry at `0x01435408` with a two-dword key, reads the associated value from the matching 0x14-byte record, scans 8-byte name/target entries, and conditionally writes a selected pointer or zero to `[EBX+0x9C]`.
 - **Observed static role:** this function is a consumer of the same registry structure whose helper layout is traced in EXP-0158. The table entries are used here as name-to-pointer records.
 - **Inferred, cross-layer candidate only:** the 16-bit selector at `[EBX+0x84]` may correspond to a native-function token, and the zero-selector fallback may resolve token-zero class-table entries. This fits the separate UELib `NativeToken` observations (EXP-0066) and the class/table name-target joins (EXP-0137–0139), but no object-layout proof or selector-to-table-entry mapping has been established. The global selector table is not file-backed, so this experiment cannot confirm its values.
-- **Unknown:** the 16-bit selector's exact field identity, runtime contents/population of `0x014068F0`, key semantics, source/meaning of the composed name, concrete owner of the registry and entry list, caller/invocation condition, whether the selected pointer is later called, and any runtime reachability or behavior.
+- **Unknown:** the helper result's exact node type and the meaning of global `0x0141B314`; the 16-bit selector's exact field identity; runtime contents/population of `0x014068F0`; key semantics; source/meaning of the composed name; concrete owner of the registry and entry list; caller/invocation condition; whether the selected pointer is later called; and any runtime reachability or behavior.
 - **Limit:** disassembly establishes local static operations only. The single `.rdata` pointer occurrence is a candidate reference, not proof of a vtable or caller. The function stores a selected pointer but no call through `[EBX+0x9C]` is established here.
 
 ## Reproduction
@@ -52,6 +54,8 @@ From repository root, verify the executable SHA-256 from the build record, then 
 
 ```powershell
 python tools\disassemble_va.py --start 0x0046E5C0 --end 0x0046E83D
+python tools\disassemble_va.py --start 0x00425D90 --end 0x00425DBE
+python tools\disassemble_va.py --start 0x00926480 --end 0x0092648F
 python tools\scan_pointer_refs.py --va 0x01435408 --code-only
 python tools\scan_pointer_refs.py --va 0x0046E5C0
 ```
