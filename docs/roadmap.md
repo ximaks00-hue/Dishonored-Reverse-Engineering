@@ -63,4 +63,4 @@ These project-delivery tasks remain open alongside reverse engineering:
 
 ## Experiment range
 
-The current source corpus contains [EXP-0001 through EXP-0160](../experiments/). New experiments use the [template](../templates/experiment.md), and the repository validator checks IDs, statuses, and local references.
+The current source corpus contains [EXP-0001 through EXP-0161](../experiments/). New experiments use the [template](../templates/experiment.md), and the repository validator checks IDs, statuses, and local references.
