@@ -94,3 +94,6 @@ EXP-0106–0108 record eight selected `AK::SoundEngine` wrapper families, the sh
 
 - Added a research-direction snapshot to the README so the dashboard is visible on the `codex/research-corpus-sync` branch landing page.
 - Added a source-linked dashboard with build-bound denominators, explicit local-ledger limits, evidence workflow diagram, and next milestone priorities; linked it from the handbook.
+- 2026-10-27: EXP-0156 reviews the shared `0x009F53F0` handler joined to three DishonoredGame exports. Raw x86 shows frame-byte decoding, optional `A`-marker handling, and a receiver virtual call at `+0x3AC`; decoded semantics, owner, dispatch, and runtime reachability remain unknown. Manual body reviews now total 48; this adds L1 only.
+- 2026-10-27: EXP-0157 rechecks `0x005C26E0` and `0x009F5450` against the exact-build index and raw x86. Corrected their recorded body sizes from 63 to 53 bytes and 117 to 96 bytes, respectively, in EXP-0142's additive row and every cumulative overlay through EXP-0156. Both addresses were already reviewed, so the unique manual-review count remains 48.
+- 2026-10-27: Regenerated the local knowledge mirror from 157 experiment records and the EXP-0156 cumulative overlay. It now reports L0=72,382, L1=51, L2=4, L3=0, and L4=0 across the 72,437-function index; this is a local derived view, not a portable research export.

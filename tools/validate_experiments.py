@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import csv
 import re
 import sys
 from pathlib import Path
@@ -30,6 +31,8 @@ CLAIM_STATUS = {
     "rejected",
 }
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+FUNCTION_INDEX = ROOT / "research" / "executable" / "functions.csv"
+FUNCTION_REVIEW_DIR = ROOT / "research" / "executable" / "evidence" / "function-triage"
 
 
 def parse_frontmatter(text: str) -> dict[str, str] | None:
@@ -52,8 +55,60 @@ def expected_id(path: Path) -> str:
     return path.stem
 
 
-def main() -> int:
+def validate_function_review_overlays() -> list[str]:
+    """Check reviewed function addresses and recorded sizes against the exact-build index."""
     errors: list[str] = []
+    if not FUNCTION_INDEX.is_file():
+        return [f"{FUNCTION_INDEX.relative_to(ROOT)}: function index is missing"]
+
+    try:
+        with FUNCTION_INDEX.open("r", encoding="utf-8-sig", newline="") as stream:
+            index_reader = csv.DictReader(stream)
+            if not {"address", "size"}.issubset(index_reader.fieldnames or []):
+                return [f"{FUNCTION_INDEX.relative_to(ROOT)}: expected address and size columns"]
+            function_sizes = {
+                row["address"].strip().upper(): row["size"].strip()
+                for row in index_reader
+                if row.get("address") and row.get("size")
+            }
+    except (OSError, csv.Error) as exc:
+        return [f"{FUNCTION_INDEX.relative_to(ROOT)}: cannot read function index: {exc}"]
+
+    overlay_paths = sorted(FUNCTION_REVIEW_DIR.glob("manual-review-overlay-EXP-*.csv"))
+    overlay_paths += sorted(FUNCTION_REVIEW_DIR.glob("manual-review-overlay-cumulative-EXP-*.csv"))
+    for path in overlay_paths:
+        relpath = path.relative_to(ROOT).as_posix()
+        try:
+            with path.open("r", encoding="utf-8-sig", newline="") as stream:
+                reader = csv.DictReader(stream)
+                if not {"address", "size_bytes"}.issubset(reader.fieldnames or []):
+                    errors.append(f"{relpath}: expected address and size_bytes columns")
+                    continue
+                seen: set[str] = set()
+                for line_number, row in enumerate(reader, start=2):
+                    address = (row.get("address") or "").strip().upper()
+                    size = (row.get("size_bytes") or "").strip()
+                    if not re.fullmatch(r"[0-9A-F]{8}", address):
+                        errors.append(f"{relpath}:{line_number}: invalid function address '{address}'")
+                        continue
+                    if address in seen:
+                        errors.append(f"{relpath}:{line_number}: duplicate function address {address}")
+                    seen.add(address)
+                    indexed_size = function_sizes.get(address)
+                    if indexed_size is None:
+                        errors.append(f"{relpath}:{line_number}: {address} is absent from the exact-build function index")
+                    elif size != indexed_size:
+                        errors.append(
+                            f"{relpath}:{line_number}: {address} size_bytes={size!r} "
+                            f"does not match indexed size {indexed_size}"
+                        )
+        except (OSError, csv.Error) as exc:
+            errors.append(f"{relpath}: cannot read review overlay: {exc}")
+    return errors
+
+
+def main() -> int:
+    errors: list[str] = validate_function_review_overlays()
     warnings: list[str] = []
     seen_ids: dict[str, Path] = {}
     files = sorted(EXPERIMENTS.glob("EXP-*.md"))

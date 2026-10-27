@@ -26,8 +26,8 @@ question: "What repeated call shape is supported for the next two highest-connec
 
 ## Observations
 
-- `0x005C26E0` is an indexed 63-byte function (`FUN_005c26e0`) and has eight EXP-0139 target edges. All eight UELib exports are `NativeFlag=true`, `NativeToken=0`, script size 2, and declare zero explicit parameters. Export names are `SetShadowParentOnAllAttachedComponents`, `DoInitRBPhys` (six class paths), and `Term`.
-- `0x009F5450` is an indexed 117-byte function (`FUN_009f5450`) and has eight EXP-0139 target edges. All eight UELib exports are `NativeFlag=true`, `NativeToken=0`, script size 7, and declare one object parameter. The exports include `OnToggle`, `OnToggle_Native`, `OnActivateRatSpawner`, and `AddAIGroupActor`; parameter classes differ (`SeqAct_Toggle`, `DisSeqAct_ActivateRatSpawner`, and `InterpGroupInstAI`).
+- `0x005C26E0` is an indexed 53-byte function (`FUN_005c26e0`) and has eight EXP-0139 target edges. All eight UELib exports are `NativeFlag=true`, `NativeToken=0`, script size 2, and declare zero explicit parameters. Export names are `SetShadowParentOnAllAttachedComponents`, `DoInitRBPhys` (six class paths), and `Term`. The raw 53-byte body hash is `B6618C4AF627DC63CC07B08946B3C7DE00213C9AF341BA89CD1059EBE851E888`; ten trailing `0xCC` bytes in the incorrectly recorded 63-byte range are padding after the function's `ret 8`, as rechecked in [EXP-0157](EXP-0157-eight-exports-single-value-handler-slot-3a0.md).
+- `0x009F5450` is an indexed 96-byte function (`FUN_009f5450`) and has eight EXP-0139 target edges. All eight UELib exports are `NativeFlag=true`, `NativeToken=0`, script size 7, and declare one object parameter. The exports include `OnToggle`, `OnToggle_Native`, `OnActivateRatSpawner`, and `AddAIGroupActor`; parameter classes differ (`SeqAct_Toggle`, `DisSeqAct_ActivateRatSpawner`, and `InterpGroupInstAI`). The body size and raw call sequence were rechecked against the executable in [EXP-0157](EXP-0157-eight-exports-single-value-handler-slot-3a0.md); the exact 96-byte range SHA-256 is `ED310C758C4C276CFBB200AFB430E5D8ECBD796416E7405F58C445B3751B0C2F`.
 - Both decompiler bodies advance the bytecode pointer and conditionally consume an `'A'` marker through `DAT_014069F4`.
 - `FUN_005c26e0` then calls indirectly through the receiver vtable at byte displacement `+0x3A0` with no explicit decoded argument.
 - `FUN_009f5450` first reads one opcode byte, advances the frame code pointer, calls a decoder from `DAT_014068F0` into a local dword, then invokes the receiver vtable at `+0x3A0` with that dword.
@@ -45,7 +45,7 @@ question: "What repeated call shape is supported for the next two highest-connec
 
 1. Rebuild EXP-0139 with its recorded UELib census inputs and select target addresses `0x005C26E0` and `0x009F5450`.
 2. Decompile both exact-build addresses read-only and compare their pseudocode hashes and operation sequence with this record.
-3. Verify the cumulative review overlay contains 31 unique indexed addresses, including these two.
+3. Verify the cumulative review overlay contains 31 unique indexed addresses, including these two. EXP-0157 rechecks both raw bodies and corrects the earlier transcribed sizes for `0x005C26E0` and `0x009F5450` across the overlay history.
 
 Decompiler locals and source parameter names are not treated as original source. The function index and its 72,437-address denominator are unchanged. Static table relationships and vtable calls do not demonstrate runtime consumption or behavior.
 
@@ -55,4 +55,5 @@ Decompiler locals and source parameter names are not treated as original source.
 - Parent class-table target join: [EXP-0139](EXP-0139-native-class-table-zero-token-handler-join.md)
 - Raw pointer evidence: [EXP-0138](EXP-0138-native-class-table-raw-pointer-validation.md)
 - Prior shared-target review: [EXP-0140](EXP-0140-shared-native-takedamage-handler.md)
+- Raw-byte size and call-shape correction: [EXP-0157](EXP-0157-eight-exports-single-value-handler-slot-3a0.md)
 - Function triage baseline: [EXP-0072](EXP-0072-exact-build-internal-function-subsystem-triage.md)

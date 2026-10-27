@@ -5,8 +5,8 @@
 ## Current evidence
 
 - Package metadata and structural catalogs cover all 904 installed UPKs; payload and bytecode completeness vary by parser and package. See [coverage](coverage.md) and the cited EXPs.
-- The exact-build executable index contains 72,437 internal functions. At the EXP-0155 sync snapshot, the derived ledger reports L0=72,383, L1=50, L2=4, L3=0, and L4=0. These gates are not counts of semantically recovered code.
-- The separate EXP-0139 catalog has 254 indexed class-table targets; 19 have body reviews, while all 254 remain subsystem-unassigned and 235 remain body-unreviewed. The manual overlay has 47 reviewed bodies; runtime-verified function count is zero.
+- The exact-build executable index contains 72,437 internal functions. The EXP-0156 local sync snapshot reports L0=72,382, L1=51, L2=4, L3=0, and L4=0. These gates are not counts of semantically recovered code, and the SQLite ledger remains a generated local view.
+- The separate EXP-0139 catalog has 254 indexed class-table targets; 20 have body reviews, while all 254 remain subsystem-unassigned and 234 remain body-unreviewed. The manual overlay has 48 reviewed bodies; runtime-verified function count is zero.
 - Blink's static evidence graph remains split: E1–E3, E5–E6 and conditional E5a–E5b are confirmed; E4, E7, E8 and E10 remain open; E9 is rejected only as a UsePower route. Keep UI enum `2`, PowerWheel item `24`, active-array index `0`, and `_iPower` distinct.
 
 ## Next work
