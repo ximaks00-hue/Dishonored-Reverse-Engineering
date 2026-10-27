@@ -19,5 +19,7 @@ jobs:
         run: python tools/validate_experiments.py
       - name: Check research documentation links
         run: python tools/check_research_docs_links.py
+      - name: Test documentation link checker
+        run: python -m unittest discover -s tests -p 'test_docs_links.py' -v
       - name: Verify EXP-0014 report-derived index
         run: python tools/check_exp0014_index.py
