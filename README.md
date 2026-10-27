@@ -35,4 +35,19 @@ An evidence-led research project for studying Dishonored on Windows, from files 
 
 ## Current scope
 
-The local workspace has a hash-identified Steam x86 executable record, package inventory, Blink UPK metadata, and read-only Ghidra analysis. See [research status](docs/research-status.md) for confirmed findings and open questions. The connected GitHub `main` branch may lag behind this local evidence set; compare its contents before treating it as the complete research record.
+The audited research corpus on `codex/research-corpus-sync` (EXP-0001–0147,
+snapshot 2026-10-27) contains a hash-identified Steam x86 build record,
+904-package structural inventories, catalogs of 72,437 internal executable
+functions, extensive resource-format experiments, and selected static slices
+of Blink, input, native registration, and Wwise/audio. These inventories
+are **not** proof of full semantic recovery: the manual function-review
+overlay covers 37 bodies at EXP-0147, and reproducible game-runtime behavior
+remains unverified. See [research status](docs/research-status.md) and the
+[completion contract](docs/roadmap.md) for the live denominator and remaining
+gaps. GitHub `main` may lag the source research branch.
+
+Documentation integrity and reproducibility were reviewed in the
+[2026-10-27 repository audit](docs/reviews/AUDIT-2026-10-27-repository-integrity.md).
+The GitHub-only CI checks validate research-record structure and local
+documentation links; they do not independently rerun the game-dependent
+experiments or verify the ignored local source binaries.
