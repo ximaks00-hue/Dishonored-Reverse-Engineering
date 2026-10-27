@@ -1,0 +1,56 @@
+{
+  "experiment": "EXP-0208",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "functions_indexed": 72437,
+  "prior_cumulative_reviewed": 253,
+  "cumulative_reviewed": 256,
+  "whole_index_reviewed_percent": 0.353411,
+  "exp0139_candidate_target_set": 254,
+  "exp0139_reviewed": 148,
+  "exp0139_remaining": 106,
+  "callgraph_edge_count": 517589,
+  "callgraph_exported_at": "2026-10-26T19:34:50Z",
+  "dossier_embedded_caller_rows": 30,
+  "dossier_rows_are_bounded_excerpt": true,
+  "caller_query_limit": 500,
+  "caller_query_returned_rows": 53,
+  "repeated_caller_sites": {
+    "007C6CF0": 2,
+    "00731710": 2,
+    "00428D40": 2,
+    "007C9FD0": 2
+  },
+  "next_triage_candidate": {
+    "basis": "body size and indexed incoming-call count only",
+    "address": "0072E230",
+    "incoming_call_rows": 30,
+    "size_bytes": 96
+  },
+  "semantic_claims_added": 0,
+  "runtime_verified_added": 0,
+  "functions_csv_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "historical_exp0158_sha256": "28E2C214C44F9C063F873551CD476CC818A779461A9C3F3CDCB2A6B9F9BD70BD",
+  "previous_cumulative_csv_sha256": "7FBE2FC7EBCF95C6B1F10688E6ED79C6037A519C74458F9BBE3BD6BABE3EEB11",
+  "evidence_csv_sha256": "FFBE166DF49A643061E50EDBFFEA42994B650BC0E520DE3272C90C8CD8F6A9C4",
+  "cumulative_csv_sha256": "94D577999D1BBB24229CF1F2E64FB0AD11FE7280CA3D232B6E66AC24D2CF2264",
+  "tooling": {
+    "python": "3.12",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7"
+  },
+  "new_body_reviews": 3,
+  "target_addresses": [
+    "00732AE0",
+    "00732CD0",
+    "00732EA0"
+  ],
+  "fully_decoded_new_bodies": 3,
+  "partial_context_address": "00730BD0",
+  "partial_context_indexed_size_bytes": 1693,
+  "partial_context_decoded_bytes": 1692,
+  "lookup_anchor_address": "0072E230",
+  "lookup_anchor_incoming_call_edges": 37,
+  "lookup_anchor_unique_caller_functions": 32,
+  "lookup_anchor_outgoing_callee": "00938290"
+}
