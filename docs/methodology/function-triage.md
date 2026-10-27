@@ -13,3 +13,7 @@ Prefer functions that: (1) discriminate between hypotheses, (2) connect importan
 - hypothesis, supporting/contradictory evidence, unknowns and next distinguishing test.
 
 Use [function template](../../templates/function.md). Names and inferred signatures are provisional until corroborated. Prefer focused call graphs to comprehensive low-value inventory.
+
+## Accelerated neighborhood review
+
+Use the [high-leverage review workflow](native-review-acceleration.md) and its reproducible native candidate queue to select clusters. A caller/callee discovered during one body's review is a lead, not an automatically analyzed function.
