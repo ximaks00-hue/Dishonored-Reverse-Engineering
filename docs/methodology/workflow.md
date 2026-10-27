@@ -1,25 +1,25 @@
 # Research workflow
 
-1. **Identify scope.** Name the build and exact question. If build identity is unknown, make that the first task.
-2. **Capture baseline.** Record file identity, tool versions, and relevant configuration before changing anything.
-3. **Write a procedure.** Include prerequisites, steps, inputs, expected observable outputs, and cleanup/reset steps.
-4. **Collect observations.** Preserve raw output or stable references. Avoid interpretive language in the observation field.
-5. **Analyze.** Compare alternatives and state what evidence would falsify each explanation.
-6. **Record and link.** Give the experiment a stable ID; link the build, artifacts, findings, and open questions.
-7. **Review.** Re-run when practical, check scope and provenance, and update status without erasing history.
+Work in **small vertical slices**. A successful experiment reduces uncertainty about a useful question rather than maximizing documents or analyzed function counts.
 
-## File and package archaeology
+1. **Frame one question.** Define scope and which decision the answer will enable.
+2. **Identify build.** Record edition, environment, binary hashes, architecture and local installation provenance where relevant. If not known, restrict the claim.
+3. **Collect baseline.** Capture read-only manifests, tools and versions, commands, settings and initial conditions; keep copyrighted content local.
+4. **List competing models.** Predict a distinct result for each whenever possible.
+5. **Design controls.** Predefine inputs, cleanup/reset steps, repeat counts, measurement points and expected outcomes.
+6. **Run and preserve observations.** Record actual outcomes independent of the interpretation, including null/failed results and parser warnings.
+7. **Interpret conservatively.** State alternatives, coverage, falsification tests and confidence rationale. Don't infer runtime resolution from file-name matches.
+8. **Publish references.** Connect BUILD, EXP, OBS, HYP, FIND or FUNC records and update status, never overwrite conflicting evidence silently.
+9. **Peer review and reproduce.** Prefer independent verification before assigning 'confirmed'; record exact limitations and build variance.
 
-Start with a read-only manifest: relative path, size, hash, detected type, and build ID. For package inspection, record tool/version and parser warnings. Keep package exports local and ignored. Never infer package compatibility solely from the engine family name.
+## File/package archaeology
+Inventory relative paths, sizes and hashes. Document parser/tool version, warnings, known false positives and which percentage of a **defined denominator** was inspected. Avoid inferring package compatibility from engine-family labels.
 
-## Behavioral research
+## Gameplay behavior
+Describe starting save/state without uploading saves, controls and timing, repeated trials, visible results and environmental variance. Observed output does not establish a specific code path.
 
-Use a small vertical slice. Record starting state, inputs, timing, environment/settings, and visible result. Repeat trials when stochastic behavior or timing can affect outcomes. State explicitly what the result does not establish.
+## Native analysis
+Prioritize functions with high discriminatory value per [function triage](function-triage.md), record RVAs tied to module SHA-256 and provisional naming, and retain source-to-interpretation links without committing third-party decompiler dumps.
 
-## Native code research
-
-Tie names, signatures, and RVAs to a specific module hash. Mark analyst-assigned function names as provisional. Keep decompiler output as a derived view and retain links to the disassembly/function record used to interpret it.
-
-## Tooling and parser checks
-
-Prefer deterministic scripts for repeated inventory or comparison. Test parsers on synthetic valid and malformed examples. Keep generated data reproducible and avoid storing bulky or copyrighted input in source control.
+## Completion criteria
+A task is complete when readers can locate sources, repeat the safe measurement, understand alternative explanations and tell precisely what remains unknown.

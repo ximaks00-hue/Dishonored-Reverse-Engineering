@@ -1,45 +1,213 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/dishonored-re/research-record.schema.json",
+  "$id": "https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/blob/main/schemas/research-record.schema.json",
   "title": "Dishonored RE research record",
-  "description": "Minimal provenance-bearing record for a finding, observation, or hypothesis.",
+  "description": "Traceable observation, hypothesis, finding or experiment; a record does not imply verification",
   "type": "object",
-  "required": ["id", "kind", "status", "claim", "scope", "sources"],
+  "required": [
+    "id",
+    "kind",
+    "status",
+    "claim",
+    "scope",
+    "sources"
+  ],
   "properties": {
-    "id": { "type": "string", "pattern": "^(FIND|OBS|HYP|EXP)-[A-Z0-9-]+$" },
-    "kind": { "enum": ["finding", "observation", "hypothesis", "experiment"] },
-    "status": { "enum": ["confirmed", "observed", "inferred", "unknown", "superseded", "planned"] },
-    "claim": { "type": "string", "minLength": 1 },
+    "id": {
+      "type": "string",
+      "pattern": "^(FIND|OBS|HYP|EXP)-[A-Z0-9-]+$"
+    },
+    "kind": {
+      "enum": [
+        "finding",
+        "observation",
+        "hypothesis",
+        "experiment"
+      ]
+    },
+    "status": {
+      "enum": [
+        "confirmed",
+        "observed",
+        "inferred",
+        "unknown",
+        "superseded",
+        "planned"
+      ]
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
     "scope": {
       "type": "object",
-      "required": ["build"],
+      "required": [
+        "build"
+      ],
       "properties": {
-        "build": { "type": ["string", "null"] },
-        "files": { "type": "array", "items": { "type": "string" } },
-        "module_rva": { "type": ["string", "null"] },
-        "conditions": { "type": "string" }
+        "build": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "module_rva": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conditions": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
     "sources": {
       "type": "array",
-      "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["type", "reference"],
+        "required": [
+          "type",
+          "reference"
+        ],
         "properties": {
-          "type": { "enum": ["file", "experiment", "tool_output", "external", "capture", "analyst_note"] },
-          "reference": { "type": "string", "minLength": 1 },
-          "tool_version": { "type": ["string", "null"] },
-          "sha256": { "type": ["string", "null"] }
+          "type": {
+            "enum": [
+              "file",
+              "experiment",
+              "tool_output",
+              "external",
+              "capture",
+              "analyst_note"
+            ]
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tool_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         },
         "additionalProperties": false
       }
     },
-    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
-    "alternatives": { "type": "array", "items": { "type": "string" } },
-    "falsification_test": { "type": "string" },
-    "supersedes": { "type": "array", "items": { "type": "string" } }
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Optional only when a documented calibration model is provided; avoid arbitrary subjective probability."
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "falsification_test": {
+      "type": "string"
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "calibration_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "build_identity_note": {
+      "type": "string"
+    }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "observed",
+              "confirmed"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "sources": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "hypothesis"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "enum": [
+              "planned",
+              "inferred",
+              "unknown",
+              "superseded"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "confirmed"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "finding",
+              "observation",
+              "experiment"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$comment": "Record schemas do not replace peer review; a claim must be supported by evidence in its stated scope."
 }

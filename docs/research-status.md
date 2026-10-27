@@ -1,31 +1,21 @@
 # Research status
 
-**Status:** foundation scaffold; build-specific research has not started.
+Updated: 2026-10-27. Scope: public GitHub repository as inspected during this audit, with the community overhaul proposed on a separate branch.
 
-## Confirmed in this repository
+## Verified in the audited published repository
+The initial commit contains methodology, templates, roadmap, architecture notes and a JSON schema. It contains **no committed build record, experiment report, native function record or research script**. New process files on the proposed branch do not constitute new facts about game internals.
 
-- The repository is intended to study Dishonored on Windows using evidence-backed, repeatable research.
-- No game build, package, experiment, or native function has been recorded in this repository yet.
+## Reported local work, not yet imported
+Previous project discussion reported `EXP-0114-config-path-candidate-audit.md` and `config_path_candidate_audit.py` in a local workspace. Reported counts: 63 of 76 directives examined, ten `BasedOn` candidate matches to Engine INI files and four localization directory matches. Two base-path candidates yielded the same `BasedOn` matches. This is a *reported*, unverified summary; **the game's actual runtime resolution rule remains unknown**. Obtain the original report, data provenance and script before presenting any of it as verified GitHub research.
 
-## Initial unknowns
+## Immediate blockers
+1. Inventory a legally accessible game build with hashes, architecture, edition and conditions; never upload the installation.
+2. Reconcile locally held experiments and scripts with published material using source review and reproduction.
+3. Establish traceable evidence chains and distinguish observations from claims.
+4. Design a test that differentiates competing `BasedOn` path models.
+5. Choose a license with rights-holder/contributor considerations before inviting substantial code contributions.
 
-- Which exact game edition/store build is available for analysis?
-- What are the executable's architecture, file version, and cryptographic hashes?
-- Which DLC and language files are present?
-- Which package tools can parse this exact build, and what are their limitations?
-- Which research question should be the first vertical slice?
+## Measurement policy
+Progress is reported by well-scoped denominators and build IDs: examined files out of an explicitly defined manifest, repeatable experiments out of chosen questions and evidence-backed claims out of reviewed findings. Document volume is not completeness.
 
-## Next actions
-
-1. Inventory the local installation without copying game content into Git.
-2. Create a build record with hashes and tool provenance.
-3. Capture a manifest of file paths, sizes, and hashes.
-4. Select one small question that can be answered with a repeatable procedure.
-
-## Claim status vocabulary
-
-- **Confirmed:** directly supported by a traceable artifact or independently repeated evidence within the stated scope.
-- **Observed:** recorded result from a specific procedure/build; does not imply internal cause.
-- **Inferred:** reasoned interpretation that still needs a discriminating check.
-- **Unknown:** unanswered, unmeasured, or unsupported. Keep it visible.
-- **Superseded:** retained for history but replaced by a better-supported conclusion.
+See [research backlog](backlog.md) and [onboarding](onboarding.md).

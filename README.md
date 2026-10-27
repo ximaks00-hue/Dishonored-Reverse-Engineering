@@ -1,32 +1,45 @@
 # Dishonored Reverse Engineering
 
-An evidence-led research project for studying Dishonored on Windows, from files and UE3 packages to observed gameplay and native code.
+Community-oriented, evidence-led research into **Dishonored (Windows)**, covering installation and configuration, Unreal Engine 3 packages, runtime behavior, gameplay systems and selected native functions.
+
+> **Project status:** research infrastructure and community workflow are available; the audited GitHub repository does **not yet contain verified build-specific experiments or function records**. See [research status](docs/research-status.md). Local work discussed outside the repository is not automatically published evidence.
+
+## Why this project exists
+Build a searchable, reproducible account of how selected game systems work, with documented uncertainty and independent behavioral models. **This is not a claim of recreating the complete game.** The project does not distribute game data and is not affiliated with the rights holders.
+
+## Participate
+**New contributor?** Start with [onboarding](docs/onboarding.md) and [CONTRIBUTING](CONTRIBUTING.md). You can help with documentation, verification, synthetic test cases and code without owning the game. Propose a [research question](https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/issues/new/choose) or improve an existing issue.
+
+## Navigation
+| Goal | Document |
+| --- | --- |
+| Learn what has actually been verified | [Research status](docs/research-status.md) |
+| Understand project organization | [Handbook](docs/index.md) and [architecture](docs/architecture/overview.md) |
+| Choose valuable work | [Research backlog](docs/backlog.md) and [roadmap](docs/roadmap.md) |
+| Record reliable evidence | [Evidence policy](docs/methodology/evidence.md) and [claim policy](docs/methodology/claims.md) |
+| Run experiments | [Experiment template](templates/experiment.md) and [workflow](docs/methodology/workflow.md) |
+| Analyze functions selectively | [Function triage](docs/methodology/function-triage.md) |
+| Contribute safely | [Community guide](CONTRIBUTING.md), [security](SECURITY.md), [licensing notice](LICENSE-NOTICE.md) |
+
+## Basic workflow
+1. Identify an exact build and a bounded research question.
+2. Define competing explanations and design a discriminating test.
+3. Record original observations, prerequisites, hashes and tools.
+4. Separate observed behavior from inferred implementation.
+5. Link stable EXP/OBS/HYP/FIND records and update the appropriate subsystem.
+6. Have another contributor reproduce or review the claim.
+
+Use `python tools/validate_repo.py` and `python -m unittest discover -s tests -v` (Python 3.11+) before proposing changes. GitHub Actions runs the same checks on pull requests.
 
 ## Research principles
+- The build, environment, file hash and method constrain every claim.
+- **Observed**, **confirmed**, **inferred**, **unknown**, **planned** and **superseded** mean different things.
+- Pseudocode is not original source; a filesystem match is not proof of runtime use.
+- RVAs are module-relative and meaningful only with binary identity.
+- Preserve contradictory results, limitations and negative findings.
+- Keep all copyrighted game content, private analysis databases and local installations out of Git.
 
-- Treat each game installation as a distinct build. Record executable hashes and architecture before comparing addresses or behavior.
-- Label statements as **confirmed**, **observed**, **inferred**, or **unknown**. An observed behavior does not prove a particular internal implementation.
-- Keep a reproducible source for every claim: build, file and hash, tool/version, experiment, or external reference.
-- Store function locations as module-relative RVAs tied to a specific binary identity. Decompiled pseudocode is a reconstruction, not original source.
-- Preserve conflicting observations and explain their scope instead of silently choosing one.
-- Keep copyrighted game data out of Git. Record metadata and hashes; put local extraction output under ignored paths.
+## Repository layout
+`docs/` contains research policy, status and synthesis; `experiments/` holds actual studies; `templates/` offers reusable report formats; `schemas/` describes machine-readable records; `tools/` and `tests/` enable reproducible validation; `.github/` handles contributor workflows. Empty areas do not imply research coverage.
 
-## Start here
-
-1. Read [research status](docs/research-status.md) and [evidence policy](docs/methodology/evidence.md).
-2. Record the installed build using [the build template](templates/build.md). Do not assume a store version or architecture.
-3. Create a repeatable experiment from [the experiment template](templates/experiment.md), or document a file/package observation.
-4. Link observations to their sources and update the relevant subsystem page.
-
-## Repository map
-
-- `docs/` — project method, architecture, confirmed findings, and open questions.
-- `experiments/` — repeatable procedures and results, identified by stable IDs.
-- `schemas/` — machine-readable formats for research records.
-- `templates/` — consistent starting points for builds, experiments, and subsystem pages.
-- `tools/` — project-owned scripts only; third-party tools are documented, not vendored.
-- `assets/` — local-only extracted data; ignored by Git.
-
-## Current scope
-
-This repository is at its foundation stage. No local game build has yet been recorded here, so build-specific package, class, function, address, or gameplay claims remain open until evidence is added.
+**Licensing:** no project-wide open-source license has been selected yet; see [license notice](LICENSE-NOTICE.md) before substantial contributions.

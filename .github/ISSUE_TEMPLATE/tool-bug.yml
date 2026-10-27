@@ -1,0 +1,25 @@
+name: Tool or documentation defect
+description: Report a reproducible problem without uploading game content
+title: "fix: "
+labels: []
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include script version, platform, sanitized command and synthetic inputs if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Sensitive or proprietary content check
+      description: Confirm this report contains no copyrighted game payload or secrets.
+    validations:
+      required: true

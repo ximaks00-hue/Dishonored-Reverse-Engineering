@@ -1,0 +1,26 @@
+name: Research question
+description: Propose a bounded, testable investigation
+title: "research: "
+labels: []
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State one answerable question and what it would unlock.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Known evidence and competing explanations
+      description: Cite existing records, note uncertainty and specify possible alternatives.
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: Distinguishing experiment and prerequisites
+      description: Include build requirements, predictions and copyright-safe output.
+    validations:
+      required: true
