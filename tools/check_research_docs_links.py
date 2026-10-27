@@ -40,7 +40,7 @@ def check_links(root: Path) -> list[str]:
         for line in content.splitlines():
             stripped = line.lstrip()
             token = stripped[:3]
-            if token in ("\`\`\`", "~~~"):
+            if token in ("```", "~~~"):
                 if fence is None:
                     fence = token
                 elif fence == token:
@@ -48,7 +48,7 @@ def check_links(root: Path) -> list[str]:
                 continue
             if fence is None:
                 visible_lines.append(line)
-        for match in LINK_RE.finditer("\\n".join(visible_lines)):
+        for match in LINK_RE.finditer("\n".join(visible_lines)):
             raw = target_from_markdown(match.group(1))
             if not raw or raw.startswith("#"):
                 continue
