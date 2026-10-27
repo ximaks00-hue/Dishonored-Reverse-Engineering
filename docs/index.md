@@ -1,36 +1,45 @@
 # Research handbook
 
-This handbook describes how the project gathers, records, and connects evidence about Dishonored. It does not claim that uninspected local files or builds have been analyzed.
+This handbook explains the evidence process and points to the current primary records. It does not claim that uninspected builds, local caches, or connected services have been analyzed.
 
-## Research layers
+## Start with your task
 
-1. **Digital archaeology:** identify installations, files, package metadata, resources, and dependencies.
-2. **Behavior and binary research:** document repeatable in-game observations and analyze script/native structures against a known build.
-3. **Independent reconstruction:** specify and implement selected behavior only after its observable contract and evidence are documented.
+| If you want to… | Start here |
+| --- | --- |
+| Join or review a contribution | [Contributing guide](../CONTRIBUTING.md) |
+| See what is established and open | [Research status](research-status.md) and [coverage](coverage.md) |
+| Choose the next project question | [Roadmap](roadmap.md) |
+| Understand a gameplay claim | The relevant page in [findings](findings/README.md) and linked EXPs |
+| Repeat or extend an experiment | [Experiment workflow](methodology/workflow.md), [template](../templates/experiment.md), and [checklist](tooling/session-checklist.md) |
+| Analyze a native function | [Function evidence model](methodology/function-evidence-model.md), [executable index](../research/executable/README.md), and linked EXPs |
+| Use project tools | [MCP and path setup](tooling/mcp.md) and [MCP server overview](../mcp_servers/README.md) |
 
-The layers can overlap, but conclusions at one layer must not be presented as proof about another. For example, an exported package object name does not establish runtime behavior.
+## Research method
 
-## Navigation
-
-- [Current status](research-status.md)
-- [Findings index](findings/README.md)
-- [Investigation changelog](changelog.md)
-- [System architecture map](architecture/overview.md)
 - [Evidence and provenance policy](methodology/evidence.md)
 - [Research workflow](methodology/workflow.md)
-- [Function evidence model and L0–L4 gates](methodology/function-evidence-model.md)
-- [Long-term roadmap](roadmap.md)
-- [MCP matrix / paths](tooling/mcp.md)
-- [Session checklist](tooling/session-checklist.md)
-- [Archive note](archive/README.md)
+- [Function coverage and L0–L4 evidence gates](methodology/function-evidence-model.md)
+- [Architecture map](architecture/overview.md)
 - [Glossary](glossary.md)
+
+## Research record
+
+- [Current status](research-status.md)
+- [Measured coverage](coverage.md)
+- [Completion scope and work order](roadmap.md)
+- [Findings index](findings/README.md)
+- [Session changelog](changelog.md)
+- [Build record](../research/builds/BUILD-STEAM-10256413/build.md)
+- [Experiment archive](../experiments/)
 - [Research record schema](../schemas/research-record.schema.json)
 
-## Subsystem documentation
+## Subsystems
 
-Create subsystem pages when evidence exists. Use [the subsystem template](../templates/subsystem/overview.md); do not create empty pages that imply coverage.
+Create or extend subsystem pages only when evidence exists. Use the [subsystem template](../templates/subsystem/overview.md); do not create pages that imply coverage before it has been established.
 
-- [Blink package and native status](gameplay/blink/overview.md)
+- [Blink overview](gameplay/blink/overview.md)
 - [Blink activation evidence graph](gameplay/blink/activation-graph.md)
 
-Experiment procedures live under [`experiments/`](../experiments/). Prefer the findings pages and activation graph over listing every EXP here.
+## Audit history
+
+Repository-wide documentation and contributor-readiness reviews belong under [`reviews/`](reviews/). Each audit must state the commit/scope inspected, checks actually run, exclusions, and unresolved risks.

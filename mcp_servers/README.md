@@ -1,4 +1,4 @@
-# Dishonored research MCP servers (v2.1 / gateway)
+# Dishonored research MCP servers
 
 Professional stdio MCP stack for evidence-led Dishonored research on build `10256413`.
 
@@ -26,7 +26,7 @@ Design rules:
 - **Path traversal guards** on export directories (`ensure_under`).
 - **CSV indexes** are mtime-cached. Function lookup is O(1) by entry and O(log n) by body range (~72k functions).
 - **Call graph** is offline SQLite (`callers` / `callees` / `xrefs_to` / `path`); missing → `index_missing`.
-- **Decompile cache** under `knowledge/cache/decompiles/` keyed by VA + EXE SHA-256.
+- **Decompile cache** under `knowledge/cache/decompiles/`; the current headless cache validates build ID and EXE SHA-256, but not Ghidra version/options/project revision. See [the cache limitation](../docs/methodology/function-evidence-model.md).
 - **Package object cache** in `package-cache.sqlite`; `search_objects` is index-only after warm-up.
 - **Agent packs** — call `brief` / `function_dossier` / `experiment` first; EXP markdown remains authoritative.
 - **Read-only runtime/Frida** — no write/patch/suspend/terminate APIs.
@@ -57,7 +57,7 @@ Standalone servers remain for compatibility with older host configs.
 
 ## Host registration
 
-- Cursor workspace: [`.cursor/mcp.json`](../.cursor/mcp.json)
+- Cursor workspace: `.cursor/mcp.json` (workspace-local and gitignored)
 - Codex: `~/.codex/config.toml`
 - Matrix: [`docs/tooling/mcp.md`](../docs/tooling/mcp.md)
 
@@ -70,6 +70,8 @@ Standalone servers remain for compatibility with older host configs.
 ```
 
 Index tools on a warm gateway should land under ~50 ms p50; headless Ghidra only on decompile cache miss.
+
+The assets server source reports version `2.2.0`. The connected assets host was last observed reporting `2.1.0` in [EXP-0122](../experiments/EXP-0122-assets-mcp-dlc-package-path-reprobe.md); source changes do not prove a running host has reloaded. Check the live `health` response before relying on path-aware behavior.
 
 ## Call-graph export
 

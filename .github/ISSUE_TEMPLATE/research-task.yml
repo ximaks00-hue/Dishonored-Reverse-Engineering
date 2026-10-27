@@ -1,0 +1,36 @@
+name: Research task
+description: Propose a focused evidence-gathering or project-infrastructure task
+title: "[Research] "
+body:
+  - type: markdown
+    attributes:
+      value: "Prefer a question that closes a specific gap or connects existing evidence. Keep candidate interpretations separate from facts."
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State one answerable question and the build or scope it concerns.
+      placeholder: What relationship or behavior is unknown, and for which build?
+    validations:
+      required: true
+  - type: textarea
+    id: prior_evidence
+    attributes:
+      label: Existing evidence
+      description: Link relevant EXPs, source artifacts, function addresses, package paths, or current documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Proposed method and evidence needed
+      description: Describe the observation that would support or falsify the candidate explanations.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Requirements and limits
+      description: List required build files/tools, runtime baseline needs, and data that must remain local.
+    validations:
+      required: false

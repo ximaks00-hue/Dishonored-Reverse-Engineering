@@ -2,11 +2,11 @@
 
 ## Start
 
-1. Confirm build: EXE SHA-256 matches [BUILD-STEAM-10256413](../../research/builds/BUILD-STEAM-10256413/build.md).
-2. Skim [research status](../research-status.md) next actions and [activation graph](../gameplay/blink/activation-graph.md).
-3. Note which MCP servers are live; workspace paths per [mcp.md](mcp.md).
-4. Open a new `EXP-NNNN` from [templates/experiment.md](../../templates/experiment.md) with YAML frontmatter before changing notes mid-flight.
-5. For native-function work, use the [function evidence model](../methodology/function-evidence-model.md): index/decompile coverage is separate from confirmed role, dataflow, and runtime claims.
+1. Read the [contributing guide](../../CONTRIBUTING.md), [research status](../research-status.md), and [roadmap](../roadmap.md).
+2. For build-specific work, confirm the EXE SHA-256 against [BUILD-STEAM-10256413](../../research/builds/BUILD-STEAM-10256413/build.md).
+3. Note which MCP servers are live and how they were configured; see [mcp.md](mcp.md).
+4. Open a new `EXP-NNNN` from [templates/experiment.md](../../templates/experiment.md) with YAML frontmatter before changing research notes.
+5. For native-function work, use the [function evidence model](../methodology/function-evidence-model.md): indexing/decompilation is separate from confirmed role, dataflow, and runtime claims.
 
 ## During
 
@@ -23,4 +23,5 @@
 3. Append a short note to [changelog.md](../changelog.md) if the session produced a narrative update.
 4. Refresh [research-status.md](../research-status.md) next actions (keep it short).
 5. Run `python tools/validate_experiments.py`.
-6. Optionally `python tools/knowledge/sync_from_experiments.py` to refresh SQLite.
+6. Run `python tools/check_research_docs_links.py` after documentation changes.
+7. Optionally `python tools/knowledge/sync_from_experiments.py` to refresh the ignored local SQLite mirror; it requires the matching local executable and function index.

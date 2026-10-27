@@ -1,38 +1,41 @@
 # Dishonored Reverse Engineering
 
-An evidence-led research project for studying Dishonored on Windows, from files and UE3 packages to observed gameplay and native code.
+An evidence-led project to reconstruct Dishonored's files, UE3 packages, native code, and selected runtime behavior. The project is active and incomplete; see the [research status](docs/research-status.md), [coverage snapshot](docs/coverage.md), and [full-scope roadmap](docs/roadmap.md).
+
+## Join the work
+
+Start with [Contributing](CONTRIBUTING.md) for task selection, evidence rules, local checks, data handling, and pull request guidance. Repository-only documentation work does not require a game installation. Binary and runtime work has stricter build and baseline requirements.
+
+## Read in this order
+
+1. [Current research status](docs/research-status.md)
+2. [Evidence and provenance policy](docs/methodology/evidence.md)
+3. [Project roadmap and completion contract](docs/roadmap.md)
+4. [Research handbook](docs/index.md)
+5. [Experiment catalog](experiments/)
 
 ## Research principles
 
-- Treat each game installation as a distinct build. Record executable hashes and architecture before comparing addresses or behavior.
-- Label statements as **confirmed**, **observed**, **inferred**, or **unknown**. An observed behavior does not prove a particular internal implementation.
-- Keep a reproducible source for every claim: build, file and hash, tool/version, experiment, or external reference.
-- Store function locations as module-relative RVAs tied to a specific binary identity. Decompiled pseudocode is a reconstruction, not original source.
-- Preserve conflicting observations and explain their scope instead of silently choosing one.
-- Keep copyrighted game data out of Git. Record metadata and hashes; put local extraction output under ignored paths.
-
-## Start here
-
-1. Read [research status](docs/research-status.md), [evidence policy](docs/methodology/evidence.md), and [AGENTS.md](AGENTS.md) if you are an automated assistant.
-2. Record the installed build using [the build template](templates/build.md). Do not assume a store version or architecture.
-3. Create a repeatable experiment from [the experiment template](templates/experiment.md), or document a file/package observation.
-4. Link observations to their sources; update [findings](docs/findings/README.md) or the subsystem page for confirmed bullets only.
-5. Run `python tools/validate_experiments.py` before treating the session as closed. Experiment YAML uses `experiment_status` + `claim_status` (see [AGENTS.md](AGENTS.md)).
+- Tie executable addresses and behavior claims to a named build and file hash.
+- Separate observation from interpretation; label claims as confirmed, observed, inferred, unknown, superseded, or rejected within a stated hypothesis scope.
+- Treat EXP bodies as the primary research record. Status pages, findings, and the SQLite database summarize EXP evidence.
+- Keep analysis coverage separate from semantic understanding, dataflow, and runtime verification. Decompiled pseudocode is an analysis output, not original source.
+- Keep game binaries, UPKs, extracted assets, saves, local caches/databases, and machine-specific configuration out of Git.
 
 ## Repository map
 
-- `docs/` — method, architecture, findings, tooling notes, and short status.
-- `docs/findings/` — durable confirmed summaries (not session narrative).
-- `docs/gameplay/blink/activation-graph.md` — Blink evidence edges.
-- `experiments/` — repeatable procedures and results, identified by stable IDs.
-- `schemas/` — machine-readable formats for research records.
-- `templates/` — consistent starting points for builds, experiments, and subsystem pages.
-- `tools/` — project-owned scripts (`validate_experiments`, knowledge sync, inventory).
-- `mcp_servers/` — workspace MCP servers; shared defaults in `mcp_servers/_paths.py`.
-- [UE Explorer MCP](tools/ueexplorer-mcp/README.md) — read-only MCP access to UE3 package metadata and UnrealScript.
-- `assets/` — local-only extracted data; ignored by Git.
-- `third_party/` — local tool installs; binaries are gitignored (see [tooling/mcp.md](docs/tooling/mcp.md)).
+| Path | Purpose |
+| --- | --- |
+| `docs/` | Status, methodology, findings, architecture, roadmap, and tool guidance |
+| `experiments/` | Primary methods, observations, interpretations, and limits, indexed by EXP ID |
+| `research/builds/` | Build identities and file manifests |
+| `research/executable/` | Function index, compact evidence catalogs, scripts, and triage |
+| `research/packages/` | Package inventories and parser-derived catalogs |
+| `schemas/` | Machine-readable research schemas |
+| `templates/` | Build, experiment, and subsystem templates |
+| `tools/`, `mcp_servers/` | Reproducible analysis tools and local MCP services |
+| `assets/extracted/`, `knowledge/cache/` | Local generated data; ignored by Git |
 
-## Current scope
+## Build scope
 
-The local workspace has a hash-identified Steam x86 executable record, package inventory, Blink UPK metadata, and read-only Ghidra analysis. See [research status](docs/research-status.md) for confirmed findings and open questions. The connected GitHub `main` branch may lag behind this local evidence set; compare its contents before treating it as the complete research record.
+The current reference record is Steam x86 build `10256413`, executable SHA-256 `66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E`. See the [build record](research/builds/BUILD-STEAM-10256413/build.md) for provenance and installation limits. GitHub `main` may lag the active research corpus; contributors should use the branch named by the maintainer and read [branch guidance](CONTRIBUTING.md#pull-requests).

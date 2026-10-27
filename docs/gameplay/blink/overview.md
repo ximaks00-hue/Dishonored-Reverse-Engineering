@@ -37,8 +37,11 @@ Keep these integers distinct until a proven conversion: PowerWheel item `24`, UI
 ## Rejected / deprioritized as Blink activation
 
 - PlayerPawn manager at `+0x59C` / `FUN_00C04C30`: real path on the pawn, but stack ABI incompatible with known UsePower targets ([EXP-0035](../../../experiments/EXP-0035-playerpawn-context-manager-provenance.md), [EXP-0037](../../../experiments/EXP-0037-pawn-manager-provenance-and-abi.md)).
-- `FUN_00C0CA70` as a *proven* user-Use→UsePower dispatcher: open/weakened (receiver class unproved; callers are state/timer/audio-adjacent) ([EXP-0029](../../../experiments/EXP-0029-usepower-runtime-dispatch.md), [EXP-0032](../../../experiments/EXP-0032-dispatch-record-provenance.md)).
 - `ArkCpntType_Lookat` as Blink teleport ([EXP-0014](../../../experiments/EXP-0014-native-owner-triage.md), [EXP-0018](../../../experiments/EXP-0018-npc-lookat-property-correlation.md)).
+
+## Open / weakened, not rejected
+
+- `FUN_00C0CA70` as a *proven* user-Use→UsePower dispatcher remains open/weakened: receiver class is unproved and current callers are state/timer/audio-adjacent ([EXP-0029](../../../experiments/EXP-0029-usepower-runtime-dispatch.md), [EXP-0032](../../../experiments/EXP-0032-dispatch-record-provenance.md), [EXP-0049](../../../experiments/EXP-0049-context-dispatch-abi-audit.md)).
 
 ## Still open
 

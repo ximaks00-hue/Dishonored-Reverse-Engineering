@@ -15,5 +15,5 @@ Build: [BUILD-STEAM-10256413](../../research/builds/BUILD-STEAM-10256413/build.m
 ## Open
 
 - Provenance/runtime role of remaining non-co-op copy-only paths.
-- Clean runtime baseline (DLL set) for Stage 03 behavior experiments. The current tree has no `dinput8.dll`, but no process was running for loaded-module inspection (`EXP-0016`, `EXP-0050`).
+- During the EXP-0016/0050 inspection sessions, the workspace lacked `dinput8.dll` and no process was available for loaded-module inspection. This is a historical snapshot; it does not establish the current runtime process or module set. A clean baseline for Stage 03 behavior experiments remains open.
 - Language/DLC completeness without filename-only inference.

@@ -51,7 +51,7 @@ Missing index → tools return `{ok:false, error.code=index_missing}` with the b
 
 | Host | Config |
 | --- | --- |
-| Cursor (workspace) | [`.cursor/mcp.json`](../../.cursor/mcp.json) — prefer `dishonored_gateway` |
+| Cursor (workspace) | `.cursor/mcp.json` (workspace-local and gitignored) — prefer `dishonored_gateway` |
 | Cursor (user) | `%USERPROFILE%\.cursor\mcp.json` — keep `ghidra-re-mcp`; Dishonored servers come from the workspace file |
 | Codex | `%USERPROFILE%\.codex\config.toml` |
 
