@@ -1,0 +1,2 @@
+﻿address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,relevant_callsites,claim_status
+005C1640,FUN_005c1640,445,unknown,body_reviewed_static_role_candidate,shared class-table target for ten exact execTakeDamage / NativeFlag=true / NativeToken=0 exports; inferred argument-decoding thunk with indirect virtual call; concrete owner unresolved,,,10 EXP-0139 raw target edges from registration functions 006067A0 / 00A0DBF0,inferred

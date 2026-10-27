@@ -81,7 +81,7 @@ HYPOTHESES = [
 
 FUNCTION_REVIEW_OVERLAY = (
     ROOT
-    / "research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0128.csv"
+    / "research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0140.csv"
 )
 
 
@@ -307,7 +307,7 @@ def sync_function_evidence(db: sqlite3.Connection, build_row_id: int) -> dict[st
              experiment_key, "", claim_key),
         )
 
-    # The 28 reviewed bodies are analysis coverage only. Their subsystem labels
+    # The cumulative reviewed bodies are analysis coverage only. Their subsystem labels
     # remain candidates/unassigned in the source overlay, so they are not
     # imported as confirmed semantic claims.
     overlay_path = FUNCTION_REVIEW_OVERLAY.resolve(strict=True)
