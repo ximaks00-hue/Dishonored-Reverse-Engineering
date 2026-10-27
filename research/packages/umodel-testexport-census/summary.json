@@ -1,0 +1,25 @@
+{
+  "scope": "904 manifest-listed UPKs in BUILD-STEAM-10256413",
+  "umodel_sha256": "44F8F1DA90A225554338328E1A2B24BE0B166A34CDFBEEB3C81DA9949E7675D0",
+  "fake_export_mode": "-testexport; selected asset serializers are exercised without writing output files",
+  "package_count": 904,
+  "source_identity_matches": 904,
+  "packages_loaded": 904,
+  "fake_export_request_count": 205165,
+  "packages_with_fake_export_requests": 721,
+  "warning_lines": 64874,
+  "error_lines": 13,
+  "terminal_status_counts": {
+    "attempted_with_warnings": 472,
+    "error": 13,
+    "fake_export_attempts_no_reported_diagnostic": 236,
+    "loaded_no_fake_export_attempts": 183
+  },
+  "class_count": 7,
+  "limitations": [
+    "Fake-export request counts are not counts of successfully serialized files.",
+    "-testexport does not write assets; this is not a full disk-export validation.",
+    "A zero fake-export request count only says this UModel build selected no supported resource for that package invocation.",
+    "UModel parsing and fake serialization are not independent validation of original package payload semantics."
+  ]
+}

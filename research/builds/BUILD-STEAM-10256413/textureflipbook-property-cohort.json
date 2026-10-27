@@ -1,0 +1,64 @@
+{
+  "source_properties_jsonl": "assets\\extracted\\uelib-object-init-ondemand-full\\default-properties.jsonl",
+  "source_manifest": "research\\builds\\BUILD-STEAM-10256413\\files.csv",
+  "owner_row_count": 30,
+  "property_row_count": 414,
+  "distinct_package_count": 30,
+  "manifest_sha256_match_count": 30,
+  "all_packages_match_manifest_sha256": true,
+  "objects_with_value_errors": 0,
+  "property_value_distributions": {
+    "HorizontalImages": {
+      "1": 1,
+      "4": 29
+    },
+    "VerticalImages": {
+      "1": 1,
+      "4": 29
+    },
+    "FrameRate": {
+      "32.0000000": 29,
+      "4.0000000": 1
+    },
+    "FrameTime": {
+      "0.0312500": 29,
+      "0.2500000": 1
+    },
+    "SizeX": {
+      "2048": 29
+    },
+    "SizeY": {
+      "2048": 29
+    },
+    "OriginalSizeX": {
+      "2048": 29
+    },
+    "OriginalSizeY": {
+      "2048": 29
+    },
+    "Format": {
+      "EPixelFormat.PF_DXT1": 29
+    },
+    "TextureFileCacheName": {
+      "\"Textures\"": 29
+    },
+    "MipTailBaseIdx": {
+      "11": 29
+    },
+    "FirstResourceMemMip": {
+      "4": 29
+    }
+  },
+  "objects_missing_selected_properties": {
+    "FirstResourceMemMip": 1,
+    "Format": 1,
+    "MipTailBaseIdx": 1,
+    "OriginalSizeX": 1,
+    "OriginalSizeY": 1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "TextureFileCacheName": 1
+  },
+  "output_csv": "research\\builds\\BUILD-STEAM-10256413\\textureflipbook-property-cohort.csv",
+  "claim_limit": "This summarizes property values emitted by UELib's EXP-0088 corpus. It does not independently validate serialization, class semantics, TFC payloads, or runtime playback."
+}

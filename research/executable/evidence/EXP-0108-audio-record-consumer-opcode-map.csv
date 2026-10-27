@@ -1,0 +1,11 @@
+discriminator_hex,producer_wrapper_or_path,consumer_case,consumer_handler,observed_consumer_operation,claim_limit
+0x0000,RenderAudio via FUN_00D21980,case 0,FUN_00D20940 inline bookkeeping,increments a state counter and may complete the drain condition; consumer signals an event after draining,No event purpose or RenderAudio behavior inferred
+0x0002,SetRTPCValue branch param_4==0,case 2,CAkRTPCMgr::SetRTPCInternal,passes record fields into SetRTPCInternal,Wrapper-to-case match; field types beyond observed pseudocode are unverified
+0x0003,SetRTPCValue branch param_4!=0,case 3,CAkRTPCMgr::SetRTPCInternal,passes record fields and TransParams pointer into SetRTPCInternal,Wrapper-to-case match; field types beyond observed pseudocode are unverified
+0x0005,ResetRTPCValue branch param_3==0,case 5,FUN_00D2FD30,passes record values to RTPC-related lookup/update helper,Helper semantics remain partially unknown
+0x0006,ResetRTPCValue branch param_3!=0,case 6,FUN_00D2FD30,passes record values to RTPC-related lookup/update helper,Helper semantics remain partially unknown
+0x0008,SetSwitch,case 8,FUN_00D2E180,updates a value returned from FUN_00D2DD30 and iterates associated callback records,No wider switch-manager/runtime behavior inferred
+0x000A,PostTrigger,case 10,FUN_00D2B030,iterates callback-like nodes and invokes an indirect method,Handler meaning is not independently named
+0x000B,RegisterGameObj,case 11,FUN_00D2CB90,looks up or allocates a CAkRegisteredObj and returns its pointer,Wrapper-to-case match; complete registry semantics remain open
+0x000C,UnregisterGameObj / UnregisterAllGameObj,case 12,FUN_00D2CC40 / FUN_00D2CEE0,selects single-object path or all-object path when field is 0xFFFFFFFF,Wrapper-to-case match; teardown semantics remain open
+0x0016,SetObjectObstructionAndOcclusion,case 0x16,FUN_00D2CE70,looks up a record keyed by object ID and calls FUN_00D33930 with the remaining values,Wrapper-to-case match; helper semantics remain open

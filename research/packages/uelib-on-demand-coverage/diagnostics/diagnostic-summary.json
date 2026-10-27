@@ -1,0 +1,10 @@
+{
+  "input": "assets\\extracted\\uelib-object-init-ondemand-full\\default-properties.jsonl",
+  "property_rows": 13418888,
+  "value_error_rows": 325,
+  "rows_with_value_diagnostics": 2048157,
+  "captured_value_diagnostic_lines": 9220977,
+  "distinct_property_field_groups": 25910,
+  "distinct_value_error_cohorts": 1,
+  "distinct_diagnostic_cohorts": 3814
+}

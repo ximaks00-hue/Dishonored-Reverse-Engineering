@@ -1,0 +1,44 @@
+{
+  "scope": "all 904 packages in BUILD-STEAM-10256413 manifest",
+  "package_count": 904,
+  "package_source_hash_size_matches": 904,
+  "package_table_counts_match_umodel_census": 904,
+  "package_initialization_errors": 0,
+  "package_extraction_errors": 0,
+  "terminal_log_processed_packages": 904,
+  "terminal_log_failed_packages": 0,
+  "package_row_reconciliation_errors": 0,
+  "table_objects": 3110949,
+  "initialized_object_rows": 3110949,
+  "on_demand_attempts": 2842054,
+  "on_demand_state_counts": {
+    "Deserialized": 2839406,
+    "Errorlized": 2648
+  },
+  "on_demand_escaped_call_errors": 0,
+  "on_demand_thrown_exceptions": 2648,
+  "on_demand_diagnostic_lines": 843223,
+  "objects_with_default_property_rows": 2431619,
+  "default_property_rows": 13418888,
+  "on_demand_objects_with_default_property_rows": 2430566,
+  "on_demand_default_property_rows": 13414061,
+  "exp_0070_default_property_rows": 4846,
+  "exp_0070_property_owners_reconciled": 1065,
+  "exp_0070_property_owners_missing": 0,
+  "exp_0070_owner_property_row_count_mismatches": 0,
+  "exp_0070_rows_belonging_to_on_demand_attempted_objects": 19,
+  "net_new_property_rows_after_on_demand_load": 13414042,
+  "new_rows_emitted_by_on_demand_objects_after_baseline_overlap": 13414042,
+  "on_demand_property_value_diagnostics": {
+    "total_default_property_rows": 13418888,
+    "value_errors_across_all_rows": 325,
+    "captured_diagnostic_lines_for_on_demand_rows": 9220977,
+    "on_demand_rows_with_captured_diagnostics": 2048157
+  },
+  "overall_deserialization_states": {
+    "0": 225535,
+    "Deserialized": 2882766,
+    "Errorlized": 2648
+  },
+  "uelib_claim": "Load() results and parser-formatted fields only; property-value diagnostics are captured for on-demand-loaded objects, and success state does not guarantee every property/array value decoded without diagnostics."
+}

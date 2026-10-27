@@ -1,0 +1,123 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "exp_0138_input_sha256": "7A4FE4FEA33C1C7EBC40DA44B9BF18C70A953846EBF11F28ED8FCD79BCAE6F15",
+  "function_index_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "manifest_sha256": "65286FAA9E04422D2A4C7E2C1D0CEAB80B02564B8C98ABA619967DD4FA09D5EB",
+  "uelib_census_root": "assets\\extracted\\uelib-census\\20261026-230210-253-c7ad73d8",
+  "uelib_jsonl_sources": [
+    {
+      "path": "000-Core/Core.upk.functions.jsonl",
+      "sha256": "6AEA611A1FA621E9D2FB85113FEB71AC43AC15158127ADEA16AC555D2A082386"
+    },
+    {
+      "path": "001-Engine/Engine.upk.functions.jsonl",
+      "sha256": "47760EFCB17CBDBFFBF76A58746EBDF20743135A85BC7A6B8BE0F09F0D13B56B"
+    },
+    {
+      "path": "002-GFxUI/GFxUI.upk.functions.jsonl",
+      "sha256": "5C486E297B8077ABDF4BF6F81714A865EBADCAAFB213C81480FB2B2B7FE71C59"
+    },
+    {
+      "path": "003-GameFramework/GameFramework.upk.functions.jsonl",
+      "sha256": "957A50E7D3A1A41AF5BC7CF6DF7A76420A3717E6710F0F5043EA9DA6835C4F42"
+    },
+    {
+      "path": "004-IpDrv/IpDrv.upk.functions.jsonl",
+      "sha256": "CD7D4C9B75E57FDC87D8504D7D621AE083F3EB99A0DDEA33B4127292403D3A71"
+    },
+    {
+      "path": "005-OnlineSubsystemPC/OnlineSubsystemPC.upk.functions.jsonl",
+      "sha256": "D619489FDDB08C0A5C2E32D03F6AE8BF6428D911246A5DA4CA901697CDA2433F"
+    },
+    {
+      "path": "006-OnlineSubsystemSteamworks/OnlineSubsystemSteamworks.upk.functions.jsonl",
+      "sha256": "82A763F8D26747BFA34BC6E30F9C87E0C89144563706F37220FE399BD27EC004"
+    },
+    {
+      "path": "007-DishonoredGame/DishonoredGame.upk.functions.jsonl",
+      "sha256": "09F41841F403B8A1CAE11D2C80E075E4563454C5DC295DA6A81D309156DBF1D4"
+    }
+  ],
+  "uelib_package_sources_rehashed": 8,
+  "uelib_corpus_function_rows": 4772,
+  "uelib_native_flagged_rows": 2572,
+  "uelib_native_flagged_zero_token_rows": 2383,
+  "class_table_edges": 332,
+  "unique_exact_uelib_function_matches": 332,
+  "matched_native_flag_true_rows": 332,
+  "matched_native_token_zero_rows": 332,
+  "matched_nonzero_native_token_rows": 0,
+  "indexed_function_start_edges": 329,
+  "unindexed_text_target_edges": 3,
+  "unique_indexed_target_functions": 254,
+  "target_addresses_in_baseline_unknown_subsystem": 254,
+  "target_addresses_overlapping_manual_review_overlay": 0,
+  "target_addresses_overlapping_baseline_symbol_candidates": 0,
+  "baseline_unknown_subsystem_functions": 71998,
+  "manual_overlay_prior_unresolved_unknown_rows": 71976,
+  "unresolved_unknown_rows_after_this_candidate_overlay": 71976,
+  "candidate_rows_in_prior_combined_overlay": 461,
+  "candidate_rows_if_this_role_overlay_is_counted_additively": 715,
+  "body_reviewed_functions_added": 0,
+  "runtime_verified_functions_added": 0,
+  "matched_uelib_function_package_rows": {
+    "DishonoredGame/CookedPCConsole/Core.upk": 5,
+    "DishonoredGame/CookedPCConsole/DishonoredGame.upk": 135,
+    "DishonoredGame/CookedPCConsole/Engine.upk": 174,
+    "DishonoredGame/CookedPCConsole/GFxUI.upk": 5,
+    "DishonoredGame/CookedPCConsole/GameFramework.upk": 11,
+    "DishonoredGame/CookedPCConsole/IpDrv.upk": 1,
+    "DishonoredGame/CookedPCConsole/OnlineSubsystemSteamworks.upk": 1
+  },
+  "registration_function_counts": {
+    "004811B0": {
+      "table_export_edges": 5,
+      "exact_uelib_zero_token_matches": 5,
+      "indexed_function_start_edges": 5,
+      "unique_indexed_target_functions": 4
+    },
+    "006067A0": {
+      "table_export_edges": 174,
+      "exact_uelib_zero_token_matches": 174,
+      "indexed_function_start_edges": 171,
+      "unique_indexed_target_functions": 149
+    },
+    "0096DAB0": {
+      "table_export_edges": 11,
+      "exact_uelib_zero_token_matches": 11,
+      "indexed_function_start_edges": 11,
+      "unique_indexed_target_functions": 11
+    },
+    "00970A10": {
+      "table_export_edges": 1,
+      "exact_uelib_zero_token_matches": 1,
+      "indexed_function_start_edges": 1,
+      "unique_indexed_target_functions": 1
+    },
+    "0099A100": {
+      "table_export_edges": 5,
+      "exact_uelib_zero_token_matches": 5,
+      "indexed_function_start_edges": 5,
+      "unique_indexed_target_functions": 5
+    },
+    "009AE330": {
+      "table_export_edges": 1,
+      "exact_uelib_zero_token_matches": 1,
+      "indexed_function_start_edges": 1,
+      "unique_indexed_target_functions": 1
+    },
+    "00A0DBF0": {
+      "table_export_edges": 135,
+      "exact_uelib_zero_token_matches": 135,
+      "indexed_function_start_edges": 135,
+      "unique_indexed_target_functions": 90
+    }
+  },
+  "limitations": [
+    "The 332 matches are exact class/method label and UELib metadata joins to raw pointer records; they are static role candidates, not runtime dispatch proof.",
+    "The 254 unique indexed targets remain subsystem-unassigned and their function bodies were not reviewed by this pass.",
+    "Three matched .text targets do not match function-index starts or indexed function ranges; they remain outside the unique function-target overlay.",
+    "The census covers selected table groups and eight function-bearing UELib packages, not every executable function or registration path."
+  ]
+}

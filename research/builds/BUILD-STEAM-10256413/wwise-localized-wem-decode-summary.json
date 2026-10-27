@@ -1,0 +1,32 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "vgmstream_path": "C:\\Users\\Max\\AppData\\Local\\Microsoft\\WinGet\\Packages\\vgmstream.vgmstream_Microsoft.Winget.Source_8wekyb3d8bbwe\\vgmstream-cli.exe",
+  "vgmstream_sha256": "0EE2626CD5D470CCE5980AB010D36B08F9C97C9480E56BBACEB11475628232FF",
+  "vgmstream_version": "r2023",
+  "akpk_package_rows": 4059,
+  "akpk_source_hashes_checked": 4056,
+  "akpk_entry_rows": 16168,
+  "akpk_sound_entry_rows": 12112,
+  "akpk_entry_ranges_out_of_bounds": 0,
+  "sound_or_bank_range_overlaps": 0,
+  "sound_payload_total_bytes": 2226354383,
+  "unique_payload_hash_size_pairs": 7213,
+  "unique_payload_bytes_decoded": 1320837434,
+  "jobs": 2,
+  "timeout_seconds_per_unique_payload": 300,
+  "decode_options": [
+    "-O",
+    "-i"
+  ],
+  "outcomes": {
+    "decoded": 7213
+  },
+  "elapsed_seconds": 57.068,
+  "limitations": [
+    "WEM ranges derive from the EXP-0130 AKPK table parser; no independent QuickBMS table cross-check exists for this extension cohort.",
+    "Payloads with identical SHA-256 and byte size were decoded once; every catalogued occurrence maps to that exact payload hash.",
+    "vgmstream acceptance does not prove perceptual correctness, event identity, locale policy, or runtime playback.",
+    "Each temporary WEM copy was removed after decoding; no extracted media corpus was retained."
+  ]
+}

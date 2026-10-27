@@ -1,0 +1,30 @@
+{
+  "package_summary_rows": 904,
+  "manifest_package_rows": 904,
+  "independent_pkginfo_rows": 904,
+  "package_hash_size_and_export_import_count_mismatches": 0,
+  "total_export_table_rows": 2885414,
+  "total_import_table_rows": 225535,
+  "serialized_index_reference_counts": {
+    "importOuters": 213955,
+    "exportOuters": 2783003,
+    "exportClasses": 2880410,
+    "exportSupers": 5355,
+    "exportTemplates": 0,
+    "exportArchetypes": 395709
+  },
+  "unresolved_package_table_index_rows": 0,
+  "all_non_null_package_indices_resolved_within_local_tables": true,
+  "import_root_rows_parsed": 225535,
+  "source_package_to_import_root_pairs": 2416,
+  "package_name_to_filename_stem_candidates": {
+    "unique_filename_stem_candidate": 2287,
+    "no_filename_stem_match": 129
+  },
+  "limitations": [
+    "UELib 1.13.3 parsed import/export table indices before object initialization; no property payload or bytecode references were extracted here.",
+    "Class, outer, super, template, and archetype links are signed package-table indices resolved only within that package's import/export tables.",
+    "An import package name matching an installed UPK filename stem is a candidate path association; duplicate and absent stems remain explicit, and a match does not prove runtime loading.",
+    "This census does not recover asset dependencies embedded in binary payloads or UnrealScript property values."
+  ]
+}

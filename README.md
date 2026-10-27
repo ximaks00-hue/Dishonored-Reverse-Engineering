@@ -2,7 +2,7 @@
 
 Community-oriented, evidence-led research into **Dishonored (Windows)**, covering installation and configuration, Unreal Engine 3 packages, runtime behavior, gameplay systems and selected native functions.
 
-> **Project status:** research infrastructure and community workflow are available; the audited GitHub repository does **not yet contain verified build-specific experiments or function records**. See [research status](docs/research-status.md). Local work discussed outside the repository is not automatically published evidence.
+> **Project status:** the research corpus includes 155 build-scoped experiments, a recorded Steam build and file manifest, reproducible analysis tools, and static native-function review catalogs. These records preserve their evidence level and limitations; they do not claim runtime verification of all findings. See [research status](docs/research-status.md) and the [published evidence index](docs/published-evidence.md).
 
 ## Why this project exists
 Build a searchable, reproducible account of how selected game systems work, with documented uncertainty and independent behavioral models. **This is not a claim of recreating the complete game.** The project does not distribute game data and is not affiliated with the rights holders.
@@ -14,6 +14,7 @@ Build a searchable, reproducible account of how selected game systems work, with
 | Goal | Document |
 | --- | --- |
 | Learn what has actually been verified | [Research status](docs/research-status.md) |
+| Browse published experiments, build identity and native-function records | [Published evidence index](docs/published-evidence.md) |
 | Understand project organization | [Handbook](docs/index.md) and [architecture](docs/architecture/overview.md) |
 | Choose valuable work | [Research backlog](docs/backlog.md) and [roadmap](docs/roadmap.md) |
 | Record reliable evidence | [Evidence policy](docs/methodology/evidence.md) and [claim policy](docs/methodology/claims.md) |

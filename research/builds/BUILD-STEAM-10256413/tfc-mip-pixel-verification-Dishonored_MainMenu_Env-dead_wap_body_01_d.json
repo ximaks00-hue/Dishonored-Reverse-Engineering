@@ -1,0 +1,61 @@
+{
+  "package_file": "assets\\extracted\\tfc-cross-cache-mainmenu\\decompressed\\Dishonored_MainMenu_Env.upk",
+  "package_sha256": "63F9AB497E4D3856112302737593D2946662A46DAE9FB8F68FCF7BD67B414BE8",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\CharTextures.tfc",
+  "tfc_file_size": 301325850,
+  "tfc_sha256": "DC44903278ECFF2E3735DF828F550FAD5D9A5871370EEB5A5D4D1CEF040E9D7B",
+  "mip_comparisons": [
+    {
+      "mip_index": 0,
+      "width": 512,
+      "height": 1024,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "CharTextures.tfc",
+      "storage_offset": 264164359,
+      "storage_size": 226462,
+      "stored_range_sha256": "DB183E5FCBAAF1D89A5CE92D051FF8D313AF85004DB4E8C0521DC804B2BE1B1F",
+      "lzo_container_header_bytes": 32,
+      "lzo_chunk_count": 2,
+      "lzo_chunk_compressed_sizes": [
+        119692,
+        106738
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072,
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null,
+      "decoded_mip_sha256": "2109F315DCD23EF3996C1F8E6C868BCFBDA6DF61506A2D5AAE6F68EFA88FD3AE",
+      "decoded_bytes": 262144,
+      "tga_file": "assets\\extracted\\tfc-cross-cache-mainmenu\\with-cache\\Dishonored_MainMenu_Env\\Texture2D\\dead_wap_body_01_d.tga",
+      "tga_file_size": 977321,
+      "tga_sha256": "6C6C84423ED274BE0F47D9B5EEAAD0FF497C53C3CE4EC2A19981F1DF1F018D70",
+      "exact_rgb_pixels": 524288,
+      "total_pixels": 524288,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    },
+    {
+      "mip_index": 2,
+      "width": 128,
+      "height": 256,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu_Env.upk",
+      "storage_offset": 20531095,
+      "storage_size": 16384,
+      "stored_range_sha256": "49AC540D149A8C610530F512374A98B15DF5CBEBB270CB66F0B73EE002F2C468",
+      "decoded_mip_sha256": "49AC540D149A8C610530F512374A98B15DF5CBEBB270CB66F0B73EE002F2C468",
+      "decoded_bytes": 16384,
+      "tga_file": "assets\\extracted\\tfc-cross-cache-mainmenu\\no-cache\\Dishonored_MainMenu_Env\\Texture2D\\dead_wap_body_01_d.tga",
+      "tga_file_size": 69225,
+      "tga_sha256": "BE5FD561BFC1A761E652D481AA510CD46926A78E4FE95459D6784E8C22AAD9CB",
+      "exact_rgb_pixels": 32768,
+      "total_pixels": 32768,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    }
+  ],
+  "claim_limit": "Byte-to-pixel equality verifies this parser export sample; it does not prove in-game runtime rendering or general TFC format coverage."
+}

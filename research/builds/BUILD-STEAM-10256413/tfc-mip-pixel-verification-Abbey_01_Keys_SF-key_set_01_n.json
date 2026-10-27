@@ -1,0 +1,59 @@
+{
+  "package_file": "assets\\extracted\\tfc-reference-probe-abbey-keys\\decompressed-confirmed\\Abbey_01_Keys_SF.upk",
+  "package_sha256": "6E5C31A73A2C5FAECEA4B3F486F66E91B0B9391F786C7A198304A70BE885EC32",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Textures.tfc",
+  "tfc_file_size": 1209025724,
+  "tfc_sha256": "111AEEF2932BC9679C3262A9D0077BED79784B919AFF04151CED5849BCE62C74",
+  "mip_comparisons": [
+    {
+      "mip_index": 0,
+      "width": 256,
+      "height": 256,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Textures.tfc",
+      "storage_offset": 52435560,
+      "storage_size": 12491,
+      "stored_range_sha256": "926F9B194BE24AE487931BAFF3611359FF7B7EA47E046FB3945A280C6350DF56",
+      "lzo_container_header_bytes": 24,
+      "lzo_chunk_count": 1,
+      "lzo_chunk_compressed_sizes": [
+        12467
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        32768
+      ],
+      "lzo_prefix_bytes_skipped": null,
+      "decoded_mip_sha256": "BC65307C8EDA694E5DD415C105ADFC8395936F5A87CC89DF628E5E5A88D912DF",
+      "decoded_bytes": 32768,
+      "tga_file": "assets\\extracted\\tfc-reference-probe-abbey-keys\\second-with-tfc\\Abbey_01_Keys_SF\\Texture2D\\key_set_01_n.tga",
+      "tga_file_size": 54861,
+      "tga_sha256": "7C69D1B1D1EE3D888A0715B7A56BF95CF2E321B1540965FCDB32F757A5CE1CBC",
+      "exact_rgb_pixels": 65536,
+      "total_pixels": 65536,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    },
+    {
+      "mip_index": 1,
+      "width": 128,
+      "height": 128,
+      "bulk_flags": "0",
+      "storage_file": "Abbey_01_Keys_SF.upk",
+      "storage_offset": 56019,
+      "storage_size": 8192,
+      "stored_range_sha256": "565F73C4CB7C96BDE0392DC922E9B3EDFC490428555FB61F30AE5CCECF0476DE",
+      "decoded_mip_sha256": "565F73C4CB7C96BDE0392DC922E9B3EDFC490428555FB61F30AE5CCECF0476DE",
+      "decoded_bytes": 8192,
+      "tga_file": "assets\\extracted\\tfc-reference-probe-abbey-keys\\second-without-tfc\\Abbey_01_Keys_SF\\Texture2D\\key_set_01_n.tga",
+      "tga_file_size": 16958,
+      "tga_sha256": "BF35199B6C44EBAA04A2EAB4549DE2921C9D9BBCE53D49DCCA3985EB483C4925",
+      "exact_rgb_pixels": 16384,
+      "total_pixels": 16384,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    }
+  ],
+  "claim_limit": "Byte-to-pixel equality verifies this parser export sample; it does not prove in-game runtime rendering or general TFC format coverage."
+}

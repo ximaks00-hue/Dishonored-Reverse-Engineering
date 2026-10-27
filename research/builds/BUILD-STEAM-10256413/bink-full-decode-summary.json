@@ -1,0 +1,22 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "ffmpeg_path": "C:\\Users\\Max\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-9.0.1-full_build\\bin\\ffmpeg.exe",
+  "ffmpeg_sha256": "57C56E369D5B4873B4D93FC1A1D833CB7CD8BC9325C14B05C34CE60B22842D8A",
+  "ffmpeg_version": "ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "manifest_bik_files": 76,
+  "manifest_total_bytes": 1954620912,
+  "jobs": 2,
+  "timeout_seconds_per_file": 600,
+  "mapping": "Decode first video stream and every optional audio stream; send output to FFmpeg null muxer.",
+  "outcomes": {
+    "decoded": 76
+  },
+  "decoded_bytes": 1954620912,
+  "failed_files": [],
+  "results_csv": "E:\\Dishonored Reverse Engineering\\research\\builds\\BUILD-STEAM-10256413\\bink-full-decode-audit.csv",
+  "limitations": [
+    "A zero FFmpeg exit status establishes decoder acceptance of the mapped streams, not audiovisual quality or semantic correctness.",
+    "This audit does not establish which movie/track the game selects at runtime."
+  ]
+}

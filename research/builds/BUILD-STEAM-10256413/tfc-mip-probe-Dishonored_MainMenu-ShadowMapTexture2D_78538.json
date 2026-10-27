@@ -1,0 +1,31 @@
+{
+  "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-probe\\decompressed\\Dishonored_MainMenu.upk",
+  "package_sha256": "B9585365B75FCFBFC9A5CE4ABD995D6BD4C9A1A2EECD4CAAEC3BC6A25E5A2D8A",
+  "package_index": 776,
+  "object_name": "ShadowMapTexture2D_78538",
+  "owner_class": "ShadowMapTexture2D",
+  "parser_class_type": "UELib.Engine.UShadowMapTexture2D",
+  "serialized_texture_width": 32,
+  "serialized_texture_height": 32,
+  "serialized_texture_format": "EPixelFormat.PF_G8",
+  "export_serial_offset": 670603,
+  "export_serial_size": 1770,
+  "export_serial_end_exclusive": 672373,
+  "texture_cache_name": "Lighting",
+  "texture_file_cache_guid_components": {
+    "A": 4113325491,
+    "B": 1319949784,
+    "C": 2101652140,
+    "D": 2322236255
+  },
+  "tfc_file": "E:\\Dishonored Reverse Engineering\\Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_file_size": 548298402,
+  "tfc_file_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "mip_count": 6,
+  "external_mip_count": 0,
+  "inline_mip_count": 6,
+  "all_mip_ranges_in_file": true,
+  "all_inline_ranges_within_export_serial": true,
+  "external_mip_offsets_in_tfc": [],
+  "output_csv": "E:\\Dishonored Reverse Engineering\\research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-Dishonored_MainMenu-ShadowMapTexture2D_78538.csv"
+}

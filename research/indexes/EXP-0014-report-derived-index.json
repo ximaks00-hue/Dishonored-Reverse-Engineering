@@ -1,0 +1,307 @@
+{
+  "record_type": "report_derived_index",
+  "evidence_level": "Parsed from user-submitted EXP-0014; binary not independently accessed",
+  "source_sha256": "8d183a32c194da8a247ecc44906c6565b91c3d6e217cd3b66984f27d2abc00e2",
+  "reported_binary_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "image_base": "0x00400000",
+  "registry": [
+    {
+      "key": 101,
+      "registrar_va": "0x009FF060",
+      "factory_va": "0x009EB640",
+      "allocation_bytes": 628,
+      "constructor_va": "0x00945EC0",
+      "type_name": "ArkCpntType_Locomotion"
+    },
+    {
+      "key": 103,
+      "registrar_va": "0x009FF0E0",
+      "factory_va": "0x009EB6B0",
+      "allocation_bytes": 636,
+      "constructor_va": "0x00955D60",
+      "type_name": "ArkCpntType_Lookat"
+    },
+    {
+      "key": 105,
+      "registrar_va": "0x009FF160",
+      "factory_va": "0x009EB720",
+      "allocation_bytes": 44,
+      "constructor_va": "0x00935FC0",
+      "type_name": "ArkCpntType_Avoidance"
+    },
+    {
+      "key": 102,
+      "registrar_va": "0x009FF1E0",
+      "factory_va": "0x009EB790",
+      "allocation_bytes": 120,
+      "constructor_va": "0x00938A90",
+      "type_name": "ArkCpntType_FaceTo"
+    },
+    {
+      "key": 104,
+      "registrar_va": "0x009FF260",
+      "factory_va": "0x009EB800",
+      "allocation_bytes": 144,
+      "constructor_va": "0x008F9620",
+      "type_name": "ArkCpntType_MeshOffset"
+    },
+    {
+      "key": 210,
+      "registrar_va": "0x009FF2E0",
+      "factory_va": "0x009EB870",
+      "allocation_bytes": 28,
+      "constructor_va": "0x00B038C0",
+      "type_name": "DisCpntType_AIKnowledge"
+    },
+    {
+      "key": 208,
+      "registrar_va": "0x009FF360",
+      "factory_va": "0x009EB8E0",
+      "allocation_bytes": 64,
+      "constructor_va": "0x00B2BAD0",
+      "type_name": "DisCpntType_AIMonitorPawnReachability"
+    },
+    {
+      "key": 211,
+      "registrar_va": "0x009FF3E0",
+      "factory_va": "0x009EB950",
+      "allocation_bytes": 64,
+      "constructor_va": "0x00B2BC90",
+      "type_name": "DisCpntType_AIMonitorReaction"
+    },
+    {
+      "key": 0,
+      "registrar_va": "0x009FF460",
+      "factory_va": "0x009EB9C0",
+      "allocation_bytes": 208,
+      "constructor_va": "0x00C41BA0",
+      "type_name": "DisCpntType_AnimPlayer"
+    },
+    {
+      "key": 200,
+      "registrar_va": "0x009FF4E0",
+      "factory_va": "0x009EBA30",
+      "allocation_bytes": 92,
+      "constructor_va": "0x00C3E1F0",
+      "type_name": "DisCpntType_HitReactionThrow"
+    },
+    {
+      "key": 203,
+      "registrar_va": "0x009FF560",
+      "factory_va": "0x009EBAA0",
+      "allocation_bytes": 80,
+      "constructor_va": "0x00C70B20",
+      "type_name": "DisCpntType_Observable"
+    },
+    {
+      "key": 209,
+      "registrar_va": "0x009FF5E0",
+      "factory_va": "0x009EBB10",
+      "allocation_bytes": 44,
+      "constructor_va": "0x00C66B70",
+      "type_name": "DisCpntType_Plague"
+    },
+    {
+      "key": 204,
+      "registrar_va": "0x009FF660",
+      "factory_va": "0x009EBB80",
+      "allocation_bytes": 88,
+      "constructor_va": "0x00C66C90",
+      "type_name": "DisCpntType_Retargeting"
+    },
+    {
+      "key": 213,
+      "registrar_va": "0x009FF6E0",
+      "factory_va": "0x009EBBF0",
+      "allocation_bytes": 60,
+      "constructor_va": "0x00C70F10",
+      "type_name": "DisCpntType_TuneCombat"
+    },
+    {
+      "key": 212,
+      "registrar_va": "0x009FF760",
+      "factory_va": "0x009EBC60",
+      "allocation_bytes": 44,
+      "constructor_va": "0x00C670A0",
+      "type_name": "DisCpntType_TuneProtection"
+    },
+    {
+      "key": 205,
+      "registrar_va": "0x009FF7E0",
+      "factory_va": "0x009EBCD0",
+      "allocation_bytes": 432,
+      "constructor_va": "0x00C71810",
+      "type_name": "DisCpntType_VisionNPC"
+    },
+    {
+      "key": 206,
+      "registrar_va": "0x009FF860",
+      "factory_va": "0x009EBD40",
+      "allocation_bytes": 400,
+      "constructor_va": "0x00C71A20",
+      "type_name": "DisCpntType_VisionWatchtower"
+    },
+    {
+      "key": 207,
+      "registrar_va": "0x009FF8E0",
+      "factory_va": "0x009EBDB0",
+      "allocation_bytes": 400,
+      "constructor_va": "0x00C71920",
+      "type_name": "DisCpntType_VisionRiverKrust"
+    },
+    {
+      "key": 214,
+      "registrar_va": "0x009FF960",
+      "factory_va": "0x009EBE20",
+      "allocation_bytes": 20,
+      "constructor_va": "0x00C66420",
+      "type_name": "DisCpntType_MonitorNPCReaction"
+    },
+    {
+      "key": 202,
+      "registrar_va": "0x009FF9E0",
+      "factory_va": "0x009EBE90",
+      "allocation_bytes": 48,
+      "constructor_va": "0x00C83380",
+      "type_name": "DisCpntType_RBDamages"
+    },
+    {
+      "key": 201,
+      "registrar_va": "0x009FFA60",
+      "factory_va": "0x009EBF00",
+      "allocation_bytes": 72,
+      "constructor_va": "0x00C74D70",
+      "type_name": "DisCpntType_LODManager"
+    }
+  ],
+  "controller": [
+    {
+      "name": "Dis_WheelShortcuts_MouseNext",
+      "record_va": "0x012E52D0",
+      "wrapper_va": "0x009F4100",
+      "receiver_slot_offset": "+0x518"
+    },
+    {
+      "name": "Dis_WheelShortcuts_MousePrevious",
+      "record_va": "0x012E52D8",
+      "wrapper_va": "0x009EDEF0",
+      "receiver_slot_offset": "+0x514"
+    },
+    {
+      "name": "Dis_WheelShortcuts_KeyboardUse",
+      "record_va": "0x012E52E0",
+      "wrapper_va": "0x009EDE90",
+      "receiver_slot_offset": "+0x510"
+    },
+    {
+      "name": "Dis_WheelShortcuts_KeyboardSelect",
+      "record_va": "0x012E52E8",
+      "wrapper_va": "0x009EDE30",
+      "receiver_slot_offset": "+0x50C"
+    },
+    {
+      "name": "Dis_WheelShortcuts_GamepadUse",
+      "record_va": "0x012E52F0",
+      "wrapper_va": "0x009EDDD0",
+      "receiver_slot_offset": "+0x508"
+    },
+    {
+      "name": "Dis_WheelShortcuts_GamepadSelect",
+      "record_va": "0x012E52F8",
+      "wrapper_va": "0x009EDD70",
+      "receiver_slot_offset": "+0x504"
+    },
+    {
+      "name": "Dis_Wheel_Close",
+      "record_va": "0x012E5300",
+      "wrapper_va": "0x009EDD00",
+      "receiver_slot_offset": "+0x500"
+    },
+    {
+      "name": "Dis_Wheel_Open",
+      "record_va": "0x012E5308",
+      "wrapper_va": "0x009EDC90",
+      "receiver_slot_offset": "+0x4FC"
+    },
+    {
+      "name": "OnTeleport_Native",
+      "record_va": "0x012E5310",
+      "wrapper_va": "0x009EDC30",
+      "receiver_slot_offset": "+0x4F8"
+    }
+  ],
+  "lookat_table": [
+    {
+      "slot_va": "0x010A6694",
+      "slot_rva": "0x00CA6694",
+      "target_va": "0x00956540",
+      "target_rva": "0x00556540",
+      "function": "FUN_00956540"
+    },
+    {
+      "slot_va": "0x010A6698",
+      "slot_rva": "0x00CA6698",
+      "target_va": "0x009561E0",
+      "target_rva": "0x005561E0",
+      "function": "FUN_009561E0"
+    },
+    {
+      "slot_va": "0x010A669C",
+      "slot_rva": "0x00CA669C",
+      "target_va": "0x009561F0",
+      "target_rva": "0x005561F0",
+      "function": "FUN_009561F0"
+    },
+    {
+      "slot_va": "0x010A66A0",
+      "slot_rva": "0x00CA66A0",
+      "target_va": "0x00956270",
+      "target_rva": "0x00556270",
+      "function": "FUN_00956270"
+    },
+    {
+      "slot_va": "0x010A66A4",
+      "slot_rva": "0x00CA66A4",
+      "target_va": "0x00955760",
+      "target_rva": "0x00555760",
+      "function": "FUN_00955760"
+    },
+    {
+      "slot_va": "0x010A66A8",
+      "slot_rva": "0x00CA66A8",
+      "target_va": "0x00932E20",
+      "target_rva": "0x00532E20",
+      "function": "FUN_00932E20"
+    },
+    {
+      "slot_va": "0x010A66AC",
+      "slot_rva": "0x00CA66AC",
+      "target_va": "0x0094D360",
+      "target_rva": "0x0054D360",
+      "function": "FUN_0094D360"
+    },
+    {
+      "slot_va": "0x010A66B0",
+      "slot_rva": "0x00CA66B0",
+      "target_va": "0x00956660",
+      "target_rva": "0x00556660",
+      "function": "FUN_00956660"
+    },
+    {
+      "slot_va": "0x010A66B4",
+      "slot_rva": "0x00CA66B4",
+      "target_va": "0x00956A00",
+      "target_rva": "0x00556A00",
+      "function": "FUN_00956A00"
+    },
+    {
+      "slot_va": "0x010A66B8",
+      "slot_rva": "0x00CA66B8",
+      "target_va": "0x00952620",
+      "target_rva": "0x00552620",
+      "function": "FUN_00952620"
+    }
+  ],
+  "original_uploaded_sha256": "8d67720e721c2f69d81777c7a982b217633f76eeee0f74a00d2def02438e71d2",
+  "normalization_note": "Files ingestion removed one terminal LF from the uploaded EXP-0014 Markdown; source_sha256 is the committed GitHub snapshot, original_uploaded_sha256 retains attachment byte identity."
+}

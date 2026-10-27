@@ -4,10 +4,10 @@ These are questions, not established facts. Priority reflects dependency and dis
 
 | Priority | Question | Evidence required | Suggested contribution |
 | --- | --- | --- | --- |
-| P0 | What exact installed build is studied? | Executable/module SHA-256, architecture, edition, OS and acquisition method | BUILD record and read-only inventory |
-| P0 | Where are the locally reported experiments and scripts? | Audited files, commit provenance, reproducible outputs | Import with source verification |
+| P0 | Is the registered build identity reproducible from an available local install? | Exact executable and manifest hashes, architecture, edition and provenance | Re-run the build check without committing game files |
+| P0 | Which parts of the published evidence can another contributor reproduce? | Source/input availability, tool versions, output hashes and known limits | Reproduce EXP-0114 or selected native catalog checks |
 | P1 | How is `BasedOn` resolved at runtime? | Controlled distinguishing observation or trace tied to a build | Hypothesis and EXP design |
-| P1 | Which config candidates are ambiguous? | Full input manifest and deterministic match report | Re-run EXP-0114 if obtained |
+| P1 | How does the game resolve `BasedOn` and config path declarations at runtime? | Controlled observation that distinguishes candidate bases | Design and execute a build-matched runtime experiment |
 | P1 | Can repository records be validated automatically? | Synthetic fixtures and CI | Extend validation script |
 | P2 | Which package readers parse sampled files reliably? | Build-bound input hashes, parser versions and failure cases | Compatibility matrix |
 | P2 | Which native function matters to a selected behavior? | Build/module hash, RVA, references and falsifying evidence | Function record |

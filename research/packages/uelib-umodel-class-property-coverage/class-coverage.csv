@@ -1,0 +1,8 @@
+umodel_fake_class,uelib_export_class_label,uelib_exports,uelib_unknown_object_exports,uelib_non_unknown_exports,uelib_deserialized_exports,uelib_objects_with_default_property_rows,uelib_default_property_rows,uelib_packages_with_class,uelib_packages_with_unknown_class,umodel_fake_export_requests,umodel_packages_with_fake_requests,packages_with_both_class_and_fake_request,claim
+Texture2D,Texture2D,92846,0,92846,0,0,0,720,0,94305,721,720,aggregate class-label crosswalk only; fake requests and UELib exports are not object-level matched
+MaterialInstanceConstant,MaterialInstanceConstant,45120,45120,0,0,0,0,483,483,39078,481,481,aggregate class-label crosswalk only; fake requests and UELib exports are not object-level matched
+StaticMesh3,StaticMesh,34856,34856,0,0,0,0,460,460,33944,452,452,aggregate class-label crosswalk only; fake requests and UELib exports are not object-level matched
+LightMapTexture2D,LightMapTexture2D,31442,31442,0,0,0,0,325,325,31442,325,325,aggregate class-label crosswalk only; fake requests and UELib exports are not object-level matched
+SkeletalMesh3,SkeletalMesh,4323,4321,2,2,2,8,275,274,4055,267,267,aggregate class-label crosswalk only; fake requests and UELib exports are not object-level matched
+Material3,Material,3667,0,3667,0,0,0,427,0,2321,374,372,aggregate class-label crosswalk only; fake requests and UELib exports are not object-level matched
+AnimSet,AnimSet,7548,7547,1,1,0,0,260,259,20,19,19,aggregate class-label crosswalk only; fake requests and UELib exports are not object-level matched

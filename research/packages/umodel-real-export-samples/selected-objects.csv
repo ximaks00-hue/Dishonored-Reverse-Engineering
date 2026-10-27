@@ -1,0 +1,8 @@
+sample_id,fake_export_class,relative_path,object_name
+texture2d,Texture2D,DishonoredGame/CookedPCConsole/UI_Map_Boyle_SF.upk,LevelMap_Ext_Boyle
+material_instance,MaterialInstanceConstant,DishonoredGame/CookedPCConsole/L_Pub_Night_P.upk,Moon_HUB_Night_INST
+static_mesh,StaticMesh3,DishonoredGame/CookedPCConsole/L_Pub_Night_P.upk,Stm_SunDome
+lightmap,LightMapTexture2D,DishonoredGame/DLC/PCConsole/DLC06/DLC06_DaudBase_P.upk,DirectionalMaxComponent0_145
+skeletal_mesh,SkeletalMesh3,DishonoredGame/CookedPCConsole/Engine.upk,Skm_Player
+material,Material3,DishonoredGame/CookedPCConsole/L_Pub_Night_P.upk,Moon_PMAT
+animation_set,AnimSet,DishonoredGame/CookedPCConsole/L_LightH_Script_Master.upk,Npc_TallBoy_Empty_as

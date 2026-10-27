@@ -1,0 +1,48 @@
+{
+  "cache_schema_version": 1,
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "wwiser_commit": "08e937b649bc7007c234bbd59e34a41d5eef3b38",
+  "wwiser_script_sha256": "6A12FB9BA8AE3DC0724BFDCBF1AB1657E39E9C60E6BEA091275CF044E3267323",
+  "parser_source_sha256": "293B4BDA601E8D714FDBAD25FB655FDB16E1E5B120B31FBEAE3221AA8BA301F9",
+  "python_version": "3.12.10",
+  "wwiser_options": [
+    "-d",
+    "xml"
+  ],
+  "timeout_seconds": 300,
+  "packages_table_sha256": "61156B22B9E112D5F09DDDA148A84303B5C43BF7B2A7CDCA2857EF212F34884F",
+  "entries_table_sha256": "4FD1765639F13C09022F6563DD0C2D25E2E6FF09F52E025717A56B7810FBF38F",
+  "source_files_checked": 4056,
+  "bank_entry_occurrences": 4056,
+  "unique_bank_payloads_in_cohort": 2570,
+  "unique_bank_payloads_in_scope": 2570,
+  "cache_hits": 0,
+  "checkpointed_this_run": 2570,
+  "cache_path": "E:\\Dishonored Reverse Engineering\\.tmp\\wwise-localized-akpk-hirc-cache.jsonl",
+  "cache_outcomes": {
+    "parsed": 2570
+  },
+  "bank_payload_bytes_by_unique_hash": 1144722681,
+  "parse_failures": 0,
+  "bank_versions": {
+    "65": 2570
+  },
+  "hirc_object_counts_by_type_across_unique_payloads": {
+    "CAkActionPlay": 31637,
+    "CAkActorMixer": 2645,
+    "CAkAttenuation": 2559,
+    "CAkEvent": 31637,
+    "CAkSound": 31637,
+    "CAkState": 2
+  },
+  "unique_hirc_object_rows": 100115,
+  "unique_static_edge_rows": 126548,
+  "scoped_limit": 0,
+  "limitations": [
+    "AKPK bank offsets and sizes derive from the EXP-0130 table parser; this procedure is not an independent AKPK table-parser cross-check.",
+    "HIRC parsing uses pinned wwiser and establishes parser-derived structures, not original Wwise source semantics.",
+    "Deduplication is by exact SHA-256 and byte size; occurrence output preserves source package provenance.",
+    "Relations are static parser output and do not establish runtime bank loading, event execution, language selection, or playback."
+  ]
+}
