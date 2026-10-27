@@ -110,6 +110,12 @@ def main() -> int:
                 continue
             resolved = (path.parent / rel).resolve()
             if not resolved.exists():
+                # These paths intentionally refer to machine-local inputs or
+                # generated outputs, which are excluded from Git. Their absence
+                # in a clean checkout is not a broken link in the published corpus.
+                repo_rel = resolved.relative_to(ROOT).as_posix() if resolved.is_relative_to(ROOT) else ""
+                if repo_rel.startswith("assets/extracted/") or repo_rel == "tools/ue-package-decompressor/decompress.exe":
+                    continue
                 errors.append(f"{path.name}: broken link '{target}'")
 
     numbers = sorted(int(i.split("-")[1]) for i in seen_ids)

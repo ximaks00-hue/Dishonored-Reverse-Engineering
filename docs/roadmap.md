@@ -53,6 +53,14 @@ Completion gates:
 
 Use denominators such as files inventoried / manifest files, packages parsed / package files, functions analyzed / indexed functions, reviewed owners / selected candidate edges, and repeatable behaviors / behaviors selected. Keep these measures separate; do not summarize them as one completion percentage. Current measures and EXP links are in [coverage](coverage.md).
 
+## Repository readiness
+
+These project-delivery tasks remain open alongside reverse engineering:
+
+- Recover the original local sources for EXP-0114 and other earlier records absent from the available GitHub corpus. Do not recreate experiment bodies from summaries.
+- Confirm successful GitHub Actions runs for repository evidence checks after the CI changes; a local pass does not close this gate.
+- Configure and verify `main` branch protection, required checks, a usable issue-label set, and collaborator access appropriate to the project's contributors.
+
 ## Experiment range
 
 The current source corpus contains [EXP-0001 through EXP-0155](../experiments/). New experiments use the [template](../templates/experiment.md), and the repository validator checks IDs, statuses, and local references.

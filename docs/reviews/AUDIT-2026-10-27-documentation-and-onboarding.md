@@ -35,11 +35,15 @@ These checks validate links and record structure. They do not certify research c
 4. `tools/validate_experiments.py` uses a small line-oriented frontmatter parser and path-link regex rather than a complete YAML/Markdown parser. It is adequate for current records but does not validate full YAML syntax or all link forms.
 5. Runtime evidence remains zero; 47 of 72,437 indexed bodies have manual body reviews, and the exact-build function unknown bucket remains large. See [coverage](../coverage.md) and [roadmap](../roadmap.md).
 6. The GitHub research corpus is carried on a long stacked draft-PR history. Branch integration still needs a reviewed rebase/merge plan; this review does not merge or retarget PRs.
+7. The first hosted Actions run failed because the EXP validator treated four intentionally local-only paths (ignored extracted outputs and the local decompressor) as broken links. The validator now exempts only those path families; a successful hosted run is still required.
+8. GitHub's API reports that branch protection is unavailable for this private repository on its current plan (HTTP 403: upgrade to Pro or make the repository public). The collaborator list currently contains only the owner. No protection was configured and no contributor access was granted.
 
 ## Follow-up order
 
-1. Keep the repository-only EXP/link checks in CI and run them for documentation changes.
-2. Add an evidence-manifest format for generated catalogs (EXP/source hashes, build, tool/options, row count, and reproduction command) and adopt it for new outputs before migrating old artifacts.
-3. Correct decompile-cache invalidation and L4 build matching with negative cross-build cases; do not relabel existing evidence automatically.
-4. Publish a compact coverage export that can be regenerated from validated metadata without requiring game binaries; keep exact-build re-indexing as a separate local operation.
-5. Continue priority-driven reverse engineering from the [roadmap](../roadmap.md). Preserve runtime and semantic gaps in the status instead of implying completion from inventory counts.
+1. Recover missing earlier local experiment sources before claiming they are represented on GitHub. EXP-0114 and other historically referenced records were absent from the available checkout during the audit; no contents were reconstructed from summaries. Track them as source-recovery work until the original files are recovered.
+2. Verify a successful GitHub Actions run for the corrected CI on the final commit; local validation alone is not CI evidence.
+3. Upgrade the private repository plan or make the repository public before enabling and verifying `main` protection and required checks. Add collaborators only by explicit GitHub username and agreed permission.
+4. Add an evidence-manifest format for generated catalogs (EXP/source hashes, build, tool/options, row count, and reproduction command) and adopt it for new outputs before migrating old artifacts.
+5. Correct decompile-cache invalidation and L4 build matching with negative cross-build cases; do not relabel existing evidence automatically.
+6. Publish a compact coverage export that can be regenerated from validated metadata without requiring game binaries; keep exact-build re-indexing as a separate local operation.
+7. Continue priority-driven reverse engineering from the [roadmap](../roadmap.md). Preserve runtime and semantic gaps in the status instead of implying completion from inventory counts.

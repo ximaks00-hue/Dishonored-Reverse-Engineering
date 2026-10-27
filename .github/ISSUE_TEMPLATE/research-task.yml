@@ -1,6 +1,7 @@
 name: Research task
 description: Propose a focused evidence-gathering or project-infrastructure task
 title: "[Research] "
+labels: [research]
 body:
   - type: markdown
     attributes:
