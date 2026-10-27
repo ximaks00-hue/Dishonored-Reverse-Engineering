@@ -42,6 +42,7 @@
 | Movie metadata | 76/76 Bink files probed; 14/14 same-stem text sidecars paired; 94 cue-like rows parsed | FFprobe metadata and file sizes agree; no full decode or runtime selection; one raw timing-field discrepancy candidate remains open; EXP-0129 |
 | CookedPC/DLC AKPK containers | 4,056/4,056 nonempty files parsed (4,059 total; 3 empty); 16,168 bank/sound entries | 4,056 bank + 12,112 sound rows; manifest size/SHA match and range/magic checks pass; no independent parser cross-check; EXP-0130 |
 | AKPK WEM payload decode | 7,213/7,213 distinct payload hashes decoded; 12,112/12,112 occurrences mapped | vgmstream r2023 accepted all unique payloads; ranges derive from EXP-0130 tables; HIRC/media identity, perceptual correctness, and runtime selection remain open; EXP-0131 |
+| Localized AKPK bank HIRC | 2,570/2,570 unique bank payloads parsed; 4,056/4,056 occurrences mapped; 100,115 HIRC objects and 126,548 static relation rows | wwiser parser output only; AKPK offsets derive from EXP-0130 and lack independent cross-check in this cohort; runtime loading/event/media/playback joins remain open; EXP-0132 |
 | Installed UPKs inventoried | 904 / 904 | 470 CookedPCConsole + 434 DLC; exact path/size/hash matched to build manifest (EXP-0011, EXP-0052) |
 | UModel UPK metadata/object census | 904 / 904 packages; 2,885,414 export rows; all per-package counts match; 17 packages with name-fixing warnings; 0 errors | Export label catalog only; property/reference recovery and script bodies remain open; EXP-0052/0053 |
 | UModel fake-export handling | 904 / 904 hash-verified packages loaded; 205,165 fake-export requests from 721 packages in seven resource classes; 485 warning-bearing packages; 13 package errors; 183 packages with no request lines | `-testexport` wrote zero files; counts are fake-export requests, not successful disk exports; real asset export and property/bytecode coverage remain open; EXP-0082 |
@@ -88,4 +89,4 @@
 
 ## Current experiment range
 
-`EXP-0001` … `EXP-0131`. Latest: [EXP-0131](../experiments/EXP-0131-localized-akpk-wem-decode-census.md). Validate with `python tools/validate_experiments.py`.
+`EXP-0001` … `EXP-0132`. Latest: [EXP-0132](../experiments/EXP-0132-localized-akpk-hirc-structure-census.md). Validate with `python tools/validate_experiments.py`.
