@@ -5,7 +5,7 @@
 3. **Write a procedure.** Include prerequisites, steps, inputs, expected observable outputs, and cleanup/reset steps.
 4. **Collect observations.** Preserve raw output or stable references. Avoid interpretive language in the observation field.
 5. **Analyze.** Compare alternatives and state what evidence would falsify each explanation.
-6. **Record and link.** Give the experiment a stable ID and YAML frontmatter (`id`, `title`, `status`, `build`, `question`); link the build, artifacts, findings, and open questions. Keep [research-status.md](../research-status.md) short; put narrative in [changelog.md](../changelog.md) and durable claims in [findings/](../findings/).
+6. **Record and link.** Give the experiment a stable ID and YAML frontmatter (`id`, `title`, `experiment_status`, `claim_status`, `build`, `question`); link the build, artifacts, findings, and open questions. Keep [research-status.md](../research-status.md) short; put narrative in [changelog.md](../changelog.md) and durable claims in [findings/](../findings/).
 7. **Review.** Re-run when practical, check scope and provenance, and update status without erasing history. Run `python tools/validate_experiments.py` and optionally `python tools/knowledge/sync_from_experiments.py`.
 
 ## File and package archaeology
