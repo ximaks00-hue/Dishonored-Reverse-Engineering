@@ -1,0 +1,46 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "manifest_sha256": "65286FAA9E04422D2A4C7E2C1D0CEAB80B02564B8C98ABA619967DD4FA09D5EB",
+  "ini_files_verified": 46,
+  "upk_manifest_rows": 904,
+  "distinct_upk_basenames": 891,
+  "reference_rows": 448,
+  "unique_targets_by_reference_kind": {
+    "configured_map_name": 29,
+    "dotted_object_reference": 5,
+    "map_hint_map_name": 76,
+    "mission_image_object_without_package": 9,
+    "mission_image_package_object": 3,
+    "package_list_declaration": 295,
+    "package_property": 4,
+    "url_map_target": 2
+  },
+  "rows_by_reference_kind": {
+    "configured_map_name": 29,
+    "dotted_object_reference": 8,
+    "map_hint_map_name": 76,
+    "mission_image_object_without_package": 9,
+    "mission_image_package_object": 14,
+    "package_list_declaration": 299,
+    "package_property": 7,
+    "url_map_target": 6
+  },
+  "rows_by_join_status": {
+    "ambiguous_exact_basename": 11,
+    "ambiguous_plus_SF_candidates": 3,
+    "exact_basename_match": 127,
+    "no_UPK_basename_candidate": 38,
+    "object_name_without_package_candidate": 9,
+    "plus_SF_candidate": 260
+  },
+  "rows_with_exact_basename_candidates": 138,
+  "rows_with_plus_SF_candidates": 263,
+  "ambiguous_rows": 14,
+  "limitations": [
+    "INI assignments are syntactic declarations; this pass does not implement Unreal configuration inheritance/merge or load-order rules.",
+    "UPK basename matches are filename candidates only and do not prove a declaration is consumed or the package is loaded.",
+    "The `_SF` alternative is reported as a separate candidate convention; it is not treated as an established resolver rule.",
+    "Bare mission-image object names have no package prefix and remain unresolved by this basename join."
+  ]
+}
