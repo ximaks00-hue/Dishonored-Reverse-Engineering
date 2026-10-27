@@ -91,3 +91,7 @@ EXP-0106–0108 record eight selected `AK::SoundEngine` wrapper families, the sh
 - 2026-10-27: EXP-0132 parses all 2,570 unique bank payloads in the 4,056-occurrence localized AKPK cohort with pinned wwiser: 100,115 HIRC objects and 126,548 static relation rows, with zero parse failures. AKPK table independence and runtime/event/media joins remain open.
 - 2026-10-27: Documentation and contributor audit reorganized entry points, coverage, roadmap, and newcomer workflow; added issue/PR templates and repository-wide Markdown path checks. This structural audit does not revalidate scientific interpretations in every EXP.
 - 2026-10-27: Added a practical contributor path with three scoped GitHub tasks, worked examples grounded in EXP-0114/0042 and the Blink evidence graph, a hypothesis-intake checklist, and a durable independent-review template. Independent review remains distinct from a claim being confirmed.
+# 2026-10-27 — Portable function coverage
+
+- Added a committed curated claim registry and deterministic per-function coverage CSV with a JSON provenance manifest. The export validates source/build identity, hashes, row counts, schemas, and exact address-set reconciliation without reading local SQLite, the game executable, or Ghidra.
+- Updated coverage and contributor documentation to distinguish repository-reproducible L0–L2 evidence from unpublished L3/L4 axes; CI now checks export reproducibility.

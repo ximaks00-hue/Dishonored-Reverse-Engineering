@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "app_id": "217980",
+  "build_id": "10256413",
+  "executable_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "module": "Dishonored.exe",
+  "records": [
+    {
+      "address": "0x00AB4680",
+      "name": "Dis_SelectPower_target",
+      "summary": "Controller +0x560 target",
+      "experiment": "EXP-0021",
+      "confidence": 0.9,
+      "claim_status": "confirmed"
+    },
+    {
+      "address": "0x00BCD800",
+      "name": "PowerWheel_OnSelectionChanged_target",
+      "summary": "PowerWheel +0x1F0 target",
+      "experiment": "EXP-0021",
+      "confidence": 0.9,
+      "claim_status": "confirmed"
+    },
+    {
+      "address": "0x00BFC990",
+      "name": "Blink_set_move_mode",
+      "summary": "Blink +0x1AC move-mode entry",
+      "experiment": "EXP-0024",
+      "confidence": 0.9,
+      "claim_status": "confirmed"
+    },
+    {
+      "address": "0x00C44D30",
+      "name": "UsePower_slot_134",
+      "summary": "DisItemContext_UsePower +0x134",
+      "experiment": "EXP-0028",
+      "confidence": 0.9,
+      "claim_status": "confirmed"
+    },
+    {
+      "address": "0x00C0CA70",
+      "name": "keyed_0x30_dispatcher",
+      "summary": "0x30-stride array dispatcher",
+      "experiment": "EXP-0032",
+      "confidence": 0.5,
+      "claim_status": "observed"
+    },
+    {
+      "address": "0x00C04C30",
+      "name": "pawn_manager_dispatch",
+      "summary": "Pawn manager virtual dispatch",
+      "experiment": "EXP-0037",
+      "confidence": 0.7,
+      "claim_status": "observed"
+    },
+    {
+      "address": "0x00B36CA0",
+      "name": "keyed_callback_register",
+      "summary": "Shared keyed callback helper",
+      "experiment": "EXP-0036",
+      "confidence": 0.7,
+      "claim_status": "observed"
+    }
+  ]
+}

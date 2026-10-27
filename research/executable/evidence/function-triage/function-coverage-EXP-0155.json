@@ -1,0 +1,159 @@
+{
+  "build": {
+    "app_id": "217980",
+    "architecture": "x86",
+    "build_id": "10256413",
+    "executable_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+    "image_base": "0x00400000",
+    "module": "Dishonored.exe"
+  },
+  "generated_by": {
+    "sha256": "5e1c3b423dab4932fd3b2bf28592ee4e8e165f4a6245b80f29838118b07e6c66",
+    "tool": "tools/export_function_coverage.py",
+    "version": 1
+  },
+  "inputs": [
+    {
+      "path": "research/executable/functions.csv",
+      "rows": 72437,
+      "sha256": "d260b168f863e6b4b592a8f57c959d204052fc67e6151c1c42ffecddf124eef9"
+    },
+    {
+      "path": "research/executable/evidence/function-triage/internal-function-triage.csv",
+      "rows": 72437,
+      "sha256": "be542ddb4d265272f7ca0f218ee9c239d2fd799ef33f5a3bf43c14d15b94896b"
+    },
+    {
+      "path": "research/executable/evidence/function-triage/internal-function-triage-summary.json",
+      "sha256": "b717a1c80e3b0f2ef6b1582b51ab138876d5e6dcc0104f6efc19d0e98afcbe7a"
+    },
+    {
+      "path": "research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0155.csv",
+      "rows": 47,
+      "sha256": "71db329003dd3e43211ae681f45f7c3068b3f297b851551dbaafbf43d60c7802"
+    },
+    {
+      "path": "research/executable/evidence/function-triage/manual-review-overlay-summary-EXP-0155.json",
+      "sha256": "174d4b55dfc4fce8001b31c6e5d6b29291d927efc30fb28c93db257e2549eade"
+    },
+    {
+      "path": "research/executable/evidence/function-triage/curated-function-claims-EXP-0155.json",
+      "sha256": "9868f97f7c2c938698a4ce5792d8961429df397a1e12609a9cba49fb77789b85"
+    },
+    {
+      "path": "schemas/curated-function-claims.schema.json",
+      "sha256": "18e17581a533d1b7b44b67902a4e6b234d9eb71a3919f50d5a39617f469ac62c"
+    },
+    {
+      "path": "schemas/function-coverage-export.schema.json",
+      "sha256": "0784565bccf2cc4d078b84e01eb4999959e2558040a3692bf2eb521d0f801ec5"
+    },
+    {
+      "path": "research/builds/BUILD-STEAM-10256413/build.md",
+      "sha256": "83bac00a21ec5feb8a17aa9ad34580ba61683f31f54ef4e49725842f6e46f036"
+    },
+    {
+      "path": "knowledge/database/schema.sql",
+      "sha256": "6271744a755c9a727cbbde6f315706099012a63d219cb6e0f982b92a88a1a919"
+    },
+    {
+      "path": "tools/knowledge/sync_from_experiments.py",
+      "sha256": "3d93a3b05a0ef774f2083a4ede6afdc7a565ddffcc3e98f3af1a74c45279859e"
+    },
+    {
+      "path": "docs/methodology/function-evidence-model.md",
+      "sha256": "4b5ccbb7c54207f505fa0103114d4c995d338635dfce81bc4ecf75aea328cc30"
+    },
+    {
+      "path": "experiments/EXP-0041-ghidra-function-count-reconciliation.md",
+      "sha256": "e6420130edba324019ae9de1589f8e2665cf3a731a7b404c7cf627df649b8162"
+    },
+    {
+      "path": "experiments/EXP-0072-exact-build-internal-function-subsystem-triage.md",
+      "sha256": "ba6cb37370f0a1206a297756725b5a90eb97e410c138bc06bfacd69b4d009e47"
+    },
+    {
+      "path": "experiments/EXP-0155-set-enabled-shared-native-adapter.md",
+      "sha256": "20e99d60e3413777fb85c45858f825367cbde19027938fa6fb412b3208f717cd"
+    }
+  ],
+  "limitations": [
+    "The exporter consumes the committed function index; it does not re-index the executable or launch Ghidra.",
+    "The executable, Ghidra project and SQLite database are not read. Build identity is taken from the recorded build file and source EXP metadata.",
+    "L0-L2 represent the highest evidence level recoverable from the listed portable inputs. L3 and L4 are not exported; their absence here is not proof that an ignored local database has no such rows.",
+    "The EXP-0072 label/callgraph triage is a static candidate baseline, not semantic ownership or runtime reachability.",
+    "The CSV's connectivity_axis and runtime_axis are marked not_exported rather than inferred from missing local database rows."
+  ],
+  "measurements": {
+    "analysis": {
+      "analyzed": 54,
+      "curated_records": 7,
+      "indexed_only": 72383,
+      "manual_review_overlay": 47
+    },
+    "denominator": 72437,
+    "portable_highest_known_level": {
+      "L0": 72383,
+      "L1": 50,
+      "L2": 4
+    },
+    "semantic_claims": {
+      "confirmed": 4,
+      "no_portable_claim": 72430,
+      "other_claims": 3
+    },
+    "triage_baseline": {
+      "symbol_name_candidates": 439,
+      "unknown_subsystem": 71998
+    },
+    "unpublished_levels": [
+      "L3",
+      "L4"
+    ]
+  },
+  "metric_scope": "Repository-published function evidence only. This export is not a snapshot of arbitrary rows in the ignored local SQLite database.",
+  "per_function_export": {
+    "columns": [
+      "address",
+      "rva",
+      "name",
+      "signature",
+      "size_bytes",
+      "analysis_axis",
+      "analysis_source",
+      "review_status",
+      "overlay_claim_status",
+      "semantic_axis",
+      "claim_status",
+      "claim_summary",
+      "claim_source",
+      "connectivity_axis",
+      "runtime_axis",
+      "highest_portable_evidence_level"
+    ],
+    "path": "research/executable/evidence/function-triage/function-coverage-EXP-0155.csv",
+    "rows": 72437,
+    "sha256": "73b81e547d6be71c8e2c6c0f1984b7e984518e4393a6a786ff21f588934901b3"
+  },
+  "schema_version": 1,
+  "source_records": [
+    {
+      "claim_status": "confirmed",
+      "id": "EXP-0041",
+      "path": "experiments/EXP-0041-ghidra-function-count-reconciliation.md",
+      "sha256": "e6420130edba324019ae9de1589f8e2665cf3a731a7b404c7cf627df649b8162"
+    },
+    {
+      "claim_status": "mixed",
+      "id": "EXP-0072",
+      "path": "experiments/EXP-0072-exact-build-internal-function-subsystem-triage.md",
+      "sha256": "ba6cb37370f0a1206a297756725b5a90eb97e410c138bc06bfacd69b4d009e47"
+    },
+    {
+      "claim_status": "mixed",
+      "id": "EXP-0155",
+      "path": "experiments/EXP-0155-set-enabled-shared-native-adapter.md",
+      "sha256": "20e99d60e3413777fb85c45858f825367cbde19027938fa6fb412b3208f717cd"
+    }
+  ]
+}

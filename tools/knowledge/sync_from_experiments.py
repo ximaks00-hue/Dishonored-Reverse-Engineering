@@ -42,16 +42,6 @@ EDGES = [
     ("E10", "FUN_00B36CA0", "Blink.activation", "open", "keyed registry unjoined", "EXP-0036"),
 ]
 
-FUNCTIONS = [
-    ("Dishonored.exe", "0x00AB4680", "Dis_SelectPower_target", "Controller +0x560 target", "EXP-0021", 0.9, "confirmed"),
-    ("Dishonored.exe", "0x00BCD800", "PowerWheel_OnSelectionChanged_target", "PowerWheel +0x1F0 target", "EXP-0021", 0.9, "confirmed"),
-    ("Dishonored.exe", "0x00BFC990", "Blink_set_move_mode", "Blink +0x1AC move-mode entry", "EXP-0024", 0.9, "confirmed"),
-    ("Dishonored.exe", "0x00C44D30", "UsePower_slot_134", "DisItemContext_UsePower +0x134", "EXP-0028", 0.9, "confirmed"),
-    ("Dishonored.exe", "0x00C0CA70", "keyed_0x30_dispatcher", "0x30-stride array dispatcher", "EXP-0032", 0.5, "observed"),
-    ("Dishonored.exe", "0x00C04C30", "pawn_manager_dispatch", "Pawn manager virtual dispatch", "EXP-0037", 0.7, "observed"),
-    ("Dishonored.exe", "0x00B36CA0", "keyed_callback_register", "Shared keyed callback helper", "EXP-0036", 0.7, "observed"),
-]
-
 HYPOTHESES = [
     (
         "Input reaches UsePower +0x134 or Blink +0x340",
@@ -83,6 +73,10 @@ FUNCTION_REVIEW_OVERLAY = (
     ROOT
     / "research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0155.csv"
 )
+CURATED_FUNCTION_CLAIMS = (
+    ROOT
+    / "research/executable/evidence/function-triage/curated-function-claims-EXP-0155.json"
+)
 
 
 def parse_frontmatter(text: str) -> dict[str, str]:
@@ -96,6 +90,22 @@ def parse_frontmatter(text: str) -> dict[str, str]:
         key, value = line.split(":", 1)
         data[key.strip()] = value.strip().strip("\"'")
     return data
+
+
+def load_curated_function_claims() -> dict:
+    """Read the published portable claim seed used by the derived SQLite mirror."""
+    payload = json.loads(CURATED_FUNCTION_CLAIMS.read_text(encoding="utf-8"))
+    if payload.get("app_id") != "217980" or payload.get("build_id") != BUILD_ID:
+        raise ValueError("curated function claims target a different game build")
+    if payload.get("executable_sha256", "").upper() != EXECUTABLE_SHA256.upper():
+        raise ValueError("curated function claims executable hash differs from configured build")
+    records = payload.get("records")
+    if not isinstance(records, list):
+        raise ValueError("curated function claims records must be a list")
+    addresses = [record.get("address") for record in records if isinstance(record, dict)]
+    if len(addresses) != len(records) or len(set(addresses)) != len(records):
+        raise ValueError("curated function claims contain malformed or duplicate rows")
+    return payload
 
 
 def connect() -> sqlite3.Connection:
@@ -486,14 +496,25 @@ def sync() -> dict[str, int]:
                     (experiment_id,),
                 )
 
-        for module, address, name, summary, exp, confidence, status in FUNCTIONS:
+        curated_functions = load_curated_function_claims()
+        module = curated_functions["module"]
+        for row in curated_functions["records"]:
             db.execute(
                 "INSERT INTO functions(module, name, address, summary, source, confidence, status, experiment_key) "
                 "VALUES(?,?,?,?,?,?,?,?) "
                 "ON CONFLICT(module, address) DO UPDATE SET "
                 "name=excluded.name, summary=excluded.summary, source=excluded.source, "
                 "confidence=excluded.confidence, status=excluded.status, experiment_key=excluded.experiment_key",
-                (module, name, address, summary, exp, confidence, status, exp),
+                (
+                    module,
+                    row["name"],
+                    row["address"],
+                    row["summary"],
+                    row["experiment"],
+                    row["confidence"],
+                    row["claim_status"],
+                    row["experiment"],
+                ),
             )
             counts["curated_functions"] += 1
 
