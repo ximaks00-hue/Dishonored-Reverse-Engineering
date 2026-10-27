@@ -18,3 +18,7 @@ The [progress dashboard](progress-dashboard.md) gives the current evidence matur
 Report coverage with denominators and scope: files inventoried / files in manifest; packages parsed / packages in manifest; functions reviewed / indexed functions in the selected module; mechanics with repeatable procedures / mechanics selected for study; and findings with traceable evidence / findings recorded. Unknown areas remain visible.
 
 For current source-linked counts and open blockers, see the [coverage snapshot](coverage.md) and the workstream pages linked from the [dashboard](progress-dashboard.md).
+
+## Next milestone priorities
+
+Use the ordered [dashboard priority list](progress-dashboard.md#next-milestone-priorities) for the next work cycle. The first gates are cache identity completeness and matching-build enforcement for runtime records. A narrow runtime experiment follows with its own recorded baseline; targeted native-cluster reviews, catalog provenance, and independent reproduction then expand the evidence base. These are priorities, not time estimates.

@@ -18,10 +18,11 @@ Select functions that resolve a high-value ownership or dataflow gap, distinguis
 
 ## Priority gaps
 
-1. Trace candidate native registrations to their owning class/table and verify dataflow or dispatch.
-2. Expand body review in high-connectivity clusters where a single owner or adapter result can classify many records.
-3. Preserve open hypotheses such as `FUN_00C0CA70` as open/weakened; do not relabel them rejected without discriminating evidence.
-4. Add L4 only from a matching-build runtime record with a recorded baseline.
+1. Select high-connectivity clusters that can resolve an open ownership/dataflow gap, including Blink-related routes where the evidence discriminates receiver identity.
+2. Trace candidate native registrations to their owning class/table and verify dataflow or dispatch.
+3. Expand body review where one supported adapter/owner result can classify multiple indexed records.
+4. Preserve open hypotheses such as `FUN_00C0CA70` as open/weakened; do not relabel them rejected without discriminating evidence.
+5. Add L4 only from a matching-build runtime record with a recorded baseline.
 
 ## Sources
 

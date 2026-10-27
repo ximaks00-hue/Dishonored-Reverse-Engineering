@@ -19,7 +19,7 @@
 
 ## Next work
 
-Adopt portable provenance manifests for new generated catalogs, then migrate high-value existing outputs. For every cache, define all output-affecting inputs and test that changing each one changes the cache identity.
+The immediate gates are the [decompilation cache identity](../reviews/AUDIT-2026-10-27-documentation-and-onboarding.md) and runtime build matching: include function address, build ID/SHA, Ghidra version, analysis options, and project-analysis revision in cache identity; reject runtime evidence whose SHA does not match the indexed build. Add positive and negative cases for each identity component. Then adopt portable provenance manifests for new generated catalogs and migrate high-value existing outputs.
 
 ## Sources
 

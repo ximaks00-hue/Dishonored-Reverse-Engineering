@@ -17,7 +17,7 @@ The graph currently labels E1–E3, E5–E6 and E5a–E5b as confirmed or condit
 
 ## Next discriminating work
 
-Work these as separate joins: trace input-to-caller, establish scheduler receiver identity, then test a narrow runtime behavior under a recorded build/config baseline. Do not merge the rejected Pawn-manager ABI path or open keyed-registry hypothesis into the activation graph without new discriminating evidence.
+Work these as separate joins: trace input-to-caller, establish scheduler receiver identity, then record one narrow runtime-confirmed behavior under the matching build and a clean, documented baseline. Keep its capture and conditions reproducible. Do not merge the rejected Pawn-manager ABI path or open keyed-registry hypothesis into the activation graph without new discriminating evidence.
 
 ## Sources
 

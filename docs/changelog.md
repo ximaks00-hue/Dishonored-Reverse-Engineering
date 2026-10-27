@@ -101,3 +101,4 @@ EXP-0106–0108 record eight selected `AK::SoundEngine` wrapper families, the sh
 - Added a multi-direction progress dashboard and focused status pages for build/install, packages and formats, Blink/gameplay, native code, audio/media, tooling, and collaboration.
 - Linked the dashboard from the README, handbook, research status, and roadmap. Published counts retain their denominators and source links; unsupported single-number completion percentages were replaced with qualitative maturity labels.
 - Corrected the evidence ladder description: L3 is connected dataflow and L4 is runtime verification; independent review remains a separate process.
+- Added an ordered next-milestone list covering cache/build identity, one bounded runtime result, high-value native clusters, portable catalog provenance, and independent review.

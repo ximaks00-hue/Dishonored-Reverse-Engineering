@@ -37,6 +37,23 @@ This dashboard summarizes research by direction. It does not combine unlike work
 
 See the [full coverage snapshot](coverage.md) and [published evidence index](published-evidence.md) for denominators and caveats.
 
+## Next milestone priorities
+
+These are ordered research priorities, not completion percentages or promises of runtime evidence. Runtime work must use the registered build, a recorded baseline, and a dedicated experiment record.
+
+| Horizon | Priority | Exit evidence | Workstream |
+| --- | --- | --- | --- |
+| Immediate | Correct decompilation cache invalidation | Cache identity includes function address, build ID and executable SHA-256, Ghidra version, all output-affecting analysis options, and analysis-project revision; tests show each change invalidates the entry | [Tooling](progress/tooling-and-automation.md) |
+| Immediate | Enforce build identity for runtime evidence | Runtime importer rejects a record whose build SHA does not match the indexed function; positive and negative build-identity cases are covered | [Tooling](progress/tooling-and-automation.md) |
+| Immediate | Establish one narrow runtime-confirmed gameplay result | A reproducible experiment records the matching build, clean baseline/capture, conditions, and observed behavior; no runtime claim is inferred from static edges | [Gameplay and Blink](progress/gameplay-and-blink.md) |
+| Near term | Review high-value native clusters | Body reviews are selected by connectivity and unresolved ownership/dataflow gaps, with each role scoped to its own evidence | [Native code](progress/native-code.md) |
+| Near term | Extend provenance to generated catalogs | Manifests record source hashes, build, tool/version/options, row counts, and reproduction command; CI checks selected portable outputs | [Tooling](progress/tooling-and-automation.md) |
+| Near term | Grow independent review | A second researcher reproduces or challenges selected high-value results; review records preserve disagreements and scope | [Collaboration](progress/collaboration-and-review.md) |
+| Later | Expand runtime instrumentation | Traces are attached only to documented experiments and matching-build baselines; static candidate edges remain separate | [Gameplay and Blink](progress/gameplay-and-blink.md) |
+| Later | Connect native clusters to gameplay models | At least one additional ownership/dataflow chain is supported by source-backed edges and linked into the relevant subsystem dossier | [Native code](progress/native-code.md) |
+
+The main implementation dependencies are visible: cache and runtime identity integrity support trustworthy analysis; a bounded runtime result then tests one gameplay bridge; targeted cluster reviews and provenance make subsequent expansion more efficient.
+
 ## Function evidence gates
 
 The repository's L0–L4 levels describe function evidence. **L3 means a supported dataflow connection; L4 means runtime verification.** Independent reproduction/review is a separate review process, not L3.
