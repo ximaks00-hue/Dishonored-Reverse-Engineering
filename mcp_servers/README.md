@@ -1,4 +1,6 @@
-# Dishonored research MCP servers (v2.1 / gateway)
+# Dishonored research MCP servers (v2 gateway)
+
+The assets-server source currently reports version `2.2.0` in `mcp_servers/assets/server.py`. This source version is not proof that a connected MCP host has reloaded: EXP-0122 observed a still-running `2.1.0` host rejecting nested DLC paths. Check `health()` on the actual host before assuming DLC support.
 
 Professional stdio MCP stack for evidence-led Dishonored research on build `10256413`.
 
@@ -57,7 +59,7 @@ Standalone servers remain for compatibility with older host configs.
 
 ## Host registration
 
-- Cursor workspace: [`.cursor/mcp.json`](../.cursor/mcp.json)
+- Cursor workspace: `.cursor/mcp.json` (workspace-local, gitignored)
 - Codex: `~/.codex/config.toml`
 - Matrix: [`docs/tooling/mcp.md`](../docs/tooling/mcp.md)
 
