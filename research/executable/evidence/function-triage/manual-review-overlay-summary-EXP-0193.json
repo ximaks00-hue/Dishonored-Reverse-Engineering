@@ -1,0 +1,26 @@
+{
+  "experiment": "EXP-0193",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "functions_indexed": 72437,
+  "prior_cumulative_reviewed": 100,
+  "new_body_reviews": 20,
+  "cumulative_reviewed": 120,
+  "whole_index_reviewed_percent": 0.165661,
+  "exp0139_candidate_targets": 254,
+  "previously_reviewed_exp0139_targets": 69,
+  "now_reviewed_exp0139_targets": 89,
+  "exp0139_targets_remaining_unreviewed": 165,
+  "semantic_claims_added": 0,
+  "runtime_verified_added": 0,
+  "tooling": {
+    "python": "3.12",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7"
+  },
+  "functions_csv_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "exp0139_candidate_catalog_sha256": "FF42E74AA7664030AE8870CAB05E00AC718FFB9F57C330302FFE66CD47FF9442",
+  "previous_cumulative_csv_sha256": "DF6DF70DDE32A7C5697A22FC1E0F2A749424313849E18B171621639C852ED8E8",
+  "evidence_csv_sha256": "7E5A1A5014D44FF947F4D618767F9BC6547B380B316E5398E557B8FE74E203EC",
+  "cumulative_csv_sha256": "E8C80AA9384AF3670DFF5F5BF2ABF55655297100DC88111A0728FF9D1679FC32"
+}
