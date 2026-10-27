@@ -21,7 +21,7 @@
 - 2026-10-27: EXP-0127 maps the static Windows input-message dispatcher branches and two allocation-guarded wrappers that forward to the reviewed input initializer. The cumulative manual overlay now covers 18 bodies (16 input-related static candidates, two unassigned); runtime verification remains zero.
 # Static analysis artifacts
 
-Canonical read-only static MCP server: [`mcp_servers/static/server.py`](../../mcp_servers/static/server.py).
+Canonical read-only static MCP server: [`mcp_servers/static/server.py`](../mcp_servers/static/server.py).
 
 `mcp/server.py` in this folder is only a compatibility launcher for older configs.
 
@@ -36,25 +36,25 @@ Canonical read-only static MCP server: [`mcp_servers/static/server.py`](../../mc
 
 Executable SHA-256: `66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E`.
 
-Headless runs use `-noanalysis -readOnly`. Prefer workspace Python under `.venv` when launching the MCP server. Path defaults: [`mcp_servers/_paths.py`](../../mcp_servers/_paths.py).
+Headless runs use `-noanalysis -readOnly`. Prefer workspace Python under `.venv` when launching the MCP server. Path defaults: [`mcp_servers/_paths.py`](../mcp_servers/_paths.py).
 
-Reproduce the native-token join from the UELib JSONL corpus with [`native_token_dispatch_catalog.py`](../../tools/native_token_dispatch_catalog.py). It invokes [`ExportNativeTokenStringRefs.java`](scripts/ExportNativeTokenStringRefs.java) through read-only Ghidra headless mode and cross-checks raw PE pointers against the exact-build function index. The catalog is a partial static join; it does not establish token-table consumption at runtime.
+Reproduce the native-token join from the UELib JSONL corpus with [`native_token_dispatch_catalog.py`](../tools/native_token_dispatch_catalog.py). It invokes [`ExportNativeTokenStringRefs.java`](../research/executable/scripts/ExportNativeTokenStringRefs.java) through read-only Ghidra headless mode and cross-checks raw PE pointers against the exact-build function index. The catalog is a partial static join; it does not establish token-table consumption at runtime.
 
-Reproduce the internal function triage with [`function_subsystem_triage.py`](../../tools/function_subsystem_triage.py). It covers the 72,437-row function denominator for accounting, but only 439 rows receive narrow symbol-name candidates and none are semantically reviewed by that pass; see [EXP-0072](../../experiments/EXP-0072-exact-build-internal-function-subsystem-triage.md).
+Reproduce the internal function triage with [`function_subsystem_triage.py`](../tools/function_subsystem_triage.py). It covers the 72,437-row function denominator for accounting, but only 439 rows receive narrow symbol-name candidates and none are semantically reviewed by that pass; see [EXP-0072](../experiments/EXP-0072-exact-build-internal-function-subsystem-triage.md).
 
 EXP-0073 probes four audio API-like functions with the exact-build decompiler. The namespaced results strengthen those addresses only and do not promote the remaining 181 audio-like labels or establish runtime use.
 
-EXP-0076 joins the 135 class-key/pointer-symbol pairs visible in `FUN_00A0DBF0` to exact class paths in the derived all-install UELib catalog. Reproduce with [`native_class_table_uelib_join.py`](../../tools/native_class_table_uelib_join.py). This exact-name join does not establish native table layout, dispatch, or runtime use.
+EXP-0076 joins the 135 class-key/pointer-symbol pairs visible in `FUN_00A0DBF0` to exact class paths in the derived all-install UELib catalog. Reproduce with [`native_class_table_uelib_join.py`](../tools/native_class_table_uelib_join.py). This exact-name join does not establish native table layout, dispatch, or runtime use.
 
-EXP-0077 parses HIRC structures from all 503 PCK banks and `Init.bnk` with a pinned wwiser checkout. Reproduce with [`wwise_bank_hirc_census.py`](../../tools/wwise_bank_hirc_census.py). It generates bank/object/edge/media CSVs; these are parser-derived IDs and relations, not runtime event evidence. Forty Sound media IDs have no exact DIDX/WEM catalog match.
+EXP-0077 parses HIRC structures from all 503 PCK banks and `Init.bnk` with a pinned wwiser checkout. Reproduce with [`wwise_bank_hirc_census.py`](../tools/wwise_bank_hirc_census.py). It generates bank/object/edge/media CSVs; these are parser-derived IDs and relations, not runtime event evidence. Forty Sound media IDs have no exact DIDX/WEM catalog match.
 
 EXP-0078 adds same-bank `ulChildID` edges and event/action/Sound/media paths through seven parsed container types. The base EXP-0077 edge catalog remains separate from the extended container-child catalog; see `wwise-hirc-edges-with-container-children.csv` and `wwise-event-hirc-sound-paths.csv` in the build directory.
 
 EXP-0079 compares locally unresolved action target IDs with all parsed HIRC object IDs across the 503 PCK banks and `Init.bnk`. EXP-0080 audits zero-valued `ulTargetID` fields and corrects the denominator: 1,007 zero values are excluded from 618 nonzero unresolved fields, of which 526 have exact-ID candidates and 92 have none. Exact matches are written to `wwise-action-target-global-id-candidates.csv`; repeated IDs and runtime semantics remain explicitly unresolved.
 
-EXP-0081 joins the 40 Sound media IDs without same-bank DIDX or catalog WEM matches to the EXP-0078 event path catalog. All 40 occur in 79 same-bank event paths; this establishes graph connectivity only, not media payload validity or runtime invocation. Reproduce with [`wwise_unmatched_media_paths.py`](../../tools/wwise_unmatched_media_paths.py); output is in the exact-build catalog directory.
+EXP-0081 joins the 40 Sound media IDs without same-bank DIDX or catalog WEM matches to the EXP-0078 event path catalog. All 40 occur in 79 same-bank event paths; this establishes graph connectivity only, not media payload validity or runtime invocation. Reproduce with [`wwise_unmatched_media_paths.py`](../tools/wwise_unmatched_media_paths.py); output is in the exact-build catalog directory.
 
-EXP-0106–0108 record eight selected `AK::SoundEngine` wrapper families, the shared critical-section-protected buffer, and a static consumer that reads length/discriminator fields and dispatches matching cases. This is not runtime behavior evidence. See [EXP-0108](../../experiments/EXP-0108-audio-record-consumer-opcode-matches.md) and its [producer/consumer case map](evidence/EXP-0108-audio-record-consumer-opcode-map.csv).
+EXP-0106–0108 record eight selected `AK::SoundEngine` wrapper families, the shared critical-section-protected buffer, and a static consumer that reads length/discriminator fields and dispatches matching cases. This is not runtime behavior evidence. See [EXP-0108](../experiments/EXP-0108-audio-record-consumer-opcode-matches.md) and its [producer/consumer case map](../research/executable/evidence/EXP-0108-audio-record-consumer-opcode-map.csv).
 
 - 2026-10-27: EXP-0109 expands the audio command dispatcher map to 50 writer callsites / 48 callers and accounts for all 37 visible discriminator cases, with the RenderAudio marker retained as a separate route. It also records the knowledge dossier 30-item caller cap against the exact-build SQLite count. Static coverage does not establish runtime use or audio behavior.
 
