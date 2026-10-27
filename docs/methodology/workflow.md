@@ -10,7 +10,7 @@ Work in **small vertical slices**. A successful experiment reduces uncertainty a
 6. **Run and preserve observations.** Record actual outcomes independent of the interpretation, including null/failed results and parser warnings.
 7. **Interpret conservatively.** State alternatives, coverage, falsification tests and confidence rationale. Don't infer runtime resolution from file-name matches.
 8. **Publish references.** Connect BUILD, EXP, OBS, HYP, FIND or FUNC records and update status, never overwrite conflicting evidence silently.
-9. **Peer review and reproduce.** Prefer independent verification before assigning 'confirmed'; record exact limitations and build variance.
+9. **Peer review and reproduce.** The evidence author cannot be the independent checker for their own result. A different contributor checks the cited source and records the independent method, exact build/input identity, outcome and limitations using the [review template](../../templates/review.md). A review approval alone does not make the underlying claim confirmed.
 
 ## File/package archaeology
 Inventory relative paths, sizes and hashes. Document parser/tool version, warnings, known false positives and which percentage of a **defined denominator** was inspected. Avoid inferring package compatibility from engine-family labels.

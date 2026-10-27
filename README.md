@@ -8,7 +8,7 @@ Community-oriented, evidence-led research into **Dishonored (Windows)**, coverin
 Build a searchable, reproducible account of how selected game systems work, with documented uncertainty and independent behavioral models. **This is not a claim of recreating the complete game.** The project does not distribute game data and is not affiliated with the rights holders.
 
 ## Participate
-**New contributor?** Start with [onboarding](docs/onboarding.md) and [CONTRIBUTING](CONTRIBUTING.md). You can help with documentation, verification, synthetic test cases and code without owning the game. Propose a [research question](https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/issues/new/choose) or improve an existing issue.
+**New contributor?** Pick a [small task](docs/contributor-tasks.md), then read [onboarding](docs/onboarding.md) and [CONTRIBUTING](CONTRIBUTING.md). The [contributor playbook](docs/contributor-playbook.md) includes worked examples and the independent review process. You can help with documentation, verification, synthetic test cases and code without owning the game. Propose a [research question](https://github.com/ximaks00-hue/Dishonored-Reverse-Engineering/issues/new/choose) or improve an existing issue.
 
 ## Navigation
 | Goal | Document |

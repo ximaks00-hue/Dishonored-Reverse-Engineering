@@ -22,9 +22,10 @@ This is the project entry point, not evidence that every candidate subsystem has
 - [Experiment report](../templates/experiment.md)
 - [Hypothesis](../templates/hypothesis.md)
 - [Finding](../templates/finding.md)
+- [Independent review](../templates/review.md)
 - [Native function](../templates/function.md)
 - [Subsystem synthesis](../templates/subsystem/overview.md)
 - [Machine-readable record schema](../schemas/research-record.schema.json)
 
 ## Contributing
-Read [CONTRIBUTING](../CONTRIBUTING.md), [community standards](../CODE_OF_CONDUCT.md), [security](../SECURITY.md) and [licensing status](../LICENSE-NOTICE.md). An unverified local report should not be promoted to a confirmed finding merely by documenting it.
+Start with [small contributor tasks](contributor-tasks.md) and the [contributor playbook](contributor-playbook.md). Then read [CONTRIBUTING](../CONTRIBUTING.md), [community standards](../CODE_OF_CONDUCT.md), [security](../SECURITY.md) and [licensing status](../LICENSE-NOTICE.md). An unverified local report should not be promoted to a confirmed finding merely by documenting it.
