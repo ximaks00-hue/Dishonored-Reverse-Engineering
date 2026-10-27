@@ -1,0 +1,26 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "pck_entry_catalog_sha256": "069D252FC3971330AA4DC6410CC2438CE00BAD2EF8890628393B63E3FBE6A627",
+  "pck_bank_catalog_sha256": "925F5CAA456E620E89D4DBC6A780D98D30AABEE804CD97C41FCD46DF2EE34691",
+  "pck_wem_decode_catalog_sha256": "184298F5ABC8CCB223CEAFBA7C9B518CF1C936D539AE5C4BDD371666795930B0",
+  "akpk_bank_catalog_sha256": "D08647C0407BDFCAC3D56E7EC78913412FACD6E1EF9EAB1B987CB5557839FA8B",
+  "akpk_hirc_wem_join_sha256": "5D7CE6ADA47DA97C960495D82FBACBAC8B6BDCA60038BB3F21B5BD011E530FDE",
+  "pck_source_paths_rehashed": 503,
+  "pck_bank_ranges_rehashed": 503,
+  "pck_bank_unique_payload_hashes": 480,
+  "pck_bank_payload_hashes_matching_akpk": 0,
+  "pck_wem_entry_rows_rehashed_and_decode_hash_checked": 1908,
+  "pck_wem_unique_numeric_ids": 1314,
+  "pck_wem_ids_with_multiple_occurrences": 315,
+  "akpk_hirc_unmatched_unique_edge_keys": 24205,
+  "akpk_hirc_unmatched_distinct_media_ids": 23549,
+  "unmatched_media_ids_with_pck_wem_id_candidates": 0,
+  "unmatched_unique_edges_with_pck_wem_id_candidates": 0,
+  "unmatched_file_ids_with_pck_wem_id_candidates": 0,
+  "limitations": [
+    "PCK filename-ID equality is a cross-container numeric candidate check and does not establish ownership or runtime resolution.",
+    "Exact bank payload hashes establish byte identity only; no PCK bank payload hash matched a localized AKPK bank in this cohort.",
+    "The scan covers only the saved 503-PCK WEM/BNK catalogs and the localized AKPK HIRC/WEM cohort; other media domains and runtime loading remain open."
+  ]
+}
