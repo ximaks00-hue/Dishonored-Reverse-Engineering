@@ -1,0 +1,32 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "vgmstream_path": "C:\\Users\\Max\\AppData\\Local\\Microsoft\\WinGet\\Packages\\vgmstream.vgmstream_Microsoft.Winget.Source_8wekyb3d8bbwe\\vgmstream-cli.exe",
+  "vgmstream_sha256": "0EE2626CD5D470CCE5980AB010D36B08F9C97C9480E56BBACEB11475628232FF",
+  "vgmstream_version": "r2023",
+  "pck_sources_hash_checked": 503,
+  "pck_entry_catalog_rows": 2411,
+  "pck_entry_ranges_out_of_bounds": 0,
+  "pck_entry_range_overlaps": 0,
+  "pck_entry_range_overlap_examples": [],
+  "wem_entries": 1908,
+  "wem_total_bytes": 1534189108,
+  "wem_source_pck_count": 194,
+  "jobs": 2,
+  "timeout_seconds_per_entry": 300,
+  "decode_options": [
+    "-O",
+    "-i"
+  ],
+  "outcomes": {
+    "decoded": 1908
+  },
+  "decoded_input_wem_bytes": 1534189108,
+  "failed_entries": [],
+  "results_csv": "E:\\Dishonored Reverse Engineering\\research\\builds\\BUILD-STEAM-10256413\\wwise-wem-decode-audit.csv",
+  "limitations": [
+    "WEM byte ranges come from the EXP-0065 QuickBMS list-only catalog; this run validates range bounds and decoder acceptance, not an independent PCK table parse.",
+    "vgmstream decode success does not establish perceptual correctness, event mapping, or runtime playback selection.",
+    "Each temporary WEM copy is removed after decode; no extracted media corpus is retained."
+  ]
+}

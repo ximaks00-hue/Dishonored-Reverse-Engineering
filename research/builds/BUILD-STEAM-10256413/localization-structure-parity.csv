@@ -1,0 +1,9 @@
+family,reference_locale,locale,reference_files,locale_files,common_files,reference_only_files,locale_only_files,files_with_identical_section_key_sets,missing_section_key_pairs,extra_section_key_pairs
+game_localization,INT,CZE,658,656,656,2,0,496,271,4
+game_localization,INT,HUN,658,656,656,2,0,510,212,4
+game_localization,INT,POL,658,656,656,2,0,652,2,4
+game_localization,INT,RUS,658,656,656,2,0,644,17,5
+engine_localization,INT,CZE,12,12,12,0,0,7,151,43
+engine_localization,INT,HUN,12,12,12,0,0,7,151,43
+engine_localization,INT,POL,12,12,12,0,0,7,151,43
+engine_localization,INT,RUS,12,12,12,0,0,7,151,43

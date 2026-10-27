@@ -1,0 +1,4 @@
+address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,relevant_callsites,claim_status
+009C7EB0,FUN_009c7eb0,143,unknown,body_reviewed_static,"allocation-guarded forwarding wrapper to FUN_009C6810 with trailing 0,-1,-1 arguments",,,FUN_009C6810 at 009C7F0B,inferred
+009C7F40,FUN_009c7f40,153,unknown,body_reviewed_static,allocation-guarded forwarding wrapper to FUN_009C6810 with modified argument list and return adjustment,,,FUN_009C6810 at 009C7F9B,inferred
+009C8970,FUN_009c8970,4047,unknown,body_reviewed_static,"window-message dispatcher with keyboard, mouse, lifecycle and device-related branches",,,FUN_009C7FE0 at 009C8B6E; FUN_009C41A0 at 009C91E1; FUN_009C64B0; FUN_009C3AC0,observed

@@ -1,0 +1,102 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "parser": "EXP-0120 Python AKPK table parser reused; no QuickBMS table cross-check was available for this extension cohort",
+  "manifest_candidate_files": 4059,
+  "manifest_candidate_bytes": 4085787427,
+  "extensions": {
+    ".DEU": {
+      "files": 388,
+      "bytes": 346014078,
+      "parsed_nonempty_files": 388
+    },
+    ".ESN": {
+      "files": 388,
+      "bytes": 367024341,
+      "parsed_nonempty_files": 388
+    },
+    ".FRA": {
+      "files": 388,
+      "bytes": 365490705,
+      "parsed_nonempty_files": 388
+    },
+    ".INT": {
+      "files": 1061,
+      "bytes": 1143615160,
+      "parsed_nonempty_files": 1058,
+      "empty_files": 3
+    },
+    ".ITA": {
+      "files": 388,
+      "bytes": 368851055,
+      "parsed_nonempty_files": 388
+    },
+    ".JPN": {
+      "files": 388,
+      "bytes": 351176928,
+      "parsed_nonempty_files": 388
+    },
+    ".RUS": {
+      "files": 1058,
+      "bytes": 1143615160,
+      "parsed_nonempty_files": 1058
+    }
+  },
+  "empty_files": 3,
+  "parsed_nonempty_files": 4056,
+  "parser_errors": 0,
+  "manifest_size_mismatches": 0,
+  "manifest_sha256_mismatches": 0,
+  "container_magic_counts": {
+    "AKPK": 4056
+  },
+  "bank_entries": 4056,
+  "sound_entries": 12112,
+  "external_entries": 0,
+  "packages_with_bank_entries": 4056,
+  "all_bank_payloads_start_with_BKHD": 4056,
+  "bank_versions": {
+    "65": 4056
+  },
+  "internal_languages_by_extension": {
+    ".DEU": {
+      "german,sfx": 388
+    },
+    ".ESN": {
+      "sfx,spanish(spain)": 388
+    },
+    ".FRA": {
+      "french(france),sfx": 388
+    },
+    ".INT": {
+      "english(us),sfx": 1047,
+      "sfx": 11
+    },
+    ".ITA": {
+      "italian,sfx": 388
+    },
+    ".JPN": {
+      "english(us),sfx": 388
+    },
+    ".RUS": {
+      "english(us),sfx": 1047,
+      "sfx": 11
+    }
+  },
+  "embedded_bank_magic_counts": {
+    "BKHD": 4056
+  },
+  "embedded_sound_magic_counts": {
+    "RIFF": 12112
+  },
+  "tables_after_first_payload_files": 0,
+  "payload_overlap_pairs": 0,
+  "variant_group_count": 1058,
+  "variant_group_sizes": {
+    "2": 670,
+    "7": 388
+  },
+  "same_hash_variant_groups": 670,
+  "parser_error_rows": [],
+  "range_issue_rows": []
+}

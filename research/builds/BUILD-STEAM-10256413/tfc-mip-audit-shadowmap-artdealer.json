@@ -1,0 +1,200 @@
+{
+  "mip_census_csv": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_ArtDealer_Block-ShadowMapTexture2D_91253.csv",
+  "mip_count": 11,
+  "package_file": "assets\\extracted\\tfc-lightmap-artdealer\\decompressed\\L_ArtDealer_Block.upk",
+  "package_sha256": "1FB978EC145B83BA8441F5B3600E0B1D91AF6E3F4DE50B988AA891368ACD6148",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "pixel_format": "PF_G8",
+  "all_mips_range_valid_and_format_decoded": true,
+  "all_mips_range_valid_and_dxt1_decoded": false,
+  "claim_limit": "All recorded ranges passed file/serial bounds and their decoded byte lengths match PF_G8 dimensions; this audit alone does not compare every mip to UModel output.",
+  "mips": [
+    {
+      "mip_index": 0,
+      "width": 1024,
+      "height": 1024,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting.tfc",
+      "storage_offset": 406588547,
+      "storage_size": 26177,
+      "decoded_bytes": 1048576,
+      "decoded_sha256": "A35C6273F959F0B092A9FBF66949BFD3C3748FEBBEA0915267972063D19395B3",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 1048576,
+      "lzo_container_header_bytes": 80,
+      "lzo_chunk_count": 8,
+      "lzo_chunk_compressed_sizes": [
+        525,
+        525,
+        525,
+        13043,
+        9904,
+        525,
+        525,
+        525
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072,
+        131072,
+        131072,
+        131072,
+        131072,
+        131072,
+        131072,
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 1,
+      "width": 512,
+      "height": 512,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting.tfc",
+      "storage_offset": 406580459,
+      "storage_size": 8088,
+      "decoded_bytes": 262144,
+      "decoded_sha256": "27829201C772804FFDA37FDDE2CA19689DF63F5E5F19D070F8DA592820C61A2B",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 262144,
+      "lzo_container_header_bytes": 32,
+      "lzo_chunk_count": 2,
+      "lzo_chunk_compressed_sizes": [
+        4498,
+        3558
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072,
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 2,
+      "width": 256,
+      "height": 256,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting.tfc",
+      "storage_offset": 406578124,
+      "storage_size": 2335,
+      "decoded_bytes": 65536,
+      "decoded_sha256": "CE0769845540B68ACF5E48A41949E465BF1508E3C1C3CEF7895D20318391F706",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 65536,
+      "lzo_container_header_bytes": 24,
+      "lzo_chunk_count": 1,
+      "lzo_chunk_compressed_sizes": [
+        2311
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        65536
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 3,
+      "width": 128,
+      "height": 128,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2322140,
+      "storage_size": 16384,
+      "decoded_bytes": 16384,
+      "decoded_sha256": "EFAC18F7B60085B6852AFCAF8B8EA4CB95F48B87EDBC81C4A1236C61F711312B",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 16384
+    },
+    {
+      "mip_index": 4,
+      "width": 64,
+      "height": 64,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2338548,
+      "storage_size": 4096,
+      "decoded_bytes": 4096,
+      "decoded_sha256": "E1B32D77C2A547170BDFE3895C16838AAD220B68C05764280669C882DD263E6A",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 4096
+    },
+    {
+      "mip_index": 5,
+      "width": 32,
+      "height": 32,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2342668,
+      "storage_size": 1024,
+      "decoded_bytes": 1024,
+      "decoded_sha256": "2C94202A863D62274E106356A5899AF61F730EF9F885BCBE03F67921244C2DBF",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 1024
+    },
+    {
+      "mip_index": 6,
+      "width": 16,
+      "height": 16,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2343716,
+      "storage_size": 256,
+      "decoded_bytes": 256,
+      "decoded_sha256": "33016A80D8605B23219D0F3E3B92FDA981950F1FD2A801FA288F879EF8315970",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 256
+    },
+    {
+      "mip_index": 7,
+      "width": 8,
+      "height": 8,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2343996,
+      "storage_size": 64,
+      "decoded_bytes": 64,
+      "decoded_sha256": "288453878D3AB6850A41C27C1B2EFE97A1236DEAD132A92587EFF64724BBC494",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 64
+    },
+    {
+      "mip_index": 8,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2344084,
+      "storage_size": 16,
+      "decoded_bytes": 16,
+      "decoded_sha256": "92AE399CF46E1BB20897320D3C60B34EB4607C6D53ACA95AB0AE68E392B67E4D",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 9,
+      "width": 2,
+      "height": 2,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2344124,
+      "storage_size": 4,
+      "decoded_bytes": 4,
+      "decoded_sha256": "8AA11E8B3543E00C5B3FE6264F0E96F78371A2F54C0BD6ED62218E6A7C181DFD",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 4
+    },
+    {
+      "mip_index": 10,
+      "width": 1,
+      "height": 1,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_Block.upk",
+      "storage_offset": 2344152,
+      "storage_size": 1,
+      "decoded_bytes": 1,
+      "decoded_sha256": "E52D9C508C502347344D8C07AD91CBD6068AFC75FF6292F062A09CA381C89E71",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 1
+    }
+  ]
+}

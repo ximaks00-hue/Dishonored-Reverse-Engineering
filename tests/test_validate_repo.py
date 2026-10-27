@@ -24,5 +24,20 @@ class ValidatorTests(unittest.TestCase):
             (root / "README.md").write_text("[missing](nothing.md)\n")
             self.assertTrue(any("broken relative link" in s for s in validate_repo.check(root)))
 
+    def test_documented_local_only_artifacts_are_optional(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            for item in validate_repo.REQUIRED:
+                p = root / item
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_text("# OK\n")
+            exp = root / "experiments" / "EXP-0001-example.md"
+            exp.parent.mkdir(parents=True, exist_ok=True)
+            exp.write_text(
+                "[sample](../assets/extracted/sample/result.tga) "
+                "[tool](../tools/ue-package-decompressor/decompress.exe)\n"
+            )
+            self.assertEqual([], validate_repo.check(root))
+
 if __name__ == "__main__":
     unittest.main()

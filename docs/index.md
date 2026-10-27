@@ -4,6 +4,7 @@ This is the project entry point, not evidence that every candidate subsystem has
 
 ## Orientation
 - [Current verified status](research-status.md)
+- [Published experiments, build record and function evidence](published-evidence.md)
 - [New contributor onboarding](onboarding.md)
 - [Research backlog](backlog.md)
 - [Roadmap and evidence gates](roadmap.md)

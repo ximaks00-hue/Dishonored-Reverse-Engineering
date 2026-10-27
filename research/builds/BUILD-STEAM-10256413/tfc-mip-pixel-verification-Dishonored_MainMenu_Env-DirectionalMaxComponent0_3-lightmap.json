@@ -1,0 +1,65 @@
+{
+  "package_file": "assets\\extracted\\tfc-cross-cache-mainmenu\\decompressed\\Dishonored_MainMenu_Env.upk",
+  "package_sha256": "63F9AB497E4D3856112302737593D2946662A46DAE9FB8F68FCF7BD67B414BE8",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_file_size": 548298402,
+  "tfc_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "mip_comparisons": [
+    {
+      "mip_index": 0,
+      "width": 1024,
+      "height": 1024,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting.tfc",
+      "storage_offset": 547630451,
+      "storage_size": 171345,
+      "stored_range_sha256": "E190FB4820B5BA75E8BBA5F3D744091A1336804609ACCFF77BBF88EE3D84B9D0",
+      "lzo_container_header_bytes": 48,
+      "lzo_chunk_count": 4,
+      "lzo_chunk_compressed_sizes": [
+        80156,
+        81194,
+        9418,
+        529
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072,
+        131072,
+        131072,
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null,
+      "decoded_mip_sha256": "22E4A86B46C02E7A529E3B0CB36B49F8D159343BEED66B66F316B936890DAB32",
+      "decoded_bytes": 524288,
+      "tga_file": "assets\\extracted\\tfc-lightmap-probe-large\\with-cache\\Dishonored_MainMenu_Env\\LightMapTexture2D\\DirectionalMaxComponent0_3.tga",
+      "tga_file_size": 600671,
+      "tga_sha256": "F6673332A19B76C0B36B7024966A01B2224A71FCF2F4EFB2620FB8BE1B31026A",
+      "exact_rgb_pixels": 1048576,
+      "total_pixels": 1048576,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    },
+    {
+      "mip_index": 3,
+      "width": 128,
+      "height": 128,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu_Env.upk",
+      "storage_offset": 3047797,
+      "storage_size": 8192,
+      "stored_range_sha256": "896E8AF3115AFBB87AC8E6FCDD52CC38671BAB2D021D633A9616D4D9DA3C2B4E",
+      "decoded_mip_sha256": "896E8AF3115AFBB87AC8E6FCDD52CC38671BAB2D021D633A9616D4D9DA3C2B4E",
+      "decoded_bytes": 8192,
+      "tga_file": "assets\\extracted\\tfc-lightmap-probe-large\\no-cache\\Dishonored_MainMenu_Env\\LightMapTexture2D\\DirectionalMaxComponent0_3.tga",
+      "tga_file_size": 16354,
+      "tga_sha256": "818C4EDC47DF45EDF6B28BE49C9AF46A81E5FE145A7AD2F7E18C986EEE7B8D57",
+      "exact_rgb_pixels": 16384,
+      "total_pixels": 16384,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    }
+  ],
+  "claim_limit": "Byte-to-pixel equality verifies this parser export sample; it does not prove in-game runtime rendering or general TFC format coverage."
+}

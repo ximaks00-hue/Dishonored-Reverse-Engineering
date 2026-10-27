@@ -11,8 +11,14 @@ REQUIRED = ["README.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md", "SECURITY.md",
             "schemas/research-record.schema.json"]
 RECORD_PATTERN = re.compile(r"^(EXP|FIND|HYP|FUNC)-[0-9]{4}[-_][a-z0-9][a-z0-9-]*\.md$")
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)]+)\)")
-IGNORED = {".git", ".venv", "venv", "__pycache__", "node_modules"}
+IGNORED = {
+    ".git", ".venv", "venv", "__pycache__", "node_modules",
+    ".cursor", ".nuget", ".tmp", "_excluded_coop_project",
+}
 RECORD_DIRS = {"experiments", "docs/findings", "docs/hypotheses", "docs/functions"}
+SYNTHESIS_PAGES = {"docs/findings/README.md", "docs/findings/baseline.md", "docs/findings/blink-native.md"}
+LOCAL_ONLY_PREFIXES = ("assets/extracted/",)
+LOCAL_ONLY_FILES = {"tools/ue-package-decompressor/decompress.exe"}
 
 def check(root: pathlib.Path = ROOT) -> list[str]:
     errors: list[str] = []
@@ -26,7 +32,7 @@ def check(root: pathlib.Path = ROOT) -> list[str]:
         rel = path.relative_to(root)
         contents = path.read_text(encoding="utf-8")
         dirname = str(rel.parent).replace("\\", "/")
-        if dirname in RECORD_DIRS and path.name != "README.md":
+        if dirname in RECORD_DIRS and path.name != "README.md" and str(rel).replace("\\", "/") not in SYNTHESIS_PAGES:
             if not RECORD_PATTERN.fullmatch(path.name):
                 errors.append(f"{rel}: invalid record filename")
             else:
@@ -38,7 +44,16 @@ def check(root: pathlib.Path = ROOT) -> list[str]:
             if target.startswith(("https://", "http://", "mailto:", "#")):
                 continue
             local = target.split("#", 1)[0].split("?", 1)[0]
-            if local and not (path.parent / local).exists():
+            if local:
+                resolved = (path.parent / local).resolve()
+                if resolved.exists():
+                    continue
+                try:
+                    repository_path = resolved.relative_to(root.resolve()).as_posix()
+                except ValueError:
+                    repository_path = ""
+                if repository_path in LOCAL_ONLY_FILES or repository_path.startswith(LOCAL_ONLY_PREFIXES):
+                    continue
                 errors.append(f"{rel}: broken relative link: {target}")
     return errors
 

@@ -1,0 +1,28 @@
+{
+  "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-artdealer-p\\L_ArtDealer_P.upk",
+  "package_sha256": "6052EEA7F0AFEE3F36027B22D65F47F32666DF74297F4972F6BBC00BC48A1400",
+  "package_index": 57,
+  "object_name": "DirectionalMaxComponent0_12",
+  "owner_class": "LightMapTexture2D",
+  "parser_class_type": "UELib.Engine.UShadowMapTexture2D",
+  "export_serial_offset": 83328,
+  "export_serial_size": 5884,
+  "export_serial_end_exclusive": 89212,
+  "texture_cache_name": "Lighting",
+  "texture_file_cache_guid_components": {
+    "A": 2532915175,
+    "B": 1223544440,
+    "C": 2760888737,
+    "D": 2922106680
+  },
+  "tfc_file": "E:\\Dishonored Reverse Engineering\\Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_file_size": 548298402,
+  "tfc_file_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "mip_count": 8,
+  "external_mip_count": 0,
+  "inline_mip_count": 8,
+  "all_mip_ranges_in_file": true,
+  "all_inline_ranges_within_export_serial": true,
+  "external_mip_offsets_in_tfc": [],
+  "output_csv": "E:\\Dishonored Reverse Engineering\\research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_ArtDealer_P-DirectionalMaxComponent0_12-lightmap.csv"
+}

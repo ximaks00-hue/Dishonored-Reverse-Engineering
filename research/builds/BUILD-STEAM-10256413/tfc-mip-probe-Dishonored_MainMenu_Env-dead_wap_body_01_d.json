@@ -1,0 +1,30 @@
+{
+  "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-cross-cache-mainmenu\\decompressed\\Dishonored_MainMenu_Env.upk",
+  "package_sha256": "63F9AB497E4D3856112302737593D2946662A46DAE9FB8F68FCF7BD67B414BE8",
+  "package_index": 5819,
+  "object_name": "dead_wap_body_01_d",
+  "owner_class": "Texture2D",
+  "export_serial_offset": 20530719,
+  "export_serial_size": 22460,
+  "export_serial_end_exclusive": 20553179,
+  "texture_cache_name": "CharTextures",
+  "texture_file_cache_guid_components": {
+    "A": 3451494343,
+    "B": 1322709417,
+    "C": 674268315,
+    "D": 3285362885
+  },
+  "tfc_file": "E:\\Dishonored Reverse Engineering\\Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\CharTextures.tfc",
+  "tfc_file_size": 301325850,
+  "tfc_file_sha256": "DC44903278ECFF2E3735DF828F550FAD5D9A5871370EEB5A5D4D1CEF040E9D7B",
+  "mip_count": 11,
+  "external_mip_count": 2,
+  "inline_mip_count": 9,
+  "all_mip_ranges_in_file": true,
+  "all_inline_ranges_within_export_serial": true,
+  "external_mip_offsets_in_tfc": [
+    264164359,
+    264105567
+  ],
+  "output_csv": "E:\\Dishonored Reverse Engineering\\research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-Dishonored_MainMenu_Env-dead_wap_body_01_d.csv"
+}

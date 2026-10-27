@@ -1,0 +1,8 @@
+umodel_fake_class,uelib_export_class_label,uelib_exports,uelib_unknown_object_exports,should_deserialize_on_demand,on_demand_attempted,uelib_deserialized_exports,uelib_errorlized_exports,on_demand_deserialized,on_demand_errorlized,objects_with_default_property_rows,default_property_rows,on_demand_load_diagnostic_lines,on_demand_escaped_call_errors,on_demand_recorded_exceptions,packages_with_exports,packages_with_on_demand_attempts,claim
+Texture2D,Texture2D,92846,0,92846,92846,92846,0,92846,0,92846,908585,0,0,0,720,720,aggregate class-label correspondence only; not an object-level UModel join
+MaterialInstanceConstant,MaterialInstanceConstant,45120,45120,45120,45120,45120,0,45120,0,45119,337485,44046,0,0,483,483,aggregate class-label correspondence only; not an object-level UModel join
+StaticMesh3,StaticMesh,34856,34856,34856,34856,34856,0,34856,0,34850,95280,34856,0,0,460,460,aggregate class-label correspondence only; not an object-level UModel join
+LightMapTexture2D,LightMapTexture2D,31442,31442,31442,31442,31442,0,31442,0,31442,163170,31442,0,0,325,325,aggregate class-label correspondence only; not an object-level UModel join
+SkeletalMesh3,SkeletalMesh,4323,4321,4321,4321,4323,0,4321,0,4323,8034,4321,0,0,275,274,aggregate class-label correspondence only; not an object-level UModel join
+Material3,Material,3667,0,3667,3667,3667,0,3667,0,3667,36117,3666,0,0,427,427,aggregate class-label correspondence only; not an object-level UModel join
+AnimSet,AnimSet,7548,7547,7547,7547,7548,0,7547,0,7545,15090,0,0,0,260,259,aggregate class-label correspondence only; not an object-level UModel join

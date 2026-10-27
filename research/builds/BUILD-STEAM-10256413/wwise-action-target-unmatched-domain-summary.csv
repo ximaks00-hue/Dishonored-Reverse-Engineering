@@ -1,0 +1,28 @@
+target_id,unresolved_action_edge_count,source_action_types,distinct_field_owner_package_match_count,matched_field_names,matched_owner_types,matched_packages,claim
+117317326,4,CAkActionSetGameParameter,2,RTPCID; RTPC_ID,RTPC; RTPCRamping,standalone:Init.bnk,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+122811015,1,CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+196641014,2,CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+294383666,4,CAkActionSetAkProp; CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+418812777,2,CAkActionSetAkProp; CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+448896754,1,CAkActionSetAkProp,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+500526455,3,CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+511365976,2,CAkActionSetGameParameter,2,RTPCID; RTPC_ID,RTPC; RTPCRamping,DishonoredGame/CookedPCConsole/Bank_Phys.pck; standalone:Init.bnk,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+568360164,2,CAkActionSetAkProp,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+691435738,6,CAkActionStop,2,ulNodeID,AkSwitchNodeParams,DishonoredGame/DLC/PCConsole/DLC06/Bank_DLC06_Amb_Level_SlaughterInt.pck; DishonoredGame/DLC/PCConsole/DLC07/Bank_DLC06_Amb_Level_SlaughterInt.pck,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+780768015,1,CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+851657313,2,CAkActionPause; CAkActionResume,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+875669451,7,CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+878987857,2,CAkActionSetAkProp; CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+887346999,6,CAkActionStop,2,ulNodeID,AkSwitchNodeParams,DishonoredGame/DLC/PCConsole/DLC06/Bank_DLC06_Amb_Level_SlaughterInt.pck; DishonoredGame/DLC/PCConsole/DLC07/Bank_DLC06_Amb_Level_SlaughterInt.pck,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+912765648,2,CAkActionSetAkProp; CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+982390135,18,CAkActionMute,1,ulNodeID,AkSwitchNodeParams,DishonoredGame/CookedPCConsole/Bank_Amb_LVL_E3.pck,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+1032929039,6,CAkActionStop,2,ulNodeID,AkSwitchNodeParams,DishonoredGame/DLC/PCConsole/DLC06/Bank_DLC06_Amb_Level_SlaughterInt.pck; DishonoredGame/DLC/PCConsole/DLC07/Bank_DLC06_Amb_Level_SlaughterInt.pck,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+1034023800,1,CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+1055071248,2,CAkActionStop,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+1484210369,1,CAkActionSetAkProp,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+1587792703,1,CAkActionSetAkProp,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+1775831174,6,CAkActionSetGameParameter,2,RTPCID; RTPC_ID,RTPC; RTPCRamping,DishonoredGame/CookedPCConsole/Bank_Amb_LVL_Lighthouse.pck; standalone:Init.bnk,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+1961174008,1,CAkActionSetAkProp,0,,,,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+2836719436,3,CAkActionSetGameParameter,2,RTPCID; RTPC_ID,RTPC; RTPCRamping,DishonoredGame/CookedPCConsole/Bank_Amb_Thunder_Clap.pck; standalone:Init.bnk,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+3959093707,4,CAkActionSetGameParameter,11,RTPCID; RTPC_ID,RTPC; RTPCRamping,DishonoredGame/CookedPCConsole/Bank_Amb_LVL_Island.pck; DishonoredGame/CookedPCConsole/Bank_Amb_LVL_Lighthouse.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_05.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_05_Localized.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_06_Localized.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_Light.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_Water.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_on_Concrete.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_on_Window.pck; DishonoredGame/CookedPCConsole/Bank_Amb_Rain_on_Wood.pck; standalone:Init.bnk,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed
+4152235916,2,CAkActionSetGameParameter,2,RTPCID; RTPC_ID,RTPC; RTPCRamping,DishonoredGame/DLC/PCConsole/DLC07/Bank_DLC07_Amb_WindTree.pck; standalone:Init.bnk,exact numeric equality in parsed XML field values; semantic/runtime relation unconfirmed

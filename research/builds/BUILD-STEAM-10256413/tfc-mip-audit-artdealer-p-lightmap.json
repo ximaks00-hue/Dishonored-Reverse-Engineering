@@ -1,0 +1,108 @@
+{
+  "mip_census_csv": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_ArtDealer_P-DirectionalMaxComponent0_12-lightmap.csv",
+  "mip_count": 8,
+  "package_file": "assets\\extracted\\tfc-lightmap-artdealer-p\\L_ArtDealer_P.upk",
+  "package_sha256": "6052EEA7F0AFEE3F36027B22D65F47F32666DF74297F4972F6BBC00BC48A1400",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "all_mips_range_valid_and_dxt1_decoded": true,
+  "claim_limit": "All recorded ranges passed file/serial bounds and decoded to DXT1 pixels of the reported dimensions; this audit alone does not compare every mip to UModel output.",
+  "mips": [
+    {
+      "mip_index": 0,
+      "width": 128,
+      "height": 64,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 83532,
+      "storage_size": 4096,
+      "decoded_bytes": 4096,
+      "decoded_sha256": "0A0E8CA950F83AFF462267F32C1685F7AF2F9FD0C753FA6A46C2F7A0877DBF7C",
+      "decoded_pixel_count": 8192
+    },
+    {
+      "mip_index": 1,
+      "width": 64,
+      "height": 32,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 87652,
+      "storage_size": 1024,
+      "decoded_bytes": 1024,
+      "decoded_sha256": "2FC777C8FD7094D41E0438F0C3E49803D2C24884D208EF3BE39A2C8887D26A33",
+      "decoded_pixel_count": 2048
+    },
+    {
+      "mip_index": 2,
+      "width": 32,
+      "height": 16,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 88700,
+      "storage_size": 256,
+      "decoded_bytes": 256,
+      "decoded_sha256": "AAA09BF8C403A25476C4B57500287A393326E4D139F62A428284D938BDBA5BDA",
+      "decoded_pixel_count": 512
+    },
+    {
+      "mip_index": 3,
+      "width": 16,
+      "height": 8,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 88980,
+      "storage_size": 64,
+      "decoded_bytes": 64,
+      "decoded_sha256": "4431643D680A25564CDA8CA73E6F1EE0A990056E5EAEC1EF565447E4C6A68769",
+      "decoded_pixel_count": 128
+    },
+    {
+      "mip_index": 4,
+      "width": 8,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 89068,
+      "storage_size": 16,
+      "decoded_bytes": 16,
+      "decoded_sha256": "C149E875EA97B751DA13AE27CF8846791FB1D8BE9B1BBDEDEAA20FA53B2F5698",
+      "decoded_pixel_count": 32
+    },
+    {
+      "mip_index": 5,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 89108,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "030E2839CA0FE460FDE758A4CCDBF8D01F57FC7DF4A638BF808076E846FF7B7C",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 6,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 89140,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "030E2839CA0FE460FDE758A4CCDBF8D01F57FC7DF4A638BF808076E846FF7B7C",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 7,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_ArtDealer_P.upk",
+      "storage_offset": 89172,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "030E2839CA0FE460FDE758A4CCDBF8D01F57FC7DF4A638BF808076E846FF7B7C",
+      "decoded_pixel_count": 16
+    }
+  ]
+}

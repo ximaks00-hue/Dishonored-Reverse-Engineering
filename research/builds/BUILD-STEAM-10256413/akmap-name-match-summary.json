@@ -1,0 +1,116 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "akmap_files": 4,
+  "string_rows": 2871,
+  "files": [
+    {
+      "source_akmap": "DishonoredGame/CookedPCConsole/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "manifest_bytes": 59830,
+      "sha256": "D8B257F8689A4F66D32BD0E563E73FF9BE65EC29F9B1B63B837D8A2CE739CC69",
+      "version_u32": 1,
+      "field_04_u32": 28698,
+      "ascii_tag_at_field_04": "EGLOBAL",
+      "candidate_string_region_start": 8,
+      "candidate_string_region_end_exclusive": 28706,
+      "candidate_string_count": 982,
+      "pck_unique_matched_strings": 399,
+      "pck_matching_manifest_paths": 422,
+      "upk_unique_matched_strings": 160,
+      "upk_matching_manifest_paths": 161,
+      "bytes_after_candidate_string_region": 31124,
+      "first_four_post_string_u32_values_raw": [
+        12,
+        160,
+        0,
+        0
+      ],
+      "limitations": [
+        "The field/tag and candidate NUL-separated strings are structurally observed, but their format roles are unknown.",
+        "Trailing binary data is not decoded; post-string DWORDs are raw values only.",
+        "Exact basename equality is a candidate cross-file association, not a runtime dependency claim."
+      ]
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC05/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "manifest_bytes": 18205,
+      "sha256": "A0D76E460477D484FF2112648A527D2777320D81B6779215864AE7420D5AE147",
+      "version_u32": 1,
+      "field_04_u32": 7465,
+      "ascii_tag_at_field_04": "EGLOBAL",
+      "candidate_string_region_start": 8,
+      "candidate_string_region_end_exclusive": 7473,
+      "candidate_string_count": 311,
+      "pck_unique_matched_strings": 205,
+      "pck_matching_manifest_paths": 218,
+      "upk_unique_matched_strings": 61,
+      "upk_matching_manifest_paths": 61,
+      "bytes_after_candidate_string_region": 10732,
+      "first_four_post_string_u32_values_raw": [
+        12,
+        61,
+        0,
+        0
+      ],
+      "limitations": [
+        "The field/tag and candidate NUL-separated strings are structurally observed, but their format roles are unknown.",
+        "Trailing binary data is not decoded; post-string DWORDs are raw values only.",
+        "Exact basename equality is a candidate cross-file association, not a runtime dependency claim."
+      ]
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC06/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "manifest_bytes": 35167,
+      "sha256": "D600171453DA7257A2EEFD56F836197A0AB7A2A11B1B90A21309EA8FC68C9341",
+      "version_u32": 1,
+      "field_04_u32": 16447,
+      "ascii_tag_at_field_04": "EGLOBAL",
+      "candidate_string_region_start": 8,
+      "candidate_string_region_end_exclusive": 16455,
+      "candidate_string_count": 596,
+      "pck_unique_matched_strings": 277,
+      "pck_matching_manifest_paths": 300,
+      "upk_unique_matched_strings": 100,
+      "upk_matching_manifest_paths": 101,
+      "bytes_after_candidate_string_region": 18712,
+      "first_four_post_string_u32_values_raw": [
+        12,
+        100,
+        0,
+        0
+      ],
+      "limitations": [
+        "The field/tag and candidate NUL-separated strings are structurally observed, but their format roles are unknown.",
+        "Trailing binary data is not decoded; post-string DWORDs are raw values only.",
+        "Exact basename equality is a candidate cross-file association, not a runtime dependency claim."
+      ]
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC07/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "manifest_bytes": 59830,
+      "sha256": "D8B257F8689A4F66D32BD0E563E73FF9BE65EC29F9B1B63B837D8A2CE739CC69",
+      "version_u32": 1,
+      "field_04_u32": 28698,
+      "ascii_tag_at_field_04": "EGLOBAL",
+      "candidate_string_region_start": 8,
+      "candidate_string_region_end_exclusive": 28706,
+      "candidate_string_count": 982,
+      "pck_unique_matched_strings": 399,
+      "pck_matching_manifest_paths": 422,
+      "upk_unique_matched_strings": 160,
+      "upk_matching_manifest_paths": 161,
+      "bytes_after_candidate_string_region": 31124,
+      "first_four_post_string_u32_values_raw": [
+        12,
+        160,
+        0,
+        0
+      ],
+      "limitations": [
+        "The field/tag and candidate NUL-separated strings are structurally observed, but their format roles are unknown.",
+        "Trailing binary data is not decoded; post-string DWORDs are raw values only.",
+        "Exact basename equality is a candidate cross-file association, not a runtime dependency claim."
+      ]
+    }
+  ]
+}

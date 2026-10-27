@@ -19,11 +19,30 @@ Dishonored RHCP/
 *.idb
 *.i64
 *.dmp
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
 local/
 private/
 .env
 .env.*
 !.env.example
+knowledge/cache/
+research/executable/ghidra-project/
+
+# Machine-local editor, package cache, scratch files and excluded side projects
+.cursor/
+.nuget/
+.tmp/
+_excluded_coop_project/
+.tmp_preamble.txt
+notify.log
+tools/**/bin/
+tools/**/obj/
+third_party/**
+!third_party/**/README*
+!third_party/**/readme.txt
+!third_party/**/LICENSE*
 
 # Python / build outputs
 __pycache__/

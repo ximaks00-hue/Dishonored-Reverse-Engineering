@@ -1,0 +1,22 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "baseline_source": "EXP-0072 exact-build internal function triage",
+  "indexed_internal_functions": 72437,
+  "baseline_unknown_subsystem": 71998,
+  "baseline_symbol_name_candidates": 439,
+  "manual_reviewed_before_EXP_0125": 5,
+  "manual_reviewed_in_EXP_0125": 8,
+  "cumulative_manual_body_reviewed_functions": 13,
+  "cumulative_input_related_static_role_candidates": 13,
+  "overlay_unresolved_unknown_subsystem": 71985,
+  "overlay_candidate_rows": 452,
+  "runtime_verified_functions": 0,
+  "limits": [
+    "The automated EXP-0072 triage artifacts remain unchanged; these are additive manual overlays.",
+    "Static roles are based on exact-build decompiler output and callgraph evidence, not runtime reachability.",
+    "Candidate roles do not recover original source, exact class ownership, or complete type semantics.",
+    "The 439 baseline symbol-name candidates remain unchanged and were not re-reviewed in EXP-0124/0125."
+  ],
+  "cumulative_rows_csv": "manual-review-overlay-cumulative-EXP-0125.csv"
+}

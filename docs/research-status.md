@@ -1,21 +1,24 @@
 # Research status
 
-Updated: 2026-10-27. Scope: public GitHub repository as inspected during this audit, with the community overhaul proposed on a separate branch.
+Updated: 2026-10-27. Scope: Steam x86 build `10256413`; see the [build record](../research/builds/BUILD-STEAM-10256413/build.md). The primary source is each EXP body; this page summarizes current coverage.
 
-## Verified in the audited published repository
-The initial commit contains methodology, templates, roadmap, architecture notes and a JSON schema. It contains **no committed build record, experiment report, native function record or research script**. New process files on the proposed branch do not constitute new facts about game internals.
+## Available evidence
 
-## Reported local work, not yet imported
-Previous project discussion reported `EXP-0114-config-path-candidate-audit.md` and `config_path_candidate_audit.py` in a local workspace. Reported counts: 63 of 76 directives examined, ten `BasedOn` candidate matches to Engine INI files and four localization directory matches. Two base-path candidates yielded the same `BasedOn` matches. This is a *reported*, unverified summary; **the game's actual runtime resolution rule remains unknown**. Obtain the original report, data provenance and script before presenting any of it as verified GitHub research.
+- The corpus contains 155 EXP records, EXP-0001–0155. See the [published evidence index](published-evidence.md) and [coverage snapshot](coverage.md).
+- The recorded build register binds Steam x86 build `10256413` to executable SHA-256 `66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E`; the binary and game installation are not in Git.
+- EXP-0114 and its analysis script report 63 syntactic path candidates from 76 config directives, ten Engine INI candidate matches, and four localization-directory matches against a hash-listed local manifest. This is **observed filesystem candidate matching**, not evidence for runtime config resolution.
+- The exact-build native-function index contains 72,437 functions. The cumulative static body-review overlay through EXP-0155 has 47 entries; these are not runtime-verified, and role/owner claims retain their EXP-specific confidence.
+- EXP-0139 has a 254-address class-table pointer/name candidate catalog; 19 received body reviews and 235 remain body-unreviewed. Pointer/name joins do not by themselves prove ownership or dispatch.
+- No runtime-verified function count is recorded. Static edges do not establish runtime reachability.
 
 ## Immediate blockers
-1. Inventory a legally accessible game build with hashes, architecture, edition and conditions; never upload the installation.
-2. Reconcile locally held experiments and scripts with published material using source review and reproduction.
-3. Establish traceable evidence chains and distinguish observations from claims.
-4. Design a test that differentiates competing `BasedOn` path models.
-5. Choose a license with rights-holder/contributor considerations before inviting substantial code contributions.
+1. Close high-value native ownership/dataflow gaps using evidence that distinguishes candidate explanations.
+2. Test competing `BasedOn` resolution models with a discriminating observation; current path presence does not establish runtime behavior.
+3. Add runtime records only from the matching build and a documented baseline.
+4. Keep experiment procedures and generated catalogs reproducible while leaving game files, extracted assets, and local databases outside Git.
+5. Resolve licensing and contribution scope in the project notice before accepting substantial code contributions.
 
 ## Measurement policy
 Progress is reported by well-scoped denominators and build IDs: examined files out of an explicitly defined manifest, repeatable experiments out of chosen questions and evidence-backed claims out of reviewed findings. Document volume is not completeness.
 
-See [research backlog](backlog.md) and [onboarding](onboarding.md).
+See [research backlog](backlog.md), [onboarding](onboarding.md), and the [roadmap](roadmap.md).

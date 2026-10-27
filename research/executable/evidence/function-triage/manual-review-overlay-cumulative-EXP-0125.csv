@@ -1,0 +1,14 @@
+address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,relevant_callsites,claim_status
+009C30A0,FUN_009c30a0,180,unknown,body_reviewed_static,conditional keyboard-hook callback filtering,,,CallNextHookEx at 009C312F/009C314A; SetWindowsHookExW callback pointer from FUN_009C3F00 at 009C3F55,observed
+009C3CC0,FUN_009c3cc0,35,unknown,body_reviewed_static,zero-state XInputSetState helper,,009C3CD8,,observed
+009C3F00,FUN_009c3f00,188,unknown,body_reviewed_static,keyboard-hook message thread,,,GetMessageW at 009C3F10/009C3F8E; SetWindowsHookExW at 009C3F5C; UnhookWindowsHookEx at 009C3F74/009C3FA4,inferred
+009C41A0,FUN_009c41a0,649,unknown,body_reviewed_static,XInput controller-slot availability reconciliation,009C41C8,009C440D,,observed
+009C48A0,FUN_009c48a0,143,unknown,body_reviewed_static,modifier-key state snapshot,,,GetKeyState virtual-key arguments 0xA2/0xA3/0xA0/0xA1/0x12; FUN_009C8210 callers at 009C82D5/009C8336/009C8561/009C86AE/009C8710,observed
+009C60A0,FUN_009c60a0,49,unknown,body_reviewed_static,guarded XInputSetState submission,,009C60C8,FUN_009C4930 at 009C60BB,observed
+009C6810,FUN_009c6810,889,unknown,body_reviewed_static,input/window initialization path,,,FUN_009C41A0 at 009C6AB9; GetKeyState; RegisterDeviceNotificationW; SetActiveWindow,inferred
+009C6B90,FUN_009c6b90,4543,unknown,body_reviewed_static,controller and keyboard state polling/dispatch,009C6D15,,GetKeyState at 009C7A6E/009C7A8A/009C7AAB,inferred
+009C7D70,FUN_009c7d70,152,unknown,body_reviewed_static,single-key state transition and dispatch,,,GetKeyState at 009C7DB7; FUN_009C7FE0 calls at 009C8006/009C8012/009C801E/009C802A/009C8036/009C8042,observed
+009C7FE0,FUN_009c7fe0,138,unknown,body_reviewed_static,modifier-key polling coordinator,,,FUN_009C8210 caller at 009C823A; six FUN_009C7D70 calls,observed
+009C8210,FUN_009c8210,1342,unknown,body_reviewed_static,window-message handling and input dispatch,,,FUN_009C7FE0 at 009C823A; FUN_009C48A0 at 009C82D5/009C8336/009C8561/009C86AE/009C8710; DefWindowProcW at 009C8278,inferred
+009C9B30,FUN_009c9b30,245,unknown,body_reviewed_static,window-procedure routing,,,FUN_009C8210 at 009C9C02; DefWindowProcW at 009C9C18; callback assigned by FUN_009C9D50 at 009C9E36,observed
+009C9D50,FUN_009c9d50,1321,unknown,body_reviewed_static,window and input-device initialization,,,CreateThread start routine FUN_009C3F00 at 009CA1C0; DirectInput8Create at 009CA1E9; FUN_009C41A0 at 009CA260; RegisterClassExW at 009C9E93,inferred

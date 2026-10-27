@@ -1,0 +1,65 @@
+{
+  "package_file": "assets\\extracted\\tfc-lightmap-dlc05\\L_DLC05_Arena_Env.upk",
+  "package_sha256": "9DE6319F0BA03073C903ACA154A6A5EABB9092C87DE92B90B86E3AAF29D8E04F",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\DLC\\PCConsole\\DLC05\\Lighting_DLC05.tfc",
+  "tfc_file_size": 73883321,
+  "tfc_sha256": "87F375E758B244FBF55589CA8112201FB8B2FE666D8209721BC30E8F667FACC5",
+  "mip_comparisons": [
+    {
+      "mip_index": 0,
+      "width": 1024,
+      "height": 1024,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting_DLC05.tfc",
+      "storage_offset": 3282055,
+      "storage_size": 245865,
+      "stored_range_sha256": "1C40F8CCDFAF2185846958B005B9E05B290D1A540D5846F80DFE2ACF8CBA9144",
+      "lzo_container_header_bytes": 48,
+      "lzo_chunk_count": 4,
+      "lzo_chunk_compressed_sizes": [
+        90353,
+        89719,
+        32677,
+        33068
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072,
+        131072,
+        131072,
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null,
+      "decoded_mip_sha256": "DEB6F1484302D9B3EFAC22E3DAA27A2E538EFA4C00EFD1689CB406B29F326B93",
+      "decoded_bytes": 524288,
+      "tga_file": "assets\\extracted\\tfc-lightmap-dlc05\\with-cache\\L_DLC05_Arena_Env\\LightMapTexture2D\\DirectionalMaxComponent0_1.tga",
+      "tga_file_size": 887494,
+      "tga_sha256": "36E8A2CAC33AEFF64BFF2801D55DD4B75DC4C6F318C6EF0D1BD0E71161E70671",
+      "exact_rgb_pixels": 1048576,
+      "total_pixels": 1048576,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    },
+    {
+      "mip_index": 3,
+      "width": 128,
+      "height": 128,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1037119,
+      "storage_size": 8192,
+      "stored_range_sha256": "BBBC874216252D5458E6754EE384E7088069FC65BC3D92C6E66DB6E9DA9045CB",
+      "decoded_mip_sha256": "BBBC874216252D5458E6754EE384E7088069FC65BC3D92C6E66DB6E9DA9045CB",
+      "decoded_bytes": 8192,
+      "tga_file": "assets\\extracted\\tfc-lightmap-dlc05\\no-cache\\L_DLC05_Arena_Env\\LightMapTexture2D\\DirectionalMaxComponent0_1.tga",
+      "tga_file_size": 21654,
+      "tga_sha256": "C787C3C973DBF3F499E3F9F1C2F841EA025DC7A0B8BCB371007A8BB8B52773B4",
+      "exact_rgb_pixels": 16384,
+      "total_pixels": 16384,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    }
+  ],
+  "claim_limit": "Byte-to-pixel equality verifies this parser export sample; it does not prove in-game runtime rendering or general TFC format coverage."
+}

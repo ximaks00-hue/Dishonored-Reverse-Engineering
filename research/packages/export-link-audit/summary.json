@@ -1,0 +1,21 @@
+{
+  "catalog_package_rows": 904,
+  "catalog_export_rows": 2885414,
+  "manifest_rows": 904,
+  "census_rows": 904,
+  "package_rows_manifest_and_census_absent": 0,
+  "manifest_hash_and_size_matches": 904,
+  "per_package_export_count_matches": 904,
+  "candidate_export_outer_links": {},
+  "import_resolution": {
+    "status": "unavailable_from_export_only_UModel_catalog",
+    "note": "The current catalog stores export labels only; it has no import table or serialized object-reference fields."
+  },
+  "limitations": [
+    "UModel -list label strings do not establish serialized UE3 outer, class, super, or object-reference values.",
+    "Candidate outer links are generated only when one local export label uniquely matches the displayed outer prefix.",
+    "No package export, property decode, bytecode decode, or runtime reachability was performed."
+  ],
+  "missing_package_examples": [],
+  "candidate_link_rows": 0
+}

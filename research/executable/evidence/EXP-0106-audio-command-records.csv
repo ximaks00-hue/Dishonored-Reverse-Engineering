@@ -1,0 +1,11 @@
+wrapper_address,wrapper_name,record_bytes,discriminator_hex,condition_or_payload_fields,static_observation_limit
+00D139F0,SetRTPCValue,20,0x0002,param_4==0; carries param_1/param_2/param_3,Wrapper field values only; code semantics are not independently confirmed
+00D139F0,SetRTPCValue,unknown,0x0003,param_4!=0; carries param_1/param_2/param_3/param_4/param_5,Record length helper FUN_00B42F50 was not inspected
+00D13A80,SetSwitch,20,0x0008,carries param_1/param_2/param_3,Wrapper field values only; code semantics are not independently confirmed
+00D13AD0,PostTrigger,16,0x000A,carries param_1/param_2,Wrapper field values only; code semantics are not independently confirmed
+00D14190,RegisterGameObj,16,0x000B,requires param_1 not 0 or 0xFFFFFFFF; carries param_1 and zero,Wrapper field values only; code semantics are not independently confirmed
+00D141E0,UnregisterGameObj,12,0x000C,param_1==0 returns 2; otherwise carries param_1,Wrapper field values only; code semantics are not independently confirmed
+00D14220,UnregisterAllGameObj,12,0x000C,carries 0xFFFFFFFF,Wrapper field values only; code semantics are not independently confirmed
+00D13D80,SetObjectObstructionAndOcclusion,24,0x0016,carries param_1/param_2/param_3/param_4,Wrapper field values only; code semantics are not independently confirmed
+00D13B70,ResetRTPCValue,16,0x0005,param_3==0; carries param_1/param_2,Record length from FUN_00566120; wrapper discriminator only
+00D13B70,ResetRTPCValue,24,0x0006,param_3!=0; carries param_1/param_2/param_3/param_4,Record length from FUN_00A1F950; wrapper discriminator only
