@@ -24,6 +24,6 @@ The database exposes both the sequential gate and four separate axes: analysis, 
 
 ## Current importer behavior
 
-`python tools/knowledge/sync_from_experiments.py` imports all 72,437 exact-build internal function-index rows at L0. It imports the 29 cumulative manual body reviews as L1 analysis records only; candidate or unresolved roles in that overlay are not converted to semantic claims. The seven existing curated function records are imported as claims with their original claim statuses and EXP references. No L3 dataflow edge or L4 runtime verification is synthesized from a call graph, static address match, or decompilation.
+`python tools/knowledge/sync_from_experiments.py` imports all 72,437 exact-build internal function-index rows at L0. It imports the 31 cumulative manual body reviews as L1 analysis records only; candidate or unresolved roles in that overlay are not converted to semantic claims. The seven existing curated function records are imported as claims with their original claim statuses and EXP references. No L3 dataflow edge or L4 runtime verification is synthesized from a call graph, static address match, or decompilation.
 
 The `function_research_progress` SQLite view provides per-function coverage, and the sync summary reports counts by L0–L4. Adding new analysis tools is a later step: their results must use the cache key and evidence fields before they can contribute to coverage.
