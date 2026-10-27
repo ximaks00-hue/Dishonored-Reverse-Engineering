@@ -97,7 +97,8 @@ def functions_in_range(start: str, end: str, limit: int = 50) -> dict[str, Any]:
 @mcp_tool(_log)
 def decompile_function(address: str, timeout_seconds: int = 90) -> dict[str, Any]:
     function = _functions.get(address)
-    cached = decompile_cache.load(function["address"])
+    cache_key = decompile_cache.cache_key(function["address"], _settings)
+    cached = decompile_cache.load(function["address"], expected_cache_key=cache_key)
     if cached is not None:
         return {
             "address": function["address"],
@@ -105,6 +106,7 @@ def decompile_function(address: str, timeout_seconds: int = 90) -> dict[str, Any
             "signature": function.get("signature", "") or cached.get("signature", ""),
             "pseudocode": cached["pseudocode"],
             "cache_hit": True,
+            "cache_stored": True,
             "cache_path": cached.get("cache_path"),
         }
     if not _settings.ghidra_headless.is_file():
@@ -132,8 +134,7 @@ def decompile_function(address: str, timeout_seconds: int = 90) -> dict[str, Any
         _settings.ghidra_project_name,
         "-process",
         _settings.ghidra_program,
-        "-noanalysis",
-        "-readOnly",
+        *decompile_cache.HEADLESS_OPTIONS,
         "-scriptPath",
         str(_SCRIPT_DIR),
         "-postScript",
@@ -178,6 +179,7 @@ def decompile_function(address: str, timeout_seconds: int = 90) -> dict[str, Any
             "signature": function.get("signature", ""),
             "pseudocode": match.group(1).strip(),
         },
+        expected_cache_key=cache_key,
     )
     return {
         "address": function["address"],
@@ -185,6 +187,7 @@ def decompile_function(address: str, timeout_seconds: int = 90) -> dict[str, Any
         "signature": function.get("signature", ""),
         "pseudocode": record["pseudocode"],
         "cache_hit": False,
+        "cache_stored": record.get("cache_stored", False),
         "cache_path": record.get("cache_path"),
     }
 
