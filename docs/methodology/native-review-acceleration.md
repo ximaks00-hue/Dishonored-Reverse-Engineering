@@ -29,6 +29,29 @@ The generator ranks unreviewed class-table target candidates by capped incoming 
 - Alternative interpretations and cheapest distinguishing next experiment.
 - Independent reviewer and commands, if reproduced.
 
+### Bounded neighborhood export
+
+`tools/native_review_neighborhood.py` exports one or more anchors with a
+maximum of two undirected call-graph hops and an explicit node budget. The
+graph is limited to indexed function entries. Both callers and callees are
+included; incoming and outgoing data xrefs are attached only as context and
+are never traversed. Each edge retains its kind, endpoints, site, SQLite row
+ID, and the SHA-256 of the exact callgraph database. The report also records
+the function-index digest and checks the callgraph build ID/EXE SHA against
+the build record.
+
+```bash
+python tools/native_review_neighborhood.py \
+  --anchor 00BFA270 --depth 1 --node-budget 100 \
+  --output reports/native-review-neighborhood.json
+```
+
+The JSON is a reproducible-input snapshot, not a new EXP or a semantic claim.
+It does not modify any review status or L0–L4 count. A different SQLite hash,
+function-index hash, build, depth, or budget defines a different export. The
+database remains local/ignored; contributors should attach the report to a
+review packet only when its input digests and build identity are available.
+
 [Function template](../../templates/function.md) is a minimal starting point. Never paste copyrighted function dumps.
 
 ## Data quality and automation roadmap
