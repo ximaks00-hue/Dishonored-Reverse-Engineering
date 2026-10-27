@@ -1,0 +1,14 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "callgraph_exported_at": "2026-10-26T19:34:50Z",
+  "direct_callsite_edges": 50,
+  "unique_callers": 48,
+  "caller_cohort_audio_name_candidates": 41,
+  "audio_name_candidate_denominator": 181,
+  "unique_producer_tags_via_00D21A00": 36,
+  "separate_renderaudio_marker_tag": "0x0000",
+  "visible_dispatch_cases": 37,
+  "visible_cases_accounted": 37,
+  "claim_limit": "Static code/callgraph reconciliation only; does not establish runtime reachability or audio behavior"
+}

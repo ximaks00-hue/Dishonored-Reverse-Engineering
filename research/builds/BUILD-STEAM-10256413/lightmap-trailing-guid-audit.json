@@ -1,0 +1,169 @@
+{
+  "sample_count": 5,
+  "all_trailing_regions_are_32_bytes": true,
+  "all_embedded_guid_words_match_summary": true,
+  "all_prefix_and_suffix_words_are_consistent": true,
+  "interpretation_limit": "The byte layout repeats and its embedded four little-endian words match the census GUID fields. This establishes byte correspondence only; meanings of the other words and engine/runtime semantics remain unknown.",
+  "samples": [
+    {
+      "summary_file": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-Dishonored_MainMenu-DirectionalMaxComponent0_289-lightmap.json",
+      "object_name": "DirectionalMaxComponent0_289",
+      "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-probe\\decompressed\\Dishonored_MainMenu.upk",
+      "package_sha256": "B9585365B75FCFBFC9A5CE4ABD995D6BD4C9A1A2EECD4CAAEC3BC6A25E5A2D8A",
+      "package_index": 209,
+      "export_serial_end_exclusive": 305050,
+      "last_inline_mip_end_exclusive": 305018,
+      "trailing_byte_count": 32,
+      "trailing_bytes_hex": "040000000400000040FFC3063AC87E4694C1C5376A5F5D3D0000000001000000",
+      "first_two_u32_le": [
+        4,
+        4
+      ],
+      "guid_u32_le": [
+        113508160,
+        1182713914,
+        935707028,
+        1029529450
+      ],
+      "summary_guid_u32_le": [
+        113508160,
+        1182713914,
+        935707028,
+        1029529450
+      ],
+      "guid_words_match_summary": true,
+      "last_two_u32_le": [
+        0,
+        1
+      ]
+    },
+    {
+      "summary_file": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-Dishonored_MainMenu_Env-DirectionalMaxComponent0_3-lightmap.json",
+      "object_name": "DirectionalMaxComponent0_3",
+      "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-cross-cache-mainmenu\\decompressed\\Dishonored_MainMenu_Env.upk",
+      "package_sha256": "63F9AB497E4D3856112302737593D2946662A46DAE9FB8F68FCF7BD67B414BE8",
+      "package_index": 228,
+      "export_serial_end_exclusive": 3058933,
+      "last_inline_mip_end_exclusive": 3058901,
+      "trailing_byte_count": 32,
+      "trailing_bytes_hex": "0400000004000000E4836777FCF22A4D815A1DBC72C799990000000001000000",
+      "first_two_u32_le": [
+        4,
+        4
+      ],
+      "guid_u32_le": [
+        2003272676,
+        1294660348,
+        3156040321,
+        2576992114
+      ],
+      "summary_guid_u32_le": [
+        2003272676,
+        1294660348,
+        3156040321,
+        2576992114
+      ],
+      "guid_words_match_summary": true,
+      "last_two_u32_le": [
+        0,
+        1
+      ]
+    },
+    {
+      "summary_file": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_ArtDealer_Block-DirectionalMaxComponent0_1-lightmap.json",
+      "object_name": "DirectionalMaxComponent0_1",
+      "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-artdealer\\decompressed\\L_ArtDealer_Block.upk",
+      "package_sha256": "1FB978EC145B83BA8441F5B3600E0B1D91AF6E3F4DE50B988AA891368ACD6148",
+      "package_index": 364,
+      "export_serial_end_exclusive": 809183,
+      "last_inline_mip_end_exclusive": 809151,
+      "trailing_byte_count": 32,
+      "trailing_bytes_hex": "0400000004000000C00D236BE8E35D44A1DC596DBD215B810000000001000000",
+      "first_two_u32_le": [
+        4,
+        4
+      ],
+      "guid_u32_le": [
+        1797459392,
+        1147003880,
+        1834605729,
+        2170233277
+      ],
+      "summary_guid_u32_le": [
+        1797459392,
+        1147003880,
+        1834605729,
+        2170233277
+      ],
+      "guid_words_match_summary": true,
+      "last_two_u32_le": [
+        0,
+        1
+      ]
+    },
+    {
+      "summary_file": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_ArtDealer_P-DirectionalMaxComponent0_12-lightmap.json",
+      "object_name": "DirectionalMaxComponent0_12",
+      "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-artdealer-p\\L_ArtDealer_P.upk",
+      "package_sha256": "6052EEA7F0AFEE3F36027B22D65F47F32666DF74297F4972F6BBC00BC48A1400",
+      "package_index": 57,
+      "export_serial_end_exclusive": 89212,
+      "last_inline_mip_end_exclusive": 89180,
+      "trailing_byte_count": 32,
+      "trailing_bytes_hex": "0400000004000000E737F99678CEED48A1D18FA438CF2BAE0000000001000000",
+      "first_two_u32_le": [
+        4,
+        4
+      ],
+      "guid_u32_le": [
+        2532915175,
+        1223544440,
+        2760888737,
+        2922106680
+      ],
+      "summary_guid_u32_le": [
+        2532915175,
+        1223544440,
+        2760888737,
+        2922106680
+      ],
+      "guid_words_match_summary": true,
+      "last_two_u32_le": [
+        0,
+        1
+      ]
+    },
+    {
+      "summary_file": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_Boyle_Ext_Env-DirectionalMaxComponent0_10-lightmap.json",
+      "object_name": "DirectionalMaxComponent0_10",
+      "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-boyle-ext\\L_Boyle_Ext_Env.upk",
+      "package_sha256": "B38CCF3121E144A4BAADEA6070E54A928EDD133EA6CC335A3F62F0C35E50270F",
+      "package_index": 312,
+      "export_serial_end_exclusive": 3067572,
+      "last_inline_mip_end_exclusive": 3067540,
+      "trailing_byte_count": 32,
+      "trailing_bytes_hex": "040000000400000038B0C64B93983A48B52CF34502905C4C0000000001000000",
+      "first_two_u32_le": [
+        4,
+        4
+      ],
+      "guid_u32_le": [
+        1271312440,
+        1211799699,
+        1173564597,
+        1281134594
+      ],
+      "summary_guid_u32_le": [
+        1271312440,
+        1211799699,
+        1173564597,
+        1281134594
+      ],
+      "guid_words_match_summary": true,
+      "last_two_u32_le": [
+        0,
+        1
+      ]
+    }
+  ]
+}

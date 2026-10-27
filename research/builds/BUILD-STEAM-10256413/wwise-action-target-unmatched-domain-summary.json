@@ -1,0 +1,53 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "parsed_pck_banks": 503,
+  "parsed_xml_sources_including_init": 504,
+  "unresolved_nonzero_action_edges": 92,
+  "distinct_target_ids": 27,
+  "target_ids_matching_at_least_one_non_ulTargetID_field": 10,
+  "target_ids_with_no_other_field_match": 17,
+  "unresolved_edges_with_other_field_matches": 57,
+  "unresolved_edges_with_no_other_field_match": 35,
+  "edges_with_same_pck_other_field_match": 35,
+  "edges_with_only_other_pck_field_match": 22,
+  "same_pck_match_edges_by_action_type": {
+    "CAkActionSetGameParameter": 17,
+    "CAkActionStop": 18
+  },
+  "only_other_pck_match_edges_by_action_type": {
+    "CAkActionMute": 18,
+    "CAkActionSetGameParameter": 4
+  },
+  "distinct_field_owner_package_match_tuples": {
+    "RTPCID|RTPC": 15,
+    "RTPC_ID|RTPCRamping": 6,
+    "ulNodeID|AkSwitchNodeParams": 7
+  },
+  "target_id_count_and_action_edges_by_field_domain": {
+    "RTPCID|RTPC": {
+      "target_ids": 6,
+      "action_edges": 21
+    },
+    "RTPC_ID|RTPCRamping": {
+      "target_ids": 6,
+      "action_edges": 21
+    },
+    "ulNodeID|AkSwitchNodeParams": {
+      "target_ids": 4,
+      "action_edges": 36
+    }
+  },
+  "matched_action_edges_by_type": {
+    "CAkActionMute": 18,
+    "CAkActionSetGameParameter": 21,
+    "CAkActionStop": 18
+  },
+  "no_other_field_match_action_edges_by_type": {
+    "CAkActionPause": 1,
+    "CAkActionResume": 1,
+    "CAkActionSetAkProp": 10,
+    "CAkActionStop": 23
+  },
+  "claim_limit": "Exact numeric matches in parser XML only; no target-domain semantics, references, or runtime resolution established"
+}

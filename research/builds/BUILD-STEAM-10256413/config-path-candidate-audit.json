@@ -1,0 +1,46 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "input_directive_rows": 76,
+  "path_candidate_rows": 63,
+  "reference_kind_counts": {
+    "based_on_file_candidate": 10,
+    "path_value_candidate": 53
+  },
+  "normalization_bases": [
+    "source_directory",
+    "install_root",
+    "game_root",
+    "engine_root"
+  ],
+  "candidate_status_counts_by_base": {
+    "source_directory": {
+      "absent_in_tree": 56,
+      "outside_install_root": 1,
+      "directory_present": 4,
+      "rooted_value_unresolved": 2
+    },
+    "install_root": {
+      "outside_install_root": 61,
+      "rooted_value_unresolved": 2
+    },
+    "game_root": {
+      "file_present": 10,
+      "outside_install_root": 39,
+      "absent_in_tree": 12,
+      "rooted_value_unresolved": 2
+    },
+    "engine_root": {
+      "file_present": 10,
+      "outside_install_root": 39,
+      "absent_in_tree": 12,
+      "rooted_value_unresolved": 2
+    }
+  },
+  "limitations": [
+    "Path candidates are normalized strings under explicit bases, not runtime resolution results.",
+    "%GAME% -> Dishonored is a candidate substitution only.",
+    "An absent target may be generated, platform-specific, virtual, or resolved by other engine rules.",
+    "A present target establishes filesystem/manifest presence, not that the game loads it."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "baseline_source": "EXP-0072 exact-build internal function triage",
+  "indexed_internal_functions": 72437,
+  "baseline_unknown_subsystem": 71998,
+  "baseline_symbol_name_candidates": 439,
+  "cumulative_manual_body_reviewed_functions": 28,
+  "cumulative_input_related_static_role_candidates": 16,
+  "cumulative_reviewed_but_unassigned_functions": 6,
+  "overlay_unresolved_unknown_subsystem": 71976,
+  "overlay_candidate_rows": 461,
+  "runtime_verified_functions": 0,
+  "cumulative_rows_csv": "manual-review-overlay-cumulative-EXP-0128.csv",
+  "limits": [
+    "The automated EXP-0072 triage artifacts remain unchanged; manual reviews are additive overlays.",
+    "Input- and audio-related static roles are based on exact-build decompiler output and callgraph evidence, not runtime reachability.",
+    "Six reviewed functions remain unassigned to a subsystem: two from EXP-0126 and four shared keyed-reference helpers from EXP-0128.",
+    "The 439 baseline symbol-name candidates remain unchanged and were not re-reviewed by the manual overlays.",
+    "EXP-0128 identifies a static request-submission path only; queue consumer execution and completion semantics remain unknown."
+  ],
+  "overlay_unknown_note": "The 71,976 unresolved unknown-subsystem rows include six manually reviewed functions whose subsystem roles remain unassigned.",
+  "cumulative_audio_related_static_role_candidates": 6
+}

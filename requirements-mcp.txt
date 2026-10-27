@@ -1,0 +1,5 @@
+# Runtime dependencies for Dishonored research MCP servers (.venv).
+mcp>=1.0
+psutil>=5.9
+frida>=16.0
+pytest>=8.0

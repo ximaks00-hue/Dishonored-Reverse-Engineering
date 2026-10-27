@@ -1,0 +1,92 @@
+{
+  "mip_census_csv": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-Dishonored_MainMenu-ShadowMapTexture2D_78538.csv",
+  "mip_count": 6,
+  "package_file": "assets\\extracted\\tfc-lightmap-probe\\decompressed\\Dishonored_MainMenu.upk",
+  "package_sha256": "B9585365B75FCFBFC9A5CE4ABD995D6BD4C9A1A2EECD4CAAEC3BC6A25E5A2D8A",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "pixel_format": "PF_G8",
+  "all_mips_range_valid_and_format_decoded": true,
+  "all_mips_range_valid_and_dxt1_decoded": false,
+  "claim_limit": "All recorded ranges passed file/serial bounds and their decoded byte lengths match PF_G8 dimensions; this audit alone does not compare every mip to UModel output.",
+  "mips": [
+    {
+      "mip_index": 0,
+      "width": 32,
+      "height": 32,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu.upk",
+      "storage_offset": 670860,
+      "storage_size": 1024,
+      "decoded_bytes": 1024,
+      "decoded_sha256": "0A9623B678364FDF165262CF2A44DA1C0AA145C8F170DDB99B8CEF94DCD2601F",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 1024
+    },
+    {
+      "mip_index": 1,
+      "width": 16,
+      "height": 16,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu.upk",
+      "storage_offset": 671908,
+      "storage_size": 256,
+      "decoded_bytes": 256,
+      "decoded_sha256": "F510996DC04055BC6163323D73DE7ACA42BE442D77F72A3EE3CB849D4E494883",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 256
+    },
+    {
+      "mip_index": 2,
+      "width": 8,
+      "height": 8,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu.upk",
+      "storage_offset": 672188,
+      "storage_size": 64,
+      "decoded_bytes": 64,
+      "decoded_sha256": "2FC52667C8A6EC55E3299DBFA99449D2E6C9B669A6C144221EED481EFB25B757",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 64
+    },
+    {
+      "mip_index": 3,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu.upk",
+      "storage_offset": 672276,
+      "storage_size": 16,
+      "decoded_bytes": 16,
+      "decoded_sha256": "0205AED2091BFB967478D267637156771135A810EF6BB6DA77E5758ADF1EBC85",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 4,
+      "width": 2,
+      "height": 2,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu.upk",
+      "storage_offset": 672316,
+      "storage_size": 4,
+      "decoded_bytes": 4,
+      "decoded_sha256": "B73FEA59269BDBD5748C3BD2F9CDB1B618F5169D8319389072CD818E84B4C063",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 4
+    },
+    {
+      "mip_index": 5,
+      "width": 1,
+      "height": 1,
+      "bulk_flags": "0",
+      "storage_file": "Dishonored_MainMenu.upk",
+      "storage_offset": 672344,
+      "storage_size": 1,
+      "decoded_bytes": 1,
+      "decoded_sha256": "94455E3ED9F716BEA425EF99B51FAE47128769A1A0CD04244221E4E14631AB83",
+      "pixel_format": "PF_G8",
+      "decoded_pixel_count": 1
+    }
+  ]
+}

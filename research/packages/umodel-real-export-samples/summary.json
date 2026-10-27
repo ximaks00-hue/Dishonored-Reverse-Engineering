@@ -1,0 +1,22 @@
+{
+  "sample_count": 7,
+  "fake_selection_confirmed": 7,
+  "real_file_written": 7,
+  "result_status_counts": {
+    "file_written": 7
+  },
+  "fake_export_classes": [
+    "AnimSet",
+    "LightMapTexture2D",
+    "Material3",
+    "MaterialInstanceConstant",
+    "SkeletalMesh3",
+    "StaticMesh3",
+    "Texture2D"
+  ],
+  "limitations": [
+    "This is a selected one-object sample, not package-wide or all-install real-export coverage.",
+    "A written file does not prove visual/runtime correctness or complete property/bytecode parsing.",
+    "Source package identity is checked against the current build manifest; source packages are not modified."
+  ]
+}

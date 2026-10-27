@@ -1,0 +1,6 @@
+address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,other_relevant_callsites,claim_status
+009C3CC0,FUN_009c3cc0,35,unknown,body_reviewed_static,zero-state XInputSetState helper,,009C3CD8,,observed
+009C41A0,FUN_009c41a0,649,unknown,body_reviewed_static,XInput controller-slot availability reconciliation,009C41C8,009C440D,,observed
+009C60A0,FUN_009c60a0,49,unknown,body_reviewed_static,guarded XInputSetState submission,,009C60C8,FUN_009C4930 at 009C60BB,observed
+009C6810,FUN_009c6810,889,unknown,body_reviewed_static,input/window initialization path,,,FUN_009C41A0 at 009C6AB9; GetKeyState; RegisterDeviceNotificationW; SetActiveWindow,inferred
+009C6B90,FUN_009c6b90,4543,unknown,body_reviewed_static,controller and keyboard state polling/dispatch,009C6D15,,GetKeyState at 009C7A6E/009C7A8A/009C7AAB,inferred

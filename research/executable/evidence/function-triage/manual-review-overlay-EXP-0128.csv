@@ -1,0 +1,11 @@
+address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,relevant_callsites,claim_status
+00D13590,FUN_00d13590,78,unknown,body_reviewed_static,conditional wait/close helper used by SoundEngine bank and preparation API wrappers,,,LoadBank at 00D14556/00D145EA/00D153AE/00D1543F; PrepareEvent at 00D14879/00D1584C/00D1594C,observed
+00D142B0,FUN_00d142b0,94,unknown,body_reviewed_static,builds a nine-dword request block and forwards it to FUN_00D27810,,,FUN_00D27810 at 00D14303; LoadBank caller at 00D145DD,observed
+00D14310,FUN_00d14310,209,unknown,body_reviewed_static,validates/copies item arrays and forwards a request block to FUN_00D27810,,,FUN_00D27810 at 00D143B6; PrepareEvent caller at 00D1486C,observed
+00D143F0,FUN_00d143f0,239,unknown,body_reviewed_static,validates/copies item arrays and forwards a request block to FUN_00D27810,,,FUN_00D27810 at 00D144A8; PrepareGameSyncs caller at 00D1496A,observed
+00D27670,FUN_00d27670,116,unknown,body_reviewed_static,"selects/allocates a node, links it into a queue and copies nine request dwords",,,FUN_00D27810 at 00D27845,observed
+00D27810,FUN_00d27810,125,unknown,body_reviewed_static,critical-section guarded request insertion with conditional reference helpers and event signal,,,FUN_00D27670 at 00D27845; SetEvent via stored handle; 20 indexed direct callers,observed
+00D1B3D0,FUN_00d1b3d0,68,unknown,body_reviewed_static_role_unresolved,keyed three-dword entry lookup/create helper used by FUN_00D1B4C0; broader subsystem ownership unknown,,,FUN_00D1B4C0 at 00D1B50A,observed
+00D1B420,FUN_00d1b420,79,unknown,body_reviewed_static_role_unresolved,removes a keyed three-dword entry by shifting following entries; six indexed callers cross sampled subsystem boundary,,,FUN_00D1B530 at 00D1B56E; also callers 00D2D1D0/00D421C0/00D42960/00D42A10,observed
+00D1B4C0,FUN_00d1b4c0,97,unknown,body_reviewed_static_role_unresolved,critical-section guarded keyed lookup/reference increment or create; shared helper ownership unresolved,,,FUN_00D27810 at 00D27831; FUN_00D27940 at 00D27A0D,observed
+00D1B530,FUN_00d1b530,109,unknown,body_reviewed_static_role_unresolved,critical-section guarded keyed reference decrement/removal and conditional handle wait; subsystem ownership unresolved,,,FUN_00D27810 at 00D2786A,observed

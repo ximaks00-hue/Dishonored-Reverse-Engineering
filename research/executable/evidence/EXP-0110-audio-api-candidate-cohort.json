@@ -1,0 +1,21 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "callgraph_exported_at": "2026-10-26T19:34:50Z",
+  "candidate_count": 181,
+  "decompiles_completed": 181,
+  "decompiler_namespace_counts": {
+    "AK::MemoryMgr": 17,
+    "AK::MotionEngine": 5,
+    "AK::MusicEngine": 3,
+    "AK::SoundEngine": 105,
+    "AK::SoundEngine::DynamicDialogue": 3,
+    "AK::SoundEngine::DynamicSequence": 6,
+    "AK::SoundEngine::Query": 30,
+    "AK::StreamMgr": 12
+  },
+  "exact_index_label_signature_matches": 181,
+  "direct_call_edges_into_FUN_00D21A00": 43,
+  "unique_FUN_00D21A00_callers_in_cohort": 41,
+  "static_claim_limit": "Names/signatures and direct callgraph relationships only; not proof of vendor provenance, complete ownership, indirect calls, or runtime use"
+}

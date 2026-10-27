@@ -1,0 +1,5 @@
+group,initialized_rows_seen,state:0,default_property_rows,objects_with_default_property_rows,should_deserialize_on_demand,on_demand_attempted,on_demand_load_errors,on_demand_thrown_exceptions,state:Deserialized,state:Errorlized
+CookedPCConsole,1448435,110386,6367586,1102749,1354350,1295965,0,2086,1335963,2086
+DLC05,610643,37034,2538604,475145,590455,573292,0,227,573382,227
+DLC06,448053,32361,1946845,363100,432372,415341,0,215,415477,215
+DLC07,603818,45754,2565853,490625,581514,557456,0,120,557944,120

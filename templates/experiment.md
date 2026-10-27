@@ -1,6 +1,16 @@
-# EXP-0001: Short descriptive title
+---
+id: EXP-0000
+title: Short descriptive title
+experiment_status: planned
+claim_status: unknown
+build: "10256413"
+question: Exact question this experiment answers
+---
 
-- Status: planned | observed | repeated | superseded
+# EXP-0000: Short descriptive title
+
+- Experiment status: planned | in_progress | done | superseded
+- Claim status: confirmed | observed | inferred | unknown | superseded | mixed
 - Build ID:
 - Question:
 - Scope and exclusions:

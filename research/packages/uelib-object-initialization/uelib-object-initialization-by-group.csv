@@ -1,0 +1,5 @@
+group,packages,exports,imports,initialized_objects,unknown_objects,unknown_object_percent,default_properties,default_property_reference_mentions,class_objects,function_objects,property_objects,top_level_init_error_packages
+CookedPCConsole,470,1338049,110386,1448435,1023481,70.661,4846,288,55241,4952,31279,0
+DLC05,160,573609,37034,610643,522404,85.55,0,0,20188,0,0,0
+DLC06,113,415692,32361,448053,366405,81.777,0,0,15681,0,0,0
+DLC07,161,558064,45754,603818,494827,81.95,0,0,22304,0,0,0

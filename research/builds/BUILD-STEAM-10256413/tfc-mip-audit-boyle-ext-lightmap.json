@@ -1,0 +1,162 @@
+{
+  "mip_census_csv": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_Boyle_Ext_Env-DirectionalMaxComponent0_10-lightmap.csv",
+  "mip_count": 11,
+  "package_file": "assets\\extracted\\tfc-lightmap-boyle-ext\\L_Boyle_Ext_Env.upk",
+  "package_sha256": "B38CCF3121E144A4BAADEA6070E54A928EDD133EA6CC335A3F62F0C35E50270F",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "all_mips_range_valid_and_dxt1_decoded": true,
+  "claim_limit": "All recorded ranges passed file/serial bounds and decoded to DXT1 pixels of the reported dimensions; this audit alone does not compare every mip to UModel output.",
+  "mips": [
+    {
+      "mip_index": 0,
+      "width": 1024,
+      "height": 256,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting.tfc",
+      "storage_offset": 8388236,
+      "storage_size": 84533,
+      "decoded_bytes": 131072,
+      "decoded_sha256": "1807045A4D60081C352FAE4EA5665FF64C3A025E9F150C9EBB41A7E3D60C935E",
+      "decoded_pixel_count": 262144,
+      "lzo_container_header_bytes": 24,
+      "lzo_chunk_count": 1,
+      "lzo_chunk_compressed_sizes": [
+        84509
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 1,
+      "width": 512,
+      "height": 128,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting.tfc",
+      "storage_offset": 8362531,
+      "storage_size": 25705,
+      "decoded_bytes": 32768,
+      "decoded_sha256": "01A573F01ED28617ABEAEDC5869D83EFA9BD116465CBAF9D5ADD005F20091524",
+      "decoded_pixel_count": 65536,
+      "lzo_container_header_bytes": 24,
+      "lzo_chunk_count": 1,
+      "lzo_chunk_compressed_sizes": [
+        25681
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        32768
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 2,
+      "width": 256,
+      "height": 64,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3056396,
+      "storage_size": 8192,
+      "decoded_bytes": 8192,
+      "decoded_sha256": "D247E81D1A78E0B20018299819792B7399EFCECDEBD7214478D0E36DF7A89370",
+      "decoded_pixel_count": 16384
+    },
+    {
+      "mip_index": 3,
+      "width": 128,
+      "height": 32,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3064612,
+      "storage_size": 2048,
+      "decoded_bytes": 2048,
+      "decoded_sha256": "5DF8E99598944CC6F8652F55F4E176C1E0E4DE968A1538DB731A36ED66ED70C5",
+      "decoded_pixel_count": 4096
+    },
+    {
+      "mip_index": 4,
+      "width": 64,
+      "height": 16,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3066684,
+      "storage_size": 512,
+      "decoded_bytes": 512,
+      "decoded_sha256": "4AD4D3FCE4E3334779D452760D7CFD636EC554B2E76E1B24636993B336C41BDD",
+      "decoded_pixel_count": 1024
+    },
+    {
+      "mip_index": 5,
+      "width": 32,
+      "height": 8,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3067220,
+      "storage_size": 128,
+      "decoded_bytes": 128,
+      "decoded_sha256": "356DEC7667149F7308B4CB5D5CAC65E032DB172981B65ED1EFDAEB798C98748E",
+      "decoded_pixel_count": 256
+    },
+    {
+      "mip_index": 6,
+      "width": 16,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3067372,
+      "storage_size": 32,
+      "decoded_bytes": 32,
+      "decoded_sha256": "D3D05435F2002B00FEE42AA07ED8D0EE69AE192E2B768BBBFE39544F2CA4A4D6",
+      "decoded_pixel_count": 64
+    },
+    {
+      "mip_index": 7,
+      "width": 8,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3067428,
+      "storage_size": 16,
+      "decoded_bytes": 16,
+      "decoded_sha256": "E00643F2A99DF980E0841DC11C6C6C2153B33D8064842C901AB663065FC7F1E9",
+      "decoded_pixel_count": 32
+    },
+    {
+      "mip_index": 8,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3067468,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "2395AEEA183668B54917F4A513F9CD795E687C00EBC283AE17773B5959FA14F2",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 9,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3067500,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "2395AEEA183668B54917F4A513F9CD795E687C00EBC283AE17773B5959FA14F2",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 10,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3067532,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "2395AEEA183668B54917F4A513F9CD795E687C00EBC283AE17773B5959FA14F2",
+      "decoded_pixel_count": 16
+    }
+  ]
+}

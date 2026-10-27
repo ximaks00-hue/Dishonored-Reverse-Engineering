@@ -1,0 +1,24 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "callgraph_exported_at": "2026-10-26T19:34:50Z",
+  "audio_api_candidate_callers": 181,
+  "indexed_direct_internal_call_edges": 401,
+  "distinct_indexed_direct_internal_callees": 126,
+  "callee_decompiles_completed": 126,
+  "callee_candidate_bucket_counts": {
+    "audio_middleware_candidate": 27,
+    "runtime_library_candidate": 2,
+    "runtime_or_object_lifecycle_candidate": 1,
+    "unknown": 96
+  },
+  "callee_matching_qualified_signature_count": 29,
+  "qualified_signature_owner_counts": {
+    "AK::MemoryMgr": 6,
+    "AK::SoundEngine": 18,
+    "AK::SoundEngine::Query": 4,
+    "CAkRegistryMgr": 1
+  },
+  "writer_callers_in_audio_api_cohort": 41,
+  "claim_limit": "Static exact-build decompiler/callgraph joins; unresolved targets, indirect calls, semantic ownership, and runtime reachability remain open"
+}

@@ -12,14 +12,24 @@ The layers can overlap, but conclusions at one layer must not be presented as pr
 
 ## Navigation
 
-- [Current status and initial questions](research-status.md)
+- [Current status](research-status.md)
+- [Findings index](findings/README.md)
+- [Investigation changelog](changelog.md)
 - [System architecture map](architecture/overview.md)
 - [Evidence and provenance policy](methodology/evidence.md)
 - [Research workflow](methodology/workflow.md)
 - [Long-term roadmap](roadmap.md)
+- [MCP matrix / paths](tooling/mcp.md)
+- [Session checklist](tooling/session-checklist.md)
+- [Archive note](archive/README.md)
 - [Glossary](glossary.md)
 - [Research record schema](../schemas/research-record.schema.json)
 
 ## Subsystem documentation
 
-Create subsystem pages when evidence exists. Use [the subsystem template](../templates/subsystem/overview.md) as a starting point; do not create empty pages that imply coverage.
+Create subsystem pages when evidence exists. Use [the subsystem template](../templates/subsystem/overview.md); do not create empty pages that imply coverage.
+
+- [Blink package and native status](gameplay/blink/overview.md)
+- [Blink activation evidence graph](gameplay/blink/activation-graph.md)
+
+Experiment procedures live under [`experiments/`](../experiments/). Prefer the findings pages and activation graph over listing every EXP here.

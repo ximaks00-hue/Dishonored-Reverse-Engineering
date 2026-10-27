@@ -1,34 +1,45 @@
-# EXP-0032 — Provenance of UsePower dispatcher records and callback registry
+---
+id: EXP-0032
+title: Dispatch record provenance
+experiment_status: done
+claim_status: mixed
+build: "10256413"
+question: "What is the machine-level layout and caller context of candidate dispatcher FUN_00C0CA70?"
+---
+# EXP-0032 — Dispatch record provenance
 
-**Status:** planned, read-only. Date: 2026-10-26. The primary local EXP-0029/0030/0031 are not accessible; observations are user-report-derived.
+- Status: the machine-level layout and direct callers of candidate dispatcher `FUN_00C0CA70` are confirmed; the producer and dynamic class of its receiver remain unknown.
+- Date: 2026-10-26.
+- Executable: workspace `Dishonored.exe`, SHA-256 `66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E`; Ghidra database `dishonored_exact_full`, x86, image base `0x00400000`.
+- Method: read-only Ghidra disassembly, decompilation, direct xrefs and disassembly-text searches. No game bytes or Ghidra program bytes were modified; `_excluded_coop_project/` was not accessed.
 
-## Questions to resolve
+## Findings
 
-1. Does `FUN_00C0CA70` actually dispatch an instance of `DisItemContext_UsePower` via slots `+0x184` and `+0x134`?
-2. Who allocates, fills or copies the `0x30`-stride collection traversed by the dispatcher, and what object pointer does its `+0x1E0` read reference?
-3. Is the generic keyed manager `FUN_00B36CA0` causally connected to UsePower, or merely a different subsystem with callbacks?
-4. Which direct or indirect event invokes the path to `FUN_00BFC990` and under what circumstances does mode 1 succeed versus mode 3 fallback?
+1. In `FUN_00C0CA70`, the count is loaded from `[*(this+0x60)+0x280]`; the base address is `*(this+0x60)+0x27C`. The loop indexes that base at a `0x30`-byte stride and loads the first DWORD as an entry pointer: `entry = *(base + index*0x30)`. The removal helper treats the adjacent DWORD at container `+0x284` as array capacity (its `param_1[2]`) while `+0x280` is count (its `param_1[1]`). This is consistent with a data/count/capacity dynamic-array header, not a packed array of 4-byte pointers.
+2. For a non-null entry, the helper resolves an object chain from `entry+0x30`, following `node+0x44` until it reaches global `DAT_014460A4` (or bypasses the search when the global is null). It then compares `entry+0x1D4` with the fourth argument. On a match it loads the receiver from `entry+0x1E0`, passes it through `FUN_005AC480`, then dispatches slots `+0x184` and `+0x134` on the returned receiver. The decisive instructions are at `0x00C0CB10` (key compare), `0x00C0CB2B` (receiver load), `0x00C0CB32` (validation/helper call), `0x00C0CB48`–`0x00C0CB52` (first indirect call), and `0x00C0CB58`–`0x00C0CB6E` (second indirect call).
+3. Direct code xrefs to `FUN_00C0CA70` are exactly five call sites: `FUN_00C2E840` at `0x00C2E89A`, `FUN_00C2EA00` at `0x00C2EB14`, `FUN_00C316E0` at `0x00C317B0` and `0x00C317CF`, and `FUN_00C35AF0` at `0x00C35B5B`. Decompilation confirms these call sites select argument triples from indexed state/timer records, not from an explicit key/button parameter. `FUN_00C2E840` calls the named middleware routine `AK::MemoryMgr::GetPoolName` elsewhere in the same function and enters the dispatcher only after a global-array membership check; this is evidence that the caller participates in a path with audio-middleware activity, but it does not prove the dispatcher's own purpose. `FUN_00C2EA00` compares a record pointer against five owner-relative subobject addresses before calling the dispatcher. The other callers similarly select records from global state. Taken together, these observed call contexts weaken the claim that `FUN_00C0CA70` has been identified as the user-facing Use dispatcher. No direct call site demonstrates a keyboard/gamepad input event, and there is still no evidence that the receiver at `entry+0x1E0` is `DisItemContext_UsePower`.
+4. `DisItemContext_UsePower` has targets `FUN_00C4B800` and `FUN_00C44D30` at the same virtual offsets `+0x184` and `+0x134`. This is slot compatibility only. There is also a prototype discrepancy to keep visible: raw disassembly shows `FUN_00C0CA70` pushes two arguments before `+0x184` and three before `+0x134`; the current UsePower targets each consume one explicit argument and return with `RET 4` (`FUN_00C44D30` reads a float from `[EBP+8]`). For the `+0x134` call, the first argument at `[EBP+8]` is `0.0`; `1.0` is the second pushed argument and the remaining zero is third. `FUN_00C44D30` consumes only the first argument; the extra stack values are not consumed by this target. This is a reason to verify target ABI and actual receiver class, not a strict exclusion: x86 callers can pass unused extra arguments, and decompiler prototypes can be incomplete. Neither the key match nor `FUN_005AC480` establishes the receiver's dynamic vtable; no producer storing a UsePower instance in `entry+0x1E0` has been found.
+5. The different expressions `entry+0x1E0`, `entry+0x1D4`, and `*(this+0x60)+0x1D4` remain distinct. Existing writers of nested `+0x1D4` fields have not been tied to the `0x30`-stride entries. A global disassembly search for immediate `0x1E0` yields many unrelated integer, pointer, and floating-point fields; immediate matches are not producer evidence.
+6. The direct-call graph for `FUN_00BFC990` and the virtual-dispatch graph must be kept separate. EXP-0030 records `FUN_00CF34E0` as its direct caller. EXP-0028 records Blink vtable slot `+0x1AC` resolving to `FUN_00BFC990`, reached through `FUN_00BE7580`'s indirect dispatch. These are compatible paths; the direct xref list does not enumerate virtual callers.
+7. Callback registry findings remain a separate branch: EXP-0031's `FUN_00B36CA0` scans/updates/appends keyed records, and `FUN_00C12A80` copies state before conditionally adding/removing a callback. Neither has been connected to the `FUN_00C0CA70` array or to a UsePower object.
+8. A neighboring removal path provides an additional view of the array shape. `FUN_00C0C950` obtains a container via an object interface call at `param_1+0x38`, then iterates `container+0x27C/+0x280` at stride `0x30`. It compares `entry+0x1D4` against `param_2+0x94`, after checking an object-link chain, and on match passes the entry to `FUN_007216F0`. That helper re-finds the entry in its own array using the same base/count/stride, calls a global manager vslot `+0x40` with the entry, invokes `FUN_005697B0(0)`, removes one element with `FUN_0071C300(index,1)`, and clears `+0x1D8` on the result of `FUN_00569E50(entry)` when non-null. `FUN_0071C300` shifts remaining 0x30-byte elements, decrements count, and may shrink storage. This confirms an entry-removal/teardown path for a compatible 0x30-byte array; the manager slot's semantic name, producer, and relationship to UsePower are unknown.
+9. Follow-up decompilation identified generic UE3 array helpers with a `0x30` element stride: `FUN_0071C680` obtains an indexed element after checking the array count; `FUN_0071C6D0` resets count and resizes storage using `capacity * 0x30`; `FUN_0071C300` removes/shifts an element. Their observed direct callers do not establish that these helpers initialize the concrete container used by `FUN_00C0CA70`: `FUN_0071C680` is called by `FUN_00745330`, and `FUN_0071C6D0` by `FUN_00752C70`. The former independently iterates another object’s `+0x27C/+0x280` array and examines three DWORDs per record; the latter resizes an array embedded at `param_1+0x3C8` in a transform-related routine. `FUN_0071C300` is called by the generic removal routine `FUN_007216F0`, itself used by multiple callers. Thus stride and helper reuse describe a generic container representation, not a shared record type or owner. These examined helpers add no producer edge to the `FUN_00C0CA70` receiver at `entry+0x1E0`.
+10. A caller-context check shows `FUN_00C2E840` has one ordinary direct code caller, `FUN_00C32730` (call at `0x00C3275B`), in addition to the dispatcher's own call site inside `FUN_00C2E840`. `FUN_00C32730` first calls `FUN_00BFF440` and `FUN_009FAD20`; if `*( *(this+0x3C)+0x124 ) < 1`, it optionally calls `FUN_006CD730` using `*( *(this+0xA4)+0x580 )`; only the other branch calls `FUN_00C2E840`, returning 2 if that helper succeeds and 1 otherwise. Ghidra also reports a data pointer to `FUN_00C32730` at `0x01172FE4`, but the containing table's start and owner are unresolved. This ties one dispatcher path to a guarded state/count method, not to a demonstrated input event; it does not identify the `0x30`-stride array producer or receiver class.
 
-## Concrete read-only procedure
+## Evidence classification
 
-1. Verify binary SHA-256 `66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E`, Ghidra program SHA, image base `0x400000`, x86 architecture.
-2. At `FUN_00C0CA70`, export assembly at loop header and dispatch, registers holding each base, index scaling, record stride, effective address leading to receiver, and instruction addresses for calls through slots `+0x184/+0x134`.
-3. Perform *backward dataflow* on the pointer dereferenced at `+0x1E0`; locate writes or constructors to the same object and bulk copy/memcpy/deserialize paths. Draw different symbols for array-entry base, nested-object base, and enclosing manager base.
-4. For alleged producers `FUN_00C2CCD0`, `FUN_00C2CD40`, `FUN_00C2DF50`, `FUN_00C2E170`, record exact assembly effective-address expressions involving `*(this+0x60)+0x1D4` or `+0x1F0`. Reject linkage by matching offsets alone.
-5. Independently identify UsePower vtable, constructor, and object creation; test whether a proven pointer to this instance can populate the dispatch receiver and whether conditional method targets actually match `FUN_00C4B800`/`FUN_00C44D30`.
-6. Isolate callback registration: `FUN_00C2F750 → FUN_00C105F0` (install/remove `FUN_00C128B0` through `FUN_00B36CA0/FUN_00AEDF80`) and `FUN_00C12A80` changing 20 DWORDs from `+0x50`. Determine descriptor/event keys, record owner, actual consumer and caller types. Do not assume generic registry is an input dispatcher.
-7. Record direct CALL and indirect CALLIND separately around `FUN_00CF34E0`, `FUN_00BE7580`, `FUN_00BFC990`; reconcile reported single direct caller with virtual Blink slot `+0x1AC`.
-8. In Blink mode setter, annotate branch guards and compare with package numeric enum: failure path via `FUN_00BFAB80(1)` → mode 3 must not be labeled until independently supported.
-9. If a safe clean installation is available, runtime observe actual Use event, receiver vptr and pawns before/after; do not run unidentified injected DLLs.
+- **Confirmed:** array count/base offsets, element stride and pointer load; key and receiver field reads; validation call; two virtual slot loads/calls; five direct code call sites and their argument sourcing; `FUN_00C2E840` is directly called by `FUN_00C32730` under the observed count branch; `FUN_00C32730` appears as a data pointer at `0x01172FE4`; `FUN_00C2E840` also invokes the named AK memory-pool routine; the decompiler-visible argument-count discrepancy at the two virtual calls; exact-build UsePower slot compatibility; separate direct/indirect Blink entry routes.
+- **Observed, interpretation limited:** dispatcher callers select records from indexed state/timer data; the `FUN_00C2E840` route is guarded by a count/state field; at least one caller function also contains audio-middleware activity. This does not establish the dispatcher's owner or semantic role.
+- **Not established:** producer or owner of the `0x30`-stride array; meaning of its key; runtime class/vptr at `entry+0x1E0`; creation/registration event; connection to a user pressing Use; connection between the callback keyed registry and this dispatch array.
+- **Confirmed, generic only:** UE3 array helper routines exist for indexed access, capacity resize, and removal at stride `0x30`; their currently observed call sites concern separate containers and do not identify the dispatcher array's producer.
+- **Superseded as an identification claim:** `FUN_00C0CA70` is not established as the `UsePower` or input dispatcher. Slot compatibility remains a hypothesis for the dynamic receiver only; the direct callers instead show indexed state/timer record selection, and one caller includes audio-middleware activity.
 
-## Deliverables
+## Next analysis
 
-- Precise record-layout diagram with pointer-chain and VA/RVA for accesses.
-- Producer/consumer table: base object, write site, read site, data value, type proof, unresolved aliasing.
-- Owner of `DisItemContext_UsePower +0x134` runtime receiver or explicit failure to establish it.
-- Registries and callbacks classified as generic or event-specific by evidence.
-- Reconciled static direct/virtual call graphs and exact mode-set success/failure predicates.
-
-## Acceptance gates
-
-Cannot close without showing exact pointer identity between a dispatch record and a concrete UsePower object, and eventually a verified event from user action to successful BlinkMove/position write. Maintain the source limits and retain negative findings.
+1. Recheck the raw stack setup/callee cleanup around dispatcher calls at `0x00C0CB48` and `0x00C0CB58`, and compare with the UsePower targets before treating matching slot numbers as compatible methods.
+2. Recover the owner and initializer of the `this+0x60` container used by `FUN_00C0CA70`; trace writes to its `+0x27C/+0x280` dynamic-array fields.
+3. Find construction/copy paths for one 0x30-byte entry and track stores to the entry pointer, `+0x1D4`, and `+0x1E0` together. Prefer whole-record copies and constructor dataflow over isolated immediate searches.
+4. Establish receiver vtable using a constructor/vtable source or an already-running matching game process with read-only tools. Do not launch or control the process.
+5. Independently identify the runtime owner and consumer of `FUN_00B36CA0`'s keyed records; join that path to the dispatch array only if a concrete pointer/dataflow edge appears.
+6. Keep `FUN_00CF34E0 → FUN_00BFC990` (direct) and `FUN_00BE7580 → slot +0x1AC → FUN_00BFC990` (virtual) as separate edges until the event owner/runtime receiver is identified.
+7. Do not use `0x30` stride or shared calls to `FUN_0071C680/FUN_0071C6D0/FUN_0071C300` as evidence that two arrays share an owner or record schema. Prioritize whole-record stores/copies and constructor/initializer dataflow to identify the container at `*(this+0x60)`.

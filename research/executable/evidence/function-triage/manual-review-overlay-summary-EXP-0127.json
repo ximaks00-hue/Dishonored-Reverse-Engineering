@@ -1,0 +1,23 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "baseline_source": "EXP-0072 exact-build internal function triage",
+  "indexed_internal_functions": 72437,
+  "baseline_unknown_subsystem": 71998,
+  "baseline_symbol_name_candidates": 439,
+  "cumulative_manual_body_reviewed_functions": 18,
+  "cumulative_input_related_static_role_candidates": 16,
+  "cumulative_reviewed_but_unassigned_functions": 2,
+  "overlay_unresolved_unknown_subsystem": 71982,
+  "overlay_candidate_rows": 455,
+  "runtime_verified_functions": 0,
+  "cumulative_rows_csv": "manual-review-overlay-cumulative-EXP-0127.csv",
+  "limits": [
+    "The automated EXP-0072 triage artifacts remain unchanged; manual reviews are additive overlays.",
+    "Input-related roles are based on exact-build decompiler output and callgraph evidence, not runtime reachability.",
+    "Two reviewed functions remain unassigned to a subsystem because their indirect target/ownership is unresolved.",
+    "The 439 baseline symbol-name candidates remain unchanged and were not re-reviewed in EXP-0124 through EXP-0127.",
+    "The two constructor-like wrappers are associated with input only by their static call to FUN_009C6810; ownership and callers remain unknown."
+  ],
+  "overlay_unknown_note": "The 71,982 unresolved unknown-subsystem rows include the two manually reviewed functions whose subsystem roles remain unassigned."
+}

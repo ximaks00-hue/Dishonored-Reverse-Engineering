@@ -13,20 +13,26 @@ An evidence-led research project for studying Dishonored on Windows, from files 
 
 ## Start here
 
-1. Read [research status](docs/research-status.md) and [evidence policy](docs/methodology/evidence.md).
+1. Read [research status](docs/research-status.md), [evidence policy](docs/methodology/evidence.md), and [AGENTS.md](AGENTS.md) if you are an automated assistant.
 2. Record the installed build using [the build template](templates/build.md). Do not assume a store version or architecture.
 3. Create a repeatable experiment from [the experiment template](templates/experiment.md), or document a file/package observation.
-4. Link observations to their sources and update the relevant subsystem page.
+4. Link observations to their sources; update [findings](docs/findings/README.md) or the subsystem page for confirmed bullets only.
+5. Run `python tools/validate_experiments.py` before treating the session as closed. Experiment YAML uses `experiment_status` + `claim_status` (see [AGENTS.md](AGENTS.md)).
 
 ## Repository map
 
-- `docs/` — project method, architecture, confirmed findings, and open questions.
+- `docs/` — method, architecture, findings, tooling notes, and short status.
+- `docs/findings/` — durable confirmed summaries (not session narrative).
+- `docs/gameplay/blink/activation-graph.md` — Blink evidence edges.
 - `experiments/` — repeatable procedures and results, identified by stable IDs.
 - `schemas/` — machine-readable formats for research records.
 - `templates/` — consistent starting points for builds, experiments, and subsystem pages.
-- `tools/` — project-owned scripts only; third-party tools are documented, not vendored.
+- `tools/` — project-owned scripts (`validate_experiments`, knowledge sync, inventory).
+- `mcp_servers/` — workspace MCP servers; shared defaults in `mcp_servers/_paths.py`.
+- [UE Explorer MCP](tools/ueexplorer-mcp/README.md) — read-only MCP access to UE3 package metadata and UnrealScript.
 - `assets/` — local-only extracted data; ignored by Git.
+- `third_party/` — local tool installs; binaries are gitignored (see [tooling/mcp.md](docs/tooling/mcp.md)).
 
 ## Current scope
 
-This repository is at its foundation stage. No local game build has yet been recorded here, so build-specific package, class, function, address, or gameplay claims remain open until evidence is added.
+The local workspace has a hash-identified Steam x86 executable record, package inventory, Blink UPK metadata, and read-only Ghidra analysis. See [research status](docs/research-status.md) for confirmed findings and open questions. The connected GitHub `main` branch may lag behind this local evidence set; compare its contents before treating it as the complete research record.

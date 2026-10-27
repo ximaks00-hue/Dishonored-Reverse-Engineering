@@ -1,0 +1,59 @@
+{
+  "package_file": "assets\\extracted\\tfc-lightmap-boyle-ext\\L_Boyle_Ext_Env.upk",
+  "package_sha256": "B38CCF3121E144A4BAADEA6070E54A928EDD133EA6CC335A3F62F0C35E50270F",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Lighting.tfc",
+  "tfc_file_size": 548298402,
+  "tfc_sha256": "A30146AE7EDB1AF9973CDE5D70368D2AB23A811A2B737CDCD7A3B0637A0D70C1",
+  "mip_comparisons": [
+    {
+      "mip_index": 0,
+      "width": 1024,
+      "height": 256,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting.tfc",
+      "storage_offset": 8388236,
+      "storage_size": 84533,
+      "stored_range_sha256": "F0B3B1D157CB48CD0A7B224EBACAA799A79CE3F88E95B5C896AD010ECCFE4F99",
+      "lzo_container_header_bytes": 24,
+      "lzo_chunk_count": 1,
+      "lzo_chunk_compressed_sizes": [
+        84509
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null,
+      "decoded_mip_sha256": "1807045A4D60081C352FAE4EA5665FF64C3A025E9F150C9EBB41A7E3D60C935E",
+      "decoded_bytes": 131072,
+      "tga_file": "assets\\extracted\\tfc-lightmap-boyle-ext\\with-cache\\L_Boyle_Ext_Env\\LightMapTexture2D\\DirectionalMaxComponent0_10.tga",
+      "tga_file_size": 299234,
+      "tga_sha256": "DB0B300EC656E6D8565AD43704B5603FEA904AA763155C9E8D2485EB86C061C9",
+      "exact_rgb_pixels": 262144,
+      "total_pixels": 262144,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    },
+    {
+      "mip_index": 2,
+      "width": 256,
+      "height": 64,
+      "bulk_flags": "0",
+      "storage_file": "L_Boyle_Ext_Env.upk",
+      "storage_offset": 3056396,
+      "storage_size": 8192,
+      "stored_range_sha256": "D247E81D1A78E0B20018299819792B7399EFCECDEBD7214478D0E36DF7A89370",
+      "decoded_mip_sha256": "D247E81D1A78E0B20018299819792B7399EFCECDEBD7214478D0E36DF7A89370",
+      "decoded_bytes": 8192,
+      "tga_file": "assets\\extracted\\tfc-lightmap-boyle-ext\\no-cache\\L_Boyle_Ext_Env\\LightMapTexture2D\\DirectionalMaxComponent0_10.tga",
+      "tga_file_size": 29812,
+      "tga_sha256": "455D46DC45645FBAAA04A82CCF1E3F1CF02749DC261372DD09F8DDC7E0B48F39",
+      "exact_rgb_pixels": 16384,
+      "total_pixels": 16384,
+      "mean_absolute_channel_error": 0.0,
+      "max_absolute_channel_error": 0,
+      "pixel_identical": true
+    }
+  ],
+  "claim_limit": "Byte-to-pixel equality verifies this parser export sample; it does not prove in-game runtime rendering or general TFC format coverage."
+}

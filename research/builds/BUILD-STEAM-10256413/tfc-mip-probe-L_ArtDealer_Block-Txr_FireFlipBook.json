@@ -1,0 +1,94 @@
+{
+  "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-artdealer\\decompressed\\L_ArtDealer_Block.upk",
+  "package_sha256": "1FB978EC145B83BA8441F5B3600E0B1D91AF6E3F4DE50B988AA891368ACD6148",
+  "package_index": 3779,
+  "object_name": "Txr_FireFlipBook",
+  "owner_class": "TextureFlipBook",
+  "parser_class_type": "UELib.Engine.UTextureFlipBook",
+  "serialized_texture_width": 2048,
+  "serialized_texture_height": 2048,
+  "serialized_texture_format": "EPixelFormat.PF_DXT1",
+  "serialized_properties": [
+    {
+      "name": "HorizontalImages",
+      "value": "4"
+    },
+    {
+      "name": "VerticalImages",
+      "value": "4"
+    },
+    {
+      "name": "FrameRate",
+      "value": "32.0000000"
+    },
+    {
+      "name": "FrameTime",
+      "value": "0.0312500"
+    },
+    {
+      "name": "SizeX",
+      "value": "2048"
+    },
+    {
+      "name": "SizeY",
+      "value": "2048"
+    },
+    {
+      "name": "OriginalSizeX",
+      "value": "2048"
+    },
+    {
+      "name": "OriginalSizeY",
+      "value": "2048"
+    },
+    {
+      "name": "Format",
+      "value": "EPixelFormat.PF_DXT1"
+    },
+    {
+      "name": "AddressX",
+      "value": "TextureAddress.TA_Wrap"
+    },
+    {
+      "name": "AddressY",
+      "value": "TextureAddress.TA_Wrap"
+    },
+    {
+      "name": "TextureFileCacheName",
+      "value": "\"Textures\""
+    },
+    {
+      "name": "MipTailBaseIdx",
+      "value": "11"
+    },
+    {
+      "name": "FirstResourceMemMip",
+      "value": "4"
+    }
+  ],
+  "export_serial_offset": 12901164,
+  "export_serial_size": 11708,
+  "export_serial_end_exclusive": 12912872,
+  "texture_cache_name": "Textures",
+  "texture_file_cache_guid_components": {
+    "A": 703035984,
+    "B": 1113631531,
+    "C": 2166348976,
+    "D": 2423478016
+  },
+  "tfc_file": "E:\\Dishonored Reverse Engineering\\Dishonored RHCP\\DishonoredGame\\CookedPCConsole\\Textures.tfc",
+  "tfc_file_size": 1209025724,
+  "tfc_file_sha256": "111AEEF2932BC9679C3262A9D0077BED79784B919AFF04151CED5849BCE62C74",
+  "mip_count": 12,
+  "external_mip_count": 4,
+  "inline_mip_count": 8,
+  "all_mip_ranges_in_file": true,
+  "all_inline_ranges_within_export_serial": true,
+  "external_mip_offsets_in_tfc": [
+    358574558,
+    358067582,
+    357940379,
+    357908198
+  ],
+  "output_csv": "E:\\Dishonored Reverse Engineering\\research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_ArtDealer_Block-Txr_FireFlipBook.csv"
+}

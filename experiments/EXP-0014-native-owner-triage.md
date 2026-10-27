@@ -1,3 +1,11 @@
+---
+id: EXP-0014
+title: "Native owner attribution for Blink-name lookup"
+experiment_status: done
+claim_status: mixed
+build: "10256413"
+question: "Which native owners can be attributed for Blink-adjacent tables, and what remains unresolved for movement?"
+---
 # EXP-0014 — Native owner attribution for Blink-name lookup
 
 - Status: owner attribution supported; Blink movement path remains unknown.
@@ -207,8 +215,29 @@ This confirms a three-DWORD lookup record (12 bytes) and the lookup semantics in
 | `OnTeleport_Native` | `0x012E5310` | `0x009EDC30` | `+0x4F8`, parsed object argument |
 
 - UELib signatures confirm the four Keyboard/Gamepad `Use` and `Select` functions each take `int _ShortcutIdx`; the two mouse next/previous functions have no parameters; wheel open/close each take `bool _bWithGamepad`; controller `OnTeleport_Native` takes `SeqAct_Teleport _pAction`. The wrapper's DWORD decode is therefore consistent with these declared argument types.
+- `DisGFxMoviePlayerPowerWheel` declares `m_GamepadShortcuts[DisWheelShortcut]` and `m_KeyboardShortcuts[10]`. Its emitted default block contains `m_AutoAssign_GamepadItemOrder[1]=DPWI_Blink` and `m_AutoAssign_KeyboardItemOrder[5]=DPWI_Blink`, but no explicit assignments to the current shortcut arrays. Therefore the observed auto-assignment order positions cannot be equated with the runtime shortcut-array contents or `_ShortcutIdx` mapping from this default block alone.
 - This cluster proves that the PlayerController exposes distinct native `Use` and `Select` paths for keyboard/gamepad shortcuts, in addition to `Dis_SelectPower(int _iPower)`. It gives a stronger set of named entry points to trace than the standalone selection wrapper. It does **not** prove that either `...Select` method calls `Dis_SelectPower`, that `_ShortcutIdx` is a power-wheel enum/index, or that the teleport callback is invoked by Blink.
 - The wrappers dispatch through adjacent slots `+0x4F8`–`+0x518`, but the table entries point to exec adapters, not the concrete functions stored in the receiver's C++ vtable. The concrete targets remain unresolved.
+
+### 17. Direct xref audit for selection adapters
+
+- Ghidra `get_xrefs_to` for `FUN_009EDD70` (GamepadSelect) returned only DATA references at `0x012E52FC` and `0x012E3A34`; `FUN_009EDE30` (KeyboardSelect) returned only DATA references at `0x012E52EC` and `0x012E3A2C`.
+- `FUN_009EE630` (`Dis_SelectPower`) returned only DATA references at `0x012E5244` and `0x012E39D8`. `FUN_009F8290` (PowerWheel `OnSelectionChanged`) returned five DATA references at `0x012E4744`, `0x012E41FC`, `0x012E3218`, `0x012E32FC`, and `0x012E347C`.
+- No direct code-call reference to these wrapper addresses was returned in this Ghidra database. The positive references identify registration/dispatch data, not callsites. This is expected to miss indirect Unreal `ProcessEvent`/native dispatch and must not be interpreted as proof that no callers exist.
+- The direct-xref pass therefore does not connect controller shortcut selection to `Dis_SelectPower` or PowerWheel selection. Recovering that path requires concrete vtable slot targets, runtime observation, or another serialized/UI dispatch source.
+
+### 18. PE CodeView record and exact PDB lookup
+
+- `llvm-readobj.exe --coff-debug-directory Dishonored RHCP/Binaries/Win32/Dishonored.exe` found one PE CodeView entry: PDB GUID `{21384D5C-A1AB-44BF-944E-54D2C991BD45}`, age `1`, and embedded path `c:\Users\aarbona\Perforce\antonio.arbona_GMSORL-PC-0004_Dishonored_Campfire_8790\Binaries\Win32\DishonoredGame-Shipping.pdb`. The debug-directory timestamp is `2022-02-17 20:20:23`.
+- A targeted local search for `DishonoredGame-Shipping.pdb` under the workspace, Steam library, Codex data, common Dbg symbol-cache directory, and local temp directory returned no file. A HEAD request to Microsoft's symbol-store path for this exact PDB name/GUID/age returned HTTP 404. Web searches for the exact PDB/GUID also returned no result.
+- **Interpretation:** the EXE retains a CodeView reference to a build PDB, but that reference is only a path/GUID record; it does not embed type or function symbols. The named PDB appears to be from a developer Perforce workspace. The target vtables remain unresolved because the PDB itself was not found or obtainable from the tested symbol store.
+- Reproduction: `llvm-readobj.exe --coff-debug-directory "Dishonored RHCP\\Binaries\\Win32\\Dishonored.exe"`; symbol-server HEAD URL used the exact CodeView key `21384D5CA1AB44BF944E54D2C991BD451`.
+
+### 19. MSVC RTTI class-name census
+
+- A read-only raw-byte scan of the exact EXE for null-terminated MSVC TypeDescriptor name prefixes `.?AV` found 296 unique class-name strings. Some third-party RTTI is present; for example, `.?AVFxRefObject@Face@OC3Ent@@` appears in the binary.
+- None of the 296 names contains `Dishonored`, `PlayerController`, `PlayerPawn`, `DisGFxMoviePlayerPowerWheel`, `DishonoredActivePowerComponent`, `Blink`, or `ArkCpntType`. Thus no class-name RTTI TypeDescriptor for the target Dishonored gameplay classes was recovered by this scan.
+- This is a scoped negative result over this MSVC RTTI string form. It does not prove that no other type metadata, proprietary RTTI, or symbols exist. Combined with the unavailable private-path PDB from section 18, it means this pass cannot label candidate function-pointer arrays as the target gameplay vtables by class-name metadata alone.
 
 ## Confirmed vs inferred vs unknown
 
@@ -265,6 +294,22 @@ Initial `ue_explorer.search_objects` requests using the decompressed absolute pa
 
 ## Reproduction addresses
 
+### 8. Controller native-registration neighborhood is not a controller constructor
+
+Read-only decompilation of the 15 calls immediately following the `DishonoredPlayerController` registration setup in `FUN_00A0DBF0` (`FUN_00AC4710`, `FUN_00B8A720`, `FUN_00AC36B0`, `FUN_00AC4740`, `FUN_00AC4770`, `FUN_00AC48D0`, `FUN_00A85750`, `FUN_00A857B0`, `FUN_00A857E0`, `FUN_00AA2980`, `FUN_00AA29B0`, `FUN_00ACECF0`, `FUN_00ACF490`, `FUN_00AC9BE0`, and `FUN_00AC66B0`) shows the same pattern in all 15: test a global pointer, call `FUN_00479370` with a distinct static descriptor if null, call a distinct per-object initializer, store and return the pointer. Examples include `FUN_00AC4710` (`DAT_0145FA94`, descriptor `DAT_01318D58`, initializer `FUN_00ABFD50`) and `FUN_00B8A720` (`DAT_014673A0`, descriptor `DAT_01346470`, initializer `FUN_00B85E10`).
+
+**Confirmed, bounded result:** these sampled neighboring calls are lazy global-object accessors, not direct evidence of a `DishonoredPlayerController` constructor or vtable initializer. Their object types and relationship, if any, to native registration are unknown. This avenue did not resolve the target of `Dis_SelectPower` at controller-relative slot `+0x560`; it must remain open. The complete registration routine was not exhaustively classified, so this finding applies only to the 15 calls listed above.
+
+Reproduction: Ghidra MCP `decompile_function` on the 15 addresses listed above, database `dishonored_exact_full`; image base `0x00400000`. The database metadata still reports a stale source path as described in “Source identity caveat.”
+
+### 9. Reproducibility recheck of compressed-package extraction and Blink defaults
+
+Re-ran the existing local decompressor and UELib dump workflow after noticing that prior diagnostic logs were absent from the workspace. The decompressor is present at `tools/ue-package-decompressor/decompress.exe` (SHA-256 `A724FFD162C1D14D167FE0DA32769EFD15486A7DB96AB4CA8CD1C2FFF8CECBFE`); its source checkout under `.tmp/UEViewer-source` is at upstream commit `a0bfb468d42be831b126632fd8a0ae6b3614f981`. The original installed package was read as input and its SHA-256 was `EC64BD36BE12D7063199CF2722A2B8F280100F1ED3F3C63404AC34980D7141E2`. The decompressor wrote only to ignored `assets/extracted/dishonored-blink/` and reported package `801/30`, 24,432 names, 30,049 exports, 652 imports, output length 17,320,971 bytes.
+
+The re-created decompressed output SHA-256 is `28CF9A76825B92A12545E1A5584285DD4061B0BF85BD51293A0B4E51C29AEFF9`, matching EXP-0009. The existing compiled read-only dump utility ran against that file with Eliot.UELib 1.13.3; it reported `CompressionFlags=0`, 30,049 exports, and 652 imports, and repeated the Blink class declarations and both `DisTweaks_Blink.m_Levels` serialized entries. It reconfirmed `m_fBlinkStepDistance=500` in the component default and the two level entries with distances `2000/1400/400`, default step distance `300`, and interval `0.01`, as recorded in EXP-0009. The complete fresh output is local-only at `.tmp/ue-readonly-dump/EXP-0009-recheck.log`.
+
+One initial `dotnet run` rebuild attempt failed because the host package under the global NuGet cache was inaccessible; running the already-built utility DLL directly succeeded. This environment issue did not affect the successful parse. The old logs were absent, but the decompressor, compiled dumper, package source, and recorded source checkout were present; this successful recheck replaces reliance on the missing logs. No installed game files were changed.
+
 | Symbol | VA | Derived RVA |
 |---|---:|---:|
 | `FUN_00955D60` constructor | `0x00955D60` | `0x00555D60` |
@@ -287,3 +332,4 @@ Initial `ue_explorer.search_objects` requests using the decompressed absolute pa
 | `execBlinkShowRange` native wrapper | `0x009F4020` | `0x005F4020` |
 | `execBlinkShowRangeFull` native wrapper | `0x009F4090` | `0x005F4090` |
 | `ADishonoredPlayerControllerexecDis_SelectPower` wrapper | `0x009EE630` | `0x005EE630` |
+

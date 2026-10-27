@@ -1,0 +1,3 @@
+address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,relevant_callsites,claim_status
+005CB4D0,FUN_005cb4d0,53,unknown,body_reviewed_static_role_unresolved,caller with string-pointer operations and indirect-helper result storage,,,FUN_006A6580 at 005CB4F6,observed
+006A6580,FUN_006a6580,10,unknown,body_reviewed_static_role_unresolved,indirect vtable dispatch; target and ownership unresolved,,,FUN_009C30A0 at 009C30F2; FUN_005CB4D0 at 005CB4F6,observed
