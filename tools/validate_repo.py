@@ -17,6 +17,8 @@ IGNORED = {
 }
 RECORD_DIRS = {"experiments", "docs/findings", "docs/hypotheses", "docs/functions"}
 SYNTHESIS_PAGES = {"docs/findings/README.md", "docs/findings/baseline.md", "docs/findings/blink-native.md"}
+LOCAL_ONLY_PREFIXES = ("assets/extracted/",)
+LOCAL_ONLY_FILES = {"tools/ue-package-decompressor/decompress.exe"}
 
 def check(root: pathlib.Path = ROOT) -> list[str]:
     errors: list[str] = []
@@ -42,7 +44,16 @@ def check(root: pathlib.Path = ROOT) -> list[str]:
             if target.startswith(("https://", "http://", "mailto:", "#")):
                 continue
             local = target.split("#", 1)[0].split("?", 1)[0]
-            if local and not (path.parent / local).exists():
+            if local:
+                resolved = (path.parent / local).resolve()
+                if resolved.exists():
+                    continue
+                try:
+                    repository_path = resolved.relative_to(root.resolve()).as_posix()
+                except ValueError:
+                    repository_path = ""
+                if repository_path in LOCAL_ONLY_FILES or repository_path.startswith(LOCAL_ONLY_PREFIXES):
+                    continue
                 errors.append(f"{rel}: broken relative link: {target}")
     return errors
 
