@@ -22,3 +22,5 @@ Updated: 2026-10-27. Scope: Steam x86 build `10256413`; see the [build record](.
 Progress is reported by well-scoped denominators and build IDs: examined files out of an explicitly defined manifest, repeatable experiments out of chosen questions and evidence-backed claims out of reviewed findings. Document volume is not completeness.
 
 See [research backlog](backlog.md), [onboarding](onboarding.md), and the [roadmap](roadmap.md).
+
+New contributors can start with the [small task list](contributor-tasks.md); the [playbook](contributor-playbook.md) defines hypothesis intake and independent review.

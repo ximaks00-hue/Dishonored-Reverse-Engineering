@@ -20,3 +20,8 @@ Avoid arbitrary numerical confidence percentages. Explain why a conclusion is su
 
 ## Corrections
 Do not silently rewrite an incorrect interpretation. Link the correcting record, note what changed and preserve superseded context. Contradictory observations may be caused by distinct builds, environments, or uncontrolled conditions.
+
+## Hypothesis intake and independent confirmation
+Accept a hypothesis for investigation only when the question is scoped, alternatives predict distinguishable outcomes, prerequisites and controls are explicit, and at least one result could falsify or weaken the model. This is an intake decision, not evidence that the hypothesis is true.
+
+Use **confirmed** only for a narrow claim supported by traceable, scope-adequate evidence as defined above; direct evidence can be sufficient without a second implementation. When a result is described as **independently reproduced/confirmed**, the checker must be a different contributor from the evidence author. An independent reproduction starts from cited sources and uses a second implementation, a separately collected measurement, or another distinct check; merely rerunning the same generator is a repeat, not an independent implementation. Record reviewer, build/input identity, method, outcome, discrepancies and limits in a [review record](../../templates/review.md). If the reviewer cannot obtain the same build or inputs, mark the check partial, blocked or not reproduced and keep the claim status bounded. See the [contributor playbook](../contributor-playbook.md).

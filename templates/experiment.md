@@ -1,8 +1,14 @@
-# EXP-0001: Short descriptive title
+---
+id: EXP-NNNN
+title: Short descriptive title
+experiment_status: planned
+claim_status: unknown
+build: "10256413 or unknown"
+question: One answerable question with a defined scope?
+---
 
-- Status: planned | observed | repeated | superseded
-- Build ID:
-- Question:
+# EXP-NNNN — Short descriptive title
+
 - Scope and exclusions:
 - Prerequisites / starting state:
 - Tools and versions:
@@ -17,8 +23,8 @@ Record measurable results only. Link captures or raw output and avoid explanatio
 
 ## Interpretation
 
-- Finding and status (observed / inferred / unknown):
-- Confidence and rationale:
+- Claim and status (observed / inferred / unknown):
+- Evidence and rationale:
 - Alternative explanations:
 - Evidence that would falsify this interpretation:
 
@@ -34,3 +40,5 @@ Record measurable results only. Link captures or raw output and avoid explanatio
 - Files/functions/objects:
 - Related experiments:
 - Open questions:
+
+Replace every `NNNN` with an unused ID before submitting. Keep `experiment_status` (`planned`, `in_progress`, `done`, `superseded`) separate from `claim_status` (`confirmed`, `observed`, `inferred`, `unknown`, `superseded`, `mixed`, `rejected`).

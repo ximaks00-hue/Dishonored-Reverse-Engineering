@@ -21,3 +21,4 @@ Which bounded research question or maintenance issue does this change address?
 - [ ] Paths, record IDs and documentation links were reviewed.
 - [ ] I ran repository validation/tests (or explain why not).
 - [ ] I considered licensing/attribution.
+- [ ] If this PR describes a result as independently reproduced/confirmed, a contributor other than the evidence author performed the check and linked the review record.
