@@ -75,11 +75,10 @@ def sha256_bytes(data: bytes) -> str:
 
 
 def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+    # Repository inputs are text artifacts. Normalize checkout line endings so
+    # the manifest is identical on Windows (core.autocrlf) and Linux runners.
+    content = path.read_bytes().replace(b"\r\n", b"\n")
+    return sha256_bytes(content)
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:

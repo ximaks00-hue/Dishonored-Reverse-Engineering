@@ -8,7 +8,7 @@
     "module": "Dishonored.exe"
   },
   "generated_by": {
-    "sha256": "5e1c3b423dab4932fd3b2bf28592ee4e8e165f4a6245b80f29838118b07e6c66",
+    "sha256": "206d6798be0ebd716e259c3eed35e448a4ff2824a9ece96ca00e7c7732107564",
     "tool": "tools/export_function_coverage.py",
     "version": 1
   },
@@ -16,25 +16,25 @@
     {
       "path": "research/executable/functions.csv",
       "rows": 72437,
-      "sha256": "d260b168f863e6b4b592a8f57c959d204052fc67e6151c1c42ffecddf124eef9"
+      "sha256": "f8f9f7fd7229056904f779d8d065d43dd16f31f3079304e84c32110bc3537a03"
     },
     {
       "path": "research/executable/evidence/function-triage/internal-function-triage.csv",
       "rows": 72437,
-      "sha256": "be542ddb4d265272f7ca0f218ee9c239d2fd799ef33f5a3bf43c14d15b94896b"
+      "sha256": "f726b8d26de28a9d78398c1d856ee5cedccafe8022267327b0562c40ef5b9b77"
     },
     {
       "path": "research/executable/evidence/function-triage/internal-function-triage-summary.json",
-      "sha256": "b717a1c80e3b0f2ef6b1582b51ab138876d5e6dcc0104f6efc19d0e98afcbe7a"
+      "sha256": "da7ba1225f09dbf2584883687dfca271d97a3a98adb0f0d0008aec5c9c7cbea5"
     },
     {
       "path": "research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0155.csv",
       "rows": 47,
-      "sha256": "71db329003dd3e43211ae681f45f7c3068b3f297b851551dbaafbf43d60c7802"
+      "sha256": "4d1536d07d06cdfc57da69e5379744f8eafdddcbd72c988685afe57868255ad7"
     },
     {
       "path": "research/executable/evidence/function-triage/manual-review-overlay-summary-EXP-0155.json",
-      "sha256": "174d4b55dfc4fce8001b31c6e5d6b29291d927efc30fb28c93db257e2549eade"
+      "sha256": "4e0f0eb03e8aea16b84c348e038d141da2d0cba6b441f0c060939b99b10e596e"
     },
     {
       "path": "research/executable/evidence/function-triage/curated-function-claims-EXP-0155.json",
@@ -50,31 +50,31 @@
     },
     {
       "path": "research/builds/BUILD-STEAM-10256413/build.md",
-      "sha256": "83bac00a21ec5feb8a17aa9ad34580ba61683f31f54ef4e49725842f6e46f036"
+      "sha256": "7e8b9992a37b1003ae068e8d293e4b9e718ad2384b19627a4f864c5c8f1a6e9f"
     },
     {
       "path": "knowledge/database/schema.sql",
-      "sha256": "6271744a755c9a727cbbde6f315706099012a63d219cb6e0f982b92a88a1a919"
+      "sha256": "d1e63db79dddc87c07a77c677ad350da3608a10926fceca59c6192dff16694a7"
     },
     {
       "path": "tools/knowledge/sync_from_experiments.py",
-      "sha256": "3d93a3b05a0ef774f2083a4ede6afdc7a565ddffcc3e98f3af1a74c45279859e"
+      "sha256": "ffd03d01cfd7f992214b9f5f956368c97f4af214aa133556eab7c05c38702186"
     },
     {
       "path": "docs/methodology/function-evidence-model.md",
-      "sha256": "4b5ccbb7c54207f505fa0103114d4c995d338635dfce81bc4ecf75aea328cc30"
+      "sha256": "382b6cf40992938e0f2446f8bfc7eeaf368fcc9a42c15ba4d0e6a65acf3e10cf"
     },
     {
       "path": "experiments/EXP-0041-ghidra-function-count-reconciliation.md",
-      "sha256": "e6420130edba324019ae9de1589f8e2665cf3a731a7b404c7cf627df649b8162"
+      "sha256": "cb70e2e89da2cb69c1f5f91500f403f4b554afa81ebbf8486f93482d45b37fd2"
     },
     {
       "path": "experiments/EXP-0072-exact-build-internal-function-subsystem-triage.md",
-      "sha256": "ba6cb37370f0a1206a297756725b5a90eb97e410c138bc06bfacd69b4d009e47"
+      "sha256": "32041c85f128a86b21ec2b22d68c9354eece452bd571a3bbdc52b2bd3bd8aa17"
     },
     {
       "path": "experiments/EXP-0155-set-enabled-shared-native-adapter.md",
-      "sha256": "20e99d60e3413777fb85c45858f825367cbde19027938fa6fb412b3208f717cd"
+      "sha256": "a4df830dd0df401a473c637536e7f32c195d16b98c9c1e2a2c8d594c3343b725"
     }
   ],
   "limitations": [
@@ -141,19 +141,19 @@
       "claim_status": "confirmed",
       "id": "EXP-0041",
       "path": "experiments/EXP-0041-ghidra-function-count-reconciliation.md",
-      "sha256": "e6420130edba324019ae9de1589f8e2665cf3a731a7b404c7cf627df649b8162"
+      "sha256": "cb70e2e89da2cb69c1f5f91500f403f4b554afa81ebbf8486f93482d45b37fd2"
     },
     {
       "claim_status": "mixed",
       "id": "EXP-0072",
       "path": "experiments/EXP-0072-exact-build-internal-function-subsystem-triage.md",
-      "sha256": "ba6cb37370f0a1206a297756725b5a90eb97e410c138bc06bfacd69b4d009e47"
+      "sha256": "32041c85f128a86b21ec2b22d68c9354eece452bd571a3bbdc52b2bd3bd8aa17"
     },
     {
       "claim_status": "mixed",
       "id": "EXP-0155",
       "path": "experiments/EXP-0155-set-enabled-shared-native-adapter.md",
-      "sha256": "20e99d60e3413777fb85c45858f825367cbde19027938fa6fb412b3208f717cd"
+      "sha256": "a4df830dd0df401a473c637536e7f32c195d16b98c9c1e2a2c8d594c3343b725"
     }
   ]
 }
