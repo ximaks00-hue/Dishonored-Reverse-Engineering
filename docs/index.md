@@ -29,3 +29,5 @@ This is the project entry point, not evidence that every candidate subsystem has
 
 ## Contributing
 Start with [small contributor tasks](contributor-tasks.md) and the [contributor playbook](contributor-playbook.md). Then read [CONTRIBUTING](../CONTRIBUTING.md), [community standards](../CODE_OF_CONDUCT.md), [security](../SECURITY.md) and [licensing status](../LICENSE-NOTICE.md). An unverified local report should not be promoted to a confirmed finding merely by documenting it.
+
+- [Native function review acceleration and candidate queue](methodology/native-review-acceleration.md)
