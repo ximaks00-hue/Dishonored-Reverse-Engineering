@@ -1,0 +1,81 @@
+{
+  "record": "EXP-0181 per-instance task-target array evidence",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "exe_relative_path": "Binaries/Win32/Dishonored.exe",
+  "image_base": "0x00400000",
+  "accessor": {
+    "va": "0x00B27E60",
+    "size": 4,
+    "bytes": "8D 41 68 C3",
+    "disassembly": "lea eax, [ecx+0x68]; ret",
+    "meaning_limited_to_observation": "returns the address this+0x68"
+  },
+  "direct_indexed_callers": [
+    {
+      "caller_va": "0x00BA84D0",
+      "callsite_va": "0x00BA859C",
+      "receiver_setup": "mov ecx, [ebp+8] at 0x00BA8593",
+      "use": "action index +0xFC indexes the returned per-object array"
+    },
+    {
+      "caller_va": "0x00A0BA70",
+      "callsite_va": "0x00A0BB78",
+      "receiver_setup": "mov ecx, eax at 0x00A0BB76 after FUN_00ACC160",
+      "use": "FUN_00A08A90 copies a local descriptor into the returned +0x68 descriptor"
+    },
+    {
+      "caller_va": "0x00A11780",
+      "callsite_va": "0x00A11908",
+      "receiver_setup": "mov ecx, edi at 0x00A11906 after selecting an object from an owner array",
+      "use": "the returned descriptor is copied into a temporary descriptor nested in a 0x10-byte row"
+    }
+  ],
+  "bounded_decompile_cache_screen": {
+    "cache_directory": "knowledge/cache/decompiles",
+    "json_file_count": 368,
+    "valid_json_count": 368,
+    "matching_build_id_and_exe_sha256": 368,
+    "searched_field": "pseudocode",
+    "coarse_candidate_pattern": "same pseudocode contains 0x68, 0x6c, and 0x70",
+    "review": "manual context check found no additional convincing same-object TArray descriptor access beyond the documented path",
+    "coverage_limit": "heuristic cache-only screen; assembly, uncached functions, and the full indexed binary were not searched"
+  },
+  "array_observations": {
+    "descriptor_fields_used": {
+      "data_pointer": "+0x00",
+      "count": "+0x04",
+      "capacity": "+0x08"
+    },
+    "record_stride": "0x24",
+    "update_handler": {
+      "va": "0x00BA84D0",
+      "size": 1052,
+      "observed_action_offsets": ["+0x0C", "+0x3C", "+0x6C", "+0xFC", "+0x100", "+0x110"],
+      "observed_record_offsets_written": ["+0x00", "+0x04", "+0x10", "+0x1C", "+0x20"],
+      "receiver_flag_read": "second argument +0x60 bit 1",
+      "operations": ["grow/initialize rows through selected index", "write selected row fields", "remove selected rows and possibly prune null trailing rows"]
+    }
+  },
+  "archive_associated_paths": {
+    "wide_string_utf16le": "DisTaskTargetsSaveData",
+    "string_occurrences": [
+      {"file_offset": "0x00CD4C3E", "va": "0x010D623E", "referenced_from": "0x00A119F0", "function": "0x00A11780"},
+      {"file_offset": "0x00CD4C6E", "va": "0x010D626E", "referenced_from": "0x00A0BB40", "function": "0x00A0BA70"}
+    ],
+    "virtual_slot": "+0x138",
+    "helper": {
+      "va": "0x00A08A90",
+      "size": 246,
+      "observed_direction": "copies descriptor entries from second argument into receiver descriptor; entries use stride 0x24"
+    },
+    "interpretation_limit": "archive/save-data-associated record processing is observed; lifecycle direction, persistence semantics, class identity, and row schema are not established"
+  },
+  "claim_limits": [
+    "FUN_00B27E60 is an accessor for this+0x68, not evidence of a process-global array.",
+    "Three indexed direct callers do not exclude inline accesses to objects at +0x68.",
+    "The UpdateTaskTarget donor method match is order-based at ratio 0.609 and differs in function size (882 vs 1052 bytes).",
+    "Property names from external reflected layouts are not promoted to exact-build field names.",
+    "No game process was launched and no runtime persistence was observed."
+  ]
+}

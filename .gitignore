@@ -1,15 +1,20 @@
 # Game files and extracted assets are not research notes and must not be committed.
 assets/extracted/
 game-install/
+.tmp/
+notify.log
 *.upk
 *.u
 *.umap
 *.sav
+UmodelSaved/
 
 # Local analysis databases and generated outputs
 *.ghidra
 *.gpr
 *.rep/
+*.lock
+*.lock~
 __pycache__/
 .pytest_cache/
 .venv/
@@ -17,9 +22,35 @@ venv/
 site/
 dist/
 build/
+.nuget/
+tools/**/bin/
+tools/**/obj/
+knowledge/database/*.sqlite
+knowledge/database/*.sqlite-shm
+knowledge/database/*.sqlite-wal
+knowledge/cache/
+
+# Vendored third-party binaries (document versions/hashes; keep tools local)
+third_party/**
+!third_party/.gitkeep
+!third_party/**/README.md
+!third_party/**/readme.txt
+!third_party/**/LICENSE*
+!third_party/**/LICENSE.*
 
 # Local game installation copied into this workspace
 Dishonored RHCP/
 
-# Explicitly excluded unrelated co-op research artifacts
+# Separate user-owned co-op project, excluded from reverse-engineering research
 _excluded_coop_project/
+
+# Local env overrides
+.env
+.env.local
+
+# Machine-local editor/MCP setup and scratch bootstrap
+.cursor/
+.tmp_preamble.txt
+
+# Locally built third-party helper (source/version/license are documented)
+tools/ue-package-decompressor/decompress.exe

@@ -5,8 +5,8 @@
 3. **Write a procedure.** Include prerequisites, steps, inputs, expected observable outputs, and cleanup/reset steps.
 4. **Collect observations.** Preserve raw output or stable references. Avoid interpretive language in the observation field.
 5. **Analyze.** Compare alternatives and state what evidence would falsify each explanation.
-6. **Record and link.** Give the experiment a stable ID; link the build, artifacts, findings, and open questions.
-7. **Review.** Re-run when practical, check scope and provenance, and update status without erasing history.
+6. **Record and link.** Give the experiment a stable ID and YAML frontmatter (`id`, `title`, `experiment_status`, `claim_status`, `build`, `question`); link the build, artifacts, findings, and open questions. Keep [research-status.md](../research-status.md) short; put detailed measures in [coverage.md](../coverage.md), session narrative in [changelog.md](../changelog.md), and durable claims in [findings/](../findings/).
+7. **Review.** Re-run when practical, check scope and provenance, and update status without erasing history. Run `python tools/validate_experiments.py` and optionally `python tools/knowledge/sync_from_experiments.py`.
 
 ## File and package archaeology
 
@@ -22,4 +22,4 @@ Tie names, signatures, and RVAs to a specific module hash. Mark analyst-assigned
 
 ## Tooling and parser checks
 
-Prefer deterministic scripts for repeated inventory or comparison. Test parsers on synthetic valid and malformed examples. Keep generated data reproducible and avoid storing bulky or copyrighted input in source control.
+Prefer deterministic scripts for repeated inventory or comparison. Check repository links and experiment structure with `python tools/check_research_docs_links.py` and `python tools/validate_experiments.py`. When adding a parser or checker, include small synthetic valid and malformed examples with its tests. Keep generated data reproducible and avoid storing bulky or copyrighted input in source control.

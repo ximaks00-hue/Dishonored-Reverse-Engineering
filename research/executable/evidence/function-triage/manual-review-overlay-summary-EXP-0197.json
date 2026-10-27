@@ -1,0 +1,76 @@
+{
+  "experiment": "EXP-0197",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "functions_indexed": 72437,
+  "prior_cumulative_reviewed": 168,
+  "new_body_reviews": 20,
+  "cumulative_reviewed": 188,
+  "whole_index_reviewed_percent": 0.259536,
+  "exp0139_candidate_target_set": 254,
+  "selected_target_count": 20,
+  "all_selected_targets_unreviewed_in_EXP0196": true,
+  "immediate_direct_calls_in_selected_bodies": 0,
+  "bodies_calling_indirect_pointer_cell_014069F4": 20,
+  "bodies_read_indexed_table_014068F0": 19,
+  "exception_to_indexed_table_read": "009F1A00",
+  "confirmed_raw_data_cells": [
+    "012E3124->009ECD70",
+    "012E3194->009EC6A0",
+    "012E31A8->005C66B0",
+    "012E31B0->009ED500",
+    "012E31B4->009F1A00",
+    "012E31C4->005D0360",
+    "012E31F8->005DBAC0",
+    "012E31FC->009EC020"
+  ],
+  "normalized_byte_groups": [
+    {
+      "count": 8,
+      "body_size_bytes": 96,
+      "addresses": [
+        "005D0360",
+        "009ED500",
+        "009EC020",
+        "009ECD70",
+        "009F8290",
+        "009EF8A0",
+        "00957B40",
+        "009F7300"
+      ]
+    },
+    {
+      "count": 2,
+      "body_size_bytes": 109,
+      "addresses": [
+        "005DBAC0",
+        "009EF960"
+      ]
+    },
+    {
+      "count": 2,
+      "body_size_bytes": 107,
+      "addresses": [
+        "009EDB10",
+        "009EED20"
+      ]
+    }
+  ],
+  "normalization": "Capstone-marked displacement and immediate encoding bytes zeroed; opcodes/registers/instruction order preserved",
+  "semantic_claims_added": 0,
+  "runtime_verified_added": 0,
+  "tooling": {
+    "python": "3.12",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7"
+  },
+  "functions_csv_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "triage_csv_sha256": "BE542DDB4D265272F7CA0F218EE9C239D2FD799EF33F5A3BF43C14D15B94896B",
+  "exp0139_catalog_sha256": "FF42E74AA7664030AE8870CAB05E00AC718FFB9F57C330302FFE66CD47FF9442",
+  "previous_cumulative_csv_sha256": "CEDA2170CE6FD5067BE958398F46BB92F842714EBAA44DCC3AF055151BF9253F",
+  "evidence_csv_sha256": "843A2BBB22762D005679FE9E9CA85B885A0492208FC5CDE8E5772A3A040614EF",
+  "cumulative_csv_sha256": "AEF738C8B2B95EDF80C8C6C37C4CB9B24074EC0BBB388502003A586C048A7587",
+  "exp0139_targets_previously_body_reviewed": 89,
+  "exp0139_targets_now_body_reviewed": 109,
+  "exp0139_targets_remaining_unreviewed": 145
+}

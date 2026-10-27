@@ -1,0 +1,2 @@
+address,name,size_bytes,baseline_subsystem_candidate,review_status,static_role_candidate,xinput_getstate_callsites,xinput_setstate_callsites,relevant_callsites,claim_status
+005C2BA0,FUN_005c2ba0,422,unknown,body_reviewed_static_role_candidate,"two exact NativeFlag=true / NativeToken=0 SpawnEmitterMeshAttachment exports share this target; body decodes six argument groups, normalizes a bool, calls receiver slot +0x3A8, and stores the return through an output pointer; slot owner and effect behavior unresolved",,,2 EXP-0139 raw target edges via 00A0DBF0,inferred

@@ -1,0 +1,55 @@
+{
+  "experiment": "EXP-0202",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "functions_indexed": 72437,
+  "prior_cumulative_reviewed": 223,
+  "new_body_reviews": 5,
+  "cumulative_reviewed": 228,
+  "whole_index_reviewed_percent": 0.314756,
+  "exp0139_candidate_target_set": 254,
+  "prior_exp0139_reviewed": 143,
+  "exp0139_reviewed": 148,
+  "exp0139_remaining": 106,
+  "all_selected_targets_unreviewed_in_EXP0201": true,
+  "fully_decoded_bodies": 5,
+  "normalized_groups": {
+    "96_byte": [
+      "005C5D00",
+      "005C7150",
+      "005CFD10"
+    ],
+    "109_byte": [
+      "005D1270",
+      "005DD150"
+    ]
+  },
+  "direct_edges_to_targets": {
+    "007D7620": 1,
+    "0069FB10": 1,
+    "007BDE20": 1,
+    "007C3BC0": 1,
+    "00594DE0": 1
+  },
+  "callgraph_returned_incoming_rows": {
+    "007D7620": 3,
+    "0069FB10": 1,
+    "007BDE20": 7,
+    "007C3BC0": 11,
+    "00594DE0": 14
+  },
+  "confirmed_raw_data_pointer_cells": 5,
+  "semantic_claims_added": 0,
+  "runtime_verified_added": 0,
+  "functions_csv_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "previous_cumulative_csv_sha256": "C725245B815F5AA7351A92A70735EC1C895AF59038E099242CA203CCDFBD24DB",
+  "exp0139_pointer_join_sha256": "03292A0C7C3413209EB778DDC6355F3DBDECC878381D786F21D2136872CD8D3F",
+  "exp0139_catalog_sha256": "FF42E74AA7664030AE8870CAB05E00AC718FFB9F57C330302FFE66CD47FF9442",
+  "evidence_csv_sha256": "23E40E31C2443273DD8F6BFBDCD61C60187BE30A8727D05EFC6AAA75BAE3237B",
+  "cumulative_csv_sha256": "63D4D17A9C3A8B8595395CC6E657E8E3D83852F1EBE4AE1AEB42D06F3F3E724E",
+  "tooling": {
+    "python": "3.12",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7"
+  }
+}

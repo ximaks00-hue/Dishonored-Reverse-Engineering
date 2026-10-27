@@ -1,0 +1,277 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "akmap_files": 4,
+  "method": "Raw little-endian DWORD census after the EXP-0115 candidate string-region end; grouping remainder measured after first four DWORDs.",
+  "files": [
+    {
+      "source_akmap": "DishonoredGame/CookedPCConsole/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 59830,
+      "sha256": "D8B257F8689A4F66D32BD0E563E73FF9BE65EC29F9B1B63B837D8A2CE739CC69",
+      "string_count_from_EXP_0115_region": 982,
+      "post_string_bytes": 31124,
+      "post_string_raw_first_four_u32": [
+        12,
+        160,
+        0,
+        0
+      ],
+      "candidate_payload_u32_count_after_first_four": 7777,
+      "candidate_12_byte_group_count": 2592,
+      "candidate_trailing_u32_remainder": 1,
+      "candidate_groups_with_field0_equal_field2": 163,
+      "candidate_groups_with_field0_equal_field2_fraction": 0.0628858024691358,
+      "candidate_groups_field_values_below_local_string_count_by_column": [
+        226,
+        199,
+        237
+      ],
+      "first_eight_candidate_groups_raw": [
+        [
+          19,
+          310,
+          19
+        ],
+        [
+          20,
+          340,
+          20
+        ],
+        [
+          39,
+          769,
+          39
+        ],
+        [
+          49,
+          986,
+          49
+        ],
+        [
+          73,
+          1441,
+          73
+        ],
+        [
+          74,
+          1458,
+          74
+        ],
+        [
+          206,
+          4684,
+          206
+        ],
+        [
+          283,
+          4711,
+          283
+        ]
+      ],
+      "interpretation_limit": "Grouping is arithmetic only; raw values below local string count are not established string indices."
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC05/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 18205,
+      "sha256": "A0D76E460477D484FF2112648A527D2777320D81B6779215864AE7420D5AE147",
+      "string_count_from_EXP_0115_region": 311,
+      "post_string_bytes": 10732,
+      "post_string_raw_first_four_u32": [
+        12,
+        61,
+        0,
+        0
+      ],
+      "candidate_payload_u32_count_after_first_four": 2679,
+      "candidate_12_byte_group_count": 893,
+      "candidate_trailing_u32_remainder": 0,
+      "candidate_groups_with_field0_equal_field2": 62,
+      "candidate_groups_with_field0_equal_field2_fraction": 0.06942889137737962,
+      "candidate_groups_field_values_below_local_string_count_by_column": [
+        17,
+        8,
+        16
+      ],
+      "first_eight_candidate_groups_raw": [
+        [
+          19,
+          310,
+          19
+        ],
+        [
+          20,
+          340,
+          20
+        ],
+        [
+          52,
+          1113,
+          52
+        ],
+        [
+          84,
+          1138,
+          84
+        ],
+        [
+          116,
+          1164,
+          116
+        ],
+        [
+          167,
+          1696,
+          167
+        ],
+        [
+          168,
+          1749,
+          168
+        ],
+        [
+          182,
+          2020,
+          182
+        ]
+      ],
+      "interpretation_limit": "Grouping is arithmetic only; raw values below local string count are not established string indices."
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC06/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 35167,
+      "sha256": "D600171453DA7257A2EEFD56F836197A0AB7A2A11B1B90A21309EA8FC68C9341",
+      "string_count_from_EXP_0115_region": 596,
+      "post_string_bytes": 18712,
+      "post_string_raw_first_four_u32": [
+        12,
+        100,
+        0,
+        0
+      ],
+      "candidate_payload_u32_count_after_first_four": 4674,
+      "candidate_12_byte_group_count": 1558,
+      "candidate_trailing_u32_remainder": 0,
+      "candidate_groups_with_field0_equal_field2": 102,
+      "candidate_groups_with_field0_equal_field2_fraction": 0.06546854942233633,
+      "candidate_groups_field_values_below_local_string_count_by_column": [
+        49,
+        42,
+        58
+      ],
+      "first_eight_candidate_groups_raw": [
+        [
+          19,
+          310,
+          19
+        ],
+        [
+          20,
+          340,
+          20
+        ],
+        [
+          39,
+          769,
+          39
+        ],
+        [
+          49,
+          986,
+          49
+        ],
+        [
+          73,
+          1441,
+          73
+        ],
+        [
+          74,
+          1458,
+          74
+        ],
+        [
+          206,
+          4684,
+          206
+        ],
+        [
+          283,
+          4711,
+          283
+        ]
+      ],
+      "interpretation_limit": "Grouping is arithmetic only; raw values below local string count are not established string indices."
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC07/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 59830,
+      "sha256": "D8B257F8689A4F66D32BD0E563E73FF9BE65EC29F9B1B63B837D8A2CE739CC69",
+      "string_count_from_EXP_0115_region": 982,
+      "post_string_bytes": 31124,
+      "post_string_raw_first_four_u32": [
+        12,
+        160,
+        0,
+        0
+      ],
+      "candidate_payload_u32_count_after_first_four": 7777,
+      "candidate_12_byte_group_count": 2592,
+      "candidate_trailing_u32_remainder": 1,
+      "candidate_groups_with_field0_equal_field2": 163,
+      "candidate_groups_with_field0_equal_field2_fraction": 0.0628858024691358,
+      "candidate_groups_field_values_below_local_string_count_by_column": [
+        226,
+        199,
+        237
+      ],
+      "first_eight_candidate_groups_raw": [
+        [
+          19,
+          310,
+          19
+        ],
+        [
+          20,
+          340,
+          20
+        ],
+        [
+          39,
+          769,
+          39
+        ],
+        [
+          49,
+          986,
+          49
+        ],
+        [
+          73,
+          1441,
+          73
+        ],
+        [
+          74,
+          1458,
+          74
+        ],
+        [
+          206,
+          4684,
+          206
+        ],
+        [
+          283,
+          4711,
+          283
+        ]
+      ],
+      "interpretation_limit": "Grouping is arithmetic only; raw values below local string count are not established string indices."
+    }
+  ],
+  "limitations": [
+    "The 12-byte grouping is a diagnostic alignment hypothesis, not a decoded structure.",
+    "Field equality and local string-count ranges do not establish field semantics or string references.",
+    "No runtime dependency or resource-loading claim is made."
+  ]
+}

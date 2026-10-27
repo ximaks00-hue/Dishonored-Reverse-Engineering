@@ -1,0 +1,27 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "baseline_source": "EXP-0072 exact-build internal function triage",
+  "indexed_internal_functions": 72437,
+  "baseline_unknown_subsystem": 71998,
+  "baseline_symbol_name_candidates": 439,
+  "cumulative_manual_body_reviewed_functions": 49,
+  "cumulative_input_related_static_role_candidates": 16,
+  "cumulative_audio_related_static_role_candidates": 6,
+  "cumulative_native_exec_role_candidates": 20,
+  "cumulative_reviewed_but_subsystem_unassigned_functions": 27,
+  "overlay_unresolved_unknown_subsystem": 71974,
+  "overlay_candidate_rows": 482,
+  "runtime_verified_functions": 0,
+  "cumulative_rows_csv": "manual-review-overlay-cumulative-EXP-0159.csv",
+  "limits": [
+    "The automated EXP-0072 triage artifacts remain unchanged; manual reviews are additive overlays.",
+    "EXP-0140 and EXP-0142 through EXP-0156 native-exec roles are inferred from exact class-table name/export joins and raw code shape; concrete semantic owners and runtime dispatch remain unknown.",
+    "Twenty-seven manually reviewed functions remain subsystem-unassigned, including twenty inferred native-exec role candidates and the seven earlier non-candidate reviews.",
+    "The 439 baseline symbol-name candidates remain unchanged and were not re-reviewed by the manual overlays.",
+    "No review in this overlay establishes runtime reachability.",
+    "FUN_0046E5C0 also has a nonzero-selector path through virtual .data at 0x014068F0; its runtime values and identity with UELib NativeToken remain unverified.",
+    "EXP-0159 confirms that the context helper follows [node+0x24] and returns the first node whose [node+0x30] equals the Class marker. FUN_00423E00 passes the marker as FUN_00424880 second argument, and the raw helper writes the marker into [second_argument+0x30], so this initialization path self-assigns the marker field. FUN_00424CD0 similarly passes global 0x01423430 as the second argument, assigning the Class marker to its +0x30 field; a separate constructor stores this global at +0xD8. The Class/Object/Core/Engine recipe strings and GetStackOwnerClass symbol support an inferred UE class-object interpretation, but exact runtime types and field semantics remain unverified. The second caller comparison to 0x01423430 is static. FUN_00414DE0 statically writes its fourth stack argument into +0x24 and clears +0x30; one pointer-reference scan finds no literal reference to that constructor, which does not exclude relative calls or runtime-computed references. The chain-link semantic role, returned node type beyond the predicate, caller, and target invocation remain unresolved."
+  ],
+  "overlay_unknown_note": "The 71,974 unresolved unknown-subsystem rows include seven earlier manually reviewed functions without subsystem assignments and the twenty EXP-0140/0142 through EXP-0156 inferred role candidates without confirmed subsystem assignments."
+}

@@ -1,0 +1,142 @@
+﻿target_va,instruction_va,bytes,mnemonic,operands
+0x005C64F0,0x005C64F0,53,push,ebx
+0x005C64F0,0x005C64F1,8B DC,mov,"ebx, esp"
+0x005C64F0,0x005C64F3,83 EC 08,sub,"esp, 8"
+0x005C64F0,0x005C64F6,83 E4 F0,and,"esp, 0xfffffff0"
+0x005C64F0,0x005C64F9,83 C4 04,add,"esp, 4"
+0x005C64F0,0x005C64FC,55,push,ebp
+0x005C64F0,0x005C64FD,8B 6B 04,mov,"ebp, dword ptr [ebx + 4]"
+0x005C64F0,0x005C6500,89 6C 24 04,mov,"dword ptr [esp + 4], ebp"
+0x005C64F0,0x005C6504,8B EC,mov,"ebp, esp"
+0x005C64F0,0x005C6506,8B 43 08,mov,"eax, dword ptr [ebx + 8]"
+0x005C64F0,0x005C6509,FF 40 18,inc,dword ptr [eax + 0x18]
+0x005C64F0,0x005C650C,83 EC 48,sub,"esp, 0x48"
+0x005C64F0,0x005C650F,56,push,esi
+0x005C64F0,0x005C6510,8B F1,mov,"esi, ecx"
+0x005C64F0,0x005C6512,8B 48 18,mov,"ecx, dword ptr [eax + 0x18]"
+0x005C64F0,0x005C6515,80 39 41,cmp,"byte ptr [ecx], 0x41"
+0x005C64F0,0x005C6518,57,push,edi
+0x005C64F0,0x005C6519,75 10,jne,0x5c652b
+0x005C64F0,0x005C651B,41,inc,ecx
+0x005C64F0,0x005C651C,6A 00,push,0
+0x005C64F0,0x005C651E,89 48 18,mov,"dword ptr [eax + 0x18], ecx"
+0x005C64F0,0x005C6521,8B 48 14,mov,"ecx, dword ptr [eax + 0x14]"
+0x005C64F0,0x005C6524,50,push,eax
+0x005C64F0,0x005C6525,FF 15 F4 69 40 01,call,dword ptr [0x14069f4]
+0x005C64F0,0x005C652B,8D 45 C0,lea,"eax, [ebp - 0x40]"
+0x005C64F0,0x005C652E,50,push,eax
+0x005C64F0,0x005C652F,8B CE,mov,"ecx, esi"
+0x005C64F0,0x005C6531,E8 2A 9F 24 00,call,0x810460
+0x005C64F0,0x005C6536,8B 7B 0C,mov,"edi, dword ptr [ebx + 0xc]"
+0x005C64F0,0x005C6539,B9 10 00 00 00,mov,"ecx, 0x10"
+0x005C64F0,0x005C653E,8B F0,mov,"esi, eax"
+0x005C64F0,0x005C6540,F3 A5,rep movsd,"dword ptr es:[edi], dword ptr [esi]"
+0x005C64F0,0x005C6542,5F,pop,edi
+0x005C64F0,0x005C6543,5E,pop,esi
+0x005C64F0,0x005C6544,8B E5,mov,"esp, ebp"
+0x005C64F0,0x005C6546,5D,pop,ebp
+0x005C64F0,0x005C6547,8B E3,mov,"esp, ebx"
+0x005C64F0,0x005C6549,5B,pop,ebx
+0x005C64F0,0x005C654A,C2 08 00,ret,8
+0x005D0B60,0x005D0B60,53,push,ebx
+0x005D0B60,0x005D0B61,8B DC,mov,"ebx, esp"
+0x005D0B60,0x005D0B63,83 EC 08,sub,"esp, 8"
+0x005D0B60,0x005D0B66,83 E4 F0,and,"esp, 0xfffffff0"
+0x005D0B60,0x005D0B69,83 C4 04,add,"esp, 4"
+0x005D0B60,0x005D0B6C,55,push,ebp
+0x005D0B60,0x005D0B6D,8B 6B 04,mov,"ebp, dword ptr [ebx + 4]"
+0x005D0B60,0x005D0B70,89 6C 24 04,mov,"dword ptr [esp + 4], ebp"
+0x005D0B60,0x005D0B74,8B EC,mov,"ebp, esp"
+0x005D0B60,0x005D0B76,8B 43 08,mov,"eax, dword ptr [ebx + 8]"
+0x005D0B60,0x005D0B79,FF 40 18,inc,dword ptr [eax + 0x18]
+0x005D0B60,0x005D0B7C,83 EC 1C,sub,"esp, 0x1c"
+0x005D0B60,0x005D0B7F,56,push,esi
+0x005D0B60,0x005D0B80,8B F1,mov,"esi, ecx"
+0x005D0B60,0x005D0B82,8B 48 18,mov,"ecx, dword ptr [eax + 0x18]"
+0x005D0B60,0x005D0B85,80 39 41,cmp,"byte ptr [ecx], 0x41"
+0x005D0B60,0x005D0B88,75 10,jne,0x5d0b9a
+0x005D0B60,0x005D0B8A,41,inc,ecx
+0x005D0B60,0x005D0B8B,6A 00,push,0
+0x005D0B60,0x005D0B8D,89 48 18,mov,"dword ptr [eax + 0x18], ecx"
+0x005D0B60,0x005D0B90,8B 48 14,mov,"ecx, dword ptr [eax + 0x14]"
+0x005D0B60,0x005D0B93,50,push,eax
+0x005D0B60,0x005D0B94,FF 15 F4 69 40 01,call,dword ptr [0x14069f4]
+0x005D0B60,0x005D0B9A,8B 06,mov,"eax, dword ptr [esi]"
+0x005D0B60,0x005D0B9C,8B 90 78 01 00 00,mov,"edx, dword ptr [eax + 0x178]"
+0x005D0B60,0x005D0BA2,8D 4D F0,lea,"ecx, [ebp - 0x10]"
+0x005D0B60,0x005D0BA5,51,push,ecx
+0x005D0B60,0x005D0BA6,8B CE,mov,"ecx, esi"
+0x005D0B60,0x005D0BA8,FF D2,call,edx
+0x005D0B60,0x005D0BAA,8B 10,mov,"edx, dword ptr [eax]"
+0x005D0B60,0x005D0BAC,8B 4B 0C,mov,"ecx, dword ptr [ebx + 0xc]"
+0x005D0B60,0x005D0BAF,89 11,mov,"dword ptr [ecx], edx"
+0x005D0B60,0x005D0BB1,8B 50 04,mov,"edx, dword ptr [eax + 4]"
+0x005D0B60,0x005D0BB4,89 51 04,mov,"dword ptr [ecx + 4], edx"
+0x005D0B60,0x005D0BB7,8B 50 08,mov,"edx, dword ptr [eax + 8]"
+0x005D0B60,0x005D0BBA,89 51 08,mov,"dword ptr [ecx + 8], edx"
+0x005D0B60,0x005D0BBD,8B 40 0C,mov,"eax, dword ptr [eax + 0xc]"
+0x005D0B60,0x005D0BC0,89 41 0C,mov,"dword ptr [ecx + 0xc], eax"
+0x005D0B60,0x005D0BC3,5E,pop,esi
+0x005D0B60,0x005D0BC4,8B E5,mov,"esp, ebp"
+0x005D0B60,0x005D0BC6,5D,pop,ebp
+0x005D0B60,0x005D0BC7,8B E3,mov,"esp, ebx"
+0x005D0B60,0x005D0BC9,5B,pop,ebx
+0x005D0B60,0x005D0BCA,C2 08 00,ret,8
+0x005D3120,0x005D3120,53,push,ebx
+0x005D3120,0x005D3121,8B DC,mov,"ebx, esp"
+0x005D3120,0x005D3123,83 EC 08,sub,"esp, 8"
+0x005D3120,0x005D3126,83 E4 F0,and,"esp, 0xfffffff0"
+0x005D3120,0x005D3129,83 C4 04,add,"esp, 4"
+0x005D3120,0x005D312C,55,push,ebp
+0x005D3120,0x005D312D,8B 6B 04,mov,"ebp, dword ptr [ebx + 4]"
+0x005D3120,0x005D3130,89 6C 24 04,mov,"dword ptr [esp + 4], ebp"
+0x005D3120,0x005D3134,8B EC,mov,"ebp, esp"
+0x005D3120,0x005D3136,83 EC 58,sub,"esp, 0x58"
+0x005D3120,0x005D3139,56,push,esi
+0x005D3120,0x005D313A,8B 73 08,mov,"esi, dword ptr [ebx + 8]"
+0x005D3120,0x005D313D,C7 05 40 A9 40 01 00 00 00 00,mov,"dword ptr [0x140a940], 0"
+0x005D3120,0x005D3147,8B 46 18,mov,"eax, dword ptr [esi + 0x18]"
+0x005D3120,0x005D314A,0F B6 10,movzx,"edx, byte ptr [eax]"
+0x005D3120,0x005D314D,40,inc,eax
+0x005D3120,0x005D314E,89 46 18,mov,"dword ptr [esi + 0x18], eax"
+0x005D3120,0x005D3151,8B 14 95 F0 68 40 01,mov,"edx, dword ptr [edx*4 + 0x14068f0]"
+0x005D3120,0x005D3158,57,push,edi
+0x005D3120,0x005D3159,8D 45 B0,lea,"eax, [ebp - 0x50]"
+0x005D3120,0x005D315C,50,push,eax
+0x005D3120,0x005D315D,89 4D FC,mov,"dword ptr [ebp - 4], ecx"
+0x005D3120,0x005D3160,8B 4E 14,mov,"ecx, dword ptr [esi + 0x14]"
+0x005D3120,0x005D3163,56,push,esi
+0x005D3120,0x005D3164,FF D2,call,edx
+0x005D3120,0x005D3166,8B 0D 44 A9 40 01,mov,"ecx, dword ptr [0x140a944]"
+0x005D3120,0x005D316C,85 C9,test,"ecx, ecx"
+0x005D3120,0x005D316E,74 11,je,0x5d3181
+0x005D3120,0x005D3170,8B 01,mov,"eax, dword ptr [ecx]"
+0x005D3120,0x005D3172,8B 15 20 A9 40 01,mov,"edx, dword ptr [0x140a920]"
+0x005D3120,0x005D3178,8B 80 A8 00 00 00,mov,"eax, dword ptr [eax + 0xa8]"
+0x005D3120,0x005D317E,52,push,edx
+0x005D3120,0x005D317F,FF D0,call,eax
+0x005D3120,0x005D3181,A1 40 A9 40 01,mov,"eax, dword ptr [0x140a940]"
+0x005D3120,0x005D3186,8B F8,mov,"edi, eax"
+0x005D3120,0x005D3188,85 C0,test,"eax, eax"
+0x005D3120,0x005D318A,75 03,jne,0x5d318f
+0x005D3120,0x005D318C,8D 7D B0,lea,"edi, [ebp - 0x50]"
+0x005D3120,0x005D318F,FF 46 18,inc,dword ptr [esi + 0x18]
+0x005D3120,0x005D3192,8B 46 18,mov,"eax, dword ptr [esi + 0x18]"
+0x005D3120,0x005D3195,80 38 41,cmp,"byte ptr [eax], 0x41"
+0x005D3120,0x005D3198,75 10,jne,0x5d31aa
+0x005D3120,0x005D319A,8B 4E 14,mov,"ecx, dword ptr [esi + 0x14]"
+0x005D3120,0x005D319D,6A 00,push,0
+0x005D3120,0x005D319F,40,inc,eax
+0x005D3120,0x005D31A0,56,push,esi
+0x005D3120,0x005D31A1,89 46 18,mov,"dword ptr [esi + 0x18], eax"
+0x005D3120,0x005D31A4,FF 15 F4 69 40 01,call,dword ptr [0x14069f4]
+0x005D3120,0x005D31AA,8B 4D FC,mov,"ecx, dword ptr [ebp - 4]"
+0x005D3120,0x005D31AD,57,push,edi
+0x005D3120,0x005D31AE,E8 9D 17 1D 00,call,0x7a4950
+0x005D3120,0x005D31B3,5F,pop,edi
+0x005D3120,0x005D31B4,5E,pop,esi
+0x005D3120,0x005D31B5,8B E5,mov,"esp, ebp"
+0x005D3120,0x005D31B7,5D,pop,ebp
+0x005D3120,0x005D31B8,8B E3,mov,"esp, ebx"
+0x005D3120,0x005D31BA,5B,pop,ebx
+0x005D3120,0x005D31BB,C2 08 00,ret,8

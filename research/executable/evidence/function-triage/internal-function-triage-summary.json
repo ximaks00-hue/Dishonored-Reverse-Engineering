@@ -1,0 +1,236 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "function_index_rows": 72437,
+  "function_index_unique_addresses": 72437,
+  "callgraph_call_edges_read": 217768,
+  "callgraph_data_edges_read": 299821,
+  "direct_call_role_counts": {
+    "caller_and_target": 29167,
+    "caller_only": 34719,
+    "neither_direct_call_role": 3866,
+    "target_only": 4685
+  },
+  "functions_with_incoming_data_xref_edges": 36347,
+  "functions_assigned_unknown_subsystem_bucket": 71998,
+  "functions_assigned_symbol_name_candidate_bucket": 439,
+  "function_catalog_rows": 72437,
+  "group_counts_by_label_candidate_and_call_role": [
+    {
+      "name_label_family": "address_derived_function_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_and_target",
+      "functions": 29025
+    },
+    {
+      "name_label_family": "address_derived_function_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_only",
+      "functions": 19669
+    },
+    {
+      "name_label_family": "address_derived_function_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 3475
+    },
+    {
+      "name_label_family": "address_derived_function_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "target_only",
+      "functions": 4449
+    },
+    {
+      "name_label_family": "address_derived_thunk_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_and_target",
+      "functions": 3
+    },
+    {
+      "name_label_family": "address_derived_thunk_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_only",
+      "functions": 1
+    },
+    {
+      "name_label_family": "address_derived_thunk_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 9
+    },
+    {
+      "name_label_family": "address_derived_thunk_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "target_only",
+      "functions": 94
+    },
+    {
+      "name_label_family": "catch_address_label",
+      "subsystem_candidate": "exception_handler_candidate",
+      "direct_call_role": "caller_only",
+      "functions": 9
+    },
+    {
+      "name_label_family": "catch_address_label",
+      "subsystem_candidate": "exception_handler_candidate",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 8
+    },
+    {
+      "name_label_family": "constructor_destructor_name",
+      "subsystem_candidate": "runtime_or_object_lifecycle_candidate",
+      "direct_call_role": "caller_and_target",
+      "functions": 19
+    },
+    {
+      "name_label_family": "constructor_destructor_name",
+      "subsystem_candidate": "runtime_or_object_lifecycle_candidate",
+      "direct_call_role": "caller_only",
+      "functions": 93
+    },
+    {
+      "name_label_family": "crt_cpp_runtime_name",
+      "subsystem_candidate": "runtime_library_candidate",
+      "direct_call_role": "caller_and_target",
+      "functions": 12
+    },
+    {
+      "name_label_family": "crt_cpp_runtime_name",
+      "subsystem_candidate": "runtime_library_candidate",
+      "direct_call_role": "caller_only",
+      "functions": 2
+    },
+    {
+      "name_label_family": "crt_cpp_runtime_name",
+      "subsystem_candidate": "runtime_library_candidate",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 3
+    },
+    {
+      "name_label_family": "crt_cpp_runtime_name",
+      "subsystem_candidate": "runtime_library_candidate",
+      "direct_call_role": "target_only",
+      "functions": 74
+    },
+    {
+      "name_label_family": "direct3d_api_name",
+      "subsystem_candidate": "graphics_candidate",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 1
+    },
+    {
+      "name_label_family": "direct3d_api_name",
+      "subsystem_candidate": "graphics_candidate",
+      "direct_call_role": "target_only",
+      "functions": 4
+    },
+    {
+      "name_label_family": "fid_conflict_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_and_target",
+      "functions": 8
+    },
+    {
+      "name_label_family": "fid_conflict_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_only",
+      "functions": 12
+    },
+    {
+      "name_label_family": "generic_lifecycle_name",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_and_target",
+      "functions": 20
+    },
+    {
+      "name_label_family": "generic_lifecycle_name",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_only",
+      "functions": 15
+    },
+    {
+      "name_label_family": "input_api_name",
+      "subsystem_candidate": "input_candidate",
+      "direct_call_role": "target_only",
+      "functions": 3
+    },
+    {
+      "name_label_family": "named_symbol_owner_unknown",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_and_target",
+      "functions": 14
+    },
+    {
+      "name_label_family": "named_symbol_owner_unknown",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_only",
+      "functions": 6
+    },
+    {
+      "name_label_family": "named_symbol_owner_unknown",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 2
+    },
+    {
+      "name_label_family": "named_symbol_owner_unknown",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "target_only",
+      "functions": 19
+    },
+    {
+      "name_label_family": "physx_delayload_name",
+      "subsystem_candidate": "physics_candidate",
+      "direct_call_role": "caller_only",
+      "functions": 6
+    },
+    {
+      "name_label_family": "unwind_address_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "caller_only",
+      "functions": 14815
+    },
+    {
+      "name_label_family": "unwind_address_label",
+      "subsystem_candidate": "unknown",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 362
+    },
+    {
+      "name_label_family": "winsock_api_name",
+      "subsystem_candidate": "network_candidate",
+      "direct_call_role": "target_only",
+      "functions": 24
+    },
+    {
+      "name_label_family": "wwise_audio_api_name",
+      "subsystem_candidate": "audio_middleware_candidate",
+      "direct_call_role": "caller_and_target",
+      "functions": 66
+    },
+    {
+      "name_label_family": "wwise_audio_api_name",
+      "subsystem_candidate": "audio_middleware_candidate",
+      "direct_call_role": "caller_only",
+      "functions": 91
+    },
+    {
+      "name_label_family": "wwise_audio_api_name",
+      "subsystem_candidate": "audio_middleware_candidate",
+      "direct_call_role": "neither_direct_call_role",
+      "functions": 6
+    },
+    {
+      "name_label_family": "wwise_audio_api_name",
+      "subsystem_candidate": "audio_middleware_candidate",
+      "direct_call_role": "target_only",
+      "functions": 18
+    }
+  ],
+  "limits": [
+    "All 72,437 records are reconciled to the exact-build index address set; label families are index strings, not proof of function behavior or implementation owner.",
+    "Subsystem candidate labels derived from API-like names remain candidates only. The large unknown bucket is intentional and should shrink only with function-body, xref, vtable-owner, or package/native evidence.",
+    "Callgraph role and data-xref fields describe the existing static export; they do not establish runtime execution, indirect-call completeness, or reachability.",
+    "The semantic_review_status column is explicitly not_reviewed_by_this_triage for every row."
+  ]
+}

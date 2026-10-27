@@ -1,0 +1,7 @@
+{
+  "sample_count": 3,
+  "samples_with_equal_property_name_sets": 0,
+  "selected_scalar_checks": 4,
+  "selected_cross_parser_scalar_matches": 4,
+  "scope_note": "Property-row and formatted-dump comparison only; neither view is the raw serialized byte stream."
+}

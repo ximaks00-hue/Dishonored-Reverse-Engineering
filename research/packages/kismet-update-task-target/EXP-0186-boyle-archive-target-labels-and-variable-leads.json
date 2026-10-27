@@ -1,0 +1,92 @@
+{
+  "record": "EXP-0186 Boyle archive target labels and variable leads",
+  "retail_target": {
+    "build_id": "10256413",
+    "package_relative_path": "DishonoredGame/CookedPCConsole/L_Boyle_Int_Script.upk",
+    "package_sha256": "17BE4C7BD18F4E400DC053E0FCF61590240B38B0C3666F2F224676FFDFACCB86"
+  },
+  "retail_export_name_search": {
+    "tool": "UE Explorer search_objects",
+    "package_path": "DishonoredGame/CookedPCConsole/L_Boyle_Int_Script.upk",
+    "package_sha256_recomputed": "17BE4C7BD18F4E400DC053E0FCF61590240B38B0C3666F2F224676FFDFACCB86",
+    "results": [
+      {"query":"DisSeqVar_Task_165","exact_name_count":1,"result":"9323   E7F512       D4 DisSeqVar_Task DisSeqVar_Task_165"},
+      {"query":"DisSeqVar_Task_168","exact_name_count":1,"result":"9326   E7F78E       D4 DisSeqVar_Task DisSeqVar_Task_168"},
+      {"query":"DishonoredTask_Custom_25","exact_name_count":1,"result":"7518   CCDFCE       A4 DishonoredTask_Custom DishonoredTask_Custom_25"},
+      {"query":"DishonoredTask_Custom_26","exact_name_count":1,"result":"7519   CCE072       A1 DishonoredTask_Custom DishonoredTask_Custom_26"},
+      {"query":"DisSeqVar_SpawnerPawn_7","exact_name_count":1,"result":"9244   E7B499       BF DisSeqVar_SpawnerPawn DisSeqVar_SpawnerPawn_7"},
+      {"query":"DisSeqVar_SpawnerPawn_1","substring_result_count":14,"exact_name_count":2,"exact_name_rows":["9210   E79FEF       C0 DisSeqVar_SpawnerPawn DisSeqVar_SpawnerPawn_1","9247   E7B6AF       98 DisSeqVar_SpawnerPawn DisSeqVar_SpawnerPawn_1"]}
+    ],
+    "claim_limit":"name/class presence only; export search does not provide the serialized Task/Target assignments or establish which duplicate SpawnerPawn_1 is referenced"
+  },
+  "archive_inputs": [
+    {
+      "artifact": "task_story_node_inventory/L_Boyle_Int_Script.csv",
+      "sha256": "6917FB27CE61A6BE108650D465D472114E7D6318F31A5508947B2DDCA75F205D",
+      "package_sha256": null
+    },
+    {
+      "artifact": "campaign_typed_links/link_details/L_Boyle_Int_Script_links.csv",
+      "sha256": "14F5B16FA8808071544B2E13D0E5B9E952F8D16AE061D8E9BB7CAFDDF6B155C0",
+      "package_sha256": null
+    },
+    {
+      "artifact": "34-stage20-object-bindings/PACKAGE_OBJECT_INVENTORY.csv",
+      "sha256": "9F50D7AA1083FEB71573624889557706D9BB997CA524CB66FCA86AC58FB06397",
+      "observation": "zero L_Boyle_Int_Script rows; same-named SpawnerPawn_1 occurs under L_Pub_FromBoyle_Script; SpawnerPawn_7 absent",
+      "cross_package_match_is_identity": false
+    }
+  ],
+  "joined_artifact": {
+    "path": "research/packages/kismet-update-task-target/boyle-int-archive-target-name-crosswalk.csv",
+    "sha256": "ED3B2EBE303259A2F16FBAC04C31A07CB7BE820A5D6B97A5C265C0396E9D67FF",
+    "rows": 22,
+    "distinct_target_labels": 11,
+    "rows_with_resolved_task_variable_definitions": 22,
+    "resolved_task_variable_references": 48,
+    "task_objective_candidate": "BoyleAssassination",
+    "task_objective_reference_counts": {"BoyleAssassination":47,"PendeltonsNote":1},
+    "sole_cross_objective_archive_candidate": {"node":"DisSeqAct_UpdateTaskTarget_15","target_name":"Lord Shaw","task_var":"DisSeqVar_Task_170","task_name":"DishonoredTask_Custom","objective":"Boyle_Objectives.PendeltonsNote"},
+    "spawner_variable_resolution": {"archive_boyle_int_definitions_found":0,"retail_exact_name_count":{"DisSeqVar_SpawnerPawn_1":2,"DisSeqVar_SpawnerPawn_7":1},"interpretation":"_7 has one name candidate; _1 is ambiguous between two exact retail exports"},
+    "repeated_task_binding_examples": [
+      {"task":"DishonoredTask_Custom_25","nodes":["DisSeqAct_UpdateTaskTarget_12","DisSeqAct_UpdateTaskTarget_13"],"labels":["Miss White","Cider Fountain"]},
+      {"task":"DishonoredTask_Custom_22","nodes":["DisSeqAct_UpdateTaskTarget","DisSeqAct_UpdateTaskTarget_1","DisSeqAct_UpdateTaskTarget_2","DisSeqAct_UpdateTaskTarget_14"],"labels":["A Clue","A Clue","A Clue","Upstairs"]},
+      {"tasks":["DishonoredTask_Custom_2","DishonoredTask_Custom_3","DishonoredTask_Custom_4"],"node":"DisSeqAct_UpdateTaskTarget_10","label":"Boat in the Cellar"}
+    ],
+    "archive_names_without_target_name_row": ["DisSeqAct_UpdateTaskTarget_9", "DisSeqAct_UpdateTaskTarget_20"],
+    "warning": "absence from this property inventory is not proof of absent serialized property"
+  },
+  "priority_examples": [
+    {"object":"DisSeqAct_UpdateTaskTarget_6","target_name":"(Outside) Samuel's Boat"},
+    {"object":"DisSeqAct_UpdateTaskTarget_10","target_name":"Boat in the Cellar"},
+    {"object":"DisSeqAct_UpdateTaskTarget_11","target_name":"Lord Brisby","task_vars":["DisSeqVar_Task_165"],"task_definition":"DishonoredTask_Custom_26","objective":"BoyleAssassination","target_vars":["DisSeqVar_SpawnerPawn_1"]},
+    {"object":"DisSeqAct_UpdateTaskTarget_12","target_name":"Miss White","task_vars":["DisSeqVar_Task_168"],"task_definition":"DishonoredTask_Custom_25","objective":"BoyleAssassination","target_vars":["DisSeqVar_SpawnerPawn_7"]},
+    {"object":"DisSeqAct_UpdateTaskTarget_13","target_name":"Cider Fountain"},
+    {"object":"DisSeqAct_UpdateTaskTarget_15","target_name":"Lord Shaw"},
+    {"object":"DisSeqAct_UpdateTaskTarget_16","target_name":"Waverly Boyle"},
+    {"object":"DisSeqAct_UpdateTaskTarget_17","target_name":"Lydia Boyle"},
+    {"object":"DisSeqAct_UpdateTaskTarget_18","target_name":"Esma Boyle","archive_output_edges":["SeqAct_ActivateRemoteEvent_46:input0","DisSeqCond_CheckStoryFlag_14:input0"]},
+    {"object":"DisSeqAct_UpdateTaskTarget_19","target_name":"Waverly Boyle","archive_output_edges":["SeqAct_ActivateRemoteEvent_46:input0","DisSeqCond_CheckStoryFlag_14:input0"]},
+    {"object":"DisSeqAct_UpdateTaskTarget_21","target_name":"Lydia Boyle","archive_output_edges":["DisSeqCond_CheckStoryFlag_26:input0"]},
+    {"object":"DisSeqAct_UpdateTaskTarget_22","target_name":"Waverly Boyle","archive_output_edges":["DisSeqCond_CheckStoryFlag_25:input0"]},
+    {"object":"DisSeqAct_UpdateTaskTarget_23","target_name":"Esma Boyle","archive_output_edges":["DisSeqCond_CheckStoryFlag_11:input0"]}
+  ],
+  "join": {
+    "basis": "archive object class/name/outer path joined to exact-hash retail export census",
+    "archive_label_rows_with_retail_export_candidate": 22,
+    "property_equivalence": "unknown"
+  },
+  "claim_status": {
+    "archive_target_name_properties": "observed in archive export CSV",
+    "archive_task_and_target_variable_links": "observed in separate archive link-detail CSV",
+    "retail_export_name_candidates": "observed exact-hash export metadata",
+    "archive_to_retail_property_equivalence": "unknown",
+    "runtime_actor_or_marker_identity": "unknown"
+  },
+  "limitations": [
+    "Archive source package SHA-256 and exact build are unavailable.",
+    "No retail property payload or retail Kismet edge is included.",
+    "Referenced SpawnerPawn and Named variable definitions remain unresolved.",
+    "Names alone do not establish actor identity, task identity, native selector membership, or displayed marker behavior."
+  ]
+}

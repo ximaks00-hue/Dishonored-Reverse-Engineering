@@ -1,0 +1,22 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "manifest_sha256": "65286FAA9E04422D2A4C7E2C1D0CEAB80B02564B8C98ABA619967DD4FA09D5EB",
+  "exp_0138_input_sha256": "7A4FE4FEA33C1C7EBC40DA44B9BF18C70A953846EBF11F28ED8FCD79BCAE6F15",
+  "exp_0139_input_sha256": "9C81007409200641871727F054686C98301AA11FF3A7F7551A476639DA3074BD",
+  "function_index_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "capstone_version": "5.0.7",
+  "pefile_version": "2024.8.26",
+  "candidate_targets": 3,
+  "common_prologue_matches": 3,
+  "ret_8_boundaries": 3,
+  "targets_with_int3_only_post_return_padding": 3,
+  "total_int3_post_return_padding_bytes": 8,
+  "summary_csv": "EXP-0141-native-class-table-unindexed-target-boundaries.csv",
+  "instruction_csv": "EXP-0141-native-class-table-unindexed-target-disassembly.csv",
+  "limitations": [
+    "The recovered entries are not added to the 72,437-row Ghidra function index.",
+    "The entry boundary is supported by an exact table pointer target, repeated x86 prologue, ret 8, int3 padding, and the next indexed function entry; it is not a saved Ghidra function definition.",
+    "Linear disassembly and UELib declaration matches do not establish runtime dispatch, concrete ownership, or behavior beyond the observed static body operations."
+  ]
+}

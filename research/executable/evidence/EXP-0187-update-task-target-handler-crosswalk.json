@@ -1,0 +1,68 @@
+{
+  "record": "EXP-0187 exact-build UpdateTaskTarget class/handler crosswalk",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "exact_build": {
+    "handler_candidate": {
+      "address": "0x00BA84D0",
+      "size_bytes": 1052,
+      "table_va": "0x01158DE0",
+      "table_rva": "0x00D58DE0",
+      "handler_slot_offset": "0x190",
+      "handler_slot_pointer": "0x00BA84D0"
+    },
+    "constructor": {
+      "address": "0x00BB87E0",
+      "size_bytes": 27,
+      "bytes": "55 8B EC 56 8B 75 08 85 F6 74 0D 8B CE E8 BE C5 85 FF C7 06 E0 8D 15 01 5E 5D C3",
+      "base_constructor_call": "0x00414DB0",
+      "vptr_store_va": "0x00BB87F2",
+      "vptr_value": "0x01158DE0",
+      "cache": "knowledge/cache/decompiles/00BB87E0.json",
+      "cache_sha256": "073D4C1787CB7612AB2C3D3055FB622B4D9794A55013C0A4E2F63E7499C1DC59"
+    },
+    "candidate_field_flow": {
+      "action_target_index_offset": "0xFC",
+      "task_target_descriptor_offset": "0x68",
+      "record_stride": "0x24"
+    }
+  },
+  "external_2013_crosswalk": {
+    "repository": "dishonoredrecompiled",
+    "commit": "e7829390fa1c2fc7c200357e9de695ad4c613527",
+    "executable_scope": "retail 2013 / engine 9411",
+    "constructor_symbol": "UDisSeqAct_UpdateTaskTarget::InternalConstructor",
+    "constructor_match": {
+      "method": "neighbours",
+      "score": 1,
+      "donor_size_bytes": 27,
+      "target_size_bytes": 27
+    },
+    "source_csv_hashes": {
+      "functions_2013_csv_sha256": "C3B6821A018D30E2A317D95396B6584EB0C378BA5C0BD0075EC1E8C6C240CE88",
+      "match_2012_2013_csv_sha256": "06164572249FD3E2477F1C404B2AF6A27CACF83ACECB8C82DB08FCEDE037B330"
+    },
+    "task_action_vtable_class_candidate": "UDisSeqAct_UpdateTaskTarget"
+  },
+  "method_identity_limit": {
+    "handler_method_body_match": "order",
+    "score": 0.609,
+    "donor_size_bytes": 882,
+    "target_size_bytes": 1052,
+    "class_table_ownership": "strongly corroborated by exact-build constructor vptr store and pinned retail-2013 constructor symbol",
+    "handler_method_source_implementation": "external source file is a stub; method semantics come from exact-build static dataflow"
+  },
+  "archive_variable_reference_limit": "Link-details export records VariableLinks leaf names, but not the linked variable object's object path or export index; same-sequence task definition joins are candidates, not direct object-reference proof.",
+  "archive_census": {
+    "csv": "research/packages/kismet-update-task-target/archive-update-task-target-census.csv",
+    "csv_sha256": "A21D4A88570E5D8B8BB17D8D6C669BFFB4C24C2F54DFFA75A99DF2D651B8E945",
+    "unique_actions": 384,
+    "property_rows": 430,
+    "indexed_actions": 39,
+    "task_variable_link_occurrences": 54,
+    "unique_scoped_task_variable_instances": 49,
+    "same_sequence_task_definition_candidates": 54,
+    "unresolved_same_sequence_task_names": 0
+  },
+  "claim_status": "mixed"
+}

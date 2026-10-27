@@ -1,0 +1,177 @@
+{
+  "mip_census_csv": "research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_DLC05_Arena_Env-DirectionalMaxComponent0_10-lightmap.csv",
+  "mip_count": 11,
+  "package_file": "assets\\extracted\\tfc-lightmap-dlc05\\L_DLC05_Arena_Env.upk",
+  "package_sha256": "9DE6319F0BA03073C903ACA154A6A5EABB9092C87DE92B90B86E3AAF29D8E04F",
+  "tfc_file": "Dishonored RHCP\\DishonoredGame\\DLC\\PCConsole\\DLC05\\Lighting_DLC05.tfc",
+  "tfc_sha256": "87F375E758B244FBF55589CA8112201FB8B2FE666D8209721BC30E8F667FACC5",
+  "all_mips_range_valid_and_dxt1_decoded": true,
+  "claim_limit": "All recorded ranges passed file/serial bounds and decoded to DXT1 pixels of the reported dimensions; this audit alone does not compare every mip to UModel output.",
+  "mips": [
+    {
+      "mip_index": 0,
+      "width": 1024,
+      "height": 1024,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting_DLC05.tfc",
+      "storage_offset": 3282055,
+      "storage_size": 245865,
+      "decoded_bytes": 524288,
+      "decoded_sha256": "DEB6F1484302D9B3EFAC22E3DAA27A2E538EFA4C00EFD1689CB406B29F326B93",
+      "decoded_pixel_count": 1048576,
+      "lzo_container_header_bytes": 48,
+      "lzo_chunk_count": 4,
+      "lzo_chunk_compressed_sizes": [
+        90353,
+        89719,
+        32677,
+        33068
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072,
+        131072,
+        131072,
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 1,
+      "width": 512,
+      "height": 512,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting_DLC05.tfc",
+      "storage_offset": 3211969,
+      "storage_size": 70086,
+      "decoded_bytes": 131072,
+      "decoded_sha256": "9BD5FAB7CC2D347D942ABDAE1C75DBA90987F4A0ABA3F6314F73C665EF202F3D",
+      "decoded_pixel_count": 262144,
+      "lzo_container_header_bytes": 24,
+      "lzo_chunk_count": 1,
+      "lzo_chunk_compressed_sizes": [
+        70062
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        131072
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 2,
+      "width": 256,
+      "height": 256,
+      "bulk_flags": "StoreInSeparateFile, CompressedLZO",
+      "storage_file": "Lighting_DLC05.tfc",
+      "storage_offset": 3192394,
+      "storage_size": 19575,
+      "decoded_bytes": 32768,
+      "decoded_sha256": "F1CCBA0AD3FF58A98F1BFF9CF3225D875E059F8A3BBFEAB869B38DE899D7AAA9",
+      "decoded_pixel_count": 65536,
+      "lzo_container_header_bytes": 24,
+      "lzo_chunk_count": 1,
+      "lzo_chunk_compressed_sizes": [
+        19551
+      ],
+      "lzo_chunk_uncompressed_sizes": [
+        32768
+      ],
+      "lzo_prefix_bytes_skipped": null
+    },
+    {
+      "mip_index": 3,
+      "width": 128,
+      "height": 128,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1037119,
+      "storage_size": 8192,
+      "decoded_bytes": 8192,
+      "decoded_sha256": "BBBC874216252D5458E6754EE384E7088069FC65BC3D92C6E66DB6E9DA9045CB",
+      "decoded_pixel_count": 16384
+    },
+    {
+      "mip_index": 4,
+      "width": 64,
+      "height": 64,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1045335,
+      "storage_size": 2048,
+      "decoded_bytes": 2048,
+      "decoded_sha256": "FBD9E60FF03C9004A9D83E2A4FB8E64FE5DC54A2813D77786CE8E39BC1D35D12",
+      "decoded_pixel_count": 4096
+    },
+    {
+      "mip_index": 5,
+      "width": 32,
+      "height": 32,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1047407,
+      "storage_size": 512,
+      "decoded_bytes": 512,
+      "decoded_sha256": "98EA959F9B795331EFCAA27800B7D104ED19DE50F41F2FE20A197195E23685A9",
+      "decoded_pixel_count": 1024
+    },
+    {
+      "mip_index": 6,
+      "width": 16,
+      "height": 16,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1047943,
+      "storage_size": 128,
+      "decoded_bytes": 128,
+      "decoded_sha256": "5C23A86DEBDC90677AECAA278A6E727AF641DCFD8A9D3E26DC72088006BE3D15",
+      "decoded_pixel_count": 256
+    },
+    {
+      "mip_index": 7,
+      "width": 8,
+      "height": 8,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1048095,
+      "storage_size": 32,
+      "decoded_bytes": 32,
+      "decoded_sha256": "951F30834CA513347EADDAC505C151EC85EAF3F32CE9161B7F7869ED9AD10F3B",
+      "decoded_pixel_count": 64
+    },
+    {
+      "mip_index": 8,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1048151,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "85DD441265B8E2D489DC7265257EBFECFFB209F4A144E1E931321F130A1123BE",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 9,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1048183,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "85DD441265B8E2D489DC7265257EBFECFFB209F4A144E1E931321F130A1123BE",
+      "decoded_pixel_count": 16
+    },
+    {
+      "mip_index": 10,
+      "width": 4,
+      "height": 4,
+      "bulk_flags": "0",
+      "storage_file": "L_DLC05_Arena_Env.upk",
+      "storage_offset": 1048215,
+      "storage_size": 8,
+      "decoded_bytes": 8,
+      "decoded_sha256": "85DD441265B8E2D489DC7265257EBFECFFB209F4A144E1E931321F130A1123BE",
+      "decoded_pixel_count": 16
+    }
+  ]
+}

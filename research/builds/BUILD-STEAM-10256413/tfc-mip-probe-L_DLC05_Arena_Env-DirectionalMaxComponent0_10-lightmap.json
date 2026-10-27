@@ -1,0 +1,32 @@
+{
+  "package_file": "E:\\Dishonored Reverse Engineering\\assets\\extracted\\tfc-lightmap-dlc05\\L_DLC05_Arena_Env.upk",
+  "package_sha256": "9DE6319F0BA03073C903ACA154A6A5EABB9092C87DE92B90B86E3AAF29D8E04F",
+  "package_index": 77,
+  "object_name": "DirectionalMaxComponent0_1",
+  "owner_class": "LightMapTexture2D",
+  "parser_class_type": "UELib.Engine.UShadowMapTexture2D",
+  "export_serial_offset": 1036815,
+  "export_serial_size": 11440,
+  "export_serial_end_exclusive": 1048255,
+  "texture_cache_name": "Lighting_DLC05",
+  "texture_file_cache_guid_components": {
+    "A": 1801543469,
+    "B": 1264554141,
+    "C": 1321210519,
+    "D": 1755180777
+  },
+  "tfc_file": "E:\\Dishonored Reverse Engineering\\Dishonored RHCP\\DishonoredGame\\DLC\\PCConsole\\DLC05\\Lighting_DLC05.tfc",
+  "tfc_file_size": 73883321,
+  "tfc_file_sha256": "87F375E758B244FBF55589CA8112201FB8B2FE666D8209721BC30E8F667FACC5",
+  "mip_count": 11,
+  "external_mip_count": 3,
+  "inline_mip_count": 8,
+  "all_mip_ranges_in_file": true,
+  "all_inline_ranges_within_export_serial": true,
+  "external_mip_offsets_in_tfc": [
+    3282055,
+    3211969,
+    3192394
+  ],
+  "output_csv": "E:\\Dishonored Reverse Engineering\\research\\builds\\BUILD-STEAM-10256413\\tfc-mip-probe-L_DLC05_Arena_Env-DirectionalMaxComponent0_10-lightmap.csv"
+}

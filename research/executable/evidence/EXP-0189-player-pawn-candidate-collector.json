@@ -1,0 +1,123 @@
+{
+  "record": "EXP-0189 Player Pawn candidate collector and distance gates",
+  "target": {
+    "steam_app_id": "217980",
+    "build_id": "10256413",
+    "exe_relative_path": "Binaries/Win32/Dishonored.exe",
+    "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E"
+  },
+  "raw_pe": {
+    "analysis": "read-only PE mapping and Capstone 5.0.7 x86-32 disassembly",
+    "image_base": "0x00400000",
+    "pawn_vtable": {"va": "0x0111A3B0", "file_offset": "0x00D18DB0", "identity_source": "EXP-0021/0035 exact-build vtable-path identification"},
+    "slot_700": {"va": "0x0111AAB0", "file_offset": "0x00D194B0", "raw_dword": "0x00AB6960", "target": "FUN_00AB6960", "target_indexed_size": 138},
+    "shared_vtable_slots": [
+      {"vtable_va": "0x0111A3B0", "slot_700": "0x00AB6960", "slot_704": "0x00AB9EA0", "slot_708": "0x00AA4EA0"},
+      {"vtable_va": "0x011B0B50", "slot_700": "0x00AB6960", "slot_704": "0x00AB9EA0", "slot_708": "0x00AA4EA0"},
+      {"vtable_va": "0x011CDBA8", "slot_700": "0x00AB6960", "slot_704": "0x00AB9EA0", "slot_708": "0x00AA4EA0"}
+    ],
+    "function_ranges": [
+      {"address": "0x00ABF830", "file_offset": "0x006BEC30", "size": 365, "body_sha256": "BC76D03A133332DCAA757DCA93193F39C3A7AB816C22950762BDD2C29695903C"},
+      {"address": "0x00AB5320", "file_offset": "0x006B4720", "size": 124, "body_sha256": "04CF9DB5F68CE1E7402F6D5D57D1FFA3DD5555A09540828B0F396ECC7C9E10DA"},
+      {"address": "0x00AB6960", "file_offset": "0x006B5D60", "size": 138, "body_sha256": "42C63DEB8E6CF4A5F9D87A6F8E56B061F47F6A6C93DEE966C265ECE45372B259"},
+      {"address": "0x00B0B780", "file_offset": "0x0070AB80", "size": 158, "body_sha256": "3200270F979B5538917A40DCABE7BEE0E1F9C00239B5523BFDBFE3E91C801149"},
+      {"address": "0x00B599B0", "file_offset": "0x00758DB0", "size": 75, "body_sha256": "D5A4530EF1DD32FC7617CE9D7CE1DF23D4EC12DBC3A8C752B1FEABB2138D1B24"},
+      {"address": "0x00BA6E50", "file_offset": "0x007A6250", "size": 327, "body_sha256": "86FFCEA2C07270370E1EBA43D65BE378E1B958E12B4EB07B4FAF4EF2C9914977"}
+    ],
+    "raw_instruction_evidence": [
+      {"va": "0x00ABF88D", "bytes": "C7 06 B0 A3 11 01", "disassembly": "mov dword ptr [esi], 0x0111A3B0 (install Pawn vtable)"},
+      {"va": "0x00ABF986", "bytes": "89 35 28 F6 45 01", "disassembly": "mov dword ptr [0x0145F628], esi"},
+      {"va": "0x00AB535A", "bytes": "C7 05 28 F6 45 01 00 00 00 00", "disassembly": "mov dword ptr [0x0145F628], 0"},
+      {"va": "0x0111AAB0", "bytes": "60 69 AB 00", "disassembly": "vtable slot +0x700 pointer = 0x00AB6960"},
+      {"va": "0x00BAD9F9", "bytes": "53", "disassembly": "push ebx (zero-initialized local used as fourth stack argument)"},
+      {"va": "0x00BADA00", "bytes": "8B 07 8B 90 00 07 00 00 6A 02 8D 4D C8 51 8B CF", "disassembly": "load Pawn vtable slot +0x700; push mode 2 and output descriptor; ECX=Pawn"},
+      {"va": "0x00BADA1A", "bytes": "FF D2", "disassembly": "call slot target"},
+      {"va": "0x00B599D8", "bytes": "8B 8F 80 03 00 00 85 C9 74 13 E8 39 73 FA FF", "disassembly": "load resolved object's +0x380 pointer into ECX; if non-null call FUN_00B00D20 with that pointer"}
+    ]
+  },
+  "cache_inputs": [
+    {"address": "0x00BAD960", "file": "knowledge/cache/decompiles/00BAD960.json", "sha256": "FD20E4B1954E0543F30C6A602A7A532EFF10E2F94829D271469259C8D4052530"},
+    {"address": "0x00ABF830", "file": "knowledge/cache/decompiles/00ABF830.json", "sha256": "F2C7598F6E2474C33BC2F2EE52D94BB4C9A0132E95B2632D5F6C0E2194DC5F93"},
+    {"address": "0x00AB5320", "file": "knowledge/cache/decompiles/00AB5320.json", "sha256": "11F27F28F47BDE48B7D2AFC4933AB768B68B11DB909634F57BAEBE0F3CFA44CC"},
+    {"address": "0x00AB6960", "file": "knowledge/cache/decompiles/00AB6960.json", "sha256": "6F1E79D99B08F6E71304513386BE446C38F6A88902954B16FEDB88AB0685DDE6"},
+    {"address": "0x00B0B780", "file": "knowledge/cache/decompiles/00B0B780.json", "sha256": "6B75E9E5B4658336DAA4052FFA8A9D2F78EE0C8C8A743FA425C41C62CEA055C3"},
+    {"address": "0x00AA1EC0", "file": "knowledge/cache/decompiles/00AA1EC0.json", "sha256": "F1B3C1BDFE87E505E92F919C871760A8003228295A892A677301B61DB4A78233"},
+    {"address": "0x00B599B0", "file": "knowledge/cache/decompiles/00B599B0.json", "sha256": "5F1E4306513B5FA5B750E31B817FC88753030682037C977F373522FBCD89D87F"},
+    {"address": "0x00A660F0", "file": "knowledge/cache/decompiles/00A660F0.json", "sha256": "3B8DACC4B9DC5DE34E0E32B55C6E8F7CA8C4B65FEDB756E40FC28CA8950C4AB3"},
+    {"address": "0x00B00D20", "file": "knowledge/cache/decompiles/00B00D20.json", "sha256": "717BEACA958B440AF01A4FD14E09BC736572650F47716F61399F975300F0FFFD"},
+    {"address": "0x00BA6E50", "file": "knowledge/cache/decompiles/00BA6E50.json", "sha256": "061A28A3C37BFD1A4FB7B1B8911CE413E5ED11EBF4BE42138FB21F4C9103DA6B"},
+    {"address": "0x00BA0DE0", "file": "knowledge/cache/decompiles/00BA0DE0.json", "sha256": "DC2E4EC953436A86634FC6B330C57FE11DE409DCE4E40157836A19081AE2F386"},
+    {"address": "0x00B0BFB0", "file": "knowledge/cache/decompiles/00B0BFB0.json", "sha256": "2D835FB76C6FFA3CA50E0AE0C6D124264CBDD66485737AF8DE30881956D2426A"},
+    {"address": "0x00C62F20", "file": "knowledge/cache/decompiles/00C62F20.json", "sha256": "52B495F487BE784EF4D9BD6ECA7B23CB9D7A2545E78CE7C52B0CCC98D1585B89"},
+    {"address": "0x00AA4EA0", "file": "knowledge/cache/decompiles/00AA4EA0.json", "sha256": "65246925F3EE5692FC46D358F0EE00830250DDFEADDAC7DA559B4033A60A5894"},
+    {"address": "0x00AB9EA0", "file": "knowledge/cache/decompiles/00AB9EA0.json", "sha256": "BE50A3728F9593E1F25C759D78B745866A7CD8A6C09B2BD969CC6C06C6E6D2D5"},
+    {"address": "0x00AA1EB0", "file": "knowledge/cache/decompiles/00AA1EB0.json", "sha256": "544AB7556CF134F674B7BDFEAF4CE81E429B8042BDCE1CF231762923C15A360B"},
+    {"address": "0x00ABED50", "file": "knowledge/cache/decompiles/00ABED50.json", "sha256": "B869A68B8B17FE2F071B8E898F58C0886566291195E651B6CAD9232F47279E4B"},
+    {"address": "0x00CBF0A0", "file": "knowledge/cache/decompiles/00CBF0A0.json", "sha256": "1F0DB3C7C67CC24C3E0F389B40FEB970E28B76A8E2DB7D2F8EA886B4E3CFD862"},
+    {"address": "0x00CFC230", "file": "knowledge/cache/decompiles/00CFC230.json", "sha256": "3EFE7931924A7CD3026E653E852A79E05E04A8C0A07717CF471BB5D8EF4B821C"},
+    {"address": "0x00AA4E20", "file": "knowledge/cache/decompiles/00AA4E20.json", "sha256": "9ED5C196B0E29C5BC66AF76F722989DB4EDF9D099BADAC281726253B969DC45B"}
+  ],
+  "collection_path": {
+    "pawn_global": "DAT_0145F628; assigned after FUN_00ABF830 installs vtable 0x0111A3B0, cleared by FUN_00AB5320",
+    "slot_700_target": "FUN_00AB6960",
+    "slot_700_arguments": {"this": "Pawn", "output": "local array descriptor", "mode": 2, "threshold": 0},
+    "linked_head_offset": "+0x9D4",
+    "linked_next_offset": "+0x90",
+    "predicate": "FUN_00B0B780(Pawn,item,2,0); raw call setup shows global ECX context DAT_014719C4 passed to FUN_00C62F20 with candidate item+0x4B8 and nested Pawn+0x15C+0x4B8 context; the context virtual slot +0x10 result is compared with requested mode 2; threshold branch bypassed at 0. Cached pseudocode has a receiver/argument mismatch, so raw x86 is authoritative.",
+    "predicate_reuse": "function index/cache cross-reference also shows FUN_00AA4EA0 and FUN_00AB9EA0 call FUN_00B0B780; no semantic category label inferred",
+    "secondary_source": "Pawn array +0xAC8/count +0xACC; entries pass through FUN_00B599B0 and non-null return values append to same local descriptor",
+    "secondary_mapping_predicate": "entry +0x508 bit 0x400 clear; resolve entry +0x26C through FUN_00A660F0; require resolved +0x380 nonzero and FUN_00B00D20 called with ECX=resolved +0x380 to return nonzero; FUN_00B00D20 returns bit 6 of its argument +0x3C",
+    "reconciliation_gate": "FUN_00BA6E50; requires FUN_00BA0DE0(candidate,mode) and numeric squared-distance tests against owner settings +0x7FC/+0x800/+0x804; candidate pointer at +0x15C later participates in existing-object matching",
+    "semantic_names": "unknown",
+    "shared_slot_reuse": {
+      "vtable_va": ["0x0111A3B0", "0x011B0B50", "0x011CDBA8"],
+      "slots": {
+        "+0x700": "FUN_00AB6960",
+        "+0x704": "FUN_00AB9EA0",
+        "+0x708": "FUN_00AA4EA0"
+      },
+      "constructor_paths": [
+        {"function": "FUN_00CBF0A0", "calls": "FUN_00ABF830", "installs_vtable": "0x011B0B50", "descriptor_class_name": "DisDLC06PlayerPawn (cross-source candidate)"},
+        {"function": "FUN_00CFC230", "calls": "FUN_00CBF0A0", "installs_vtable": "0x011CDBA8", "descriptor_class_name": "DisDLC07PlayerPawn (cross-source candidate)"}
+      ],
+      "claim_limit": "Pointer reuse across these vtable slots and constructor paths is observed; C++ inheritance and linked-node semantics are not established."
+    },
+    "raw_offset_census_0x9d4": {
+      "method": "Review indexed function-map displacement hits and selected exact-build caches/constructors; raw byte-pattern overlaps are not treated as object-field references. Not every matching PE byte sequence was fully decoded in this follow-up.",
+      "indexed_function_denominator": 72437,
+      "reviewed_context_hits": [
+        {"function": "FUN_00AA4EA0", "context": "Pawn linked-list head read"},
+        {"function": "FUN_00AB6960", "context": "Pawn linked-list head read"},
+        {"function": "FUN_00AB9EA0", "context": "Pawn linked-list head address/read"},
+        {"function": "FUN_00DB95D0", "context": "_Font_Cache float field initialization store"},
+        {"function": "FUN_00DB9E40", "context": "_Font_Cache float field read"},
+        {"function": "FUN_009B8760", "context": "separate pointer-array indexing"}
+      ],
+      "additional_unresolved_or_non_field_matches": [
+        {"function": "FUN_007C4B20", "context": "conditional branch relative displacement, not memory operand"},
+        {"function": "FUN_0099F490", "context": "overlap between disp8 and immediate bytes, not a 0x9D4 memory operand"}
+      ],
+      "pawn_specific_explicit_writer_found_in_reviewed_indexed_bodies_and_constructors": false,
+      "limits": ["This is not a fully decoded proof of all raw PE byte-pattern matches.", "Review does not exclude unindexed code, computed/aliased writes, or allocator zero initialization."]
+    }
+  },
+  "claim_limits": [
+    "EXP-0021/0035 identify vtable path 0x0111A3B0 as DishonoredPlayerPawn; this proves the static class/vtable association, not runtime global lifetime outside constructor/cleanup paths.",
+    "The linked-node type at Pawn +0x9D4, meanings of mode 2, nested +0x4B8 values, +0xAC8 entries, +0x380 result, and radius settings remain unknown.",
+    "The decompiler output is an analysis rendering; raw PE bytes and indexed boundaries are retained as provenance.",
+    "No runtime occurrence, visibility effect, or specific retail Kismet linkage was observed."
+  ],
+  "claim_status": {
+    "global_pointer_constructor_and_cleanup_writes": "observed",
+    "dishonored_player_pawn_vtable_identity": "confirmed",
+    "slot_700_target_and_call_arguments": "observed",
+    "linked_collection_and_mode_filter_dataflow": "observed",
+    "full_indexed_direct_0x9d4_census_no_pawn_writer": "observed",
+    "predicate_raw_call_setup_corrects_cached_pseudocode": "observed",
+    "secondary_array_mapping_and_distance_conditions": "observed",
+    "semantic_collection_and_gameplay_identity": "unknown",
+    "related_vtable_slot_reuse_across_constructor_paths": "observed",
+    "pawn_9d4_list_writer": "unknown",
+    "runtime_and_kismet_linkage": "unknown"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "record": "EXP-0188 parallel task-marker reconciliation paths and callback arrays",
+  "target": {
+    "steam_app_id": "217980",
+    "build_id": "10256413",
+    "exe_relative_path": "Binaries/Win32/Dishonored.exe",
+    "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E"
+  },
+  "raw_pe": {
+    "analysis": "read-only PE mapping and Capstone 5.0.7 x86-32 disassembly",
+    "image_base": "0x00400000",
+    "function_va": "0x00BAD960",
+    "function_rva": "0x007AD960",
+    "function_file_offset": "0x007ACD60",
+    "function_size": 1563,
+    "function_sha256": "223F16C8D12CB28A3F0ABBFF62E86FD6371BD58ACA181B26D6A44F9F14F12DE2",
+    "cleanup_ranges": [
+      {"va_range": "0x00BADE08-0x00BADE57", "file_offset": "0x007AD208", "purpose": "flag test and removal from secondary array"},
+      {"va_range": "0x00BADE87-0x00BADEA2", "file_offset": "0x007AD287", "purpose": "virtual slot-0 callback and primary array removal"},
+      {"va_range": "0x00BAD88E-0x00BAD8E9", "file_offset": "0x007AC28E", "purpose": "FUN_00BAD550 stale-entry removal from secondary and primary arrays"},
+      {"va_range": "0x00BADA00-0x00BADA7A", "file_offset": "0x007ACE00", "purpose": "global-object virtual call and temporary candidate-list population"},
+      {"va_range": "0x00BADC25-0x00BADC59", "file_offset": "0x007AD025", "purpose": "raw allocation size and constructor argument setup"},
+      {"va_range": "0x00BADD8C-0x00BADDAE", "file_offset": "0x007AD08C", "purpose": "actor-derived object +0x28 write"}
+    ],
+    "vtable": {
+      "va": "0x011635C0",
+      "file_offset": "0x00D61FC0",
+      "slot_0_target": "0x00BD6640",
+      "slot_0_target_size": 33,
+      "slot_0_target_body_sha256": "C78F5687FC17BBAC5C642E26BBBE96B1009F521E197879B397D01B0F3C36F86E",
+      "slot_0_behavior": "calls 0x00BCEB00; if byte argument bit 0 is set, passes this to helper 0x004042E0",
+      "helper_0x004042E0": "passes this to virtual slot +0x0C of object pointer at global 0x0140A90C; callback target meaning unresolved"
+    },
+    "vtable_comparison": {
+      "table_a": {"va": "0x011635A8", "file_offset": "0x00D61FA8", "slots_0_to_11": ["0x00BD6610", "0x00BC54F0", "0x00BC5730", "0x005CB0C0", "0x00BB9FA0", "0x00BC57F0", "0x00BD6640", "0x00BC5B40", "0x00BC5C10", "0x00BB9FF0", "0x00BBD590", "0x00BBD630"]},
+      "table_b": {"va": "0x011635C0", "file_offset": "0x00D61FC0", "slots_0_to_11": ["0x00BD6640", "0x00BC5B40", "0x00BC5C10", "0x00BB9FF0", "0x00BBD590", "0x00BBD630", "0x00BD6820", "0x00BC54F0", "0x00BC5730", "0x005CB0C0", "0x00BB9FA0", "0x00BC5D00"]},
+      "common_sequence": "table_a slots 6-11 equal table_b slots 0-5; byte-level observation only, not proof of inheritance",
+      "slot_plus_0c": {"table_a_target": "0x005CB0C0", "table_a_effect": "ret 4", "table_b_target": "0x00BB9FF0", "table_b_body_size": 52, "table_b_body_sha256": "951993E195C78990E4D56EBCF69E8B04DCAE0101EF3B4EE9F72D5C6A00B7F22A", "table_b_effect": "subtracts second float argument from object fields +0xC8 and +0xD0", "callback_argument_forwarding": "FUN_00BB00C0 forwards its second argument to each secondary-array object's slot +0x0C; direct caller FUN_00BB2280 supplies a float argument", "field_and_object_semantics": "unknown"}
+    },
+    "raw_instruction_evidence": [
+      {"va": "0x00BADA00", "bytes": "8B 07", "disassembly": "mov eax,[edi]"},
+      {"va": "0x00BADA02", "bytes": "8B 90 00 07 00 00", "disassembly": "mov edx,[eax+0x700]"},
+      {"va": "0x00BADA08", "bytes": "6A 02", "disassembly": "push 2"},
+      {"va": "0x00BADA0A", "bytes": "8D 4D C8", "disassembly": "lea ecx,[ebp-0x38]"},
+      {"va": "0x00BADA0D", "bytes": "51", "disassembly": "push ecx"},
+      {"va": "0x00BADA0E", "bytes": "8B CF", "disassembly": "mov ecx,edi"},
+      {"va": "0x00BADA1A", "bytes": "FF D2", "disassembly": "call edx"},
+      {"va": "0x00BADE10", "bytes": "24 8F 3C 01", "disassembly": "and al,0x8f; cmp al,1"},
+      {"va": "0x00BADE45", "bytes": "8B 0F", "disassembly": "mov ecx,[edi]"},
+      {"va": "0x00BADE47", "bytes": "8D 04 9D 00 00 00 00 03 C8", "disassembly": "lea eax,[ebx*4]; add ecx,eax"},
+      {"va": "0x00BADE50", "bytes": "51", "disassembly": "push ecx (primary array slot address)"},
+      {"va": "0x00BADE51", "bytes": "8D 8E 54 05 00 00", "disassembly": "lea ecx,[esi+0x554]"},
+      {"va": "0x00BADE57", "bytes": "E8 A4 8D F8 FF", "disassembly": "call 0x00B36C00"},
+      {"va": "0x00BADE90", "bytes": "8B 01 8B 10 6A 01 FF D2", "disassembly": "load object's vtable slot 0; push 1; call slot"},
+      {"va": "0x00BADE98", "bytes": "6A 01 53 8B CF E8 2E FF E9 FF", "disassembly": "push count 1 and index EBX; ECX=EDI; call 0x00A4DDD0"},
+      {"va": "0x00BAD88E", "bytes": "8B 06 8B 4D F0 8D 1C BD 00 00 00 00 03 C3 50 81 C1 54 05 00 00 E8 58 93 F8 FF", "disassembly": "load primary data base from owner+0x524; compute slot address using EDI; push slot address; ECX=owner+0x554; call 0x00B36C00"},
+      {"va": "0x00BAD8D3", "bytes": "8B 0E 8B 0C 0B 85 C9 74 08 8B 11 8B 02 6A 01 FF D0", "disassembly": "load stale object from primary slot; if non-null load and call its vtable slot 0 with argument 1"},
+      {"va": "0x00BAD8E4", "bytes": "6A 01 57 8B CE E8 E2 04 EA FF", "disassembly": "push count 1 and index EDI; ECX=owner+0x524; call 0x00A4DDD0"},
+      {"va": "0x00BADC25", "bytes": "6A 08 68 D8 00 00 00 E8 4F 66 85 FF", "disassembly": "push 8; push 0xd8; call allocation helper 0x00404280"},
+      {"va": "0x00BADC3F", "bytes": "8B 4E 38 8B 55 E0 51 8B 4D F0 81 C2 B4 07 00 00 52", "disassembly": "load owner+0x38; push; derive owner-root+0x7b4; push; load candidate actor pointer; push"},
+      {"va": "0x00BADC57", "bytes": "8B C8 E8 42 0D 02 00", "disassembly": "ECX=allocated object; call 0x00BCE9A0"},
+      {"va": "0x00BADD8C", "bytes": "8B 55 F0 8B 82 5C 01 00 00 8B 80 20 01 00 00 8B 8E 30 05 00 00 8B 0C 99 83 E0 01 89 41 28", "disassembly": "candidate actor+0x120 bit 0 written to reconciled object+0x28"},
+      {"va": "0x011635C0", "bytes": "40 66 BD 00", "disassembly": "vtable slot 0 pointer = 0x00BD6640 (little endian)"}
+    ]
+  },
+  "cache_inputs": [
+    {"address": "0x00BAD550", "file": "knowledge/cache/decompiles/00BAD550.json", "sha256": "10B43CA8F9E9265B73F465DF6CC185411489574D5C988BA809667E6EB001C2FB"},
+    {"address": "0x00BAD960", "file": "knowledge/cache/decompiles/00BAD960.json", "sha256": "FD20E4B1954E0543F30C6A602A7A532EFF10E2F94829D271469259C8D4052530"},
+    {"address": "0x00BB00C0", "file": "knowledge/cache/decompiles/00BB00C0.json", "sha256": "A2FED82F1D52390E551D29073E6821477030C3D08B88D28161F969026E080FA1"},
+    {"address": "0x00BB2280", "file": "knowledge/cache/decompiles/00BB2280.json", "sha256": "4C627A1F1B3F3ED30439AC2B3C6ADFA184C9A6D7F62E1A06989254FBEE49D2A3"},
+    {"address": "0x00BCE750", "file": "knowledge/cache/decompiles/00BCE750.json", "sha256": "5E7F646C2C03AFD77A5C981EF723674ACF508B6B7E806A1F8F0BEDCE0B0C62AB"},
+    {"address": "0x00BCE9A0", "file": "knowledge/cache/decompiles/00BCE9A0.json", "sha256": "0E63D8485848A117EF670C689AFDDEE97CFD52515DCBB52E432FFC3DECCD957B"},
+    {"address": "0x00B36C00", "file": "knowledge/cache/decompiles/00B36C00.json", "sha256": "9750CDCE1E8D9DDEAE5A3A2E1CD6141494726FC5ACFA198BB98105BABCE2B955"},
+    {"address": "0x00A4DDD0", "file": "knowledge/cache/decompiles/00A4DDD0.json", "sha256": "FCB304B14DBE1FC004813002AE03E88052D31A59006C63CDD791B6D7CFA9C604"},
+    {"address": "0x00BD6640", "file": "knowledge/cache/decompiles/00BD6640.json", "sha256": "1B16A5F0B1A9A6D3E8E535D4A84517742F804DD212450DA543CD4E92D295E4A2"},
+    {"address": "0x00BCEB00", "file": "knowledge/cache/decompiles/00BCEB00.json", "sha256": "664EA8543F6772C7291A71FCD1428DD67485E194F5CFEFAE3F6FC250B32DB8F0"},
+    {"address": "0x004042E0", "file": "knowledge/cache/decompiles/004042E0.json", "sha256": "2148B35D13C565B82FE694E22EDD369B71EEFC45F91679698619581B2B0F3874"},
+    {"address": "0x00BB9FF0", "file": "knowledge/cache/decompiles/00BB9FF0.json", "sha256": "7DF53B880FB7DD4B85EB26776076FED4DC42A3A75023AA50658FE7AF4CB8F49A"}
+  ],
+  "wrapper": {
+    "va": "0x00BB00C0",
+    "indexed_caller": "0x00BB2280",
+    "caller_site": "0x00BB23C4",
+    "ordered_calls": ["0x00BAD550", "0x00BAD960"],
+    "secondary_array_data_offset": "+0x554",
+    "secondary_array_count_offset": "+0x558",
+    "iteration": "virtual slot +0x0C called with wrapper second argument"
+  },
+  "reconciliation_paths": [
+    {
+      "va": "0x00BAD550",
+      "candidate_source": "row pointers returned by 0x00AD9910 when owner +0x1C0 bit 0x80 is set; selector mode 1",
+      "primary_array_data_offset": "+0x524",
+      "primary_array_count_offset": "+0x528",
+      "match": "existing object +0x08 equals candidate row first DWORD",
+      "constructor": "0x00BCE750",
+      "constructor_vtable": "0x011635A8",
+      "new_object_size": "0x88",
+      "also_appends_new_object_to_secondary_array": true,
+      "stale_entry_calls_in_order": ["0x00B36C00(ECX=owner+0x554, stack target=&(owner+0x524)[i])", "non-null current object vtable slot 0 with argument 1", "0x00A4DDD0(ECX=owner+0x524, index=i, count=1)"]
+    },
+    {
+      "va": "0x00BAD960",
+      "candidate_source": "global pointer 0x0145F628 resolves by constructor/vtable crosswalk to DishonoredPlayerPawn (details in EXP-0189). Its vtable slot +0x700 receives a local array descriptor and stack arguments 2,0; FUN_00AB6960 collects filtered linked nodes from Pawn +0x9D4. FUN_00BAD960 also walks Pawn array data +0xAC8/count +0xACC, calls 0x00B599B0 for each element and appends non-null returns via 0x00BA1330; each candidate is filtered through 0x00BA6E50. Semantic element types and category meanings remain unknown.",
+      "candidate_actor_pointer_offset": "+0x15C",
+      "primary_array_data_offset": "+0x530",
+      "primary_array_count_offset": "+0x534",
+      "match": "existing object +0x08 equals candidate actor pointer at candidate +0x15C",
+      "constructor": "0x00BCE9A0",
+      "constructor_vtable": "0x011635C0",
+      "new_object_size": "0xD8 (raw allocation call setup; differs from FUN_00BAD550's 0x88)",
+      "constructor_arguments_observed": ["candidate actor pointer", "owner root +0x7B4", "owner +0x38"],
+      "also_appends_new_object_to_secondary_array": true,
+      "observed_field_update": "object +0x28 = candidate actor +0x120 bit 0",
+      "stale_candidate_condition": "((byte)(object +0x1C) & 0x8F) == 1",
+      "stale_entry_calls_in_order": ["0x00B36C00(ECX=owner+0x554, stack target=&(owner+0x530)[i])", "object vtable slot 0 with argument 1", "0x00A4DDD0(ECX=owner+0x530, index=i, count=1)"],
+      "slot_0_target": "0x00BD6640",
+      "slot_0_effect": "calls 0x00BCEB00, then on argument bit 0 delegates this to 0x004042E0; global virtual callback semantics unknown"
+    }
+  ],
+  "generic_helper_observations": {
+    "0x00B36C00": "compares *array[i] with *target; compacts matching pointer and decrements array count",
+    "0x00A4DDD0": "removes indexed entries from a pointer array and adjusts count/capacity"
+  },
+  "global_pointer_cross_reference": {
+    "pointer": "0x0145F628",
+    "other_references": ["FUN_00AD0E00", "FUN_00AD1080", "FUN_00AD1320", "FUN_00AD4F60"],
+    "limit": "Shared global-pointer reference only; does not prove that slot +0x700, object array +0xAC8/+0xACC, and notification listener arrays are the same data or subsystem."
+  },
+  "claim_limits": [
+    "The cleanup call argument roles and slot-0 target are confirmed from raw x86/vtable; the global virtual callback's semantic effect remains unknown.",
+    "The Pawn vtable and collection mechanisms are resolved in EXP-0189; semantic element types, category meaning, and names for the primary/secondary arrays remain unknown.",
+    "Distinct constructor/vtable and dataflow support separate paths, not named gameplay object types.",
+    "The +0x554/+0x558 slot +0x0C callback target differs across the two observed vtables: one is a no-op stub and one subtracts the forwarded float argument from fields +0xC8/+0xD0; field/object meanings are unknown.",
+    "The two vtables share table entries by position, but this does not establish inheritance.",
+    "No runtime behavior, visible marker effect, or specific retail Kismet linkage was observed."
+  ],
+  "claim_status": {
+    "exact_build_calls_and_offsets": "observed",
+    "different_candidate_sources_and_match_keys": "observed",
+    "shared_secondary_array_role": "observed",
+    "object_family_semantics": "unknown",
+    "cleanup_static_call_sequence": "observed",
+    "cleanup_global_virtual_callback_semantics": "unknown",
+    "runtime_and_kismet_linkage": "unknown"
+  },
+  "follow_up_evidence": "EXP-0189-player-pawn-candidate-collector.json"
+}

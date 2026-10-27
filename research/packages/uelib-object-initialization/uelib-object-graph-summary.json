@@ -1,0 +1,41 @@
+{
+  "input_object_rows": 3110949,
+  "input_package_count": 904,
+  "duplicate_package_indices": 0,
+  "class_catalog_rows": 133660,
+  "inheritance_relation_rows": 5355,
+  "property_type_reference_rows": 3896,
+  "initialized_relation_rows_rebuilt_from_object_fields": 6413586,
+  "initialized_relation_counts_rebuilt": {
+    "archetype": 395709,
+    "class": 2880410,
+    "default_object": 43205,
+    "next_field": 29152,
+    "outer": 3046617,
+    "property_type": 13138,
+    "super": 5355
+  },
+  "initialized_edge_jsonl_rows": 6413586,
+  "initialized_edge_jsonl_relation_counts": {
+    "archetype": 395709,
+    "class": 2880410,
+    "default_object": 43205,
+    "next_field": 29152,
+    "outer": 3046617,
+    "property_type": 13138,
+    "super": 5355
+  },
+  "initialized_edges_missing_source_package_index": 0,
+  "initialized_edges_source_path_mismatches": 0,
+  "default_property_reference_mentions": 288,
+  "distinct_formatted_reference_relation_rows": 288,
+  "distinct_package_reference_target_pairs": 283,
+  "reference_mentions_matching_same_package_object_path": 288,
+  "reference_mentions_matching_same_package_path_and_export_class": 288,
+  "distinct_unmatched_reference_relation_rows": 0,
+  "limits": [
+    "UELib API/parser output only; no complete UE3 payload or runtime semantics claim.",
+    "Default-property references are text mentions extracted from formatted values and are not structured serialized references.",
+    "Same-package path and class counts are internal parser-output consistency checks; duplicate formatted paths are retained as counts."
+  ]
+}

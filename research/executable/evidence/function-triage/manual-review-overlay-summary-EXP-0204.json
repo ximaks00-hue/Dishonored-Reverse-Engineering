@@ -1,0 +1,46 @@
+{
+  "experiment": "EXP-0204",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "functions_indexed": 72437,
+  "prior_cumulative_reviewed": 234,
+  "new_body_reviews": 5,
+  "cumulative_reviewed": 239,
+  "whole_index_reviewed_percent": 0.329942,
+  "exp0139_candidate_target_set": 254,
+  "exp0139_reviewed": 148,
+  "exp0139_remaining": 106,
+  "fully_decoded_bodies": 5,
+  "normalized_groups": {
+    "distinct_67_byte_target": [
+      "007C3BC0"
+    ],
+    "distinct_223_byte_caller": [
+      "007C5910"
+    ],
+    "distinct_417_byte_caller": [
+      "007C5D40"
+    ],
+    "distinct_311_byte_caller": [
+      "007C3D60"
+    ],
+    "distinct_109_byte_caller": [
+      "007C4000"
+    ]
+  },
+  "direct_call_edges_observed": 19,
+  "callgraph_incoming_rows_007C3BC0": 11,
+  "callgraph_rows_00428B50_limit_response": 200,
+  "callgraph_endpoint_cap_rows": 200,
+  "semantic_claims_added": 0,
+  "runtime_verified_added": 0,
+  "functions_csv_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "previous_cumulative_csv_sha256": "6240A29DC41982EB37C8D22BF2ED09A6DF7A3B6671D3B74343854294CE5628DA",
+  "evidence_csv_sha256": "84E02F5D96970D656F4B71FC90254F6B36DC0496F23378184C667DDE65EA9606",
+  "cumulative_csv_sha256": "7FBE2FC7EBCF95C6B1F10688E6ED79C6037A519C74458F9BBE3BD6BABE3EEB11",
+  "tooling": {
+    "pefile": "2024.8.26",
+    "python": "3.12",
+    "capstone": "5.0.7"
+  }
+}

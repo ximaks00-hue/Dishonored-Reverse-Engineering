@@ -1,0 +1,225 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "akmap_files": 4,
+  "candidate_fields_audited": 22905,
+  "method": "Interpret each post-EXP-0116 candidate triplet DWORD as a byte offset relative to the string-region start at file byte 8; record bounds, exact token starts, and NUL-terminated suffixes.",
+  "files": [
+    {
+      "source_akmap": "DishonoredGame/CookedPCConsole/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 59830,
+      "sha256": "D8B257F8689A4F66D32BD0E563E73FF9BE65EC29F9B1B63B837D8A2CE739CC69",
+      "candidate_string_pool_file_range": [
+        8,
+        28706
+      ],
+      "candidate_string_pool_bytes": 28698,
+      "post_string_bytes": 31124,
+      "post_string_first_four_u32_raw": [
+        12,
+        160,
+        0,
+        0
+      ],
+      "distinct_exact_upk_basename_string_values": 160,
+      "raw_header_word_1_equals_upk_basename_match_count": true,
+      "candidate_group_width_bytes": 12,
+      "candidate_group_count": 2592,
+      "trailing_u32_after_candidate_groups": [
+        3553
+      ],
+      "trailing_u32_offset_audit": [
+        {
+          "raw_u32": 3553,
+          "in_string_region_bounds": true,
+          "candidate_file_offset": 3561,
+          "target_suffix": "BK_70D947D44D90C9FAF55C35A9554EA8A8",
+          "target_is_token_start": true
+        }
+      ],
+      "field_offset_checks": [
+        {
+          "in_bounds": 2592,
+          "token_start": 2438,
+          "suffix_nonempty_printable": 2588,
+          "empty": 4
+        },
+        {
+          "in_bounds": 2592,
+          "token_start": 2591,
+          "suffix_nonempty_printable": 2591,
+          "empty": 1
+        },
+        {
+          "in_bounds": 2592,
+          "token_start": 2438,
+          "suffix_nonempty_printable": 2588,
+          "empty": 4
+        }
+      ],
+      "limitations": [
+        "Values were tested as offsets relative to byte 8; this tests string-pool addressability, not field semantics.",
+        "A value at a token start may resolve to a token; a value inside a token resolves only to its suffix.",
+        "The 12-byte grouping is carried forward from EXP-0116 and remains a candidate record boundary.",
+        "No resource dependency, package selection, or runtime load behavior is established."
+      ]
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC05/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 18205,
+      "sha256": "A0D76E460477D484FF2112648A527D2777320D81B6779215864AE7420D5AE147",
+      "candidate_string_pool_file_range": [
+        8,
+        7473
+      ],
+      "candidate_string_pool_bytes": 7465,
+      "post_string_bytes": 10732,
+      "post_string_first_four_u32_raw": [
+        12,
+        61,
+        0,
+        0
+      ],
+      "distinct_exact_upk_basename_string_values": 61,
+      "raw_header_word_1_equals_upk_basename_match_count": true,
+      "candidate_group_width_bytes": 12,
+      "candidate_group_count": 893,
+      "trailing_u32_after_candidate_groups": [],
+      "trailing_u32_offset_audit": [],
+      "field_offset_checks": [
+        {
+          "in_bounds": 893,
+          "token_start": 837,
+          "suffix_nonempty_printable": 890,
+          "empty": 3
+        },
+        {
+          "in_bounds": 893,
+          "token_start": 892,
+          "suffix_nonempty_printable": 892,
+          "empty": 1
+        },
+        {
+          "in_bounds": 893,
+          "token_start": 837,
+          "suffix_nonempty_printable": 890,
+          "empty": 3
+        }
+      ],
+      "limitations": [
+        "Values were tested as offsets relative to byte 8; this tests string-pool addressability, not field semantics.",
+        "A value at a token start may resolve to a token; a value inside a token resolves only to its suffix.",
+        "The 12-byte grouping is carried forward from EXP-0116 and remains a candidate record boundary.",
+        "No resource dependency, package selection, or runtime load behavior is established."
+      ]
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC06/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 35167,
+      "sha256": "D600171453DA7257A2EEFD56F836197A0AB7A2A11B1B90A21309EA8FC68C9341",
+      "candidate_string_pool_file_range": [
+        8,
+        16455
+      ],
+      "candidate_string_pool_bytes": 16447,
+      "post_string_bytes": 18712,
+      "post_string_first_four_u32_raw": [
+        12,
+        100,
+        0,
+        0
+      ],
+      "distinct_exact_upk_basename_string_values": 100,
+      "raw_header_word_1_equals_upk_basename_match_count": true,
+      "candidate_group_width_bytes": 12,
+      "candidate_group_count": 1558,
+      "trailing_u32_after_candidate_groups": [],
+      "trailing_u32_offset_audit": [],
+      "field_offset_checks": [
+        {
+          "in_bounds": 1558,
+          "token_start": 1461,
+          "suffix_nonempty_printable": 1557,
+          "empty": 1
+        },
+        {
+          "in_bounds": 1558,
+          "token_start": 1557,
+          "suffix_nonempty_printable": 1557,
+          "empty": 1
+        },
+        {
+          "in_bounds": 1558,
+          "token_start": 1461,
+          "suffix_nonempty_printable": 1557,
+          "empty": 1
+        }
+      ],
+      "limitations": [
+        "Values were tested as offsets relative to byte 8; this tests string-pool addressability, not field semantics.",
+        "A value at a token start may resolve to a token; a value inside a token resolves only to its suffix.",
+        "The 12-byte grouping is carried forward from EXP-0116 and remains a candidate record boundary.",
+        "No resource dependency, package selection, or runtime load behavior is established."
+      ]
+    },
+    {
+      "source_akmap": "DishonoredGame/DLC/PCConsole/DLC07/MISSIONAUDIOCACHINGLIST.AKMAP",
+      "bytes": 59830,
+      "sha256": "D8B257F8689A4F66D32BD0E563E73FF9BE65EC29F9B1B63B837D8A2CE739CC69",
+      "candidate_string_pool_file_range": [
+        8,
+        28706
+      ],
+      "candidate_string_pool_bytes": 28698,
+      "post_string_bytes": 31124,
+      "post_string_first_four_u32_raw": [
+        12,
+        160,
+        0,
+        0
+      ],
+      "distinct_exact_upk_basename_string_values": 160,
+      "raw_header_word_1_equals_upk_basename_match_count": true,
+      "candidate_group_width_bytes": 12,
+      "candidate_group_count": 2592,
+      "trailing_u32_after_candidate_groups": [
+        3553
+      ],
+      "trailing_u32_offset_audit": [
+        {
+          "raw_u32": 3553,
+          "in_string_region_bounds": true,
+          "candidate_file_offset": 3561,
+          "target_suffix": "BK_70D947D44D90C9FAF55C35A9554EA8A8",
+          "target_is_token_start": true
+        }
+      ],
+      "field_offset_checks": [
+        {
+          "in_bounds": 2592,
+          "token_start": 2438,
+          "suffix_nonempty_printable": 2588,
+          "empty": 4
+        },
+        {
+          "in_bounds": 2592,
+          "token_start": 2591,
+          "suffix_nonempty_printable": 2591,
+          "empty": 1
+        },
+        {
+          "in_bounds": 2592,
+          "token_start": 2438,
+          "suffix_nonempty_printable": 2588,
+          "empty": 4
+        }
+      ],
+      "limitations": [
+        "Values were tested as offsets relative to byte 8; this tests string-pool addressability, not field semantics.",
+        "A value at a token start may resolve to a token; a value inside a token resolves only to its suffix.",
+        "The 12-byte grouping is carried forward from EXP-0116 and remains a candidate record boundary.",
+        "No resource dependency, package selection, or runtime load behavior is established."
+      ]
+    }
+  ]
+}

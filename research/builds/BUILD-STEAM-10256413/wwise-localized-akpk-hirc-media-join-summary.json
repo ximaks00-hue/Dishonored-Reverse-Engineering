@@ -1,0 +1,27 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "akpk_entries_table_sha256": "4FD1765639F13C09022F6563DD0C2D25E2E6FF09F52E025717A56B7810FBF38F",
+  "akpk_entries_table_sha256_verified": "4FD1765639F13C09022F6563DD0C2D25E2E6FF09F52E025717A56B7810FBF38F",
+  "hirc_edges_sha256": "C987A6BA09D178386A080E240B887F72733E4434150A811981407BDF9429EE82",
+  "hirc_bank_occurrences_sha256": "E2484E4D252521BCF84366C542FF45698B60BB77693C1C314B419876F50150B5",
+  "wem_occurrences_sha256": "9ED2184D19E11E310BBD42D8ADB33119160A178C5393941EF33FF15DE7B331CA",
+  "wem_decode_results_sha256": "E23D325BD32CF9E1E0F0270DBFDED03C10E9371517D7876EC2729EFCBD062298",
+  "hirc_sound_media_edge_rows": 31637,
+  "distinct_hirc_bank_payloads_with_edges": 2559,
+  "unique_bank_sound_media_edges_by_status": {
+    "no_wem_resource_id_match": 24205,
+    "same_source_resource_id_candidate": 7432
+  },
+  "candidate_output_rows_by_status": {
+    "no_wem_resource_id_match": 0,
+    "same_source_resource_id_candidate": 12112
+  },
+  "wem_occurrence_keys": 12112,
+  "wem_occurrence_keys_joined_one_to_one": 12112,
+  "distinct_wem_resource_ids": 7368,
+  "distinct_wem_payloads_joined": 7213,
+  "unmatched_media_edges_with_file_id_matching_any_wem_id": 0,
+  "output_rows": 52692,
+  "interpretation_limit": "Equal resource/media IDs in an exact source container are static parser/catalog candidates only. Cross-container ID matches are separately labeled; no result establishes original Wwise semantics, runtime bank selection, event execution, or playback."
+}

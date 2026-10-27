@@ -1,0 +1,114 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "class_catalog_sha256": "34DCB7977F4ADF1BE00B1E5F2A9B0A01C5BD82EA55ED9D1CA434E7617FD025A9",
+  "root_dispatcher_address": "009DD640",
+  "root_dispatcher_cache_sha256": "E84779D1B04C070B2FA7F61F9B7C75F37D6C0776BF97863A0CA3606CE661C355",
+  "root_dispatcher_unique_direct_callee_count": 16,
+  "root_dispatcher_unique_direct_callees": [
+    "0045D6D0",
+    "004811B0",
+    "005D5440",
+    "006067A0",
+    "0095A300",
+    "0096DAB0",
+    "0096E190",
+    "00970A10",
+    "00971750",
+    "0099A100",
+    "009A5490",
+    "009AE330",
+    "009B0FC0",
+    "009C46F0",
+    "009E5670",
+    "00A0DBF0"
+  ],
+  "root_sets_and_clears_flag_mask_0x200_in_decompiler_output": true,
+  "selected_group_functions_directly_called": [
+    "006067A0",
+    "0096DAB0",
+    "00970A10",
+    "0099A100",
+    "009AE330",
+    "00A0DBF0",
+    "004811B0"
+  ],
+  "selected_registration_group_count": 7,
+  "class_table_key_pairs": 332,
+  "distinct_function_key_pairs": 332,
+  "distinct_class_key_strings": 332,
+  "exact_uelib_class_path_matches": 332,
+  "rows_across_matched_uelib_class_catalog": 11141,
+  "distinct_matched_uelib_packages": 844,
+  "groups": {
+    "006067A0": {
+      "decompiler_cache_sha256": "370844BDA5CE510E5A1CCA7883A8B45F281E8A96A17F067522433FCC97203B35",
+      "pseudocode_sha256": "D8C6D1C306D313737EDDAF27C6D3C8727B245B157CB2BA287E3E3CF3812D9DAD",
+      "class_table_key_pairs": 174,
+      "unique_exact_uelib_class_path_keys": 174,
+      "uelib_class_catalog_rows": 9319,
+      "direct_helper_pairs": 0,
+      "wrapper_helper_pairs": 174
+    },
+    "0096DAB0": {
+      "decompiler_cache_sha256": "4A60D5689B237019BE97FD79E9E1C402F52C94229078245174070FFA15F1946A",
+      "pseudocode_sha256": "F8A568F57C12F092F5849C125C4A82F30FC17D8084C088242ED4B65126518797",
+      "class_table_key_pairs": 11,
+      "unique_exact_uelib_class_path_keys": 11,
+      "uelib_class_catalog_rows": 12,
+      "direct_helper_pairs": 11,
+      "wrapper_helper_pairs": 0
+    },
+    "00970A10": {
+      "decompiler_cache_sha256": "4D8AA55C94AB32E4F1C8BA310F647F46DA3BC0B9FDF3ECA5EE466783FBA304AE",
+      "pseudocode_sha256": "637496D937965DB290C577D56E66AC8E80C023ED607F11F240AE7A8E968D0610",
+      "class_table_key_pairs": 1,
+      "unique_exact_uelib_class_path_keys": 1,
+      "uelib_class_catalog_rows": 1,
+      "direct_helper_pairs": 1,
+      "wrapper_helper_pairs": 0
+    },
+    "0099A100": {
+      "decompiler_cache_sha256": "D64EBE911DD48715D8FFD07223DA205133D50882F817250A6F3949D54BBBBAE4",
+      "pseudocode_sha256": "90E96BB31F0E3AB54713710B19D2193DF392269C2813D38C2F6A119D8FC52CC6",
+      "class_table_key_pairs": 5,
+      "unique_exact_uelib_class_path_keys": 5,
+      "uelib_class_catalog_rows": 5,
+      "direct_helper_pairs": 5,
+      "wrapper_helper_pairs": 0
+    },
+    "009AE330": {
+      "decompiler_cache_sha256": "86900225F6D70CC91E42AFD07CAEBD1CFC1D91A108E058E944F1E4A48E6CDEA7",
+      "pseudocode_sha256": "FB8E06B80DA5296435E48221E68DFF6BCEEDFD12F467E25DD81F98F3FCAA798A",
+      "class_table_key_pairs": 1,
+      "unique_exact_uelib_class_path_keys": 1,
+      "uelib_class_catalog_rows": 1,
+      "direct_helper_pairs": 1,
+      "wrapper_helper_pairs": 0
+    },
+    "00A0DBF0": {
+      "decompiler_cache_sha256": "A32151015AE126BCEE70557CF5AB1C627367F96DBCA4CD9A1D344A7F3017D587",
+      "pseudocode_sha256": "0E2F3CE2BFBD2DF4D572A7C056BFF125F294956F2BFC88C9BB97A46D475AC360",
+      "class_table_key_pairs": 135,
+      "unique_exact_uelib_class_path_keys": 135,
+      "uelib_class_catalog_rows": 1798,
+      "direct_helper_pairs": 51,
+      "wrapper_helper_pairs": 84
+    },
+    "004811B0": {
+      "decompiler_cache_sha256": "E5E7A41A28B86A7FD3D5F191E893441B99F79E9C767C32BC3F7A75A68795132E",
+      "pseudocode_sha256": "10A218D9760A75A363FDFE548053E6DE816C318EA8C0565A52BD889AD85677F9",
+      "class_table_key_pairs": 5,
+      "unique_exact_uelib_class_path_keys": 5,
+      "uelib_class_catalog_rows": 5,
+      "direct_helper_pairs": 5,
+      "wrapper_helper_pairs": 0
+    }
+  },
+  "limitations": [
+    "Pairs are extracted from exact-build Ghidra decompiler output with explicit local-expression/helper-call patterns; pseudocode is not original source.",
+    "UELib Class-path matching is exact label evidence. It does not prove object identity, table layout, token lookup, runtime invocation, or handler reachability.",
+    "The group census covers the seven listed key/table bodies called directly by FUN_009DD640; it does not claim all executable registration paths or every NativeToken function.",
+    "Pointer-symbol suffixes are retained as decompiler symbol metadata and were not used to infer table lengths or enumerate every handler in a class table."
+  ]
+}

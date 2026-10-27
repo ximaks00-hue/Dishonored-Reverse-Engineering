@@ -1,0 +1,69 @@
+{
+  "record": "EXP-0185 Boyle archive UpdateTaskTarget name/path crosswalk",
+  "retail_target": {
+    "steam_app_id": "217980",
+    "build_id": "10256413",
+    "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+    "package_relative_path": "DishonoredGame/CookedPCConsole/L_Boyle_Int_Script.upk",
+    "package_sha256": "17BE4C7BD18F4E400DC053E0FCF61590240B38B0C3666F2F224676FFDFACCB86"
+  },
+  "archive_source": {
+    "artifact": "L_Boyle_Int_Script_links.csv",
+    "local_path": "D:/Dishonored/40_BROWSER_PORT/repo/experiments/campaign_typed_links/link_details/L_Boyle_Int_Script_links.csv",
+    "sha256": "14F5B16FA8808071544B2E13D0E5B9E952F8D16AE061D8E9BB7CAFDDF6B155C0",
+    "property_rows": 72,
+    "distinct_update_task_target_objects": 24,
+    "package_sha256": null,
+    "identity_limit": "original archive UPK hash/build identity unavailable"
+  },
+  "retail_catalog": {
+    "artifact": "boyle-int-update-task-target-exports.csv",
+    "sha256": "9192C22D9CF66F10D45331A5CBB76C87930C933EB771F874032888A0EA649B7E",
+    "distinct_objects_in_outer_path": 25,
+    "outer_path": "TheWorld.PersistentLevel.Main_Sequence.Boyle_Objectives",
+    "source_index_conventions": {
+      "uelib": "tableIndex",
+      "ue_explorer": "export_index",
+      "warning": "numeric indices differ and must not be used as cross-source identity"
+    }
+  },
+  "join": {
+    "keys": ["object_class", "object_name", "full_outer_path"],
+    "archive_names_matched_to_retail": 24,
+    "archive_names_unmatched": [],
+    "retail_only_names": ["DisSeqAct_UpdateTaskTarget_41"],
+    "mapping_strength": "exact class/name/outer-path match; serialized property equivalence not established"
+  },
+  "joined_artifact": {
+    "path": "research/packages/kismet-update-task-target/boyle-int-archive-retail-name-crosswalk.csv",
+    "sha256": "B0CF9E5F18B9B62C109A44A6BBD504E93D50A05855B95B674B8995BE4281CFC8",
+    "rows": 24,
+    "columns_include": ["archive_export_index", "archive_task_linked_variables", "archive_target_linked_variables", "archive_output_edges", "retail_uelib_table_index", "retail_ue_explorer_export_index", "retail_serial_offset", "retail_serial_size", "retail_package_sha256"],
+    "archive_rows_with_task_and_target_link_groups": 24,
+    "archive_rows_with_nonempty_task_link_refs": 23,
+    "archive_rows_with_nonempty_target_link_refs": 23,
+    "archive_rows_with_both_nonempty_link_refs": 22,
+    "archive_rows_with_output_links": 10,
+    "archive_output_link_pairs": 13
+  },
+  "archive_only_edge_examples": [
+    {"source":"DisSeqAct_UpdateTaskTarget_18","destinations":["SeqAct_ActivateRemoteEvent_46:input0","DisSeqCond_CheckStoryFlag_14:input0"]},
+    {"source":"DisSeqAct_UpdateTaskTarget_19","destinations":["SeqAct_ActivateRemoteEvent_46:input0","DisSeqCond_CheckStoryFlag_14:input0"]},
+    {"source":"DisSeqAct_UpdateTaskTarget_21","destinations":["DisSeqCond_CheckStoryFlag_26:input0"]},
+    {"source":"DisSeqAct_UpdateTaskTarget_22","destinations":["DisSeqCond_CheckStoryFlag_25:input0"]},
+    {"source":"DisSeqAct_UpdateTaskTarget_23","destinations":["DisSeqCond_CheckStoryFlag_11:input0"]}
+  ],
+  "claim_status": {
+    "archive_object_names_and_links": "observed in archive CSV",
+    "retail_export_name_and_outer_path": "observed in exact-hash retail export catalog",
+    "archive_to_retail_node_identity": "inferred candidate from class/name/outer path",
+    "retail_property_and_edge_equivalence": "unknown"
+  },
+  "limitations": [
+    "Archive source package SHA-256 and exact source build are unavailable.",
+    "No retail property payload or retail Kismet links were recovered in this experiment.",
+    "Archive link metadata must not be merged into the retail evidence graph without direct corroboration.",
+    "Export indices are inventory-specific and not cross-source identities.",
+    "No native handler execution or runtime behavior was observed."
+  ]
+}

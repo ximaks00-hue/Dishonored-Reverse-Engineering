@@ -1,0 +1,166 @@
+{
+  "record": "EXP-0182 task-target layout and save-data crosswalk",
+  "target": {
+    "steam_app_id": "217980",
+    "build_id": "10256413",
+    "exe_relative_path": "Binaries/Win32/Dishonored.exe",
+    "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+    "package_relative_path": "DishonoredGame/CookedPCConsole/DishonoredGame.upk",
+    "package_sha256": "EC64BD36BE12D7063199CF2722A2B8F280100F1ED3F3C63404AC34980D7141E2",
+    "package_summary": {
+      "package_version": "801/30",
+      "engine_version": 9411,
+      "name_count": 24432,
+      "export_count": 30049,
+      "import_count": 652
+    }
+  },
+  "exact_build_observations": {
+    "task_target_descriptor_accessor": {
+      "va": "0x00B27E60",
+      "bytes": "8D 41 68 C3",
+      "disassembly": "lea eax, [ecx+0x68]; ret",
+      "claim": "returns this+0x68"
+    },
+    "target_row_stride": "0x24",
+    "task_id_offset_candidate": {
+      "getter_va": "0x009C5AF0",
+      "bytes": "8B 41 64 C3",
+      "disassembly": "mov eax, [ecx+0x64]; ret"
+    },
+    "shared_plus_64_getter_callers": ["0x00A11780", "0x00943490", "0x0094B880"],
+    "shared_plus_64_getter_caveat": "two additional gameplay-logic callers use the result as a nonzero gate; do not infer a universal semantic name from FUN_009C5AF0 alone",
+    "task_id_lookup": {
+      "function_va": "0x00ACC160",
+      "summary": "scans task-like objects and returns the first whose DWORD at +0x64 equals the supplied ID"
+    },
+    "update_task_target_candidate": {
+      "function_va": "0x00BA84D0",
+      "size": 1052,
+      "action_offsets_read": ["+0xFC", "+0x100", "+0x104", "+0x110"],
+      "record_offsets_written": ["+0x00", "+0x04", "+0x10", "+0x1C", "+0x20"],
+      "record_stride": "0x24"
+    },
+    "save_data_associated_functions": [
+      {
+        "va": "0x00A11780",
+        "literal_va": "0x010D623E",
+        "literal_file_offset": "0x00CD4C3E",
+        "virtual_slot": "+0x138"
+      },
+      {
+        "va": "0x00A0BA70",
+        "literal_va": "0x010D626E",
+        "literal_file_offset": "0x00CD4C6E",
+        "virtual_slot": "+0x138"
+      }
+    ],
+    "ambiguous_get_targets_candidate": {
+      "va": "0x00A42290",
+      "bytes": "8D 41 64 C3",
+      "disassembly": "lea eax, [ecx+0x64]; ret",
+      "assessment": "does not return the +0x68 task-target descriptor; external symbol transfer remains unresolved"
+    }
+  },
+  "exact_build_package_export_list": {
+    "artifact": "dishonoredgame.list.txt",
+    "local_path": "D:/Dishonored/50_THIRD_PERSON_MOD/analysis/dumps/dishonoredgame.list.txt",
+    "artifact_sha256": "CB5BBFCAC689BDD8A4246E293D4CFDACB6048E617F54DC6736A193BFBD49B055",
+    "scope": "reflected object/member names and property types only; no native offsets or runtime values",
+    "members": [
+      {"owner": "DishonoredTask_Base", "name": "m_TaskID", "type": "IntProperty"},
+      {"owner": "DishonoredTask_Base", "name": "m_Targets", "type": "ArrayProperty"},
+      {"owner": "DisTaskTargetsSaveData", "name": "m_TaskID", "type": "IntProperty"},
+      {"owner": "DisTaskTargetsSaveData", "name": "m_Targets", "type": "ArrayProperty"},
+      {"owner": "DisTaskTarget", "name": "m_pActor", "type": "ObjectProperty"},
+      {"owner": "DisTaskTarget", "name": "m_TargetNameLocFile", "type": "StrProperty"},
+      {"owner": "DisTaskTarget", "name": "m_TargetNameLocSection", "type": "StrProperty"},
+      {"owner": "DisTaskTarget", "name": "m_VanishPreset", "type": "ByteProperty"},
+      {"owner": "DisTaskTarget", "name": "m_bOptional", "type": "BoolProperty"},
+      {"owner": "DisSeqAct_UpdateTaskTarget", "name": "m_TargetIndex", "type": "IntProperty"},
+      {"owner": "DisSeqAct_UpdateTaskTarget", "name": "m_pTargetActor", "type": "ObjectProperty"},
+      {"owner": "DisSeqAct_UpdateTaskTarget", "name": "m_TargetName", "type": "StrProperty"},
+      {"owner": "DisSeqAct_UpdateTaskTarget", "name": "m_MarkerVanishPreset", "type": "ByteProperty"}
+    ],
+    "tooling_limit": "compressed package object decompilation was unavailable; export-list names/types do not reveal native offsets",
+    "source_rows": [
+      {"line": 9513, "text": "#9323 StructProperty DishonoredTask_Base:m_Targets.m_Targets"},
+      {"line": 9514, "text": "#9324 BoolProperty DishonoredTask_Base:DisTaskTarget.m_bOptional"},
+      {"line": 9515, "text": "#9325 ByteProperty DishonoredTask_Base:DisTaskTarget.m_VanishPreset"},
+      {"line": 9516, "text": "#9326 StrProperty DishonoredTask_Base:DisTaskTarget.m_TargetNameLocSection"},
+      {"line": 9517, "text": "#9327 StrProperty DishonoredTask_Base:DisTaskTarget.m_TargetNameLocFile"},
+      {"line": 9518, "text": "#9328 ObjectProperty DishonoredTask_Base:DisTaskTarget.m_pActor"},
+      {"line": 9519, "text": "#9329 ScriptStruct DishonoredTask_Base:DisTaskTarget"},
+      {"line": 9520, "text": "#9330 StructProperty DishonoredTask_Base:DisTaskTargetsSaveData.m_Targets.m_Targets"},
+      {"line": 9521, "text": "#9331 ArrayProperty DishonoredTask_Base:DisTaskTargetsSaveData.m_Targets"},
+      {"line": 9522, "text": "#9332 IntProperty DishonoredTask_Base:DisTaskTargetsSaveData.m_TaskID"},
+      {"line": 9523, "text": "#9333 ScriptStruct DishonoredTask_Base:DisTaskTargetsSaveData"},
+      {"line": 9525, "text": "#9335 ArrayProperty DishonoredTask_Base:m_Targets"},
+      {"line": 9526, "text": "#9336 IntProperty DishonoredTask_Base:m_TaskID"},
+      {"line": 11679, "text": "#11489 ByteProperty DisSeqAct_UpdateTaskTarget:m_MarkerVanishPreset"},
+      {"line": 11680, "text": "#11490 StrProperty DisSeqAct_UpdateTaskTarget:m_TargetName"},
+      {"line": 11681, "text": "#11491 ObjectProperty DisSeqAct_UpdateTaskTarget:m_pTargetActor"},
+      {"line": 11682, "text": "#11492 IntProperty DisSeqAct_UpdateTaskTarget:m_TargetIndex"}
+    ]
+  },
+  "external_crosswalk": {
+    "repository": "https://github.com/ectrc/dishonoredrecompiled",
+    "local_repository": "D:/Dishonored/10_EDITOR_RESTORATION/history/attempt-2_EditorWork_2026-10-08/dishonoredrecompiled",
+    "commit": "e7829390fa1c2fc7c200357e9de695ad4c613527",
+    "version_scope": "README identifies retail 2013 / engine 9411 as layout target; symbolized 2012 QA is donor only",
+    "source_sha256": {
+      "README.md": "2C9E930C02A42E8A1639C34C79A48051CBAE61E7827F1928846EECE9F5CAA66E",
+      "source/Development/Src/DishonoredGame/Inc/DishonoredGameObjectivesClasses.h": "F5153AB3CF81341C94ADF6DE6B773721DED71E73CA22D45CAF586461EEC7979E",
+      "source/Development/Src/DishonoredGame/Inc/DishonoredGameLayouts.h": "F52C10720197B894203BC953DE4BE931634340CA2DFB4AF70D8B82473333F4D0",
+      "resources/docs/types/script_delta_2012_2013.md": "867269850FDC29BA1394A28E29F799E77530C437B02A0B49C357BF72FE4759B2",
+      "source/Development/Src/DishonoredGame/Src/dissavegame.cpp": "5EA65D0BC7ECFD77DE9D671C2E5F133165F8D20F0C1BF9B4742AD344071C3A68",
+      "resources/docs/symbols/match_2012_2013.csv": "06164572249FD3E2477F1C404B2AF6A27CACF83ACECB8C82DB08FCEDE037B330"
+    },
+    "layout": {
+      "task": {"class": "UDishonoredTask_Base", "size": 124, "m_TaskID": "0x64", "m_Targets": "0x68"},
+      "target_record": {
+        "struct": "FDisTaskTarget",
+        "size": "0x24",
+        "fields": {
+          "m_pActor": "0x00",
+          "m_TargetNameLocFile": "0x04",
+          "m_TargetNameLocSection": "0x10",
+          "m_VanishPreset": "0x1C",
+          "m_bOptional": "bitfield follows +0x1C; no individual offset assertion"
+        }
+      },
+      "save_data": {"struct": "FDisTaskTargetsSaveData", "size": "0x10", "m_TaskID": "0x00", "m_Targets": "0x04"},
+      "update_action": {
+        "class": "UDisSeqAct_UpdateTaskTarget",
+        "fields": {"m_TargetIndex": "0xFC", "m_pTargetActor": "0x100", "m_TargetName": "0x104", "m_MarkerVanishPreset": "0x110"}
+      },
+      "assertion_limit": "Static assertions verify numeric field offsets listed above except the m_bOptional bitfield's individual byte/bit offset"
+    },
+    "schema_delta": {
+      "2012_target_record_size": "0x18",
+      "2013_retail_target_record_size": "0x24",
+      "save_data_key_2012": "m_pTask object pointer",
+      "save_data_key_2013": "m_TaskID integer",
+      "retail_added_localization_fields": ["m_TargetNameLocFile", "m_TargetNameLocSection"]
+    },
+    "function_name_match_candidates": [
+      {"target_va": "0x00A11780", "candidate": "GameSave", "target_rva": "0x611780", "score": 0.819, "size_note": "807 target vs 791 donor bytes"},
+      {"target_va": "0x00A0BA70", "candidate": "GameLoad", "target_rva": "0x60BA70", "score": 0.729, "size_note": "321 target vs 316 donor bytes"}
+    ],
+    "reconstruction_limit": "dissavegame.cpp marks write-side target serialization and load-side restoration incomplete; use it as a crosswalk lead, not proof of retail lifecycle behavior",
+    "negative_match": {"candidate": "GetTargets", "target_va": "0x00A42290", "matcher_score": 0.85, "conflict": "target code returns this+0x64, while the 2013 layout places m_Targets at this+0x68"}
+  },
+  "claim_status": {
+    "exact_offsets_and_bytes": "observed",
+    "package_member_names_and_types": "observed",
+    "external_field_name_crosswalk": "inferred, strongly corroborated",
+    "save_load_method_identity_and_runtime_lifecycle": "unknown"
+  },
+  "limitations": [
+    "External 2013 SDK layout is not cryptographically bound to target EXE bytes, despite matching build family and offsets.",
+    "Compressed package export lists provide names/types, not property values or native offsets.",
+    "UpdateTaskTarget handler identity remains a cross-source candidate; EXP-0179 reports a weak order-based donor match.",
+    "The external save/load implementation is an incomplete reconstruction, not original retail source.",
+    "No runtime execution, save creation, load restoration, or HUD marker display was observed."
+  ]
+}

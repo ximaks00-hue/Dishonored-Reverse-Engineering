@@ -1,0 +1,63 @@
+{
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "exp_0137_source_sha256": "15E112185F8753E5309A5AC46A12E8C1A789D4372E6E76812EC92ABC1E58B020",
+  "function_index_sha256": "D260B168F863E6B4B592A8F57C959D204052FC67E6151C1C42FFECDDF124EEF9",
+  "input_rows": 332,
+  "raw_name_pointer_slots_in_data": 332,
+  "decoded_name_strings_in_rdata": 332,
+  "adjacent_handler_targets_in_text": 332,
+  "names_start_with_class_key": 332,
+  "exact_function_index_start_targets": 329,
+  "text_targets_without_exact_function_index_start": 3,
+  "unindexed_targets_inside_indexed_function_ranges": 0,
+  "unindexed_targets": [
+    {
+      "registration_address": "006067A0",
+      "class_key": "RB_Handle",
+      "native_exec_name": "URB_HandleexecGetOrientation",
+      "target_va": "0x005D0B60"
+    },
+    {
+      "registration_address": "006067A0",
+      "class_key": "RB_ConstraintInstance",
+      "native_exec_name": "URB_ConstraintInstanceexecMoveKinActorTransform",
+      "target_va": "0x005D3120"
+    },
+    {
+      "registration_address": "006067A0",
+      "class_key": "UISceneClient",
+      "native_exec_name": "UUISceneClientexecGetInverseCanvasToScreen",
+      "target_va": "0x005C64F0"
+    }
+  ],
+  "counts_by_registration": {
+    "004811B0": {
+      "exact_function_index_start": 5
+    },
+    "006067A0": {
+      "exact_function_index_start": 171,
+      "unindexed_text_target": 3
+    },
+    "0096DAB0": {
+      "exact_function_index_start": 11
+    },
+    "00970A10": {
+      "exact_function_index_start": 1
+    },
+    "0099A100": {
+      "exact_function_index_start": 5
+    },
+    "009AE330": {
+      "exact_function_index_start": 1
+    },
+    "00A0DBF0": {
+      "exact_function_index_start": 135
+    }
+  },
+  "limitations": [
+    "This checks only the one raw name/target pair at each EXP-0137 pointer-symbol address; it does not infer table extent or enumerate sibling entries.",
+    "A target in .text is not thereby proved to execute or to be a complete function; exact starts and ranges are limited to the current function index.",
+    "The static pointer/name relation does not establish runtime table consumption, NativeToken conversion, or dispatch."
+  ]
+}
