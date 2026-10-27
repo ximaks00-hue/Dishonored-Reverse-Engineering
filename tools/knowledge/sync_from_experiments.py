@@ -79,10 +79,31 @@ HYPOTHESES = [
     ),
 ]
 
-FUNCTION_REVIEW_OVERLAY = (
-    ROOT
-    / "research/executable/evidence/function-triage/manual-review-overlay-cumulative-EXP-0156.csv"
-)
+FUNCTION_REVIEW_OVERLAY_DIR = ROOT / "research/executable/evidence/function-triage"
+FUNCTION_REVIEW_OVERLAY_RE = re.compile(r"^manual-review-overlay-cumulative-EXP-(\d+)\.csv$")
+
+
+def current_function_review_overlay() -> Path:
+    """Select and provenance-check the newest cumulative body-review overlay."""
+    candidates = []
+    for path in FUNCTION_REVIEW_OVERLAY_DIR.glob("manual-review-overlay-cumulative-EXP-*.csv"):
+        match = FUNCTION_REVIEW_OVERLAY_RE.match(path.name)
+        if match:
+            candidates.append((int(match.group(1)), path))
+    if not candidates:
+        raise FileNotFoundError("no cumulative function body-review overlay found")
+    experiment_number, overlay_path = max(candidates, key=lambda item: item[0])
+    summary_path = FUNCTION_REVIEW_OVERLAY_DIR / f"manual-review-overlay-summary-EXP-{experiment_number:04d}.json"
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    if summary.get("experiment") != f"EXP-{experiment_number:04d}":
+        raise ValueError(f"overlay experiment ID does not match {summary_path.relative_to(ROOT)}")
+    expected_hash = summary.get("cumulative_csv_sha256")
+    actual_hash = hashlib.sha256(overlay_path.read_bytes()).hexdigest().upper()
+    if expected_hash != actual_hash:
+        raise ValueError(
+            f"cumulative function review overlay hash does not match {summary_path.relative_to(ROOT)}"
+        )
+    return overlay_path
 
 
 def parse_frontmatter(text: str) -> dict[str, str]:
@@ -201,6 +222,7 @@ def sync_function_evidence(db: sqlite3.Connection, build_row_id: int) -> dict[st
     index_ref = str(index_path.relative_to(ROOT)).replace("\\", "/")
     rows: list[tuple] = []
     address_to_id: dict[int, int] = {}
+    address_to_size: dict[int, int] = {}
     with index_path.open("r", encoding="utf-8-sig", newline="") as stream:
         for row in csv.DictReader(stream):
             va = int(row["address"], 16)
@@ -232,10 +254,11 @@ def sync_function_evidence(db: sqlite3.Connection, build_row_id: int) -> dict[st
         "size_bytes=excluded.size_bytes,index_source=excluded.index_source,index_sha256=excluded.index_sha256",
         rows,
     )
-    for function_id, va in db.execute(
-        "SELECT id,va FROM function_inventory WHERE build_id=? AND module=?", (build_row_id, "Dishonored.exe")
+    for function_id, va, size in db.execute(
+        "SELECT id,va,size_bytes FROM function_inventory WHERE build_id=? AND module=?", (build_row_id, "Dishonored.exe")
     ):
         address_to_id[int(va)] = int(function_id)
+        address_to_size[int(va)] = int(size)
 
     exp_rows = {
         row[0]: (row[1], row[2])
@@ -310,21 +333,33 @@ def sync_function_evidence(db: sqlite3.Connection, build_row_id: int) -> dict[st
     # The cumulative reviewed bodies are analysis coverage only. Their subsystem labels
     # remain candidates/unassigned in the source overlay, so they are not
     # imported as confirmed semantic claims.
-    overlay_path = FUNCTION_REVIEW_OVERLAY.resolve(strict=True)
+    overlay_path = current_function_review_overlay().resolve(strict=True)
     overlay_ref = str(overlay_path.relative_to(ROOT)).replace("\\", "/")
     overlay_sha = sha256_file(overlay_path)
     overlay_rows = list(csv.DictReader(overlay_path.open("r", encoding="utf-8-sig", newline="")))
+    seen_overlay_addresses: set[int] = set()
     for row in overlay_rows:
         va = int(row["address"], 16)
+        if va in seen_overlay_addresses:
+            raise ValueError(f"duplicate reviewed function address in {overlay_ref}: {row['address']}")
+        seen_overlay_addresses.add(va)
         function_id = address_to_id.get(va)
         if function_id is None:
             raise ValueError(f"reviewed function address is missing from the exact-build index: {row['address']}")
+        indexed_size = address_to_size[va]
+        if int(row["size_bytes"]) != indexed_size:
+            raise ValueError(
+                f"reviewed function body size disagrees with exact-build index at {row['address']}: "
+                f"overlay={row['size_bytes']} index={indexed_size}"
+            )
         managed_function_ids.add(function_id)
         summary = (
             f"{row['review_status']}; static_role_candidate={row['static_role_candidate']}; "
             f"source_claim_status={row['claim_status']}"
         )
-        insert_analysis(function_id, va, "manual_body_review", "Ghidra (manual review)", "not-recorded",
+        tool_name = row.get("analysis_tool") or "Ghidra (manual review)"
+        tool_version = row.get("analysis_tool_version") or "not-recorded"
+        insert_analysis(function_id, va, "manual_body_review", tool_name, tool_version,
                         overlay_ref, overlay_sha, summary)
 
     current_experiment_paths = {

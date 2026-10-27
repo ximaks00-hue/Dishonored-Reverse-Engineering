@@ -1,0 +1,22 @@
+{
+  "experiment": "EXP-0190",
+  "build_id": "10256413",
+  "exe_sha256": "66443F3D68A6C658B0ED943260C3EB2F4CC9E3400D5809A94D6EC41EB725E17E",
+  "functions_indexed": 72437,
+  "prior_cumulative_reviewed": 49,
+  "new_body_reviews": 11,
+  "cumulative_reviewed": 60,
+  "whole_index_reviewed_percent": 0.082831,
+  "exp0139_candidate_targets": 254,
+  "previously_reviewed_exp0139_targets": 20,
+  "now_reviewed_exp0139_targets": 31,
+  "semantic_claims_added": 0,
+  "runtime_verified_added": 0,
+  "tooling": {
+    "python": "3.12",
+    "pefile": "2024.8.26",
+    "capstone": "5.0.7"
+  },
+  "evidence_csv_sha256": "59B4D78443A233B4342F44B3E296900AC488C7B3D97C86A516FA2C33F3060337",
+  "cumulative_csv_sha256": "D9FB02333D9E13DB092CBC2ADC0F3997D404DE88E974A40FE1485481A61463EB"
+}
